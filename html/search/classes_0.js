@@ -1,0 +1,21 @@
+var searchData=
+[
+  ['bass_5f3dvector',['BASS_3DVECTOR',['../structBASS__3DVECTOR.html',1,'']]],
+  ['bass_5fchannelinfo',['BASS_CHANNELINFO',['../structBASS__CHANNELINFO.html',1,'']]],
+  ['bass_5fdeviceinfo',['BASS_DEVICEINFO',['../structBASS__DEVICEINFO.html',1,'']]],
+  ['bass_5fdx8_5fchorus',['BASS_DX8_CHORUS',['../structBASS__DX8__CHORUS.html',1,'']]],
+  ['bass_5fdx8_5fcompressor',['BASS_DX8_COMPRESSOR',['../structBASS__DX8__COMPRESSOR.html',1,'']]],
+  ['bass_5fdx8_5fdistortion',['BASS_DX8_DISTORTION',['../structBASS__DX8__DISTORTION.html',1,'']]],
+  ['bass_5fdx8_5fecho',['BASS_DX8_ECHO',['../structBASS__DX8__ECHO.html',1,'']]],
+  ['bass_5fdx8_5fflanger',['BASS_DX8_FLANGER',['../structBASS__DX8__FLANGER.html',1,'']]],
+  ['bass_5fdx8_5fgargle',['BASS_DX8_GARGLE',['../structBASS__DX8__GARGLE.html',1,'']]],
+  ['bass_5fdx8_5fi3dl2reverb',['BASS_DX8_I3DL2REVERB',['../structBASS__DX8__I3DL2REVERB.html',1,'']]],
+  ['bass_5fdx8_5fparameq',['BASS_DX8_PARAMEQ',['../structBASS__DX8__PARAMEQ.html',1,'']]],
+  ['bass_5fdx8_5freverb',['BASS_DX8_REVERB',['../structBASS__DX8__REVERB.html',1,'']]],
+  ['bass_5ffileprocs',['BASS_FILEPROCS',['../structBASS__FILEPROCS.html',1,'']]],
+  ['bass_5finfo',['BASS_INFO',['../structBASS__INFO.html',1,'']]],
+  ['bass_5fpluginform',['BASS_PLUGINFORM',['../structBASS__PLUGINFORM.html',1,'']]],
+  ['bass_5fplugininfo',['BASS_PLUGININFO',['../structBASS__PLUGININFO.html',1,'']]],
+  ['bass_5frecordinfo',['BASS_RECORDINFO',['../structBASS__RECORDINFO.html',1,'']]],
+  ['bass_5fsample',['BASS_SAMPLE',['../structBASS__SAMPLE.html',1,'']]]
+];

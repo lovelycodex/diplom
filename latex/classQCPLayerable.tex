@@ -1,0 +1,248 @@
+\hypertarget{classQCPLayerable}{}\section{Q\+C\+P\+Layerable Class Reference}
+\label{classQCPLayerable}\index{Q\+C\+P\+Layerable@{Q\+C\+P\+Layerable}}
+
+
+Base class for all drawable objects.  
+
+
+Inheritance diagram for Q\+C\+P\+Layerable\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=6.075950cm]{classQCPLayerable}
+\end{center}
+\end{figure}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classQCPLayerable_abbf8657cedea73ac1c3499b521c90eba}{layer\+Changed} (\hyperlink{classQCPLayer}{Q\+C\+P\+Layer} $\ast$new\+Layer)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classQCPLayerable_a74c0fa237f29bf0e49565013fc5d1ec0}{Q\+C\+P\+Layerable} (\hyperlink{classQCustomPlot}{Q\+Custom\+Plot} $\ast$plot, Q\+String target\+Layer=Q\+String(), \hyperlink{classQCPLayerable}{Q\+C\+P\+Layerable} $\ast$\hyperlink{classQCPLayerable_a98d79f5b716d45eac4347befe546d0ec}{parent\+Layerable}=0)
+\item 
+\hypertarget{classQCPLayerable_a10a3cc92e0fa63e4a929e61d34e275a7}{}bool {\bfseries visible} () const \label{classQCPLayerable_a10a3cc92e0fa63e4a929e61d34e275a7}
+
+\item 
+\hypertarget{classQCPLayerable_ab7e0e94461566093d36ffc0f5312b109}{}\hyperlink{classQCustomPlot}{Q\+Custom\+Plot} $\ast$ {\bfseries parent\+Plot} () const \label{classQCPLayerable_ab7e0e94461566093d36ffc0f5312b109}
+
+\item 
+\hyperlink{classQCPLayerable}{Q\+C\+P\+Layerable} $\ast$ \hyperlink{classQCPLayerable_a98d79f5b716d45eac4347befe546d0ec}{parent\+Layerable} () const 
+\item 
+\hypertarget{classQCPLayerable_aea67e8c19145e70d68c286a36f6b8300}{}\hyperlink{classQCPLayer}{Q\+C\+P\+Layer} $\ast$ {\bfseries layer} () const \label{classQCPLayerable_aea67e8c19145e70d68c286a36f6b8300}
+
+\item 
+\hypertarget{classQCPLayerable_aef5cb4aa899ed9dc9384fd614560291e}{}bool {\bfseries antialiased} () const \label{classQCPLayerable_aef5cb4aa899ed9dc9384fd614560291e}
+
+\item 
+void \hyperlink{classQCPLayerable_a3bed99ddc396b48ce3ebfdc0418744f8}{set\+Visible} (bool on)
+\item 
+Q\+\_\+\+S\+L\+O\+T bool \hyperlink{classQCPLayerable_ab0d0da6d2de45a118886d2c8e16d5a54}{set\+Layer} (\hyperlink{classQCPLayer}{Q\+C\+P\+Layer} $\ast$layer)
+\item 
+bool \hyperlink{classQCPLayerable_ab25a0e7b897993b44447caee0f142083}{set\+Layer} (const Q\+String \&layer\+Name)
+\item 
+void \hyperlink{classQCPLayerable_a4fd43e89be4a553ead41652565ff0581}{set\+Antialiased} (bool enabled)
+\item 
+virtual double \hyperlink{classQCPLayerable_a4001c4d0dfec55598efa4d531f2179a9}{select\+Test} (const Q\+Point\+F \&pos, bool only\+Selectable, Q\+Variant $\ast$details=0) const 
+\item 
+bool \hyperlink{classQCPLayerable_a30809f7455e9794bca7b6c737622fa63}{real\+Visibility} () const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classQCPLayerable_ab20b7dbd8e0249ed61adb9622c427382}{}virtual void {\bfseries parent\+Plot\+Initialized} (\hyperlink{classQCustomPlot}{Q\+Custom\+Plot} $\ast$parent\+Plot)\label{classQCPLayerable_ab20b7dbd8e0249ed61adb9622c427382}
+
+\item 
+\hypertarget{classQCPLayerable_aa4035e586b7f317a06ba7e74e242a5ea}{}virtual \hyperlink{namespaceQCP_a2ad6bb6281c7c2d593d4277b44c2b037}{Q\+C\+P\+::\+Interaction} {\bfseries selection\+Category} () const \label{classQCPLayerable_aa4035e586b7f317a06ba7e74e242a5ea}
+
+\item 
+\hypertarget{classQCPLayerable_a07a8f746640c3704b09910df297afcba}{}virtual Q\+Rect {\bfseries clip\+Rect} () const \label{classQCPLayerable_a07a8f746640c3704b09910df297afcba}
+
+\item 
+\hypertarget{classQCPLayerable_afdf83ddc6a265cbf4c89fe99d3d93473}{}virtual void {\bfseries apply\+Default\+Antialiasing\+Hint} (\hyperlink{classQCPPainter}{Q\+C\+P\+Painter} $\ast$painter) const =0\label{classQCPLayerable_afdf83ddc6a265cbf4c89fe99d3d93473}
+
+\item 
+\hypertarget{classQCPLayerable_aecf2f7087482d4b6a78cb2770e5ed12d}{}virtual void {\bfseries draw} (\hyperlink{classQCPPainter}{Q\+C\+P\+Painter} $\ast$painter)=0\label{classQCPLayerable_aecf2f7087482d4b6a78cb2770e5ed12d}
+
+\item 
+\hypertarget{classQCPLayerable_a7498c2d0d081cf7cad0fb3bb93aa0e91}{}virtual void {\bfseries select\+Event} (Q\+Mouse\+Event $\ast$event, bool additive, const Q\+Variant \&details, bool $\ast$selection\+State\+Changed)\label{classQCPLayerable_a7498c2d0d081cf7cad0fb3bb93aa0e91}
+
+\item 
+\hypertarget{classQCPLayerable_ae546370644a5551c76af739afc008bee}{}virtual void {\bfseries deselect\+Event} (bool $\ast$selection\+State\+Changed)\label{classQCPLayerable_ae546370644a5551c76af739afc008bee}
+
+\item 
+\hypertarget{classQCPLayerable_a8cbe5a0c9a5674249982f5ca5f8e02bc}{}void {\bfseries initialize\+Parent\+Plot} (\hyperlink{classQCustomPlot}{Q\+Custom\+Plot} $\ast$parent\+Plot)\label{classQCPLayerable_a8cbe5a0c9a5674249982f5ca5f8e02bc}
+
+\item 
+\hypertarget{classQCPLayerable_aa23c893671f1f6744ac235cf2204cf3a}{}void {\bfseries set\+Parent\+Layerable} (\hyperlink{classQCPLayerable}{Q\+C\+P\+Layerable} $\ast$\hyperlink{classQCPLayerable_a98d79f5b716d45eac4347befe546d0ec}{parent\+Layerable})\label{classQCPLayerable_aa23c893671f1f6744ac235cf2204cf3a}
+
+\item 
+\hypertarget{classQCPLayerable_af94484cfb7cbbddb7de522e9be71d9a4}{}bool {\bfseries move\+To\+Layer} (\hyperlink{classQCPLayer}{Q\+C\+P\+Layer} $\ast$layer, bool prepend)\label{classQCPLayerable_af94484cfb7cbbddb7de522e9be71d9a4}
+
+\item 
+\hypertarget{classQCPLayerable_a62bd552d1a45aa9accb24b310542279e}{}void {\bfseries apply\+Antialiasing\+Hint} (\hyperlink{classQCPPainter}{Q\+C\+P\+Painter} $\ast$painter, bool local\+Antialiased, \hyperlink{namespaceQCP_ae55dbe315d41fe80f29ba88100843a0c}{Q\+C\+P\+::\+Antialiased\+Element} override\+Element) const \label{classQCPLayerable_a62bd552d1a45aa9accb24b310542279e}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classQCPLayerable_a62e3aed8427d6ce3ccf716f285106cb3}{}bool {\bfseries m\+Visible}\label{classQCPLayerable_a62e3aed8427d6ce3ccf716f285106cb3}
+
+\item 
+\hypertarget{classQCPLayerable_aa2a528433e44db02b8aef23c1f9f90ed}{}\hyperlink{classQCustomPlot}{Q\+Custom\+Plot} $\ast$ {\bfseries m\+Parent\+Plot}\label{classQCPLayerable_aa2a528433e44db02b8aef23c1f9f90ed}
+
+\item 
+\hypertarget{classQCPLayerable_a3291445a980053e2d17a21d15957624e}{}Q\+Pointer$<$ \hyperlink{classQCPLayerable}{Q\+C\+P\+Layerable} $>$ {\bfseries m\+Parent\+Layerable}\label{classQCPLayerable_a3291445a980053e2d17a21d15957624e}
+
+\item 
+\hypertarget{classQCPLayerable_aa38ec5891aff0f50b36fd63e9372a0cd}{}\hyperlink{classQCPLayer}{Q\+C\+P\+Layer} $\ast$ {\bfseries m\+Layer}\label{classQCPLayerable_aa38ec5891aff0f50b36fd63e9372a0cd}
+
+\item 
+\hypertarget{classQCPLayerable_a3ab45a4c76a3333ce42eb217a81733ec}{}bool {\bfseries m\+Antialiased}\label{classQCPLayerable_a3ab45a4c76a3333ce42eb217a81733ec}
+
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classQCPLayerable_a1cdf9df76adcfae45261690aa0ca2198}{}class {\bfseries Q\+Custom\+Plot}\label{classQCPLayerable_a1cdf9df76adcfae45261690aa0ca2198}
+
+\item 
+\hypertarget{classQCPLayerable_acbf20ecb140f66c5fd1bc64ae0762990}{}class {\bfseries Q\+C\+P\+Axis\+Rect}\label{classQCPLayerable_acbf20ecb140f66c5fd1bc64ae0762990}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Base class for all drawable objects. 
+
+This is the abstract base class most visible objects derive from, e.\+g. plottables, axes, grid etc.
+
+Every layerable is on a layer (\hyperlink{classQCPLayer}{Q\+C\+P\+Layer}) which allows controlling the rendering order by stacking the layers accordingly.
+
+For details about the layering mechanism, see the \hyperlink{classQCPLayer}{Q\+C\+P\+Layer} documentation. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classQCPLayerable_a74c0fa237f29bf0e49565013fc5d1ec0}{}\index{Q\+C\+P\+Layerable@{Q\+C\+P\+Layerable}!Q\+C\+P\+Layerable@{Q\+C\+P\+Layerable}}
+\index{Q\+C\+P\+Layerable@{Q\+C\+P\+Layerable}!Q\+C\+P\+Layerable@{Q\+C\+P\+Layerable}}
+\subsubsection[{Q\+C\+P\+Layerable}]{\setlength{\rightskip}{0pt plus 5cm}Q\+C\+P\+Layerable\+::\+Q\+C\+P\+Layerable (
+\begin{DoxyParamCaption}
+\item[{{\bf Q\+Custom\+Plot} $\ast$}]{plot, }
+\item[{Q\+String}]{target\+Layer = {\ttfamily QString()}, }
+\item[{{\bf Q\+C\+P\+Layerable} $\ast$}]{parent\+Layerable = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}\label{classQCPLayerable_a74c0fa237f29bf0e49565013fc5d1ec0}
+Creates a new \hyperlink{classQCPLayerable}{Q\+C\+P\+Layerable} instance.
+
+Since \hyperlink{classQCPLayerable}{Q\+C\+P\+Layerable} is an abstract base class, it can\textquotesingle{}t be instantiated directly. Use one of the derived classes.
+
+If {\itshape plot} is provided, it automatically places itself on the layer named {\itshape target\+Layer}. If {\itshape target\+Layer} is an empty string, it places itself on the current layer of the plot (see \hyperlink{classQCustomPlot_a73a6dc47c653bb6f8f030abca5a11852}{Q\+Custom\+Plot\+::set\+Current\+Layer}).
+
+It is possible to provide 0 as {\itshape plot}. In that case, you should assign a parent plot at a later time with initialize\+Parent\+Plot.
+
+The layerable\textquotesingle{}s parent layerable is set to {\itshape parent\+Layerable}, if provided. Direct layerable parents are mainly used to control visibility in a hierarchy of layerables. This means a layerable is only drawn, if all its ancestor layerables are also visible. Note that {\itshape parent\+Layerable} does not become the Q\+Object-\/parent (for memory management) of this layerable, {\itshape plot} does. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classQCPLayerable_abbf8657cedea73ac1c3499b521c90eba}{}\index{Q\+C\+P\+Layerable@{Q\+C\+P\+Layerable}!layer\+Changed@{layer\+Changed}}
+\index{layer\+Changed@{layer\+Changed}!Q\+C\+P\+Layerable@{Q\+C\+P\+Layerable}}
+\subsubsection[{layer\+Changed}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Layerable\+::layer\+Changed (
+\begin{DoxyParamCaption}
+\item[{{\bf Q\+C\+P\+Layer} $\ast$}]{new\+Layer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{classQCPLayerable_abbf8657cedea73ac1c3499b521c90eba}
+This signal is emitted when the layer of this layerable changes, i.\+e. this layerable is moved to a different layer.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classQCPLayerable_ab0d0da6d2de45a118886d2c8e16d5a54}{set\+Layer} 
+\end{DoxySeeAlso}
+\hypertarget{classQCPLayerable_a98d79f5b716d45eac4347befe546d0ec}{}\index{Q\+C\+P\+Layerable@{Q\+C\+P\+Layerable}!parent\+Layerable@{parent\+Layerable}}
+\index{parent\+Layerable@{parent\+Layerable}!Q\+C\+P\+Layerable@{Q\+C\+P\+Layerable}}
+\subsubsection[{parent\+Layerable}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+C\+P\+Layerable} $\ast$ Q\+C\+P\+Layerable\+::parent\+Layerable (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classQCPLayerable_a98d79f5b716d45eac4347befe546d0ec}
+Returns the parent layerable of this layerable. The parent layerable is used to provide visibility hierarchies in conjunction with the method \hyperlink{classQCPLayerable_a30809f7455e9794bca7b6c737622fa63}{real\+Visibility}. This way, layerables only get drawn if their parent layerables are visible, too.
+
+Note that a parent layerable is not necessarily also the Q\+Object parent for memory management. Further, a layerable doesn\textquotesingle{}t always have a parent layerable, so this function may return 0.
+
+A parent layerable is set implicitly with when placed inside layout elements and doesn\textquotesingle{}t need to be set manually by the user. \hypertarget{classQCPLayerable_a30809f7455e9794bca7b6c737622fa63}{}\index{Q\+C\+P\+Layerable@{Q\+C\+P\+Layerable}!real\+Visibility@{real\+Visibility}}
+\index{real\+Visibility@{real\+Visibility}!Q\+C\+P\+Layerable@{Q\+C\+P\+Layerable}}
+\subsubsection[{real\+Visibility}]{\setlength{\rightskip}{0pt plus 5cm}bool Q\+C\+P\+Layerable\+::real\+Visibility (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classQCPLayerable_a30809f7455e9794bca7b6c737622fa63}
+Returns whether this layerable is visible, taking the visibility of the layerable parent and the visibility of the layer this layerable is on into account. This is the method that is consulted to decide whether a layerable shall be drawn or not.
+
+If this layerable has a direct layerable parent (usually set via hierarchies implemented in subclasses, like in the case of \hyperlink{classQCPLayoutElement}{Q\+C\+P\+Layout\+Element}), this function returns true only if this layerable has its visibility set to true and the parent layerable\textquotesingle{}s \hyperlink{classQCPLayerable_a30809f7455e9794bca7b6c737622fa63}{real\+Visibility} returns true.
+
+If this layerable doesn\textquotesingle{}t have a direct layerable parent, returns the state of this layerable\textquotesingle{}s visibility. \hypertarget{classQCPLayerable_a4001c4d0dfec55598efa4d531f2179a9}{}\index{Q\+C\+P\+Layerable@{Q\+C\+P\+Layerable}!select\+Test@{select\+Test}}
+\index{select\+Test@{select\+Test}!Q\+C\+P\+Layerable@{Q\+C\+P\+Layerable}}
+\subsubsection[{select\+Test}]{\setlength{\rightskip}{0pt plus 5cm}double Q\+C\+P\+Layerable\+::select\+Test (
+\begin{DoxyParamCaption}
+\item[{const Q\+Point\+F \&}]{pos, }
+\item[{bool}]{only\+Selectable, }
+\item[{Q\+Variant $\ast$}]{details = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{classQCPLayerable_a4001c4d0dfec55598efa4d531f2179a9}
+This function is used to decide whether a click hits a layerable object or not.
+
+{\itshape pos} is a point in pixel coordinates on the \hyperlink{classQCustomPlot}{Q\+Custom\+Plot} surface. This function returns the shortest pixel distance of this point to the object. If the object is either invisible or the distance couldn\textquotesingle{}t be determined, -\/1.\+0 is returned. Further, if {\itshape only\+Selectable} is true and the object is not selectable, -\/1.\+0 is returned, too.
+
+If the object is represented not by single lines but by an area like a \hyperlink{classQCPItemText}{Q\+C\+P\+Item\+Text} or the bars of a \hyperlink{classQCPBars}{Q\+C\+P\+Bars} plottable, a click inside the area should also be considered a hit. In these cases this function thus returns a constant value greater zero but still below the parent plot\textquotesingle{}s selection tolerance. (typically the selection\+Tolerance multiplied by 0.\+99).
+
+Providing a constant value for area objects allows selecting line objects even when they are obscured by such area objects, by clicking close to the lines (i.\+e. closer than 0.\+99$\ast$selection\+Tolerance).
+
+The actual setting of the selection state is not done by this function. This is handled by the parent \hyperlink{classQCustomPlot}{Q\+Custom\+Plot} when the mouse\+Release\+Event occurs, and the finally selected object is notified via the select\+Event/deselect\+Event methods.
+
+{\itshape details} is an optional output parameter. Every layerable subclass may place any information in {\itshape details}. This information will be passed to select\+Event when the parent \hyperlink{classQCustomPlot}{Q\+Custom\+Plot} decides on the basis of this select\+Test call, that the object was successfully selected. The subsequent call to select\+Event will carry the {\itshape details}. This is useful for multi-\/part objects (like \hyperlink{classQCPAxis}{Q\+C\+P\+Axis}). This way, a possibly complex calculation to decide which part was clicked is only done once in \hyperlink{classQCPLayerable_a4001c4d0dfec55598efa4d531f2179a9}{select\+Test}. The result (i.\+e. the actually clicked part) can then be placed in {\itshape details}. So in the subsequent select\+Event, the decision which part was selected doesn\textquotesingle{}t have to be done a second time for a single selection operation.
+
+You may pass 0 as {\itshape details} to indicate that you are not interested in those selection details.
+
+\begin{DoxySeeAlso}{See also}
+select\+Event, deselect\+Event, \hyperlink{classQCustomPlot_a5ee1e2f6ae27419deca53e75907c27e5}{Q\+Custom\+Plot\+::set\+Interactions} 
+\end{DoxySeeAlso}
+
+
+Reimplemented in \hyperlink{classQCPItemBracket_aa6933caff1d42c54bcebc769ef88c798}{Q\+C\+P\+Item\+Bracket}, \hyperlink{classQCPItemTracer_ae71f3728421c83c188c117279ca050fd}{Q\+C\+P\+Item\+Tracer}, \hyperlink{classQCPItemPixmap_a9f8436aa141fa0fb504191c882c2f4d9}{Q\+C\+P\+Item\+Pixmap}, \hyperlink{classQCPItemEllipse_acd7e5f9528630b2ab5987e2a5782eb7c}{Q\+C\+P\+Item\+Ellipse}, \hyperlink{classQCPItemText_a285b95bb6634c2e4f7768abb7a8bc69c}{Q\+C\+P\+Item\+Text}, \hyperlink{classQCPItemRect_af13b0797079b40b73d1c7286b76f18ac}{Q\+C\+P\+Item\+Rect}, \hyperlink{classQCPItemCurve_a741375c11667b5f9c95b2683f93ee514}{Q\+C\+P\+Item\+Curve}, \hyperlink{classQCPItemLine_a7541e5d9378ca121d07b0df3b24f7178}{Q\+C\+P\+Item\+Line}, \hyperlink{classQCPItemStraightLine_a64cc3796f58ce856012732603edb2f1c}{Q\+C\+P\+Item\+Straight\+Line}, \hyperlink{classQCPFinancial_adf6cff00a55f775487d375fe4df5e95b}{Q\+C\+P\+Financial}, \hyperlink{classQCPColorMap_a4088dc7bcbe9bba605c84a912ba660ff}{Q\+C\+P\+Color\+Map}, \hyperlink{classQCPStatisticalBox_a7d3ac843dc48a085740fdfc4319a89cc}{Q\+C\+P\+Statistical\+Box}, \hyperlink{classQCPBars_a0d37a9feb1d0baf73ce6e809db214445}{Q\+C\+P\+Bars}, \hyperlink{classQCPCurve_a5af9949e725704811bbc81ecd5970b8e}{Q\+C\+P\+Curve}, \hyperlink{classQCPGraph_abc9ff375aabcf2d21cca33d6baf85772}{Q\+C\+P\+Graph}, \hyperlink{classQCPPlotTitle_a5b7ae716be9134a48f4e378feb0e6699}{Q\+C\+P\+Plot\+Title}, \hyperlink{classQCPLegend_aa3892801051bc7b985e003576df844db}{Q\+C\+P\+Legend}, \hyperlink{classQCPAbstractLegendItem_ad0480d5cad34627a294a2921caa4a62f}{Q\+C\+P\+Abstract\+Legend\+Item}, \hyperlink{classQCPAbstractItem_a96d522d10ffc0413b9a366c6f7f0476b}{Q\+C\+P\+Abstract\+Item}, \hyperlink{classQCPAbstractPlottable_a38efe9641d972992a3d44204bc80ec1d}{Q\+C\+P\+Abstract\+Plottable}, \hyperlink{classQCPAxis_a2877a6230920c118be65c6113089f467}{Q\+C\+P\+Axis}, \hyperlink{classQCPLayoutInset_ab5a2f2b88c05e369fd7da9583d17aa3a}{Q\+C\+P\+Layout\+Inset}, and \hyperlink{classQCPLayoutElement_a9fcf5d0ea19f2c23b2b528bce2c6f095}{Q\+C\+P\+Layout\+Element}.
+
+\hypertarget{classQCPLayerable_a4fd43e89be4a553ead41652565ff0581}{}\index{Q\+C\+P\+Layerable@{Q\+C\+P\+Layerable}!set\+Antialiased@{set\+Antialiased}}
+\index{set\+Antialiased@{set\+Antialiased}!Q\+C\+P\+Layerable@{Q\+C\+P\+Layerable}}
+\subsubsection[{set\+Antialiased}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Layerable\+::set\+Antialiased (
+\begin{DoxyParamCaption}
+\item[{bool}]{enabled}
+\end{DoxyParamCaption}
+)}\label{classQCPLayerable_a4fd43e89be4a553ead41652565ff0581}
+Sets whether this object will be drawn antialiased or not.
+
+Note that antialiasing settings may be overridden by \hyperlink{classQCustomPlot_af6f91e5eab1be85f67c556e98c3745e8}{Q\+Custom\+Plot\+::set\+Antialiased\+Elements} and \hyperlink{classQCustomPlot_ae10d685b5eabea2999fb8775ca173c24}{Q\+Custom\+Plot\+::set\+Not\+Antialiased\+Elements}. \hypertarget{classQCPLayerable_ab0d0da6d2de45a118886d2c8e16d5a54}{}\index{Q\+C\+P\+Layerable@{Q\+C\+P\+Layerable}!set\+Layer@{set\+Layer}}
+\index{set\+Layer@{set\+Layer}!Q\+C\+P\+Layerable@{Q\+C\+P\+Layerable}}
+\subsubsection[{set\+Layer}]{\setlength{\rightskip}{0pt plus 5cm}bool Q\+C\+P\+Layerable\+::set\+Layer (
+\begin{DoxyParamCaption}
+\item[{{\bf Q\+C\+P\+Layer} $\ast$}]{layer}
+\end{DoxyParamCaption}
+)}\label{classQCPLayerable_ab0d0da6d2de45a118886d2c8e16d5a54}
+Sets the {\itshape layer} of this layerable object. The object will be placed on top of the other objects already on {\itshape layer}.
+
+Returns true on success, i.\+e. if {\itshape layer} is a valid layer. \hypertarget{classQCPLayerable_ab25a0e7b897993b44447caee0f142083}{}\index{Q\+C\+P\+Layerable@{Q\+C\+P\+Layerable}!set\+Layer@{set\+Layer}}
+\index{set\+Layer@{set\+Layer}!Q\+C\+P\+Layerable@{Q\+C\+P\+Layerable}}
+\subsubsection[{set\+Layer}]{\setlength{\rightskip}{0pt plus 5cm}bool Q\+C\+P\+Layerable\+::set\+Layer (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{layer\+Name}
+\end{DoxyParamCaption}
+)}\label{classQCPLayerable_ab25a0e7b897993b44447caee0f142083}
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Sets the layer of this layerable object by name
+
+Returns true on success, i.\+e. if {\itshape layer\+Name} is a valid layer name. \hypertarget{classQCPLayerable_a3bed99ddc396b48ce3ebfdc0418744f8}{}\index{Q\+C\+P\+Layerable@{Q\+C\+P\+Layerable}!set\+Visible@{set\+Visible}}
+\index{set\+Visible@{set\+Visible}!Q\+C\+P\+Layerable@{Q\+C\+P\+Layerable}}
+\subsubsection[{set\+Visible}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Layerable\+::set\+Visible (
+\begin{DoxyParamCaption}
+\item[{bool}]{on}
+\end{DoxyParamCaption}
+)}\label{classQCPLayerable_a3bed99ddc396b48ce3ebfdc0418744f8}
+Sets the visibility of this layerable object. If an object is not visible, it will not be drawn on the \hyperlink{classQCustomPlot}{Q\+Custom\+Plot} surface, and user interaction with it (e.\+g. click and selection) is not possible. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{qcustomplot_8h}{qcustomplot.\+h}\item 
+\hyperlink{qcustomplot_8cpp}{qcustomplot.\+cpp}\end{DoxyCompactItemize}

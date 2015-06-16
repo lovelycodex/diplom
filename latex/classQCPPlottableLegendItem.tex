@@ -1,0 +1,93 @@
+\hypertarget{classQCPPlottableLegendItem}{}\section{Q\+C\+P\+Plottable\+Legend\+Item Class Reference}
+\label{classQCPPlottableLegendItem}\index{Q\+C\+P\+Plottable\+Legend\+Item@{Q\+C\+P\+Plottable\+Legend\+Item}}
+
+
+A legend item representing a plottable with an icon and the plottable name.  
+
+
+Inheritance diagram for Q\+C\+P\+Plottable\+Legend\+Item\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{classQCPPlottableLegendItem}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classQCPPlottableLegendItem_ac1072591fe409d3dabad51b23ee4d6c5}{Q\+C\+P\+Plottable\+Legend\+Item} (\hyperlink{classQCPLegend}{Q\+C\+P\+Legend} $\ast$parent, \hyperlink{classQCPAbstractPlottable}{Q\+C\+P\+Abstract\+Plottable} $\ast$plottable)
+\item 
+\hypertarget{classQCPPlottableLegendItem_af29e9a2c60b4cba0cac2447b8af7b488}{}\hyperlink{classQCPAbstractPlottable}{Q\+C\+P\+Abstract\+Plottable} $\ast$ {\bfseries plottable} ()\label{classQCPPlottableLegendItem_af29e9a2c60b4cba0cac2447b8af7b488}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classQCPPlottableLegendItem_a68a781c3de4f9959fdf82075052d43aa}{}virtual void {\bfseries draw} (\hyperlink{classQCPPainter}{Q\+C\+P\+Painter} $\ast$painter)\label{classQCPPlottableLegendItem_a68a781c3de4f9959fdf82075052d43aa}
+
+\item 
+virtual Q\+Size \hyperlink{classQCPPlottableLegendItem_a76bad654ebc8e870392f488419a6a483}{minimum\+Size\+Hint} () const 
+\item 
+\hypertarget{classQCPPlottableLegendItem_ab36270e6b022a6961fa44136f35c0e4b}{}Q\+Pen {\bfseries get\+Icon\+Border\+Pen} () const \label{classQCPPlottableLegendItem_ab36270e6b022a6961fa44136f35c0e4b}
+
+\item 
+\hypertarget{classQCPPlottableLegendItem_ad762b07439c738660ba93e78c1d03667}{}Q\+Color {\bfseries get\+Text\+Color} () const \label{classQCPPlottableLegendItem_ad762b07439c738660ba93e78c1d03667}
+
+\item 
+\hypertarget{classQCPPlottableLegendItem_a8a85c8a25affb4895423d730164d61de}{}Q\+Font {\bfseries get\+Font} () const \label{classQCPPlottableLegendItem_a8a85c8a25affb4895423d730164d61de}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classQCPPlottableLegendItem_ada647fb4b22971a1a424e15b4f6af0d9}{}\hyperlink{classQCPAbstractPlottable}{Q\+C\+P\+Abstract\+Plottable} $\ast$ {\bfseries m\+Plottable}\label{classQCPPlottableLegendItem_ada647fb4b22971a1a424e15b4f6af0d9}
+
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+A legend item representing a plottable with an icon and the plottable name. 
+
+This is the standard legend item for plottables. It displays an icon of the plottable next to the plottable name. The icon is drawn by the respective plottable itself (Q\+C\+P\+Abstract\+Plottable\+::draw\+Legend\+Icon), and tries to give an intuitive symbol for the plottable. For example, the \hyperlink{classQCPGraph}{Q\+C\+P\+Graph} draws a centered horizontal line and/or a single scatter point in the middle.
+
+Legend items of this type are always associated with one plottable (retrievable via the plottable() function and settable with the constructor). You may change the font of the plottable name with \hyperlink{classQCPAbstractLegendItem_a409c53455d8112f71d70c0c43eb10265}{set\+Font}. Icon padding and border pen is taken from the parent \hyperlink{classQCPLegend}{Q\+C\+P\+Legend}, see \hyperlink{classQCPLegend_a2f2c93d18a651f4ff294bb3f026f49b8}{Q\+C\+P\+Legend\+::set\+Icon\+Border\+Pen} and \hyperlink{classQCPLegend_a62973bd69d5155e8ea3141366e8968f6}{Q\+C\+P\+Legend\+::set\+Icon\+Text\+Padding}.
+
+The function \hyperlink{classQCPAbstractPlottable_a70f8cabfd808f7d5204b9f18c45c13f5}{Q\+C\+P\+Abstract\+Plottable\+::add\+To\+Legend}/\hyperlink{classQCPAbstractPlottable_aa1f350e510326d012b9a9c9249736c83}{Q\+C\+P\+Abstract\+Plottable\+::remove\+From\+Legend} creates/removes legend items of this type in the default implementation. However, these functions may be reimplemented such that a different kind of legend item (e.\+g a direct subclass of \hyperlink{classQCPAbstractLegendItem}{Q\+C\+P\+Abstract\+Legend\+Item}) is used for that plottable.
+
+Since \hyperlink{classQCPLegend}{Q\+C\+P\+Legend} is based on \hyperlink{classQCPLayoutGrid}{Q\+C\+P\+Layout\+Grid}, a legend item itself is just a subclass of \hyperlink{classQCPLayoutElement}{Q\+C\+P\+Layout\+Element}. While it could be added to a legend (or any other layout) via the normal layout interface, \hyperlink{classQCPLegend}{Q\+C\+P\+Legend} has specialized functions for handling legend items conveniently, see the documentation of \hyperlink{classQCPLegend}{Q\+C\+P\+Legend}. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classQCPPlottableLegendItem_ac1072591fe409d3dabad51b23ee4d6c5}{}\index{Q\+C\+P\+Plottable\+Legend\+Item@{Q\+C\+P\+Plottable\+Legend\+Item}!Q\+C\+P\+Plottable\+Legend\+Item@{Q\+C\+P\+Plottable\+Legend\+Item}}
+\index{Q\+C\+P\+Plottable\+Legend\+Item@{Q\+C\+P\+Plottable\+Legend\+Item}!Q\+C\+P\+Plottable\+Legend\+Item@{Q\+C\+P\+Plottable\+Legend\+Item}}
+\subsubsection[{Q\+C\+P\+Plottable\+Legend\+Item}]{\setlength{\rightskip}{0pt plus 5cm}Q\+C\+P\+Plottable\+Legend\+Item\+::\+Q\+C\+P\+Plottable\+Legend\+Item (
+\begin{DoxyParamCaption}
+\item[{{\bf Q\+C\+P\+Legend} $\ast$}]{parent, }
+\item[{{\bf Q\+C\+P\+Abstract\+Plottable} $\ast$}]{plottable}
+\end{DoxyParamCaption}
+)}\label{classQCPPlottableLegendItem_ac1072591fe409d3dabad51b23ee4d6c5}
+Creates a new legend item associated with {\itshape plottable}.
+
+Once it\textquotesingle{}s created, it can be added to the legend via \hyperlink{classQCPLegend_a3ab274de52d2951faea45a6d975e6b3f}{Q\+C\+P\+Legend\+::add\+Item}.
+
+A more convenient way of adding/removing a plottable to/from the legend is via the functions \hyperlink{classQCPAbstractPlottable_a70f8cabfd808f7d5204b9f18c45c13f5}{Q\+C\+P\+Abstract\+Plottable\+::add\+To\+Legend} and \hyperlink{classQCPAbstractPlottable_aa1f350e510326d012b9a9c9249736c83}{Q\+C\+P\+Abstract\+Plottable\+::remove\+From\+Legend}. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classQCPPlottableLegendItem_a76bad654ebc8e870392f488419a6a483}{}\index{Q\+C\+P\+Plottable\+Legend\+Item@{Q\+C\+P\+Plottable\+Legend\+Item}!minimum\+Size\+Hint@{minimum\+Size\+Hint}}
+\index{minimum\+Size\+Hint@{minimum\+Size\+Hint}!Q\+C\+P\+Plottable\+Legend\+Item@{Q\+C\+P\+Plottable\+Legend\+Item}}
+\subsubsection[{minimum\+Size\+Hint}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Size Q\+C\+P\+Plottable\+Legend\+Item\+::minimum\+Size\+Hint (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classQCPPlottableLegendItem_a76bad654ebc8e870392f488419a6a483}
+Returns the minimum size this layout element (the inner \hyperlink{classQCPLayoutElement_affdfea003469aac3d0fac5f4e06171bc}{rect}) may be compressed to.
+
+if a minimum size (\hyperlink{classQCPLayoutElement_a5dd29a3c8bc88440c97c06b67be7886b}{set\+Minimum\+Size}) was not set manually, parent layouts consult this function to determine the minimum allowed size of this layout element. (A manual minimum size is considered set if it is non-\/zero.) 
+
+Reimplemented from \hyperlink{classQCPLayoutElement_aebe14fb71f858c0f98caf8d342a9864a}{Q\+C\+P\+Layout\+Element}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{qcustomplot_8h}{qcustomplot.\+h}\item 
+\hyperlink{qcustomplot_8cpp}{qcustomplot.\+cpp}\end{DoxyCompactItemize}
