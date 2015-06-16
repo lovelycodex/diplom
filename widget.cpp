@@ -244,7 +244,9 @@ void Widget::stopRecording()
     else
         BASS_Free();
 }
-
+/**
+ * @brief Widget::updateInputInfo
+ */
 void Widget::updateInputInfo()
 {
     float level;
@@ -343,7 +345,11 @@ void Widget::plotSpectrums(int number_graph, float *arr) {
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------
 //---------------------------------------------------------Bessel function of the first kind-------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------
-///brief:: zeroth order modified Bessel function of the first kind, which has a complex mathematical description.
+/**
+ * @brief zeroth order modified Bessel function of the first kind, which has a complex mathematical description.
+ * @param x
+ * @return
+ */
 float Widget::I0(float x) {
     float Y = x / 2.0f;
     float T = 0.0000000001;
@@ -363,7 +369,9 @@ float Widget::I0(float x) {
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------
 //-----------------------------------------------------------------Kaiser Window ------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------
-///brief:: It is a one-parameter family of window functions used for digital signal processing.
+/**
+ * @brief It is a one-parameter family of window functions used for digital signal processing.
+ */
 void Widget::KaiserWindow() {
     float iI0b = 0, h = 0;
     int k = 0;
@@ -381,7 +389,10 @@ void Widget::KaiserWindow() {
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------Message box for errors--------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------
-///brief:: Simple messanger
+/**
+ * @brief Simple messanger
+ * @param String message
+ */
 void Error(QString er) {
     QMessageBox msg;
     QString str = er;
@@ -393,7 +404,9 @@ void Error(QString er) {
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------
 //----------------------------------------------------------------Timer function-------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------
-///brief:: Colled every 0.3 secinds and update text field where represented recording size.
+/**
+ * @brief Colled every 0.3 secinds and update text field where represented recording size.
+ */
 void Widget::timerProc() {
     // update the recording/playback counter
     QString text = "no data";
@@ -410,7 +423,10 @@ void Widget::timerProc() {
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------Events------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------
-///brief:: Colled this events on every events (on buttons, SliderBar etc).
+/**
+ * @brief Colled this events on every events (on buttons, SliderBar etc).
+ * @param value a sound value
+ */
 void Widget::on_horizontalSlider_valueChanged(qint32 value) {
     float level=value/100.0f;
     if (!BASS_RecordSetInput(input,BASS_INPUT_ON,level)){ // failed to set input level
