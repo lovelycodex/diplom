@@ -35,7 +35,10 @@ BOOL CALLBACK RecordingCallback(HRECORD handle, const void *buffer, DWORD length
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------
 //----------------------------------------------------------Widget default constructor-------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------
-///brief:: Set the start up configuration.
+/**
+ * @brief Default constructor. Set a start up configuration.
+ * @param QWidget *parent - Link to parent Widget (default is null).
+ */
 Widget::Widget(QWidget *parent) : QWidget(parent), ui(new Ui::Widget)
 {
     try {
@@ -154,6 +157,9 @@ Widget::Widget(QWidget *parent) : QWidget(parent), ui(new Ui::Widget)
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------
 //------------------------------------------------------------Simple destructor--------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief Widget::~Widget Defaul destructor.
+ */
 Widget::~Widget()
 {
     // release all BASS stuff;
@@ -165,7 +171,9 @@ Widget::~Widget()
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------
 //----------------------------------------------------------Start recording function---------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------
-///brief:: Starts the record and set default confuration for audio file. If start record is failure free RECBUF is comming.
+/**
+ * @brief Starts the record and set default confuration for audio file. If start record is failure free RECBUF is comming.
+ */
 void Widget::startRecording() {
     WAVEFORMATEX *wf;
     if (recbuf) { // free old recording;
@@ -204,7 +212,10 @@ void Widget::startRecording() {
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------
 //----------------------------------------------------------Stop Recording function----------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------
-///brief:: No incoming parameters. Get data from RCHAN. Creating the stream file. If BASS_StreamCreateFile is failure colled BASS_Free().
+/**
+ * @brief No incoming parameters. Get data from RCHAN. Creating the stream file. If BASS_StreamCreateFile is failure colled BASS_Free().
+ * @param No params
+ */
 void Widget::stopRecording()
 {
     if (BASS_ChannelGetData(rchan, this->fft, (int)BASS_DATA_FFT4096) == -1) {
@@ -247,7 +258,10 @@ void Widget::updateInputInfo()
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------
 //----------------------------------------------------------Write data to disk---------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------
-///brief:: No incoming parameters. Write recording data to disk.
+/**
+ * @brief No incoming parameters. Write recording data to disk.
+ * @param No param
+ */
 void Widget::writeToDisk()
 {
     QString file_name = QFileDialog::getSaveFileName(this, tr("Save File"), "", tr("Music Files (*.mp3)"));
@@ -265,7 +279,11 @@ void Widget::writeToDisk()
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------
 //----------------------------------------------------------------Plot Spectrum--------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------
-///brief:: int number_graph - which graph have to plot.
+/**
+ * @brief Plot spectrums on two graphs (first- FFT, second - Kaiser Window)
+ * @param number_graph - which graph to plot
+ * @param arr - The array which have to plot
+ */
 void Widget::plotSpectrums(int number_graph, float *arr) {
     ui->plot1->addGraph();
     ui->plot2->addGraph();

@@ -1,6 +1,6 @@
 #ifndef WIDGET_H
 #define WIDGET_H
-
+//-----------------------------------------QT class incldues----------------------------------
 # include <QWidget>
 # include <QMessageBox>
 # include <QDebug>
@@ -12,6 +12,8 @@
 # include <QGraphicsDropShadowEffect>
 # include <qmath.h>
 # include <exception>
+//---------------------------------------------------------------------------------------------
+# include <sqlite3.h>       //DB include
 
 # include <malloc.h>
 # include "bass.h"
