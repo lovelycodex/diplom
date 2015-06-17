@@ -43,7 +43,11 @@ Widget::Widget(QWidget *parent) : QWidget(parent), ui(new Ui::Widget)
 {
     try {
         timer = new QTimer(this);
+        this->timer_for_record = new QTimer(this);
+
         connect(timer, SIGNAL(timeout()), this, SLOT(timerProc()));
+        connect(timer_for_record, SIGNAL(timeout()), this, SLOT(stopRecordingSlot()));
+        connect(this, SIGNAL(PlotSpectrumSignal()), this, SLOT(plotSpectrums()));
 
         ui->setupUi(this);
         ui->lineEdit->setAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
@@ -207,7 +211,7 @@ void Widget::startRecording() {
         recbuf=0;
         return;
     }
-    ui->pushButton->setText(tr("Stop"));
+    ui->pushButton->setEnabled(false);
 }
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------
 //----------------------------------------------------------Stop Recording function----------------------------------------------------------------------------
@@ -218,7 +222,7 @@ void Widget::startRecording() {
  */
 void Widget::stopRecording()
 {
-    if (BASS_ChannelGetData(rchan, this->fft, (int)BASS_DATA_FFT4096) == -1) {
+    if (BASS_ChannelGetData(rchan, this->fft, BASS_DATA_FFT1024|BASS_DATA_FFT_COMPLEX) == -1) {
         QDEBUG("Cannot get recbuf from rchan");
         QDEBUG(BASS_ErrorGetCode());
     }
@@ -243,6 +247,7 @@ void Widget::stopRecording()
     }
     else
         BASS_Free();
+    ui->pushButton->setEnabled(true);
 }
 /**
  * @brief Widget::updateInputInfo
@@ -283,13 +288,10 @@ void Widget::writeToDisk()
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------
 /**
  * @brief Plot spectrums on two graphs (first- FFT, second - Kaiser Window)
- * @param number_graph - which graph to plot
- * @param arr - The array which have to plot
  */
-void Widget::plotSpectrums(int number_graph, float *arr) {
+void Widget::plotSpectrums() {
     ui->plot1->addGraph();
-    ui->plot2->addGraph();
-    ui->plot2->addGraph();
+
 
     ui->plot1->graph(0)->setPen(QPen(QColor(218,242,4)));
     ui->plot1->graph(0)->setBrush(QColor(10,74,50));
@@ -298,50 +300,58 @@ void Widget::plotSpectrums(int number_graph, float *arr) {
     QVector<double> y;
     QVector<double> reverse_y;
 
-    y.push_back(0);
-    reverse_y.push_back(0);
+    float w = xout = k = sq = 0;
 
 
-    switch(number_graph) {
-    case 1:{
-        for (int i = 1; i < 2048; i++) {
-            x.push_back(i);
-            y.push_back(arr[i]*20);
-        }
-        ui->plot1->graph(0)->setData(x,y);
-        ui->plot1->xAxis->setRange(0, 100);
-        ui->plot1->xAxis->setVisible(true);
-        ui->plot1->yAxis->setVisible(true);
-        //ui->plot1->graph(0)->setBrush(QBrush(Qt::blue));
-        //ui->plot1->yAxis->setRange(0, 1);
-        ui->plot1->replot();
 
-    } break;
-    case 2:{
-        qint32 j = 1;
-        for (int i = 1; i < 2048; i++) {
-            if (!qIsNaN(arr[i])) {
-                x.push_back(j);
-                y.push_back(arr[i]*20);
-                reverse_y.push_back(arr[i]*20*(-1));
-                j++;
-                //QDEBUG(arr[i]);
-            }
-        }
-
-        ui->plot2->graph(0)->setData(x,y);
-        ui->plot2->graph(1)->setData(x,reverse_y);
-        ui->plot2->xAxis->setRange(0, x.size());
-        ui->plot2->xAxis->setVisible(true);
-        ui->plot2->yAxis->setVisible(true);
-        ui->plot2->graph(0)->setBrush(QBrush(Qt::black));
-        ui->plot2->graph(1)->setBrush(QBrush(Qt::black));
-        ui->plot2->yAxis->setRange(-1, 1);
-        ui->plot2->replot();
-    } break;
+    for (int i = 0; i < 1024; i++) {
+        x.push_back(i);
+        y.push_back((fft[i*2]+fft[i*2+1])*20);
     }
 
+    ui->plot1->graph(0)->setData(x,y);
+    ui->plot1->xAxis->setRange(0, 1024);
+    ui->plot1->xAxis->setVisible(true);
+    ui->plot1->yAxis->setVisible(true);
+    //ui->plot1->graph(0)->setBrush(QBrush(Qt::blue));
+    //ui->plot1->yAxis->setRange(0, 1);
+    ui->plot1->replot();
+
+    emit this->plotKaiserWindow();
 }
+
+void Widget::plotKaiserWindow() {
+    ui->plot2->addGraph();
+    ui->plot2->addGraph();
+
+    QVector<double> x;
+    QVector<double> y;
+    QVector<double> reverse_y;
+
+    qint32 j = 2;
+
+    for (int i = 0; i < 1024; i++) {
+        if (!qIsNaN(fft[i])) {
+            x.push_back(j);
+            y.push_back(fft[i*2]+fft[i*2+1]);
+            //reverse_y.push_back(fft[i]*20*(-1));
+            j++;
+        }
+    }
+
+    QDEBUG(x.size());
+
+    ui->plot2->graph(0)->setData(x,y);
+    ui->plot2->graph(1)->setData(x,reverse_y);
+    ui->plot2->xAxis->setRange(0, x.size());
+    ui->plot2->xAxis->setVisible(true);
+    ui->plot2->yAxis->setVisible(true);
+    ui->plot2->graph(0)->setBrush(QBrush(Qt::black));
+    ui->plot2->graph(1)->setBrush(QBrush(Qt::black));
+    ui->plot2->yAxis->setRange(-1, 1);
+    ui->plot2->replot();
+}
+
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------
 //---------------------------------------------------------Bessel function of the first kind-------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -447,26 +457,14 @@ void Widget::on_pushButton_clicked() {
     if (!rchan) {
         //this->clearGraphs();
         this->timer->start(300);
+        this->timer_for_record->start(3000);
         startRecording();
-
-    }
-    else {
-        this->timer->stop();
-        stopRecording();
     }
 }
 
-void Widget::on_pushButton_4_clicked()
-{
-
-    this->plotSpectrums(1, this->fft);
-
-}
-
-void Widget::on_pushButton_5_clicked()
-{
-
-    this->KaiserWindow();
-    this->plotSpectrums(2, this->fft);
-
+void Widget::stopRecordingSlot() {
+    this->timer->stop();
+    this->timer_for_record->stop();
+    this->stopRecording();
+    emit this->PlotSpectrumSignal();
 }

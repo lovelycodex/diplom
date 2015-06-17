@@ -57,15 +57,23 @@ public:
 
     void writeToDisk                        ();
 
-    void plotSpectrums                      (int, float *);
-
     void KaiserWindow                       ();
 
     float I0                                (float);
 
+signals:
+    void PlotSpectrumSignal                 ();
+
+    void PlotKaiserWindowSignal             ();
 
 private slots:
     void timerProc                          ();
+
+    void plotSpectrums                      ();
+
+    void plotKaiserWindow                   ();
+
+    void stopRecordingSlot                  ();
 
     void clearGraphs                        ();
 
@@ -87,6 +95,7 @@ private slots:
 
 private:
     QTimer      *timer;
+    QTimer      *timer_for_record;
     float       *fft;               // recbuf represented by FFT;
     RGB         palette[256];
     Ui::Widget  *ui;
