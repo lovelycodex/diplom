@@ -1,0 +1,12 @@
+<map id="QCPStatisticalBox::QCPStatisticalBox" name="QCPStatisticalBox::QCPStatisticalBox">
+<area shape="rect" id="node2" href="$class_q_c_p_statistical_box.html#ad5241943422eb8e58360a97e99ad6aa7" title="QCPStatisticalBox::\lsetOutlierStyle" alt="" coords="205,5,349,47"/>
+<area shape="rect" id="node3" href="$class_q_c_p_statistical_box.html#adf378812446bd66f34d1f7f293d991cd" title="QCPStatisticalBox::\lsetWhiskerWidth" alt="" coords="205,71,349,112"/>
+<area shape="rect" id="node4" href="$class_q_c_p_statistical_box.html#a0b62775bd67301b1eba5c785f2b26f14" title="QCPStatisticalBox::\lsetWidth" alt="" coords="205,136,349,177"/>
+<area shape="rect" id="node5" href="$class_q_c_p_abstract_plottable.html#ab74b09ae4c0e7e13142fe4b5bf46cac7" title="QCPAbstractPlottable\l::setPen" alt="" coords="197,201,356,243"/>
+<area shape="rect" id="node6" href="$class_q_c_p_abstract_plottable.html#a6911603cad23ab0469b108224517516f" title="QCPAbstractPlottable\l::setSelectedPen" alt="" coords="197,267,356,308"/>
+<area shape="rect" id="node7" href="$class_q_c_p_statistical_box.html#a7260ac55b669f5d0a74f16d5ca84c52c" title="QCPStatisticalBox::\lsetMedianPen" alt="" coords="205,332,349,373"/>
+<area shape="rect" id="node8" href="$class_q_c_p_statistical_box.html#a4a5034cb3b9b040444df05ab1684620b" title="QCPStatisticalBox::\lsetWhiskerPen" alt="" coords="205,397,349,439"/>
+<area shape="rect" id="node9" href="$class_q_c_p_statistical_box.html#aa8d3e503897788e1abf68dc74b5f147f" title="QCPStatisticalBox::\lsetWhiskerBarPen" alt="" coords="205,463,349,504"/>
+<area shape="rect" id="node10" href="$class_q_c_p_abstract_plottable.html#a7a4b92144dca6453a1f0f210e27edc74" title="QCPAbstractPlottable\l::setBrush" alt="" coords="197,528,356,569"/>
+<area shape="rect" id="node11" href="$class_q_c_p_abstract_plottable.html#ae8c816874089f7a44001e8618e81a9dc" title="QCPAbstractPlottable\l::setSelectedBrush" alt="" coords="197,593,356,635"/>
+</map>

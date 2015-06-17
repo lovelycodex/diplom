@@ -1,0 +1,298 @@
+.TH "QCPItemTracer" 3 "Thu Jun 18 2015" "Version v.2" "Voice analyze" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+QCPItemTracer \- Item that sticks to \fBQCPGraph\fP data points\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBTracerStyle\fP { \fBtsNone\fP, \fBtsPlus\fP, \fBtsCrosshair\fP, \fBtsCircle\fP, \fBtsSquare\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQCPItemTracer\fP (\fBQCustomPlot\fP *parentPlot)"
+.br
+.ti -1c
+.RI "QPen \fBpen\fP () const "
+.br
+.ti -1c
+.RI "QPen \fBselectedPen\fP () const "
+.br
+.ti -1c
+.RI "QBrush \fBbrush\fP () const "
+.br
+.ti -1c
+.RI "QBrush \fBselectedBrush\fP () const "
+.br
+.ti -1c
+.RI "double \fBsize\fP () const "
+.br
+.ti -1c
+.RI "\fBTracerStyle\fP \fBstyle\fP () const "
+.br
+.ti -1c
+.RI "\fBQCPGraph\fP * \fBgraph\fP () const "
+.br
+.ti -1c
+.RI "double \fBgraphKey\fP () const "
+.br
+.ti -1c
+.RI "bool \fBinterpolating\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetPen\fP (const QPen &pen)"
+.br
+.ti -1c
+.RI "void \fBsetSelectedPen\fP (const QPen &pen)"
+.br
+.ti -1c
+.RI "void \fBsetBrush\fP (const QBrush &brush)"
+.br
+.ti -1c
+.RI "void \fBsetSelectedBrush\fP (const QBrush &brush)"
+.br
+.ti -1c
+.RI "void \fBsetSize\fP (double size)"
+.br
+.ti -1c
+.RI "void \fBsetStyle\fP (\fBTracerStyle\fP style)"
+.br
+.ti -1c
+.RI "void \fBsetGraph\fP (\fBQCPGraph\fP *graph)"
+.br
+.ti -1c
+.RI "void \fBsetGraphKey\fP (double key)"
+.br
+.ti -1c
+.RI "void \fBsetInterpolating\fP (bool enabled)"
+.br
+.ti -1c
+.RI "virtual double \fBselectTest\fP (const QPointF &pos, bool onlySelectable, QVariant *details=0) const "
+.br
+.ti -1c
+.RI "void \fBupdatePosition\fP ()"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBQCPItemPosition\fP *const \fBposition\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBdraw\fP (\fBQCPPainter\fP *painter)"
+.br
+.ti -1c
+.RI "QPen \fBmainPen\fP () const "
+.br
+.ti -1c
+.RI "QBrush \fBmainBrush\fP () const "
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "QPen \fBmPen\fP"
+.br
+.ti -1c
+.RI "QPen \fBmSelectedPen\fP"
+.br
+.ti -1c
+.RI "QBrush \fBmBrush\fP"
+.br
+.ti -1c
+.RI "QBrush \fBmSelectedBrush\fP"
+.br
+.ti -1c
+.RI "double \fBmSize\fP"
+.br
+.ti -1c
+.RI "\fBTracerStyle\fP \fBmStyle\fP"
+.br
+.ti -1c
+.RI "\fBQCPGraph\fP * \fBmGraph\fP"
+.br
+.ti -1c
+.RI "double \fBmGraphKey\fP"
+.br
+.ti -1c
+.RI "bool \fBmInterpolating\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Item that sticks to \fBQCPGraph\fP data points\&. 
+
+Tracer example\&. Blue dotted circles are anchors, solid blue discs are positions\&. The tracer can be connected with a \fBQCPGraph\fP via \fBsetGraph\fP\&. Then it will automatically adopt the coordinate axes of the graph and update its \fIposition\fP to be on the graph's data\&. This means the key stays controllable via \fBsetGraphKey\fP, but the value will follow the graph data\&. If a \fBQCPGraph\fP is connected, note that setting the coordinates of the tracer item directly via \fIposition\fP will have no effect because they will be overriden in the next redraw (this is when the coordinate update happens)\&.
+.PP
+If the specified key in \fBsetGraphKey\fP is outside the key bounds of the graph, the tracer will stay at the corresponding end of the graph\&.
+.PP
+With \fBsetInterpolating\fP you may specify whether the tracer may only stay exactly on data points or whether it interpolates data points linearly, if given a key that lies between two data points of the graph\&.
+.PP
+The tracer has different visual styles, see \fBsetStyle\fP\&. It is also possible to make the tracer have no own visual appearance (set the style to \fBtsNone\fP), and just connect other item positions to the tracer \fIposition\fP (used as an anchor) via \fBQCPItemPosition::setParentAnchor\fP\&.
+.PP
+\fBNote:\fP
+.RS 4
+The tracer position is only automatically updated upon redraws\&. So when the data of the graph changes and immediately afterwards (without a redraw) the a position coordinates of the tracer are retrieved, they will not reflect the updated data of the graph\&. In this case \fBupdatePosition\fP must be called manually, prior to reading the tracer coordinates\&. 
+.RE
+.PP
+
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBQCPItemTracer::TracerStyle\fP"
+The different visual appearances a tracer item can have\&. Some styles size may be controlled with \fBsetSize\fP\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetStyle\fP 
+.RE
+.PP
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fItsNone \fP\fP
+The tracer is not visible\&. 
+.TP
+\fB\fItsPlus \fP\fP
+A plus shaped crosshair with limited size\&. 
+.TP
+\fB\fItsCrosshair \fP\fP
+A plus shaped crosshair which spans the complete axis rect\&. 
+.TP
+\fB\fItsCircle \fP\fP
+A circle\&. 
+.TP
+\fB\fItsSquare \fP\fP
+A square\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "QCPItemTracer::QCPItemTracer (\fBQCustomPlot\fP * parentPlot)"
+Creates a tracer item and sets default values\&.
+.PP
+The constructed item can be added to the plot with \fBQCustomPlot::addItem\fP\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "double QCPItemTracer::selectTest (const QPointF & pos, bool onlySelectable, QVariant * details = \fC0\fP) const\fC [virtual]\fP"
+This function is used to decide whether a click hits a layerable object or not\&.
+.PP
+\fIpos\fP is a point in pixel coordinates on the \fBQCustomPlot\fP surface\&. This function returns the shortest pixel distance of this point to the object\&. If the object is either invisible or the distance couldn't be determined, -1\&.0 is returned\&. Further, if \fIonlySelectable\fP is true and the object is not selectable, -1\&.0 is returned, too\&.
+.PP
+If the object is represented not by single lines but by an area like a \fBQCPItemText\fP or the bars of a \fBQCPBars\fP plottable, a click inside the area should also be considered a hit\&. In these cases this function thus returns a constant value greater zero but still below the parent plot's selection tolerance\&. (typically the selectionTolerance multiplied by 0\&.99)\&.
+.PP
+Providing a constant value for area objects allows selecting line objects even when they are obscured by such area objects, by clicking close to the lines (i\&.e\&. closer than 0\&.99*selectionTolerance)\&.
+.PP
+The actual setting of the selection state is not done by this function\&. This is handled by the parent \fBQCustomPlot\fP when the mouseReleaseEvent occurs, and the finally selected object is notified via the selectEvent/deselectEvent methods\&.
+.PP
+\fIdetails\fP is an optional output parameter\&. Every layerable subclass may place any information in \fIdetails\fP\&. This information will be passed to \fBselectEvent\fP when the parent \fBQCustomPlot\fP decides on the basis of this selectTest call, that the object was successfully selected\&. The subsequent call to \fBselectEvent\fP will carry the \fIdetails\fP\&. This is useful for multi-part objects (like \fBQCPAxis\fP)\&. This way, a possibly complex calculation to decide which part was clicked is only done once in \fBselectTest\fP\&. The result (i\&.e\&. the actually clicked part) can then be placed in \fIdetails\fP\&. So in the subsequent \fBselectEvent\fP, the decision which part was selected doesn't have to be done a second time for a single selection operation\&.
+.PP
+You may pass 0 as \fIdetails\fP to indicate that you are not interested in those selection details\&.
+.PP
+\fBSee also:\fP
+.RS 4
+selectEvent, deselectEvent, \fBQCustomPlot::setInteractions\fP 
+.RE
+.PP
+
+.PP
+Implements \fBQCPAbstractItem\fP\&.
+.SS "void QCPItemTracer::setBrush (const QBrush & brush)"
+Sets the brush that will be used to draw any fills of the tracer
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetSelectedBrush\fP, \fBsetPen\fP 
+.RE
+.PP
+
+.SS "void QCPItemTracer::setGraph (\fBQCPGraph\fP * graph)"
+Sets the \fBQCPGraph\fP this tracer sticks to\&. The tracer \fIposition\fP will be set to type \fBQCPItemPosition::ptPlotCoords\fP and the axes will be set to the axes of \fIgraph\fP\&.
+.PP
+To free the tracer from any graph, set \fIgraph\fP to 0\&. The tracer \fIposition\fP can then be placed freely like any other item position\&. This is the state the tracer will assume when its graph gets deleted while still attached to it\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetGraphKey\fP 
+.RE
+.PP
+
+.SS "void QCPItemTracer::setGraphKey (double key)"
+Sets the key of the graph's data point the tracer will be positioned at\&. This is the only free coordinate of a tracer when attached to a graph\&.
+.PP
+Depending on \fBsetInterpolating\fP, the tracer will be either positioned on the data point closest to \fIkey\fP, or will stay exactly at \fIkey\fP and interpolate the value linearly\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetGraph\fP, \fBsetInterpolating\fP 
+.RE
+.PP
+
+.SS "void QCPItemTracer::setInterpolating (bool enabled)"
+Sets whether the value of the graph's data points shall be interpolated, when positioning the tracer\&.
+.PP
+If \fIenabled\fP is set to false and a key is given with \fBsetGraphKey\fP, the tracer is placed on the data point of the graph which is closest to the key, but which is not necessarily exactly there\&. If \fIenabled\fP is true, the tracer will be positioned exactly at the specified key, and the appropriate value will be interpolated from the graph's data points linearly\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetGraph\fP, \fBsetGraphKey\fP 
+.RE
+.PP
+
+.SS "void QCPItemTracer::setPen (const QPen & pen)"
+Sets the pen that will be used to draw the line of the tracer
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetSelectedPen\fP, \fBsetBrush\fP 
+.RE
+.PP
+
+.SS "void QCPItemTracer::setSelectedBrush (const QBrush & brush)"
+Sets the brush that will be used to draw any fills of the tracer, when selected\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetBrush\fP, \fBsetSelected\fP 
+.RE
+.PP
+
+.SS "void QCPItemTracer::setSelectedPen (const QPen & pen)"
+Sets the pen that will be used to draw the line of the tracer when selected
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetPen\fP, \fBsetSelected\fP 
+.RE
+.PP
+
+.SS "void QCPItemTracer::setSize (double size)"
+Sets the size of the tracer in pixels, if the style supports setting a size (e\&.g\&. \fBtsSquare\fP does, \fBtsCrosshair\fP does not)\&. 
+.SS "void QCPItemTracer::setStyle (\fBQCPItemTracer::TracerStyle\fP style)"
+Sets the style/visual appearance of the tracer\&.
+.PP
+If you only want to use the tracer \fIposition\fP as an anchor for other items, set \fIstyle\fP to \fBtsNone\fP\&. 
+.SS "void QCPItemTracer::updatePosition ()"
+If the tracer is connected with a graph (\fBsetGraph\fP), this function updates the tracer's \fIposition\fP to reside on the graph data, depending on the configured key (\fBsetGraphKey\fP)\&.
+.PP
+It is called automatically on every redraw and normally doesn't need to be called manually\&. One exception is when you want to read the tracer coordinates via \fIposition\fP and are not sure that the graph's data (or the tracer key with \fBsetGraphKey\fP) hasn't changed since the last redraw\&. In that situation, call this function before accessing \fIposition\fP, to make sure you don't get out-of-date coordinates\&.
+.PP
+If there is no graph set on this tracer, this function does nothing\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Voice analyze from the source code\&.

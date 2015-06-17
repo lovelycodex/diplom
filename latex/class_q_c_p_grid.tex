@@ -1,0 +1,259 @@
+\section{Q\+C\+P\+Grid Class Reference}
+\label{class_q_c_p_grid}\index{Q\+C\+P\+Grid@{Q\+C\+P\+Grid}}
+
+
+Responsible for drawing the grid of a \doxyref{Q\+C\+P\+Axis}{p.}{class_q_c_p_axis}.  
+
+
+
+
+Collaboration diagram for Q\+C\+P\+Grid\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_grid__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Q\+C\+P\+Grid} ({\bf Q\+C\+P\+Axis} $\ast$parent\+Axis)
+\item 
+bool {\bfseries sub\+Grid\+Visible} () const \label{class_q_c_p_grid_a0a8963e384d53cd77cbab7df96147458}
+
+\item 
+bool {\bfseries antialiased\+Sub\+Grid} () const \label{class_q_c_p_grid_abfa6c638a05b45b2ed31b680fc9b31fc}
+
+\item 
+bool {\bfseries antialiased\+Zero\+Line} () const \label{class_q_c_p_grid_a4dfbc1cee989d8cae1434b765ab2a13b}
+
+\item 
+Q\+Pen {\bfseries pen} () const \label{class_q_c_p_grid_aca20b67548e3ae31fd02e6398ffd6cb9}
+
+\item 
+Q\+Pen {\bfseries sub\+Grid\+Pen} () const \label{class_q_c_p_grid_ac698f8c6864b1d8f0e2af97ca4b39cc6}
+
+\item 
+Q\+Pen {\bfseries zero\+Line\+Pen} () const \label{class_q_c_p_grid_a06ea986b651860446e1224d2097259b9}
+
+\item 
+void {\bf set\+Sub\+Grid\+Visible} (bool visible)
+\item 
+void {\bf set\+Antialiased\+Sub\+Grid} (bool enabled)
+\item 
+void {\bf set\+Antialiased\+Zero\+Line} (bool enabled)
+\item 
+void {\bf set\+Pen} (const Q\+Pen \&pen)
+\item 
+void {\bf set\+Sub\+Grid\+Pen} (const Q\+Pen \&pen)
+\item 
+void {\bf set\+Zero\+Line\+Pen} (const Q\+Pen \&pen)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries apply\+Default\+Antialiasing\+Hint} ({\bf Q\+C\+P\+Painter} $\ast$painter) const \label{class_q_c_p_grid_a9916f5e38b4d6cae446537aeb47c7272}
+
+\item 
+virtual void {\bfseries draw} ({\bf Q\+C\+P\+Painter} $\ast$painter)\label{class_q_c_p_grid_ad009c23f96078616aa4f66a750974b23}
+
+\item 
+void {\bfseries draw\+Grid\+Lines} ({\bf Q\+C\+P\+Painter} $\ast$painter) const \label{class_q_c_p_grid_a3aff10e993f6625e255c19e4f97a09d8}
+
+\item 
+void {\bfseries draw\+Sub\+Grid\+Lines} ({\bf Q\+C\+P\+Painter} $\ast$painter) const \label{class_q_c_p_grid_afa5d9d12de419e881f381f2ab7cb414d}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries m\+Sub\+Grid\+Visible}\label{class_q_c_p_grid_a4e4a0400d6319bb44c06341f6298c87b}
+
+\item 
+bool {\bfseries m\+Antialiased\+Sub\+Grid}\label{class_q_c_p_grid_a71b7051f833f0c5de3094998d6afdd87}
+
+\item 
+bool {\bfseries m\+Antialiased\+Zero\+Line}\label{class_q_c_p_grid_a8c0df56ae86440408c050895dcdb922b}
+
+\item 
+Q\+Pen {\bfseries m\+Pen}\label{class_q_c_p_grid_a1cdc4a3bccf6a40c2d4360def9fefa40}
+
+\item 
+Q\+Pen {\bfseries m\+Sub\+Grid\+Pen}\label{class_q_c_p_grid_aa9004bc139ad3ea92629f0aaae81d83f}
+
+\item 
+Q\+Pen {\bfseries m\+Zero\+Line\+Pen}\label{class_q_c_p_grid_a379481871f17655c27eda30af233554f}
+
+\item 
+{\bf Q\+C\+P\+Axis} $\ast$ {\bfseries m\+Parent\+Axis}\label{class_q_c_p_grid_a9a8a76731e6e737b65b929fd1995cc88}
+
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries Q\+C\+P\+Axis}\label{class_q_c_p_grid_af123edeca169ec7a31958a1d714e1a8a}
+
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Responsible for drawing the grid of a \doxyref{Q\+C\+P\+Axis}{p.}{class_q_c_p_axis}. 
+
+This class is tightly bound to \doxyref{Q\+C\+P\+Axis}{p.}{class_q_c_p_axis}. Every axis owns a grid instance and uses it to draw the grid lines, sub grid lines and zero-\/line. You can interact with the grid of an axis via \doxyref{Q\+C\+P\+Axis\+::grid}{p.}{class_q_c_p_axis_ac4fb913cce3072b5e75a4635e0f6cd04}. Normally, you don\textquotesingle{}t need to create an instance of \doxyref{Q\+C\+P\+Grid}{p.}{class_q_c_p_grid} yourself.
+
+The axis and grid drawing was split into two classes to allow them to be placed on different layers (both \doxyref{Q\+C\+P\+Axis}{p.}{class_q_c_p_axis} and \doxyref{Q\+C\+P\+Grid}{p.}{class_q_c_p_grid} inherit from \doxyref{Q\+C\+P\+Layerable}{p.}{class_q_c_p_layerable}). Thus it is possible to have the grid in the background and the axes in the foreground, and any plottables/items in between. This described situation is the default setup, see the \doxyref{Q\+C\+P\+Layer}{p.}{class_q_c_p_layer} documentation. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Q\+C\+P\+Grid@{Q\+C\+P\+Grid}!Q\+C\+P\+Grid@{Q\+C\+P\+Grid}}
+\index{Q\+C\+P\+Grid@{Q\+C\+P\+Grid}!Q\+C\+P\+Grid@{Q\+C\+P\+Grid}}
+\subsubsection[{Q\+C\+P\+Grid}]{\setlength{\rightskip}{0pt plus 5cm}Q\+C\+P\+Grid\+::\+Q\+C\+P\+Grid (
+\begin{DoxyParamCaption}
+\item[{{\bf Q\+C\+P\+Axis} $\ast$}]{parent\+Axis}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_grid_acd1cdd2909625388a13048b698494a17}
+Creates a \doxyref{Q\+C\+P\+Grid}{p.}{class_q_c_p_grid} instance and sets default values.
+
+You shouldn\textquotesingle{}t instantiate grids on their own, since every \doxyref{Q\+C\+P\+Axis}{p.}{class_q_c_p_axis} brings its own \doxyref{Q\+C\+P\+Grid}{p.}{class_q_c_p_grid}. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_grid_acd1cdd2909625388a13048b698494a17_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{Q\+C\+P\+Grid@{Q\+C\+P\+Grid}!set\+Antialiased\+Sub\+Grid@{set\+Antialiased\+Sub\+Grid}}
+\index{set\+Antialiased\+Sub\+Grid@{set\+Antialiased\+Sub\+Grid}!Q\+C\+P\+Grid@{Q\+C\+P\+Grid}}
+\subsubsection[{set\+Antialiased\+Sub\+Grid}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Grid\+::set\+Antialiased\+Sub\+Grid (
+\begin{DoxyParamCaption}
+\item[{bool}]{enabled}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_grid_a5692310ba183721a413d60951407d114}
+Sets whether sub grid lines are drawn antialiased. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_grid_a5692310ba183721a413d60951407d114_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Grid@{Q\+C\+P\+Grid}!set\+Antialiased\+Zero\+Line@{set\+Antialiased\+Zero\+Line}}
+\index{set\+Antialiased\+Zero\+Line@{set\+Antialiased\+Zero\+Line}!Q\+C\+P\+Grid@{Q\+C\+P\+Grid}}
+\subsubsection[{set\+Antialiased\+Zero\+Line}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Grid\+::set\+Antialiased\+Zero\+Line (
+\begin{DoxyParamCaption}
+\item[{bool}]{enabled}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_grid_a3cc6d54647393ee71afb6da56af07aa4}
+Sets whether zero lines are drawn antialiased. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_grid_a3cc6d54647393ee71afb6da56af07aa4_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Grid@{Q\+C\+P\+Grid}!set\+Pen@{set\+Pen}}
+\index{set\+Pen@{set\+Pen}!Q\+C\+P\+Grid@{Q\+C\+P\+Grid}}
+\subsubsection[{set\+Pen}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Grid\+::set\+Pen (
+\begin{DoxyParamCaption}
+\item[{const Q\+Pen \&}]{pen}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_grid_aa05ab9816ffb440908171e45e833b593}
+Sets the pen with which (major) grid lines are drawn. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=313pt]{class_q_c_p_grid_aa05ab9816ffb440908171e45e833b593_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Grid@{Q\+C\+P\+Grid}!set\+Sub\+Grid\+Pen@{set\+Sub\+Grid\+Pen}}
+\index{set\+Sub\+Grid\+Pen@{set\+Sub\+Grid\+Pen}!Q\+C\+P\+Grid@{Q\+C\+P\+Grid}}
+\subsubsection[{set\+Sub\+Grid\+Pen}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Grid\+::set\+Sub\+Grid\+Pen (
+\begin{DoxyParamCaption}
+\item[{const Q\+Pen \&}]{pen}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_grid_a9edd3593f384d1f0b0202a39cef4453d}
+Sets the pen with which sub grid lines are drawn. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_grid_a9edd3593f384d1f0b0202a39cef4453d_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Grid@{Q\+C\+P\+Grid}!set\+Sub\+Grid\+Visible@{set\+Sub\+Grid\+Visible}}
+\index{set\+Sub\+Grid\+Visible@{set\+Sub\+Grid\+Visible}!Q\+C\+P\+Grid@{Q\+C\+P\+Grid}}
+\subsubsection[{set\+Sub\+Grid\+Visible}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Grid\+::set\+Sub\+Grid\+Visible (
+\begin{DoxyParamCaption}
+\item[{bool}]{visible}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_grid_ad4ad6bf714ec45e08845456355a1b700}
+Sets whether grid lines at sub tick marks are drawn.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{set\+Sub\+Grid\+Pen}{p.}{class_q_c_p_grid_a9edd3593f384d1f0b0202a39cef4453d} 
+\end{DoxySeeAlso}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_grid_ad4ad6bf714ec45e08845456355a1b700_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Grid@{Q\+C\+P\+Grid}!set\+Zero\+Line\+Pen@{set\+Zero\+Line\+Pen}}
+\index{set\+Zero\+Line\+Pen@{set\+Zero\+Line\+Pen}!Q\+C\+P\+Grid@{Q\+C\+P\+Grid}}
+\subsubsection[{set\+Zero\+Line\+Pen}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Grid\+::set\+Zero\+Line\+Pen (
+\begin{DoxyParamCaption}
+\item[{const Q\+Pen \&}]{pen}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_grid_a209f40fdb252397b418b82d3494d8ea0}
+Sets the pen with which zero lines are drawn.
+
+Zero lines are lines at value coordinate 0 which may be drawn with a different pen than other grid lines. To disable zero lines and just draw normal grid lines at zero, set {\itshape pen} to Qt\+::\+No\+Pen. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_grid_a209f40fdb252397b418b82d3494d8ea0_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf qcustomplot.\+h}\item 
+{\bf qcustomplot.\+cpp}\end{DoxyCompactItemize}

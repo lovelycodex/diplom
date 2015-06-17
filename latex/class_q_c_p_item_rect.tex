@@ -1,0 +1,292 @@
+\section{Q\+C\+P\+Item\+Rect Class Reference}
+\label{class_q_c_p_item_rect}\index{Q\+C\+P\+Item\+Rect@{Q\+C\+P\+Item\+Rect}}
+
+
+A rectangle.  
+
+
+
+
+Collaboration diagram for Q\+C\+P\+Item\+Rect\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_item_rect__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Q\+C\+P\+Item\+Rect} ({\bf Q\+Custom\+Plot} $\ast$parent\+Plot)
+\item 
+Q\+Pen {\bfseries pen} () const \label{class_q_c_p_item_rect_a3cb7b6de5e82cc5a3c99e9de919a55e6}
+
+\item 
+Q\+Pen {\bfseries selected\+Pen} () const \label{class_q_c_p_item_rect_a7e701c34e72a4c25647e93fa369f395c}
+
+\item 
+Q\+Brush {\bfseries brush} () const \label{class_q_c_p_item_rect_a03d2d26ffcac78b25b8e90915f9c4abe}
+
+\item 
+Q\+Brush {\bfseries selected\+Brush} () const \label{class_q_c_p_item_rect_a3b586228393f5c8efa78c4d2a4b25cbf}
+
+\item 
+void {\bf set\+Pen} (const Q\+Pen \&pen)
+\item 
+void {\bf set\+Selected\+Pen} (const Q\+Pen \&pen)
+\item 
+void {\bf set\+Brush} (const Q\+Brush \&brush)
+\item 
+void {\bf set\+Selected\+Brush} (const Q\+Brush \&brush)
+\item 
+virtual double {\bf select\+Test} (const Q\+Point\+F \&pos, bool only\+Selectable, Q\+Variant $\ast$details=0) const 
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Q\+C\+P\+Item\+Position} $\ast$const {\bfseries top\+Left}\label{class_q_c_p_item_rect_aa70feeef173489b03c3fbe906a5023c4}
+
+\item 
+{\bf Q\+C\+P\+Item\+Position} $\ast$const {\bfseries bottom\+Right}\label{class_q_c_p_item_rect_a409f3bfe615a7e322bb3d4d193d85b26}
+
+\item 
+{\bf Q\+C\+P\+Item\+Anchor} $\ast$const {\bfseries top}\label{class_q_c_p_item_rect_a96e50db552fb297d6fb62614676217bc}
+
+\item 
+{\bf Q\+C\+P\+Item\+Anchor} $\ast$const {\bfseries top\+Right}\label{class_q_c_p_item_rect_a77e0eb6e4aa6efee620d35e2c21bdad7}
+
+\item 
+{\bf Q\+C\+P\+Item\+Anchor} $\ast$const {\bfseries right}\label{class_q_c_p_item_rect_a7979c1915f61ad2609a9cc179c2e445e}
+
+\item 
+{\bf Q\+C\+P\+Item\+Anchor} $\ast$const {\bfseries bottom}\label{class_q_c_p_item_rect_a99313bf2b338d9f81e19bd38082038aa}
+
+\item 
+{\bf Q\+C\+P\+Item\+Anchor} $\ast$const {\bfseries bottom\+Left}\label{class_q_c_p_item_rect_abd8ee63fdf81f0c74bf7ccadee8603da}
+
+\item 
+{\bf Q\+C\+P\+Item\+Anchor} $\ast$const {\bfseries left}\label{class_q_c_p_item_rect_aad0ca1af0c8debfc20d7b47fc942764d}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bfseries Anchor\+Index} \{ \\*
+{\bfseries ai\+Top}, 
+{\bfseries ai\+Top\+Right}, 
+{\bfseries ai\+Right}, 
+{\bfseries ai\+Bottom}, 
+\\*
+{\bfseries ai\+Bottom\+Left}, 
+{\bfseries ai\+Left}
+ \}\label{class_q_c_p_item_rect_af0ebba58e6bca4851c4db726691ec0d3}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries draw} ({\bf Q\+C\+P\+Painter} $\ast$painter)\label{class_q_c_p_item_rect_a18cd583638b876cdd50f1a155ec182aa}
+
+\item 
+virtual Q\+Point\+F {\bfseries anchor\+Pixel\+Point} (int anchor\+Id) const \label{class_q_c_p_item_rect_ae0973f8281fb52361b0c99ee899be07e}
+
+\item 
+Q\+Pen {\bfseries main\+Pen} () const \label{class_q_c_p_item_rect_afa0fb7c6328a1e197ecd537de36daf8f}
+
+\item 
+Q\+Brush {\bfseries main\+Brush} () const \label{class_q_c_p_item_rect_ab0bd8e272e822ec851ba5b0c20e9200e}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Pen {\bfseries m\+Pen}\label{class_q_c_p_item_rect_aa0d49323628d6752026056bfb52afd86}
+
+\item 
+Q\+Pen {\bfseries m\+Selected\+Pen}\label{class_q_c_p_item_rect_a73cc0bee61de3c67221ec8c7a76a29ed}
+
+\item 
+Q\+Brush {\bfseries m\+Brush}\label{class_q_c_p_item_rect_a2d7f207fada27588b3a52b19234d3c2e}
+
+\item 
+Q\+Brush {\bfseries m\+Selected\+Brush}\label{class_q_c_p_item_rect_a21b70eee59b6e19ae0bbdf037b13508f}
+
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+A rectangle. 
+
+ It has two positions, {\itshape top\+Left} and {\itshape bottom\+Right}, which define the rectangle. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Q\+C\+P\+Item\+Rect@{Q\+C\+P\+Item\+Rect}!Q\+C\+P\+Item\+Rect@{Q\+C\+P\+Item\+Rect}}
+\index{Q\+C\+P\+Item\+Rect@{Q\+C\+P\+Item\+Rect}!Q\+C\+P\+Item\+Rect@{Q\+C\+P\+Item\+Rect}}
+\subsubsection[{Q\+C\+P\+Item\+Rect}]{\setlength{\rightskip}{0pt plus 5cm}Q\+C\+P\+Item\+Rect\+::\+Q\+C\+P\+Item\+Rect (
+\begin{DoxyParamCaption}
+\item[{{\bf Q\+Custom\+Plot} $\ast$}]{parent\+Plot}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_item_rect_a412ad1579f7a1fba453d0fa28c496cbc}
+Creates a rectangle item and sets default values.
+
+The constructed item can be added to the plot with \doxyref{Q\+Custom\+Plot\+::add\+Item}{p.}{class_q_custom_plot_aa500620379262321685cb7a7674cbd2a}. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_item_rect_a412ad1579f7a1fba453d0fa28c496cbc_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{Q\+C\+P\+Item\+Rect@{Q\+C\+P\+Item\+Rect}!select\+Test@{select\+Test}}
+\index{select\+Test@{select\+Test}!Q\+C\+P\+Item\+Rect@{Q\+C\+P\+Item\+Rect}}
+\subsubsection[{select\+Test}]{\setlength{\rightskip}{0pt plus 5cm}double Q\+C\+P\+Item\+Rect\+::select\+Test (
+\begin{DoxyParamCaption}
+\item[{const Q\+Point\+F \&}]{pos, }
+\item[{bool}]{only\+Selectable, }
+\item[{Q\+Variant $\ast$}]{details = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_q_c_p_item_rect_af13b0797079b40b73d1c7286b76f18ac}
+This function is used to decide whether a click hits a layerable object or not.
+
+{\itshape pos} is a point in pixel coordinates on the \doxyref{Q\+Custom\+Plot}{p.}{class_q_custom_plot} surface. This function returns the shortest pixel distance of this point to the object. If the object is either invisible or the distance couldn\textquotesingle{}t be determined, -\/1.\+0 is returned. Further, if {\itshape only\+Selectable} is true and the object is not selectable, -\/1.\+0 is returned, too.
+
+If the object is represented not by single lines but by an area like a \doxyref{Q\+C\+P\+Item\+Text}{p.}{class_q_c_p_item_text} or the bars of a \doxyref{Q\+C\+P\+Bars}{p.}{class_q_c_p_bars} plottable, a click inside the area should also be considered a hit. In these cases this function thus returns a constant value greater zero but still below the parent plot\textquotesingle{}s selection tolerance. (typically the selection\+Tolerance multiplied by 0.\+99).
+
+Providing a constant value for area objects allows selecting line objects even when they are obscured by such area objects, by clicking close to the lines (i.\+e. closer than 0.\+99$\ast$selection\+Tolerance).
+
+The actual setting of the selection state is not done by this function. This is handled by the parent \doxyref{Q\+Custom\+Plot}{p.}{class_q_custom_plot} when the mouse\+Release\+Event occurs, and the finally selected object is notified via the select\+Event/deselect\+Event methods.
+
+{\itshape details} is an optional output parameter. Every layerable subclass may place any information in {\itshape details}. This information will be passed to select\+Event when the parent \doxyref{Q\+Custom\+Plot}{p.}{class_q_custom_plot} decides on the basis of this select\+Test call, that the object was successfully selected. The subsequent call to select\+Event will carry the {\itshape details}. This is useful for multi-\/part objects (like \doxyref{Q\+C\+P\+Axis}{p.}{class_q_c_p_axis}). This way, a possibly complex calculation to decide which part was clicked is only done once in \doxyref{select\+Test}{p.}{class_q_c_p_item_rect_af13b0797079b40b73d1c7286b76f18ac}. The result (i.\+e. the actually clicked part) can then be placed in {\itshape details}. So in the subsequent select\+Event, the decision which part was selected doesn\textquotesingle{}t have to be done a second time for a single selection operation.
+
+You may pass 0 as {\itshape details} to indicate that you are not interested in those selection details.
+
+\begin{DoxySeeAlso}{See also}
+select\+Event, deselect\+Event, \doxyref{Q\+Custom\+Plot\+::set\+Interactions}{p.}{class_q_custom_plot_a5ee1e2f6ae27419deca53e75907c27e5} 
+\end{DoxySeeAlso}
+
+
+Implements {\bf Q\+C\+P\+Abstract\+Item} \doxyref{}{p.}{class_q_c_p_abstract_item_a96d522d10ffc0413b9a366c6f7f0476b}.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_item_rect_af13b0797079b40b73d1c7286b76f18ac_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Item\+Rect@{Q\+C\+P\+Item\+Rect}!set\+Brush@{set\+Brush}}
+\index{set\+Brush@{set\+Brush}!Q\+C\+P\+Item\+Rect@{Q\+C\+P\+Item\+Rect}}
+\subsubsection[{set\+Brush}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Item\+Rect\+::set\+Brush (
+\begin{DoxyParamCaption}
+\item[{const Q\+Brush \&}]{brush}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_item_rect_abbd4e346a03513ee466afc25d9c75446}
+Sets the brush that will be used to fill the rectangle. To disable filling, set {\itshape brush} to Qt\+::\+No\+Brush.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{set\+Selected\+Brush}{p.}{class_q_c_p_item_rect_abd1792859844118dedee86223cede7af}, \doxyref{set\+Pen}{p.}{class_q_c_p_item_rect_a483c0da5a17e1646cd17ddea2c124e7d} 
+\end{DoxySeeAlso}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_item_rect_abbd4e346a03513ee466afc25d9c75446_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Item\+Rect@{Q\+C\+P\+Item\+Rect}!set\+Pen@{set\+Pen}}
+\index{set\+Pen@{set\+Pen}!Q\+C\+P\+Item\+Rect@{Q\+C\+P\+Item\+Rect}}
+\subsubsection[{set\+Pen}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Item\+Rect\+::set\+Pen (
+\begin{DoxyParamCaption}
+\item[{const Q\+Pen \&}]{pen}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_item_rect_a483c0da5a17e1646cd17ddea2c124e7d}
+Sets the pen that will be used to draw the line of the rectangle
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{set\+Selected\+Pen}{p.}{class_q_c_p_item_rect_a52a1bcb2dc753a538e406a2ba3cf21ce}, \doxyref{set\+Brush}{p.}{class_q_c_p_item_rect_abbd4e346a03513ee466afc25d9c75446} 
+\end{DoxySeeAlso}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_item_rect_a483c0da5a17e1646cd17ddea2c124e7d_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Item\+Rect@{Q\+C\+P\+Item\+Rect}!set\+Selected\+Brush@{set\+Selected\+Brush}}
+\index{set\+Selected\+Brush@{set\+Selected\+Brush}!Q\+C\+P\+Item\+Rect@{Q\+C\+P\+Item\+Rect}}
+\subsubsection[{set\+Selected\+Brush}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Item\+Rect\+::set\+Selected\+Brush (
+\begin{DoxyParamCaption}
+\item[{const Q\+Brush \&}]{brush}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_item_rect_abd1792859844118dedee86223cede7af}
+Sets the brush that will be used to fill the rectangle when selected. To disable filling, set {\itshape brush} to Qt\+::\+No\+Brush.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{set\+Brush}{p.}{class_q_c_p_item_rect_abbd4e346a03513ee466afc25d9c75446} 
+\end{DoxySeeAlso}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_item_rect_abd1792859844118dedee86223cede7af_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Item\+Rect@{Q\+C\+P\+Item\+Rect}!set\+Selected\+Pen@{set\+Selected\+Pen}}
+\index{set\+Selected\+Pen@{set\+Selected\+Pen}!Q\+C\+P\+Item\+Rect@{Q\+C\+P\+Item\+Rect}}
+\subsubsection[{set\+Selected\+Pen}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Item\+Rect\+::set\+Selected\+Pen (
+\begin{DoxyParamCaption}
+\item[{const Q\+Pen \&}]{pen}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_item_rect_a52a1bcb2dc753a538e406a2ba3cf21ce}
+Sets the pen that will be used to draw the line of the rectangle when selected
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{set\+Pen}{p.}{class_q_c_p_item_rect_a483c0da5a17e1646cd17ddea2c124e7d}, \doxyref{set\+Selected}{p.}{class_q_c_p_abstract_item_a203de94ad586cc44d16c9565f49d3378} 
+\end{DoxySeeAlso}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_item_rect_a52a1bcb2dc753a538e406a2ba3cf21ce_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf qcustomplot.\+h}\item 
+{\bf qcustomplot.\+cpp}\end{DoxyCompactItemize}

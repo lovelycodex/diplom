@@ -1,0 +1,230 @@
+.TH "QCPLayoutInset" 3 "Thu Jun 18 2015" "Version v.2" "Voice analyze" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+QCPLayoutInset \- A layout that places child elements aligned to the border or arbitrarily positioned\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBInsetPlacement\fP { \fBipFree\fP, \fBipBorderAligned\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQCPLayoutInset\fP ()"
+.br
+.ti -1c
+.RI "\fBInsetPlacement\fP \fBinsetPlacement\fP (int index) const "
+.br
+.ti -1c
+.RI "Qt::Alignment \fBinsetAlignment\fP (int index) const "
+.br
+.ti -1c
+.RI "QRectF \fBinsetRect\fP (int index) const "
+.br
+.ti -1c
+.RI "void \fBsetInsetPlacement\fP (int index, \fBInsetPlacement\fP placement)"
+.br
+.ti -1c
+.RI "void \fBsetInsetAlignment\fP (int index, Qt::Alignment alignment)"
+.br
+.ti -1c
+.RI "void \fBsetInsetRect\fP (int index, const QRectF &\fBrect\fP)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateLayout\fP ()"
+.br
+.ti -1c
+.RI "virtual int \fBelementCount\fP () const "
+.br
+.ti -1c
+.RI "virtual \fBQCPLayoutElement\fP * \fBelementAt\fP (int index) const "
+.br
+.ti -1c
+.RI "virtual \fBQCPLayoutElement\fP * \fBtakeAt\fP (int index)"
+.br
+.ti -1c
+.RI "virtual bool \fBtake\fP (\fBQCPLayoutElement\fP *element)"
+.br
+.ti -1c
+.RI "virtual void \fBsimplify\fP ()"
+.br
+.ti -1c
+.RI "virtual double \fBselectTest\fP (const QPointF &pos, bool onlySelectable, QVariant *details=0) const "
+.br
+.ti -1c
+.RI "void \fBaddElement\fP (\fBQCPLayoutElement\fP *element, Qt::Alignment alignment)"
+.br
+.ti -1c
+.RI "void \fBaddElement\fP (\fBQCPLayoutElement\fP *element, const QRectF &\fBrect\fP)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "QList< \fBQCPLayoutElement\fP * > \fBmElements\fP"
+.br
+.ti -1c
+.RI "QList< \fBInsetPlacement\fP > \fBmInsetPlacement\fP"
+.br
+.ti -1c
+.RI "QList< Qt::Alignment > \fBmInsetAlignment\fP"
+.br
+.ti -1c
+.RI "QList< QRectF > \fBmInsetRect\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+A layout that places child elements aligned to the border or arbitrarily positioned\&. 
+
+Elements are placed either aligned to the border or at arbitrary position in the area of the layout\&. Which placement applies is controlled with the \fBInsetPlacement\fP (\fBsetInsetPlacement\fP)\&.
+.PP
+Elements are added via \fBaddElement(QCPLayoutElement *element, Qt::Alignment alignment)\fP or \fBaddElement(QCPLayoutElement *element, const QRectF &rect)\fP\&. If the first method is used, the inset placement will default to \fBipBorderAligned\fP and the element will be aligned according to the \fIalignment\fP parameter\&. The second method defaults to \fBipFree\fP and allows placing elements at arbitrary position and size, defined by \fIrect\fP\&.
+.PP
+The alignment or rect can be set via \fBsetInsetAlignment\fP or \fBsetInsetRect\fP, respectively\&.
+.PP
+This is the layout that every \fBQCPAxisRect\fP has as \fBQCPAxisRect::insetLayout\fP\&. 
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBQCPLayoutInset::InsetPlacement\fP"
+Defines how the placement and sizing is handled for a certain element in a \fBQCPLayoutInset\fP\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIipFree \fP\fP
+The element may be positioned/sized arbitrarily, see \fBsetInsetRect\fP\&. 
+.TP
+\fB\fIipBorderAligned \fP\fP
+The element is aligned to one of the layout sides, see \fBsetInsetAlignment\fP\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "QCPLayoutInset::QCPLayoutInset ()\fC [explicit]\fP"
+Creates an instance of \fBQCPLayoutInset\fP and sets default values\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "void QCPLayoutInset::addElement (\fBQCPLayoutElement\fP * element, Qt::Alignment alignment)"
+Adds the specified \fIelement\fP to the layout as an inset aligned at the border (\fBsetInsetAlignment\fP is initialized with \fBipBorderAligned\fP)\&. The alignment is set to \fIalignment\fP\&.
+.PP
+\fIalignment\fP is an or combination of the following alignment flags: Qt::AlignLeft, Qt::AlignHCenter, Qt::AlighRight, Qt::AlignTop, Qt::AlignVCenter, Qt::AlignBottom\&. Any other alignment flags will be ignored\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBaddElement(QCPLayoutElement *element, const QRectF &rect)\fP 
+.RE
+.PP
+
+.SS "void QCPLayoutInset::addElement (\fBQCPLayoutElement\fP * element, const QRectF & rect)"
+Adds the specified \fIelement\fP to the layout as an inset with free positioning/sizing (\fBsetInsetAlignment\fP is initialized with \fBipFree\fP)\&. The position and size is set to \fIrect\fP\&.
+.PP
+\fIrect\fP is given in fractions of the whole inset layout rect\&. So an inset with rect (0, 0, 1, 1) will span the entire layout\&. An inset with rect (0\&.6, 0\&.1, 0\&.35, 0\&.35) will be in the top right corner of the layout, with 35% width and height of the parent layout\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBaddElement(QCPLayoutElement *element, Qt::Alignment alignment)\fP 
+.RE
+.PP
+
+.SS "\fBQCPLayoutElement\fP * QCPLayoutInset::elementAt (int index) const\fC [virtual]\fP"
+Returns the element in the cell with the given \fIindex\fP\&. If \fIindex\fP is invalid, returns 0\&.
+.PP
+Note that even if \fIindex\fP is valid, the respective cell may be empty in some layouts (e\&.g\&. \fBQCPLayoutGrid\fP), so this function may return 0 in those cases\&. You may use this function to check whether a cell is empty or not\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBelements\fP, \fBelementCount\fP, \fBtakeAt\fP 
+.RE
+.PP
+
+.PP
+Implements \fBQCPLayout\fP\&.
+.SS "int QCPLayoutInset::elementCount () const\fC [virtual]\fP"
+Returns the number of elements/cells in the layout\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBelements\fP, \fBelementAt\fP 
+.RE
+.PP
+
+.PP
+Implements \fBQCPLayout\fP\&.
+.SS "Qt::Alignment QCPLayoutInset::insetAlignment (int index) const"
+Returns the alignment of the element with the specified \fIindex\fP\&. The alignment only has a meaning, if the inset placement (\fBsetInsetPlacement\fP) is \fBipBorderAligned\fP\&. 
+.SS "\fBQCPLayoutInset::InsetPlacement\fP QCPLayoutInset::insetPlacement (int index) const"
+Returns the placement type of the element with the specified \fIindex\fP\&. 
+.SS "QRectF QCPLayoutInset::insetRect (int index) const"
+Returns the rect of the element with the specified \fIindex\fP\&. The rect only has a meaning, if the inset placement (\fBsetInsetPlacement\fP) is \fBipFree\fP\&. 
+.SS "double QCPLayoutInset::selectTest (const QPointF & pos, bool onlySelectable, QVariant * details = \fC0\fP) const\fC [virtual]\fP"
+The inset layout is sensitive to events only at areas where its (visible) child elements are sensitive\&. If the selectTest method of any of the child elements returns a positive number for \fIpos\fP, this method returns a value corresponding to 0\&.99 times the parent plot's selection tolerance\&. The inset layout is not selectable itself by default\&. So if \fIonlySelectable\fP is true, -1\&.0 is returned\&.
+.PP
+See \fBQCPLayerable::selectTest\fP for a general explanation of this virtual method\&. 
+.PP
+Reimplemented from \fBQCPLayoutElement\fP\&.
+.SS "void QCPLayoutInset::setInsetAlignment (int index, Qt::Alignment alignment)"
+If the inset placement (\fBsetInsetPlacement\fP) is \fBipBorderAligned\fP, this function is used to set the alignment of the element with the specified \fIindex\fP to \fIalignment\fP\&.
+.PP
+\fIalignment\fP is an or combination of the following alignment flags: Qt::AlignLeft, Qt::AlignHCenter, Qt::AlighRight, Qt::AlignTop, Qt::AlignVCenter, Qt::AlignBottom\&. Any other alignment flags will be ignored\&. 
+.SS "void QCPLayoutInset::setInsetPlacement (int index, \fBQCPLayoutInset::InsetPlacement\fP placement)"
+Sets the inset placement type of the element with the specified \fIindex\fP to \fIplacement\fP\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBInsetPlacement\fP 
+.RE
+.PP
+
+.SS "void QCPLayoutInset::setInsetRect (int index, const QRectF & rect)"
+If the inset placement (\fBsetInsetPlacement\fP) is \fBipFree\fP, this function is used to set the position and size of the element with the specified \fIindex\fP to \fIrect\fP\&.
+.PP
+\fIrect\fP is given in fractions of the whole inset layout rect\&. So an inset with rect (0, 0, 1, 1) will span the entire layout\&. An inset with rect (0\&.6, 0\&.1, 0\&.35, 0\&.35) will be in the top right corner of the layout, with 35% width and height of the parent layout\&.
+.PP
+Note that the minimum and maximum sizes of the embedded element (\fBQCPLayoutElement::setMinimumSize\fP, \fBQCPLayoutElement::setMaximumSize\fP) are enforced\&. 
+.SS "void QCPLayoutInset::simplify ()\fC [inline]\fP, \fC [virtual]\fP"
+The QCPInsetLayout does not need simplification since it can never have empty cells due to its linear index structure\&. This method does nothing\&. 
+.PP
+Reimplemented from \fBQCPLayout\fP\&.
+.SS "bool QCPLayoutInset::take (\fBQCPLayoutElement\fP * element)\fC [virtual]\fP"
+Removes the specified \fIelement\fP from the layout and returns true on success\&.
+.PP
+If the \fIelement\fP isn't in this layout, returns false\&.
+.PP
+Note that some layouts don't remove the respective cell right away but leave an empty cell after successful removal of the layout element\&. To collapse empty cells, use \fBsimplify\fP\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBtakeAt\fP 
+.RE
+.PP
+
+.PP
+Implements \fBQCPLayout\fP\&.
+.SS "\fBQCPLayoutElement\fP * QCPLayoutInset::takeAt (int index)\fC [virtual]\fP"
+Removes the element with the given \fIindex\fP from the layout and returns it\&.
+.PP
+If the \fIindex\fP is invalid or the cell with that index is empty, returns 0\&.
+.PP
+Note that some layouts don't remove the respective cell right away but leave an empty cell after successful removal of the layout element\&. To collapse empty cells, use \fBsimplify\fP\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBelementAt\fP, \fBtake\fP 
+.RE
+.PP
+
+.PP
+Implements \fBQCPLayout\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Voice analyze from the source code\&.

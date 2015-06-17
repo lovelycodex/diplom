@@ -1,0 +1,59 @@
+.TH "QCPBarData" 3 "Thu Jun 18 2015" "Version v.2" "Voice analyze" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+QCPBarData \- Holds the data of one single data point (one bar) for \fBQCPBars\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQCPBarData\fP ()"
+.br
+.ti -1c
+.RI "\fBQCPBarData\fP (double key, double value)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "double \fBkey\fP"
+.br
+.ti -1c
+.RI "double \fBvalue\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Holds the data of one single data point (one bar) for \fBQCPBars\fP\&. 
+
+The container for storing multiple data points is \fBQCPBarDataMap\fP\&.
+.PP
+The stored data is: 
+.PD 0
+
+.IP "\(bu" 2
+\fIkey:\fP coordinate on the key axis of this bar 
+.IP "\(bu" 2
+\fIvalue:\fP height coordinate on the value axis of this bar
+.PP
+\fBSee also:\fP
+.RS 4
+QCPBarDataaMap 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "QCPBarData::QCPBarData ()"
+Constructs a bar data point with key and value set to zero\&. 
+.SS "QCPBarData::QCPBarData (double key, double value)"
+Constructs a bar data point with the specified \fIkey\fP and \fIvalue\fP\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Voice analyze from the source code\&.

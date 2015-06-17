@@ -1,0 +1,13 @@
+<map id="QCPGraph::QCPGraph" name="QCPGraph::QCPGraph">
+<area shape="rect" id="node2" href="$class_q_c_p_abstract_plottable.html#ab74b09ae4c0e7e13142fe4b5bf46cac7" title="QCPAbstractPlottable\l::setPen" alt="" coords="253,5,411,47"/>
+<area shape="rect" id="node3" href="$class_q_c_p_graph.html#abd4c7f81939e10776ea64603a704f22a" title="QCPGraph::setErrorPen" alt="" coords="247,71,417,98"/>
+<area shape="rect" id="node4" href="$class_q_c_p_abstract_plottable.html#a7a4b92144dca6453a1f0f210e27edc74" title="QCPAbstractPlottable\l::setBrush" alt="" coords="253,123,411,164"/>
+<area shape="rect" id="node5" href="$class_q_c_p_abstract_plottable.html#a6911603cad23ab0469b108224517516f" title="QCPAbstractPlottable\l::setSelectedPen" alt="" coords="253,188,411,229"/>
+<area shape="rect" id="node6" href="$class_q_c_p_abstract_plottable.html#ae8c816874089f7a44001e8618e81a9dc" title="QCPAbstractPlottable\l::setSelectedBrush" alt="" coords="253,253,411,295"/>
+<area shape="rect" id="node7" href="$class_q_c_p_graph.html#a513fecccff5b2a50ce53f665338c60ff" title="QCPGraph::setLineStyle" alt="" coords="245,319,419,346"/>
+<area shape="rect" id="node8" href="$class_q_c_p_graph.html#ac3614d799c3894f2bc646e99c7f73d38" title="QCPGraph::setErrorType" alt="" coords="243,370,421,397"/>
+<area shape="rect" id="node9" href="$class_q_c_p_graph.html#a10f50c5495ce45ef559ec2066194a335" title="QCPGraph::setErrorBarSize" alt="" coords="234,421,430,447"/>
+<area shape="rect" id="node10" href="$class_q_c_p_graph.html#ab1c1ee03d8dd94676a564e5e5f11aac2" title="QCPGraph::setErrorBarSkip\lSymbol" alt="" coords="234,472,430,513"/>
+<area shape="rect" id="node11" href="$class_q_c_p_graph.html#a2d03156df1b64037a2e36cfa50351ca3" title="QCPGraph::setChannelFill\lGraph" alt="" coords="240,537,424,579"/>
+<area shape="rect" id="node12" href="$class_q_c_p_graph.html#ab468cd600160f327836aa0644291e64c" title="QCPGraph::setAdaptiveSampling" alt="" coords="216,603,448,630"/>
+</map>

@@ -1,0 +1,193 @@
+.TH "QCP" 3 "Thu Jun 18 2015" "Version v.2" "Voice analyze" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+QCP \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBMarginSide\fP { \fBmsLeft\fP = 0x01, \fBmsRight\fP = 0x02, \fBmsTop\fP = 0x04, \fBmsBottom\fP = 0x08, \fBmsAll\fP = 0xFF, \fBmsNone\fP = 0x00 }"
+.br
+.ti -1c
+.RI "enum \fBAntialiasedElement\fP { \fBaeAxes\fP = 0x0001, \fBaeGrid\fP = 0x0002, \fBaeSubGrid\fP = 0x0004, \fBaeLegend\fP = 0x0008, \fBaeLegendItems\fP = 0x0010, \fBaePlottables\fP = 0x0020, \fBaeItems\fP = 0x0040, \fBaeScatters\fP = 0x0080, \fBaeErrorBars\fP = 0x0100, \fBaeFills\fP = 0x0200, \fBaeZeroLine\fP = 0x0400, \fBaeAll\fP = 0xFFFF, \fBaeNone\fP = 0x0000 }"
+.br
+.ti -1c
+.RI "enum \fBPlottingHint\fP { \fBphNone\fP = 0x000, \fBphFastPolylines\fP = 0x001, \fBphForceRepaint\fP = 0x002, \fBphCacheLabels\fP = 0x004 }"
+.br
+.ti -1c
+.RI "enum \fBInteraction\fP { \fBiRangeDrag\fP = 0x001, \fBiRangeZoom\fP = 0x002, \fBiMultiSelect\fP = 0x004, \fBiSelectPlottables\fP = 0x008, \fBiSelectAxes\fP = 0x010, \fBiSelectLegend\fP = 0x020, \fBiSelectItems\fP = 0x040, \fBiSelectOther\fP = 0x080 }"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBisInvalidData\fP (double value)"
+.br
+.ti -1c
+.RI "bool \fBisInvalidData\fP (double value1, double value2)"
+.br
+.ti -1c
+.RI "void \fBsetMarginValue\fP (QMargins &margins, \fBQCP::MarginSide\fP side, int value)"
+.br
+.ti -1c
+.RI "int \fBgetMarginValue\fP (const QMargins &margins, \fBQCP::MarginSide\fP side)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBQCP\fP Namespace contains general enums and QFlags used throughout the \fBQCustomPlot\fP library 
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBQCP::AntialiasedElement\fP"
+Defines what objects of a plot can be forcibly drawn antialiased/not antialiased\&. If an object is neither forcibly drawn antialiased nor forcibly drawn not antialiased, it is up to the respective element how it is drawn\&. Typically it provides a \fIsetAntialiased\fP function for this\&.
+.PP
+\fCAntialiasedElements\fP is a flag of or-combined elements of this enum type\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBQCustomPlot::setAntialiasedElements\fP, \fBQCustomPlot::setNotAntialiasedElements\fP 
+.RE
+.PP
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIaeAxes \fP\fP
+\fC0x0001\fP Axis base line and tick marks 
+.TP
+\fB\fIaeGrid \fP\fP
+\fC0x0002\fP Grid lines 
+.TP
+\fB\fIaeSubGrid \fP\fP
+\fC0x0004\fP Sub grid lines 
+.TP
+\fB\fIaeLegend \fP\fP
+\fC0x0008\fP Legend box 
+.TP
+\fB\fIaeLegendItems \fP\fP
+\fC0x0010\fP Legend items 
+.TP
+\fB\fIaePlottables \fP\fP
+\fC0x0020\fP Main lines of plottables (excluding error bars, see element \fBaeErrorBars\fP) 
+.TP
+\fB\fIaeItems \fP\fP
+\fC0x0040\fP Main lines of items 
+.TP
+\fB\fIaeScatters \fP\fP
+\fC0x0080\fP Scatter symbols of plottables (excluding scatter symbols of type ssPixmap) 
+.TP
+\fB\fIaeErrorBars \fP\fP
+\fC0x0100\fP Error bars 
+.TP
+\fB\fIaeFills \fP\fP
+\fC0x0200\fP Borders of fills (e\&.g\&. under or between graphs) 
+.TP
+\fB\fIaeZeroLine \fP\fP
+\fC0x0400\fP Zero-lines, see \fBQCPGrid::setZeroLinePen\fP 
+.TP
+\fB\fIaeAll \fP\fP
+\fC0xFFFF\fP All elements 
+.TP
+\fB\fIaeNone \fP\fP
+\fC0x0000\fP No elements 
+.SS "enum \fBQCP::Interaction\fP"
+Defines the mouse interactions possible with \fBQCustomPlot\fP\&.
+.PP
+\fCInteractions\fP is a flag of or-combined elements of this enum type\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBQCustomPlot::setInteractions\fP 
+.RE
+.PP
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIiRangeDrag \fP\fP
+\fC0x001\fP Axis ranges are draggable (see \fBQCPAxisRect::setRangeDrag\fP, \fBQCPAxisRect::setRangeDragAxes\fP) 
+.TP
+\fB\fIiRangeZoom \fP\fP
+\fC0x002\fP Axis ranges are zoomable with the mouse wheel (see \fBQCPAxisRect::setRangeZoom\fP, \fBQCPAxisRect::setRangeZoomAxes\fP) 
+.TP
+\fB\fIiMultiSelect \fP\fP
+\fC0x004\fP The user can select multiple objects by holding the modifier set by \fBQCustomPlot::setMultiSelectModifier\fP while clicking 
+.TP
+\fB\fIiSelectPlottables \fP\fP
+\fC0x008\fP Plottables are selectable (e\&.g\&. graphs, curves, bars,\&.\&.\&. see \fBQCPAbstractPlottable\fP) 
+.TP
+\fB\fIiSelectAxes \fP\fP
+\fC0x010\fP Axes are selectable (or parts of them, see \fBQCPAxis::setSelectableParts\fP) 
+.TP
+\fB\fIiSelectLegend \fP\fP
+\fC0x020\fP Legends are selectable (or their child items, see \fBQCPLegend::setSelectableParts\fP) 
+.TP
+\fB\fIiSelectItems \fP\fP
+\fC0x040\fP Items are selectable (Rectangles, Arrows, Textitems, etc\&. see \fBQCPAbstractItem\fP) 
+.TP
+\fB\fIiSelectOther \fP\fP
+\fC0x080\fP All other objects are selectable (e\&.g\&. your own derived layerables, the plot title,\&.\&.\&.) 
+.SS "enum \fBQCP::MarginSide\fP"
+Defines the sides of a rectangular entity to which margins can be applied\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBQCPLayoutElement::setAutoMargins\fP, \fBQCPAxisRect::setAutoMargins\fP 
+.RE
+.PP
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fImsLeft \fP\fP
+\fC0x01\fP left margin 
+.TP
+\fB\fImsRight \fP\fP
+\fC0x02\fP right margin 
+.TP
+\fB\fImsTop \fP\fP
+\fC0x04\fP top margin 
+.TP
+\fB\fImsBottom \fP\fP
+\fC0x08\fP bottom margin 
+.TP
+\fB\fImsAll \fP\fP
+\fC0xFF\fP all margins 
+.TP
+\fB\fImsNone \fP\fP
+\fC0x00\fP no margin 
+.SS "enum \fBQCP::PlottingHint\fP"
+Defines plotting hints that control various aspects of the quality and speed of plotting\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBQCustomPlot::setPlottingHints\fP 
+.RE
+.PP
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIphNone \fP\fP
+\fC0x000\fP No hints are set 
+.TP
+\fB\fIphFastPolylines \fP\fP
+\fC0x001\fP Graph/Curve lines are drawn with a faster method\&. This reduces the quality especially of the line segment joins\&. (Only relevant for solid line pens\&.) 
+.TP
+\fB\fIphForceRepaint \fP\fP
+\fC0x002\fP causes an immediate repaint() instead of a soft update() when \fBQCustomPlot::replot()\fP is called with parameter \fBQCustomPlot::rpHint\fP\&. This is set by default to prevent the plot from freezing on fast consecutive replots (e\&.g\&. user drags ranges with mouse)\&. 
+.TP
+\fB\fIphCacheLabels \fP\fP
+\fC0x004\fP axis (tick) labels will be cached as pixmaps, increasing replot performance\&. 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Voice analyze from the source code\&.

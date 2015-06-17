@@ -1,0 +1,214 @@
+.TH "QCPAbstractLegendItem" 3 "Thu Jun 18 2015" "Version v.2" "Voice analyze" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+QCPAbstractLegendItem \- The abstract base class for all entries in a \fBQCPLegend\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBselectionChanged\fP (bool selected)"
+.br
+.ti -1c
+.RI "void \fBselectableChanged\fP (bool selectable)"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQCPAbstractLegendItem\fP (\fBQCPLegend\fP *parent)"
+.br
+.ti -1c
+.RI "\fBQCPLegend\fP * \fBparentLegend\fP () const "
+.br
+.ti -1c
+.RI "QFont \fBfont\fP () const "
+.br
+.ti -1c
+.RI "QColor \fBtextColor\fP () const "
+.br
+.ti -1c
+.RI "QFont \fBselectedFont\fP () const "
+.br
+.ti -1c
+.RI "QColor \fBselectedTextColor\fP () const "
+.br
+.ti -1c
+.RI "bool \fBselectable\fP () const "
+.br
+.ti -1c
+.RI "bool \fBselected\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetFont\fP (const QFont &font)"
+.br
+.ti -1c
+.RI "void \fBsetTextColor\fP (const QColor &color)"
+.br
+.ti -1c
+.RI "void \fBsetSelectedFont\fP (const QFont &font)"
+.br
+.ti -1c
+.RI "void \fBsetSelectedTextColor\fP (const QColor &color)"
+.br
+.ti -1c
+.RI "Q_SLOT void \fBsetSelectable\fP (bool selectable)"
+.br
+.ti -1c
+.RI "Q_SLOT void \fBsetSelected\fP (bool selected)"
+.br
+.ti -1c
+.RI "virtual double \fBselectTest\fP (const QPointF &pos, bool onlySelectable, QVariant *details=0) const "
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual \fBQCP::Interaction\fP \fBselectionCategory\fP () const "
+.br
+.ti -1c
+.RI "virtual void \fBapplyDefaultAntialiasingHint\fP (\fBQCPPainter\fP *painter) const "
+.br
+.ti -1c
+.RI "virtual QRect \fBclipRect\fP () const "
+.br
+.ti -1c
+.RI "virtual void \fBdraw\fP (\fBQCPPainter\fP *painter)=0"
+.br
+.ti -1c
+.RI "virtual void \fBselectEvent\fP (QMouseEvent *event, bool additive, const QVariant &details, bool *selectionStateChanged)"
+.br
+.ti -1c
+.RI "virtual void \fBdeselectEvent\fP (bool *selectionStateChanged)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBQCPLegend\fP * \fBmParentLegend\fP"
+.br
+.ti -1c
+.RI "QFont \fBmFont\fP"
+.br
+.ti -1c
+.RI "QColor \fBmTextColor\fP"
+.br
+.ti -1c
+.RI "QFont \fBmSelectedFont\fP"
+.br
+.ti -1c
+.RI "QColor \fBmSelectedTextColor\fP"
+.br
+.ti -1c
+.RI "bool \fBmSelectable\fP"
+.br
+.ti -1c
+.RI "bool \fBmSelected\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBQCPLegend\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+The abstract base class for all entries in a \fBQCPLegend\fP\&. 
+
+It defines a very basic interface for entries in a \fBQCPLegend\fP\&. For representing plottables in the legend, the subclass \fBQCPPlottableLegendItem\fP is more suitable\&.
+.PP
+Only derive directly from this class when you need absolute freedom (e\&.g\&. a custom legend entry that's not even associated with a plottable)\&.
+.PP
+You must implement the following pure virtual functions: 
+.PD 0
+
+.IP "\(bu" 2
+\fBdraw\fP (from \fBQCPLayerable\fP)
+.PP
+You inherit the following members you may use: \fBQCPLegend\fP *\fBmParentLegend\fP  A pointer to the parent \fBQCPLegend\fP\&. QFont \fBmFont\fP  The generic font of the item\&. You should use this font for all or at least the most prominent text of the item\&.  
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "QCPAbstractLegendItem::QCPAbstractLegendItem (\fBQCPLegend\fP * parent)\fC [explicit]\fP"
+Constructs a \fBQCPAbstractLegendItem\fP and associates it with the \fBQCPLegend\fP \fIparent\fP\&. This does not cause the item to be added to \fIparent\fP, so \fBQCPLegend::addItem\fP must be called separately\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "void QCPAbstractLegendItem::selectionChanged (bool selected)\fC [signal]\fP"
+This signal is emitted when the selection state of this legend item has changed, either by user interaction or by a direct call to \fBsetSelected\fP\&. 
+.SS "double QCPAbstractLegendItem::selectTest (const QPointF & pos, bool onlySelectable, QVariant * details = \fC0\fP) const\fC [virtual]\fP"
+Layout elements are sensitive to events inside their outer rect\&. If \fIpos\fP is within the outer rect, this method returns a value corresponding to 0\&.99 times the parent plot's selection tolerance\&. However, layout elements are not selectable by default\&. So if \fIonlySelectable\fP is true, -1\&.0 is returned\&.
+.PP
+See \fBQCPLayerable::selectTest\fP for a general explanation of this virtual method\&.
+.PP
+\fBQCPLayoutElement\fP subclasses may reimplement this method to provide more specific selection test behaviour\&. 
+.PP
+Reimplemented from \fBQCPLayoutElement\fP\&.
+.SS "void QCPAbstractLegendItem::setFont (const QFont & font)"
+Sets the default font of this specific legend item to \fIfont\fP\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetTextColor\fP, \fBQCPLegend::setFont\fP 
+.RE
+.PP
+
+.SS "void QCPAbstractLegendItem::setSelectable (bool selectable)"
+Sets whether this specific legend item is selectable\&.
+.PP
+\fBSee also:\fP
+.RS 4
+setSelectedParts, \fBQCustomPlot::setInteractions\fP 
+.RE
+.PP
+
+.SS "void QCPAbstractLegendItem::setSelected (bool selected)"
+Sets whether this specific legend item is selected\&.
+.PP
+It is possible to set the selection state of this item by calling this function directly, even if setSelectable is set to false\&.
+.PP
+\fBSee also:\fP
+.RS 4
+setSelectableParts, \fBQCustomPlot::setInteractions\fP 
+.RE
+.PP
+
+.SS "void QCPAbstractLegendItem::setSelectedFont (const QFont & font)"
+When this legend item is selected, \fIfont\fP is used to draw generic text, instead of the normal font set with \fBsetFont\fP\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetFont\fP, \fBQCPLegend::setSelectedFont\fP 
+.RE
+.PP
+
+.SS "void QCPAbstractLegendItem::setSelectedTextColor (const QColor & color)"
+When this legend item is selected, \fIcolor\fP is used to draw generic text, instead of the normal color set with \fBsetTextColor\fP\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetTextColor\fP, \fBQCPLegend::setSelectedTextColor\fP 
+.RE
+.PP
+
+.SS "void QCPAbstractLegendItem::setTextColor (const QColor & color)"
+Sets the default text color of this specific legend item to \fIcolor\fP\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetFont\fP, \fBQCPLegend::setTextColor\fP 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Voice analyze from the source code\&.

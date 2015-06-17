@@ -1,0 +1,444 @@
+.TH "QCPFinancial" 3 "Thu Jun 18 2015" "Version v.2" "Voice analyze" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+QCPFinancial \- A plottable representing a financial stock chart\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBChartStyle\fP { \fBcsOhlc\fP, \fBcsCandlestick\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQCPFinancial\fP (\fBQCPAxis\fP *keyAxis, \fBQCPAxis\fP *valueAxis)"
+.br
+.ti -1c
+.RI "\fBQCPFinancialDataMap\fP * \fBdata\fP () const "
+.br
+.ti -1c
+.RI "\fBChartStyle\fP \fBchartStyle\fP () const "
+.br
+.ti -1c
+.RI "double \fBwidth\fP () const "
+.br
+.ti -1c
+.RI "bool \fBtwoColored\fP () const "
+.br
+.ti -1c
+.RI "QBrush \fBbrushPositive\fP () const "
+.br
+.ti -1c
+.RI "QBrush \fBbrushNegative\fP () const "
+.br
+.ti -1c
+.RI "QPen \fBpenPositive\fP () const "
+.br
+.ti -1c
+.RI "QPen \fBpenNegative\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetData\fP (\fBQCPFinancialDataMap\fP *\fBdata\fP, bool copy=false)"
+.br
+.ti -1c
+.RI "void \fBsetData\fP (const QVector< double > &key, const QVector< double > &open, const QVector< double > &high, const QVector< double > &low, const QVector< double > &close)"
+.br
+.ti -1c
+.RI "void \fBsetChartStyle\fP (\fBChartStyle\fP style)"
+.br
+.ti -1c
+.RI "void \fBsetWidth\fP (double width)"
+.br
+.ti -1c
+.RI "void \fBsetTwoColored\fP (bool twoColored)"
+.br
+.ti -1c
+.RI "void \fBsetBrushPositive\fP (const QBrush &brush)"
+.br
+.ti -1c
+.RI "void \fBsetBrushNegative\fP (const QBrush &brush)"
+.br
+.ti -1c
+.RI "void \fBsetPenPositive\fP (const QPen &pen)"
+.br
+.ti -1c
+.RI "void \fBsetPenNegative\fP (const QPen &pen)"
+.br
+.ti -1c
+.RI "void \fBaddData\fP (const \fBQCPFinancialDataMap\fP &dataMap)"
+.br
+.ti -1c
+.RI "void \fBaddData\fP (const \fBQCPFinancialData\fP &\fBdata\fP)"
+.br
+.ti -1c
+.RI "void \fBaddData\fP (double key, double open, double high, double low, double close)"
+.br
+.ti -1c
+.RI "void \fBaddData\fP (const QVector< double > &key, const QVector< double > &open, const QVector< double > &high, const QVector< double > &low, const QVector< double > &close)"
+.br
+.ti -1c
+.RI "void \fBremoveDataBefore\fP (double key)"
+.br
+.ti -1c
+.RI "void \fBremoveDataAfter\fP (double key)"
+.br
+.ti -1c
+.RI "void \fBremoveData\fP (double fromKey, double toKey)"
+.br
+.ti -1c
+.RI "void \fBremoveData\fP (double key)"
+.br
+.ti -1c
+.RI "virtual void \fBclearData\fP ()"
+.br
+.ti -1c
+.RI "virtual double \fBselectTest\fP (const QPointF &pos, bool onlySelectable, QVariant *details=0) const "
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBQCPFinancialDataMap\fP \fBtimeSeriesToOhlc\fP (const QVector< double > &time, const QVector< double > &value, double timeBinSize, double timeBinOffset=0)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBdraw\fP (\fBQCPPainter\fP *painter)"
+.br
+.ti -1c
+.RI "virtual void \fBdrawLegendIcon\fP (\fBQCPPainter\fP *painter, const QRectF &rect) const "
+.br
+.ti -1c
+.RI "virtual \fBQCPRange\fP \fBgetKeyRange\fP (bool &foundRange, \fBSignDomain\fP inSignDomain=\fBsdBoth\fP) const "
+.br
+.ti -1c
+.RI "virtual \fBQCPRange\fP \fBgetValueRange\fP (bool &foundRange, \fBSignDomain\fP inSignDomain=\fBsdBoth\fP) const "
+.br
+.ti -1c
+.RI "void \fBdrawOhlcPlot\fP (\fBQCPPainter\fP *painter, const QCPFinancialDataMap::const_iterator &begin, const QCPFinancialDataMap::const_iterator &end)"
+.br
+.ti -1c
+.RI "void \fBdrawCandlestickPlot\fP (\fBQCPPainter\fP *painter, const QCPFinancialDataMap::const_iterator &begin, const QCPFinancialDataMap::const_iterator &end)"
+.br
+.ti -1c
+.RI "double \fBohlcSelectTest\fP (const QPointF &pos, const QCPFinancialDataMap::const_iterator &begin, const QCPFinancialDataMap::const_iterator &end) const "
+.br
+.ti -1c
+.RI "double \fBcandlestickSelectTest\fP (const QPointF &pos, const QCPFinancialDataMap::const_iterator &begin, const QCPFinancialDataMap::const_iterator &end) const "
+.br
+.ti -1c
+.RI "void \fBgetVisibleDataBounds\fP (QCPFinancialDataMap::const_iterator &lower, QCPFinancialDataMap::const_iterator &upper) const "
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBQCPFinancialDataMap\fP * \fBmData\fP"
+.br
+.ti -1c
+.RI "\fBChartStyle\fP \fBmChartStyle\fP"
+.br
+.ti -1c
+.RI "double \fBmWidth\fP"
+.br
+.ti -1c
+.RI "bool \fBmTwoColored\fP"
+.br
+.ti -1c
+.RI "QBrush \fBmBrushPositive\fP"
+.br
+.ti -1c
+.RI "QBrush \fBmBrushNegative\fP"
+.br
+.ti -1c
+.RI "QPen \fBmPenPositive\fP"
+.br
+.ti -1c
+.RI "QPen \fBmPenNegative\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBQCustomPlot\fP"
+.br
+.ti -1c
+.RI "class \fBQCPLegend\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+A plottable representing a financial stock chart\&. 
+
+
+.PP
+This plottable represents time series data binned to certain intervals, mainly used for stock charts\&. The two common representations OHLC (Open-High-Low-Close) bars and Candlesticks can be set via \fBsetChartStyle\fP\&.
+.PP
+The data is passed via \fBsetData\fP as a set of open/high/low/close values at certain keys (typically times)\&. This means the data must be already binned appropriately\&. If data is only available as a series of values (e\&.g\&. \fIprice\fP against \fItime\fP), you can use the static convenience function \fBtimeSeriesToOhlc\fP to generate binned OHLC-data which can then be passed to \fBsetData\fP\&.
+.PP
+The width of the OHLC bars/candlesticks can be controlled with \fBsetWidth\fP and is given in plot key coordinates\&. A typical choice is to set it to (or slightly less than) one bin interval width\&.
+.SH "Changing the appearance"
+.PP
+Charts can be either single- or two-colored (\fBsetTwoColored\fP)\&. If set to be single-colored, lines are drawn with the plottable's pen (\fBsetPen\fP) and fills with the brush (\fBsetBrush\fP)\&.
+.PP
+If set to two-colored, positive changes of the value during an interval (\fIclose\fP >= \fIopen\fP) are represented with a different pen and brush than negative changes (\fIclose\fP < \fIopen\fP)\&. These can be configured with \fBsetPenPositive\fP, \fBsetPenNegative\fP, \fBsetBrushPositive\fP, and \fBsetBrushNegative\fP\&. In two-colored mode, the normal plottable pen/brush is ignored\&. Upon selection however, the normal selected pen/brush (\fBsetSelectedPen\fP, \fBsetSelectedBrush\fP) is used, irrespective of whether the chart is single- or two-colored\&. 
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBQCPFinancial::ChartStyle\fP"
+Defines the possible representations of OHLC data in the plot\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetChartStyle\fP 
+.RE
+.PP
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIcsOhlc \fP\fP
+Open-High-Low-Close bar representation\&. 
+.TP
+\fB\fIcsCandlestick \fP\fP
+Candlestick representation\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "QCPFinancial::QCPFinancial (\fBQCPAxis\fP * keyAxis, \fBQCPAxis\fP * valueAxis)\fC [explicit]\fP"
+Constructs a financial chart which uses \fIkeyAxis\fP as its key axis ('x') and \fIvalueAxis\fP as its value axis ('y')\&. \fIkeyAxis\fP and \fIvalueAxis\fP must reside in the same \fBQCustomPlot\fP instance and not have the same orientation\&. If either of these restrictions is violated, a corresponding message is printed to the debug output (qDebug), the construction is not aborted, though\&.
+.PP
+The constructed \fBQCPFinancial\fP can be added to the plot with \fBQCustomPlot::addPlottable\fP, \fBQCustomPlot\fP then takes ownership of the financial chart\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "void QCPFinancial::addData (const \fBQCPFinancialDataMap\fP & dataMap)"
+Adds the provided data points in \fIdataMap\fP to the current data\&.
+.PP
+Alternatively, you can also access and modify the data via the \fBdata\fP method, which returns a pointer to the internal \fBQCPFinancialDataMap\fP\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBremoveData\fP 
+.RE
+.PP
+
+.SS "void QCPFinancial::addData (const \fBQCPFinancialData\fP & data)"
+This is an overloaded member function, provided for convenience\&. It differs from the above function only in what argument(s) it accepts\&.
+.PP
+Adds the provided single data point in \fIdata\fP to the current data\&.
+.PP
+Alternatively, you can also access and modify the data via the \fBdata\fP method, which returns a pointer to the internal \fBQCPFinancialData\fP\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBremoveData\fP 
+.RE
+.PP
+
+.SS "void QCPFinancial::addData (double key, double open, double high, double low, double close)"
+This is an overloaded member function, provided for convenience\&. It differs from the above function only in what argument(s) it accepts\&.
+.PP
+Adds the provided single data point given by \fIkey\fP, \fIopen\fP, \fIhigh\fP, \fIlow\fP, and \fIclose\fP to the current data\&.
+.PP
+Alternatively, you can also access and modify the data via the \fBdata\fP method, which returns a pointer to the internal \fBQCPFinancialData\fP\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBremoveData\fP 
+.RE
+.PP
+
+.SS "void QCPFinancial::addData (const QVector< double > & key, const QVector< double > & open, const QVector< double > & high, const QVector< double > & low, const QVector< double > & close)"
+This is an overloaded member function, provided for convenience\&. It differs from the above function only in what argument(s) it accepts\&.
+.PP
+Adds the provided open/high/low/close data to the current data\&.
+.PP
+Alternatively, you can also access and modify the data via the \fBdata\fP method, which returns a pointer to the internal \fBQCPFinancialData\fP\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBremoveData\fP 
+.RE
+.PP
+
+.SS "void QCPFinancial::clearData ()\fC [virtual]\fP"
+Removes all data points\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBremoveData\fP, \fBremoveDataAfter\fP, \fBremoveDataBefore\fP 
+.RE
+.PP
+
+.PP
+Implements \fBQCPAbstractPlottable\fP\&.
+.SS "\fBQCPFinancialDataMap\fP * QCPFinancial::data () const\fC [inline]\fP"
+Returns a pointer to the internal data storage of type \fBQCPFinancialDataMap\fP\&. You may use it to directly manipulate the data, which may be more convenient and faster than using the regular \fBsetData\fP or \fBaddData\fP methods, in certain situations\&. 
+.SS "void QCPFinancial::removeData (double fromKey, double toKey)"
+Removes all data points with keys between \fIfromKey\fP and \fItoKey\fP\&. if \fIfromKey\fP is greater or equal to \fItoKey\fP, the function does nothing\&. To remove a single data point with known key, use \fBremoveData(double key)\fP\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBaddData\fP, \fBclearData\fP 
+.RE
+.PP
+
+.SS "void QCPFinancial::removeData (double key)"
+This is an overloaded member function, provided for convenience\&. It differs from the above function only in what argument(s) it accepts\&.
+.PP
+Removes a single data point at \fIkey\fP\&. If the position is not known with absolute precision, consider using \fBremoveData(double fromKey, double toKey)\fP with a small fuzziness interval around the suspected position, depeding on the precision with which the key is known\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBaddData\fP, \fBclearData\fP 
+.RE
+.PP
+
+.SS "void QCPFinancial::removeDataAfter (double key)"
+Removes all data points with keys greater than \fIkey\fP\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBaddData\fP, \fBclearData\fP 
+.RE
+.PP
+
+.SS "void QCPFinancial::removeDataBefore (double key)"
+Removes all data points with keys smaller than \fIkey\fP\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBaddData\fP, \fBclearData\fP 
+.RE
+.PP
+
+.SS "double QCPFinancial::selectTest (const QPointF & pos, bool onlySelectable, QVariant * details = \fC0\fP) const\fC [virtual]\fP"
+This function is used to decide whether a click hits a layerable object or not\&.
+.PP
+\fIpos\fP is a point in pixel coordinates on the \fBQCustomPlot\fP surface\&. This function returns the shortest pixel distance of this point to the object\&. If the object is either invisible or the distance couldn't be determined, -1\&.0 is returned\&. Further, if \fIonlySelectable\fP is true and the object is not selectable, -1\&.0 is returned, too\&.
+.PP
+If the object is represented not by single lines but by an area like a \fBQCPItemText\fP or the bars of a \fBQCPBars\fP plottable, a click inside the area should also be considered a hit\&. In these cases this function thus returns a constant value greater zero but still below the parent plot's selection tolerance\&. (typically the selectionTolerance multiplied by 0\&.99)\&.
+.PP
+Providing a constant value for area objects allows selecting line objects even when they are obscured by such area objects, by clicking close to the lines (i\&.e\&. closer than 0\&.99*selectionTolerance)\&.
+.PP
+The actual setting of the selection state is not done by this function\&. This is handled by the parent \fBQCustomPlot\fP when the mouseReleaseEvent occurs, and the finally selected object is notified via the selectEvent/deselectEvent methods\&.
+.PP
+\fIdetails\fP is an optional output parameter\&. Every layerable subclass may place any information in \fIdetails\fP\&. This information will be passed to \fBselectEvent\fP when the parent \fBQCustomPlot\fP decides on the basis of this selectTest call, that the object was successfully selected\&. The subsequent call to \fBselectEvent\fP will carry the \fIdetails\fP\&. This is useful for multi-part objects (like \fBQCPAxis\fP)\&. This way, a possibly complex calculation to decide which part was clicked is only done once in \fBselectTest\fP\&. The result (i\&.e\&. the actually clicked part) can then be placed in \fIdetails\fP\&. So in the subsequent \fBselectEvent\fP, the decision which part was selected doesn't have to be done a second time for a single selection operation\&.
+.PP
+You may pass 0 as \fIdetails\fP to indicate that you are not interested in those selection details\&.
+.PP
+\fBSee also:\fP
+.RS 4
+selectEvent, deselectEvent, \fBQCustomPlot::setInteractions\fP 
+.RE
+.PP
+
+.PP
+Implements \fBQCPAbstractPlottable\fP\&.
+.SS "void QCPFinancial::setBrushNegative (const QBrush & brush)"
+If \fBsetTwoColored\fP is set to true, this function controls the brush that is used to draw fills of data points with a negative trend (i\&.e\&. bars/candlesticks with close < open)\&.
+.PP
+If \fItwoColored\fP is false, the normal plottable's pen and brush are used (\fBsetPen\fP, \fBsetBrush\fP)\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetBrushPositive\fP, \fBsetPenNegative\fP, \fBsetPenPositive\fP 
+.RE
+.PP
+
+.SS "void QCPFinancial::setBrushPositive (const QBrush & brush)"
+If \fBsetTwoColored\fP is set to true, this function controls the brush that is used to draw fills of data points with a positive trend (i\&.e\&. bars/candlesticks with close >= open)\&.
+.PP
+If \fItwoColored\fP is false, the normal plottable's pen and brush are used (\fBsetPen\fP, \fBsetBrush\fP)\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetBrushNegative\fP, \fBsetPenPositive\fP, \fBsetPenNegative\fP 
+.RE
+.PP
+
+.SS "void QCPFinancial::setChartStyle (\fBQCPFinancial::ChartStyle\fP style)"
+Sets which representation style shall be used to display the OHLC data\&. 
+.SS "void QCPFinancial::setData (\fBQCPFinancialDataMap\fP * data, bool copy = \fCfalse\fP)"
+Replaces the current data with the provided \fIdata\fP\&.
+.PP
+If \fIcopy\fP is set to true, data points in \fIdata\fP will only be copied\&. if false, the plottable takes ownership of the passed data and replaces the internal data pointer with it\&. This is significantly faster than copying for large datasets\&.
+.PP
+Alternatively, you can also access and modify the plottable's data via the \fBdata\fP method, which returns a pointer to the internal \fBQCPFinancialDataMap\fP\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBtimeSeriesToOhlc\fP 
+.RE
+.PP
+
+.SS "void QCPFinancial::setData (const QVector< double > & key, const QVector< double > & open, const QVector< double > & high, const QVector< double > & low, const QVector< double > & close)"
+This is an overloaded member function, provided for convenience\&. It differs from the above function only in what argument(s) it accepts\&.
+.PP
+Replaces the current data with the provided open/high/low/close data\&. The provided vectors should have equal length\&. Else, the number of added points will be the size of the smallest vector\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBtimeSeriesToOhlc\fP 
+.RE
+.PP
+
+.SS "void QCPFinancial::setPenNegative (const QPen & pen)"
+If \fBsetTwoColored\fP is set to true, this function controls the pen that is used to draw outlines of data points with a negative trend (i\&.e\&. bars/candlesticks with close < open)\&.
+.PP
+If \fItwoColored\fP is false, the normal plottable's pen and brush are used (\fBsetPen\fP, \fBsetBrush\fP)\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetPenPositive\fP, \fBsetBrushNegative\fP, \fBsetBrushPositive\fP 
+.RE
+.PP
+
+.SS "void QCPFinancial::setPenPositive (const QPen & pen)"
+If \fBsetTwoColored\fP is set to true, this function controls the pen that is used to draw outlines of data points with a positive trend (i\&.e\&. bars/candlesticks with close >= open)\&.
+.PP
+If \fItwoColored\fP is false, the normal plottable's pen and brush are used (\fBsetPen\fP, \fBsetBrush\fP)\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetPenNegative\fP, \fBsetBrushPositive\fP, \fBsetBrushNegative\fP 
+.RE
+.PP
+
+.SS "void QCPFinancial::setTwoColored (bool twoColored)"
+Sets whether this chart shall contrast positive from negative trends per data point by using two separate colors to draw the respective bars/candlesticks\&.
+.PP
+If \fItwoColored\fP is false, the normal plottable's pen and brush are used (\fBsetPen\fP, \fBsetBrush\fP)\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetPenPositive\fP, \fBsetPenNegative\fP, \fBsetBrushPositive\fP, \fBsetBrushNegative\fP 
+.RE
+.PP
+
+.SS "void QCPFinancial::setWidth (double width)"
+Sets the width of the individual bars/candlesticks to \fIwidth\fP in plot key coordinates\&.
+.PP
+A typical choice is to set it to (or slightly less than) one bin interval width\&. 
+.SS "\fBQCPFinancialDataMap\fP QCPFinancial::timeSeriesToOhlc (const QVector< double > & time, const QVector< double > & value, double timeBinSize, double timeBinOffset = \fC0\fP)\fC [static]\fP"
+A convenience function that converts time series data (\fIvalue\fP against \fItime\fP) to OHLC binned data points\&. The return value can then be passed on to \fBsetData\fP\&.
+.PP
+The size of the bins can be controlled with \fItimeBinSize\fP in the same units as \fItime\fP is given\&. For example, if the unit of \fItime\fP is seconds and single OHLC/Candlesticks should span an hour each, set \fItimeBinSize\fP to 3600\&.
+.PP
+\fItimeBinOffset\fP allows to control precisely at what \fItime\fP coordinate a bin should start\&. The value passed as \fItimeBinOffset\fP doesn't need to be in the range encompassed by the \fItime\fP keys\&. It merely defines the mathematical offset/phase of the bins that will be used to process the data\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Voice analyze from the source code\&.

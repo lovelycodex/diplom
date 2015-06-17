@@ -1,0 +1,99 @@
+.TH "QCPMarginGroup" 3 "Thu Jun 18 2015" "Version v.2" "Voice analyze" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+QCPMarginGroup \- A margin group allows synchronization of margin sides if working with multiple layout elements\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQCPMarginGroup\fP (\fBQCustomPlot\fP *parentPlot)"
+.br
+.ti -1c
+.RI "QList< \fBQCPLayoutElement\fP * > \fBelements\fP (\fBQCP::MarginSide\fP side) const "
+.br
+.ti -1c
+.RI "bool \fBisEmpty\fP () const "
+.br
+.ti -1c
+.RI "void \fBclear\fP ()"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBcommonMargin\fP (\fBQCP::MarginSide\fP side) const "
+.br
+.ti -1c
+.RI "void \fBaddChild\fP (\fBQCP::MarginSide\fP side, \fBQCPLayoutElement\fP *element)"
+.br
+.ti -1c
+.RI "void \fBremoveChild\fP (\fBQCP::MarginSide\fP side, \fBQCPLayoutElement\fP *element)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBQCustomPlot\fP * \fBmParentPlot\fP"
+.br
+.ti -1c
+.RI "QHash< \fBQCP::MarginSide\fP, QList< \fBQCPLayoutElement\fP * > > \fBmChildren\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBQCPLayoutElement\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+A margin group allows synchronization of margin sides if working with multiple layout elements\&. 
+
+\fBQCPMarginGroup\fP allows you to tie a margin side of two or more layout elements together, such that they will all have the same size, based on the largest required margin in the group\&.
+.PP
+
+.br
+Demonstration of QCPMarginGroup
+.br
+ In certain situations it is desirable that margins at specific sides are synchronized across layout elements\&. For example, if one \fBQCPAxisRect\fP is below another one in a grid layout, it will provide a cleaner look to the user if the left and right margins of the two axis rects are of the same size\&. The left axis of the top axis rect will then be at the same horizontal position as the left axis of the lower axis rect, making them appear aligned\&. The same applies for the right axes\&. This is what \fBQCPMarginGroup\fP makes possible\&.
+.PP
+To add/remove a specific side of a layout element to/from a margin group, use the \fBQCPLayoutElement::setMarginGroup\fP method\&. To completely break apart the margin group, either call \fBclear\fP, or just delete the margin group\&.
+.SH "Example"
+.PP
+First create a margin group: 
+.PP
+.nf
+
+.fi
+.PP
+Then set this group on the layout element sides: 
+.PP
+.nf
+
+.fi
+.PP
+Here, we've used the first two axis rects of the plot and synchronized their left margins with each other and their right margins with each other\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "QCPMarginGroup::QCPMarginGroup (\fBQCustomPlot\fP * parentPlot)"
+Creates a new \fBQCPMarginGroup\fP instance in \fIparentPlot\fP\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "void QCPMarginGroup::clear ()"
+Clears this margin group\&. The synchronization of the margin sides that use this margin group is lifted and they will use their individual margin sizes again\&. 
+.SS "QList< \fBQCPLayoutElement\fP * > QCPMarginGroup::elements (\fBQCP::MarginSide\fP side) const\fC [inline]\fP"
+Returns a list of all layout elements that have their margin \fIside\fP associated with this margin group\&. 
+.SS "bool QCPMarginGroup::isEmpty () const"
+Returns whether this margin group is empty\&. If this function returns true, no layout elements use this margin group to synchronize margin sides\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Voice analyze from the source code\&.

@@ -1,0 +1,11 @@
+<map id="QCPLayoutGrid::simplify" name="QCPLayoutGrid::simplify">
+<area shape="rect" id="node2" href="$class_q_c_p_legend.html#ac91595c3eaa746fe6321d2eb952c63bb" title="QCPLegend::removeItem" alt="" coords="228,85,411,112"/>
+<area shape="rect" id="node3" href="$class_q_c_p_abstract_plottable.html#aa1f350e510326d012b9a9c9249736c83" title="QCPAbstractPlottable\l::removeFromLegend" alt="" coords="465,49,623,90"/>
+<area shape="rect" id="node10" href="$class_q_c_p_legend.html#a24795c7250eb5214fcea16b7217b4dfb" title="QCPLegend::clearItems" alt="" coords="459,115,629,141"/>
+<area shape="rect" id="node4" href="$class_q_custom_plot.html#af3dafd56884208474f311d6226513ab2" title="QCustomPlot::removePlottable" alt="" coords="677,56,896,83"/>
+<area shape="rect" id="node5" href="$class_q_custom_plot.html#afc210e0021480f8119bccf37839dbcc8" title="QCustomPlot::removePlottable" alt="" coords="944,5,1163,32"/>
+<area shape="rect" id="node6" href="$class_q_custom_plot.html#a9a409bb3201878adb7ffba1c89c4e004" title="QCustomPlot::clearPlottables" alt="" coords="949,56,1157,83"/>
+<area shape="rect" id="node7" href="$class_q_custom_plot.html#a903561be895fb6528a770d66ac5e6713" title="QCustomPlot::removeGraph" alt="" coords="952,107,1155,133"/>
+<area shape="rect" id="node8" href="$class_q_custom_plot.html#a9554b3d2d5b10c0f884bd4010b6c192c" title="QCustomPlot::removeGraph" alt="" coords="1211,81,1413,108"/>
+<area shape="rect" id="node9" href="$class_q_custom_plot.html#ab0f3abff2d2f7df3668b5836f39207fa" title="QCustomPlot::clearGraphs" alt="" coords="1217,132,1407,159"/>
+</map>

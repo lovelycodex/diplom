@@ -1,0 +1,9 @@
+<map id="QCPLegend::setFont" name="QCPLegend::setFont">
+<area shape="rect" id="node2" href="$class_q_c_p_legend.html#a198228e9cdc78d3a3c306fa6763d0404" title="QCPLegend::itemCount" alt="" coords="443,5,614,32"/>
+<area shape="rect" id="node6" href="$class_q_c_p_legend.html#a454272d7094437beb3278a2294006da5" title="QCPLegend::item" alt="" coords="228,56,361,83"/>
+<area shape="rect" id="node8" href="$class_q_c_p_abstract_legend_item.html#a409c53455d8112f71d70c0c43eb10265" title="QCPAbstractLegendItem\l::setFont" alt="" coords="205,107,384,149"/>
+<area shape="rect" id="node3" href="$class_q_c_p_layout_grid.html#aa682b1d36660478f665bab3c64e956a9" title="QCPLayoutGrid::elementCount" alt="" coords="673,5,891,32"/>
+<area shape="rect" id="node4" href="$class_q_c_p_layout_grid.html#af8e6c7a05864ebe610c87756c7b9079c" title="QCPLayoutGrid::rowCount" alt="" coords="951,5,1137,32"/>
+<area shape="rect" id="node5" href="$class_q_c_p_layout_grid.html#ac39074eafd148b82d0762090f258189e" title="QCPLayoutGrid::columnCount" alt="" coords="939,56,1149,83"/>
+<area shape="rect" id="node7" href="$class_q_c_p_layout_grid.html#a26849ee5c47b4c940e8d65e8462f1065" title="QCPLayoutGrid::elementAt" alt="" coords="432,56,625,83"/>
+</map>

@@ -1,0 +1,343 @@
+\section{Q\+C\+P\+Bars\+Group Class Reference}
+\label{class_q_c_p_bars_group}\index{Q\+C\+P\+Bars\+Group@{Q\+C\+P\+Bars\+Group}}
+
+
+Groups multiple \doxyref{Q\+C\+P\+Bars}{p.}{class_q_c_p_bars} together so they appear side by side.  
+
+
+
+
+Collaboration diagram for Q\+C\+P\+Bars\+Group\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_bars_group__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf Spacing\+Type} \{ {\bf st\+Absolute}, 
+{\bf st\+Axis\+Rect\+Ratio}, 
+{\bf st\+Plot\+Coords}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Q\+C\+P\+Bars\+Group} ({\bf Q\+Custom\+Plot} $\ast$parent\+Plot)
+\item 
+{\bf Spacing\+Type} {\bfseries spacing\+Type} () const \label{class_q_c_p_bars_group_a1bb562f669d47bd7d3cdd2da1f7d8f00}
+
+\item 
+double {\bfseries spacing} () const \label{class_q_c_p_bars_group_a730bffefcac6c97aaf60e6f64dd3bcd9}
+
+\item 
+void {\bf set\+Spacing\+Type} ({\bf Spacing\+Type} spacing\+Type)
+\item 
+void {\bf set\+Spacing} (double spacing)
+\item 
+Q\+List$<$ {\bf Q\+C\+P\+Bars} $\ast$ $>$ {\bf bars} () const 
+\item 
+{\bf Q\+C\+P\+Bars} $\ast$ {\bf bars} (int index) const 
+\item 
+int {\bf size} () const 
+\item 
+bool {\bf is\+Empty} () const 
+\item 
+void {\bf clear} ()
+\item 
+bool {\bf contains} ({\bf Q\+C\+P\+Bars} $\ast${\bf bars}) const 
+\item 
+void {\bf append} ({\bf Q\+C\+P\+Bars} $\ast${\bf bars})
+\item 
+void {\bf insert} (int i, {\bf Q\+C\+P\+Bars} $\ast${\bf bars})
+\item 
+void {\bf remove} ({\bf Q\+C\+P\+Bars} $\ast${\bf bars})
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries register\+Bars} ({\bf Q\+C\+P\+Bars} $\ast${\bf bars})\label{class_q_c_p_bars_group_a7b00514f19ad58d0bb3fd5246a67fae2}
+
+\item 
+void {\bfseries unregister\+Bars} ({\bf Q\+C\+P\+Bars} $\ast${\bf bars})\label{class_q_c_p_bars_group_ac7073cdd7b1a40c6cb4b5f908145f8c4}
+
+\item 
+double {\bfseries key\+Pixel\+Offset} (const {\bf Q\+C\+P\+Bars} $\ast${\bf bars}, double key\+Coord)\label{class_q_c_p_bars_group_a8e2ca6002e7bab49670144d048a2bcc9}
+
+\item 
+double {\bfseries get\+Pixel\+Spacing} (const {\bf Q\+C\+P\+Bars} $\ast${\bf bars}, double key\+Coord)\label{class_q_c_p_bars_group_a0beccd41bc3841a4c5b284823bc7d2de}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Q\+Custom\+Plot} $\ast$ {\bfseries m\+Parent\+Plot}\label{class_q_c_p_bars_group_a973d408cfbf88db95115aec71877f9e7}
+
+\item 
+{\bf Spacing\+Type} {\bfseries m\+Spacing\+Type}\label{class_q_c_p_bars_group_a6794ee1a9c81864d627bff6a4b2d64ec}
+
+\item 
+double {\bfseries m\+Spacing}\label{class_q_c_p_bars_group_a56471d7f548ca6141b7a5bf9629f7ece}
+
+\item 
+Q\+List$<$ {\bf Q\+C\+P\+Bars} $\ast$ $>$ {\bfseries m\+Bars}\label{class_q_c_p_bars_group_affdb1e9233c277ff5a4c0a1121cf1fc0}
+
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries Q\+C\+P\+Bars}\label{class_q_c_p_bars_group_a721b87c7cdb8e83a90d77fc8a22e7195}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Groups multiple \doxyref{Q\+C\+P\+Bars}{p.}{class_q_c_p_bars} together so they appear side by side. 
+
+
+
+When showing multiple \doxyref{Q\+C\+P\+Bars}{p.}{class_q_c_p_bars} in one plot which have bars at identical keys, it may be desirable to have them appearing next to each other at each key. This is what adding the respective \doxyref{Q\+C\+P\+Bars}{p.}{class_q_c_p_bars} plottables to a \doxyref{Q\+C\+P\+Bars\+Group}{p.}{class_q_c_p_bars_group} achieves. (An alternative approach is to stack them on top of each other, see \doxyref{Q\+C\+P\+Bars\+::move\+Above}{p.}{class_q_c_p_bars_ac22e00a6a41509538c21b04f0a57318c}.)\subsection{Usage}\label{class_q_c_p_bars_group_qcpbarsgroup-usage}
+To add a \doxyref{Q\+C\+P\+Bars}{p.}{class_q_c_p_bars} plottable to the group, create a new group and then add the respective bars intances\+: 
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+Alternatively to appending to the group like shown above, you can also set the group on the \doxyref{Q\+C\+P\+Bars}{p.}{class_q_c_p_bars} plottable via \doxyref{Q\+C\+P\+Bars\+::set\+Bars\+Group}{p.}{class_q_c_p_bars_aedd1709061f0b307c47ddb45e172ef9a}.
+
+The spacing between the bars can be configured via \doxyref{set\+Spacing\+Type}{p.}{class_q_c_p_bars_group_a2c7e2d61b10594a4555b615e1fcaf49e} and \doxyref{set\+Spacing}{p.}{class_q_c_p_bars_group_aa553d327479d72a0c3dafcc724a190e2}. The bars in this group appear in the plot in the order they were appended. To insert a bars plottable at a certain index position, or to reposition a bars plottable which is already in the group, use \doxyref{insert}{p.}{class_q_c_p_bars_group_a309a5f7233db189f3ea9c2d04ece6c13}.
+
+To remove specific bars from the group, use either \doxyref{remove}{p.}{class_q_c_p_bars_group_a215e28a5944f1159013a0e19169220e7} or call \doxyref{Q\+C\+P\+Bars\+:\+:set\+Bars\+Group(0)}{p.}{class_q_c_p_bars_aedd1709061f0b307c47ddb45e172ef9a} on the respective bars plottable.
+
+To clear the entire group, call \doxyref{clear}{p.}{class_q_c_p_bars_group_a3ddf23928c6cd89530bd34ab7ba7b177}, or simply delete the group.\subsection{Example}\label{class_q_c_p_bars_group_qcpbarsgroup-example}
+The image above is generated with the following code\+: 
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\subsection{Member Enumeration Documentation}
+\index{Q\+C\+P\+Bars\+Group@{Q\+C\+P\+Bars\+Group}!Spacing\+Type@{Spacing\+Type}}
+\index{Spacing\+Type@{Spacing\+Type}!Q\+C\+P\+Bars\+Group@{Q\+C\+P\+Bars\+Group}}
+\subsubsection[{Spacing\+Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Q\+C\+P\+Bars\+Group\+::\+Spacing\+Type}}\label{class_q_c_p_bars_group_a4c0521120a97e60bbca37677a37075b6}
+Defines the ways the spacing between bars in the group can be specified. Thus it defines what the number passed to \doxyref{set\+Spacing}{p.}{class_q_c_p_bars_group_aa553d327479d72a0c3dafcc724a190e2} actually means.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{set\+Spacing\+Type}{p.}{class_q_c_p_bars_group_a2c7e2d61b10594a4555b615e1fcaf49e}, \doxyref{set\+Spacing}{p.}{class_q_c_p_bars_group_aa553d327479d72a0c3dafcc724a190e2} 
+\end{DoxySeeAlso}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{st\+Absolute@{st\+Absolute}!Q\+C\+P\+Bars\+Group@{Q\+C\+P\+Bars\+Group}}\index{Q\+C\+P\+Bars\+Group@{Q\+C\+P\+Bars\+Group}!st\+Absolute@{st\+Absolute}}\item[{\em 
+st\+Absolute\label{class_q_c_p_bars_group_a4c0521120a97e60bbca37677a37075b6ab53fa3efaf14867dd0f14d41d64e42ac}
+}]Bar spacing is in absolute pixels. \index{st\+Axis\+Rect\+Ratio@{st\+Axis\+Rect\+Ratio}!Q\+C\+P\+Bars\+Group@{Q\+C\+P\+Bars\+Group}}\index{Q\+C\+P\+Bars\+Group@{Q\+C\+P\+Bars\+Group}!st\+Axis\+Rect\+Ratio@{st\+Axis\+Rect\+Ratio}}\item[{\em 
+st\+Axis\+Rect\+Ratio\label{class_q_c_p_bars_group_a4c0521120a97e60bbca37677a37075b6ae94b05c27bc985dcdd8b1e1b7f163d26}
+}]Bar spacing is given by a fraction of the axis rect size. \index{st\+Plot\+Coords@{st\+Plot\+Coords}!Q\+C\+P\+Bars\+Group@{Q\+C\+P\+Bars\+Group}}\index{Q\+C\+P\+Bars\+Group@{Q\+C\+P\+Bars\+Group}!st\+Plot\+Coords@{st\+Plot\+Coords}}\item[{\em 
+st\+Plot\+Coords\label{class_q_c_p_bars_group_a4c0521120a97e60bbca37677a37075b6ad369cee6287e0a86e8c2b643a3168c54}
+}]Bar spacing is in key coordinates and thus scales with the key axis range. \end{description}
+\end{Desc}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Q\+C\+P\+Bars\+Group@{Q\+C\+P\+Bars\+Group}!Q\+C\+P\+Bars\+Group@{Q\+C\+P\+Bars\+Group}}
+\index{Q\+C\+P\+Bars\+Group@{Q\+C\+P\+Bars\+Group}!Q\+C\+P\+Bars\+Group@{Q\+C\+P\+Bars\+Group}}
+\subsubsection[{Q\+C\+P\+Bars\+Group}]{\setlength{\rightskip}{0pt plus 5cm}Q\+C\+P\+Bars\+Group\+::\+Q\+C\+P\+Bars\+Group (
+\begin{DoxyParamCaption}
+\item[{{\bf Q\+Custom\+Plot} $\ast$}]{parent\+Plot}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_bars_group_aa4e043b9a22c6c5ea0f93740aca063e1}
+Constructs a new bars group for the specified \doxyref{Q\+Custom\+Plot}{p.}{class_q_custom_plot} instance. 
+
+\subsection{Member Function Documentation}
+\index{Q\+C\+P\+Bars\+Group@{Q\+C\+P\+Bars\+Group}!append@{append}}
+\index{append@{append}!Q\+C\+P\+Bars\+Group@{Q\+C\+P\+Bars\+Group}}
+\subsubsection[{append}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Bars\+Group\+::append (
+\begin{DoxyParamCaption}
+\item[{{\bf Q\+C\+P\+Bars} $\ast$}]{bars}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_bars_group_a809ed63cc4ff7cd5b0b8c96b470163d3}
+Adds the specified {\itshape bars} plottable to this group. Alternatively, you can also use \doxyref{Q\+C\+P\+Bars\+::set\+Bars\+Group}{p.}{class_q_c_p_bars_aedd1709061f0b307c47ddb45e172ef9a} on the {\itshape bars} instance.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{insert}{p.}{class_q_c_p_bars_group_a309a5f7233db189f3ea9c2d04ece6c13}, \doxyref{remove}{p.}{class_q_c_p_bars_group_a215e28a5944f1159013a0e19169220e7} 
+\end{DoxySeeAlso}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_bars_group_a809ed63cc4ff7cd5b0b8c96b470163d3_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Bars\+Group@{Q\+C\+P\+Bars\+Group}!bars@{bars}}
+\index{bars@{bars}!Q\+C\+P\+Bars\+Group@{Q\+C\+P\+Bars\+Group}}
+\subsubsection[{bars}]{\setlength{\rightskip}{0pt plus 5cm}Q\+List$<$ {\bf Q\+C\+P\+Bars} $\ast$ $>$ Q\+C\+P\+Bars\+Group\+::bars (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_q_c_p_bars_group_a7c72ed1f8cd962c93b8c42ab96cd91ec}
+Returns all bars currently in this group.
+
+\begin{DoxySeeAlso}{See also}
+bars(int index) 
+\end{DoxySeeAlso}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_bars_group_a7c72ed1f8cd962c93b8c42ab96cd91ec_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Bars\+Group@{Q\+C\+P\+Bars\+Group}!bars@{bars}}
+\index{bars@{bars}!Q\+C\+P\+Bars\+Group@{Q\+C\+P\+Bars\+Group}}
+\subsubsection[{bars}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+C\+P\+Bars} $\ast$ Q\+C\+P\+Bars\+Group\+::bars (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+) const}\label{class_q_c_p_bars_group_a72d022790b7c93151c95c28eefaf51b4}
+Returns the \doxyref{Q\+C\+P\+Bars}{p.}{class_q_c_p_bars} instance with the specified {\itshape index} in this group. If no such \doxyref{Q\+C\+P\+Bars}{p.}{class_q_c_p_bars} exists, returns 0.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{bars()}{p.}{class_q_c_p_bars_group_a7c72ed1f8cd962c93b8c42ab96cd91ec}, \doxyref{size}{p.}{class_q_c_p_bars_group_af07364189c5717a158ec95b609687532} 
+\end{DoxySeeAlso}
+\index{Q\+C\+P\+Bars\+Group@{Q\+C\+P\+Bars\+Group}!clear@{clear}}
+\index{clear@{clear}!Q\+C\+P\+Bars\+Group@{Q\+C\+P\+Bars\+Group}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Bars\+Group\+::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_bars_group_a3ddf23928c6cd89530bd34ab7ba7b177}
+Removes all \doxyref{Q\+C\+P\+Bars}{p.}{class_q_c_p_bars} plottables from this group.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{is\+Empty}{p.}{class_q_c_p_bars_group_a1d89da4e9176f4f77105e9a4afd44e2b} 
+\end{DoxySeeAlso}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_bars_group_a3ddf23928c6cd89530bd34ab7ba7b177_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Bars\+Group@{Q\+C\+P\+Bars\+Group}!contains@{contains}}
+\index{contains@{contains}!Q\+C\+P\+Bars\+Group@{Q\+C\+P\+Bars\+Group}}
+\subsubsection[{contains}]{\setlength{\rightskip}{0pt plus 5cm}bool Q\+C\+P\+Bars\+Group\+::contains (
+\begin{DoxyParamCaption}
+\item[{{\bf Q\+C\+P\+Bars} $\ast$}]{bars}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_q_c_p_bars_group_adb4837894167e629e42e200db056fac3}
+Returns whether the specified {\itshape bars} plottable is part of this group. \index{Q\+C\+P\+Bars\+Group@{Q\+C\+P\+Bars\+Group}!insert@{insert}}
+\index{insert@{insert}!Q\+C\+P\+Bars\+Group@{Q\+C\+P\+Bars\+Group}}
+\subsubsection[{insert}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Bars\+Group\+::insert (
+\begin{DoxyParamCaption}
+\item[{int}]{i, }
+\item[{{\bf Q\+C\+P\+Bars} $\ast$}]{bars}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_bars_group_a309a5f7233db189f3ea9c2d04ece6c13}
+Inserts the specified {\itshape bars} plottable into this group at the specified index position {\itshape i}. This gives you full control over the ordering of the bars.
+
+{\itshape bars} may already be part of this group. In that case, {\itshape bars} is just moved to the new index position.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{append}{p.}{class_q_c_p_bars_group_a809ed63cc4ff7cd5b0b8c96b470163d3}, \doxyref{remove}{p.}{class_q_c_p_bars_group_a215e28a5944f1159013a0e19169220e7} 
+\end{DoxySeeAlso}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_bars_group_a309a5f7233db189f3ea9c2d04ece6c13_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Bars\+Group@{Q\+C\+P\+Bars\+Group}!is\+Empty@{is\+Empty}}
+\index{is\+Empty@{is\+Empty}!Q\+C\+P\+Bars\+Group@{Q\+C\+P\+Bars\+Group}}
+\subsubsection[{is\+Empty}]{\setlength{\rightskip}{0pt plus 5cm}bool Q\+C\+P\+Bars\+Group\+::is\+Empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_q_c_p_bars_group_a1d89da4e9176f4f77105e9a4afd44e2b}
+Returns whether this bars group is empty.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{size}{p.}{class_q_c_p_bars_group_af07364189c5717a158ec95b609687532} 
+\end{DoxySeeAlso}
+\index{Q\+C\+P\+Bars\+Group@{Q\+C\+P\+Bars\+Group}!remove@{remove}}
+\index{remove@{remove}!Q\+C\+P\+Bars\+Group@{Q\+C\+P\+Bars\+Group}}
+\subsubsection[{remove}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Bars\+Group\+::remove (
+\begin{DoxyParamCaption}
+\item[{{\bf Q\+C\+P\+Bars} $\ast$}]{bars}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_bars_group_a215e28a5944f1159013a0e19169220e7}
+Removes the specified {\itshape bars} plottable from this group.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{contains}{p.}{class_q_c_p_bars_group_adb4837894167e629e42e200db056fac3}, \doxyref{clear}{p.}{class_q_c_p_bars_group_a3ddf23928c6cd89530bd34ab7ba7b177} 
+\end{DoxySeeAlso}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_bars_group_a215e28a5944f1159013a0e19169220e7_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Bars\+Group@{Q\+C\+P\+Bars\+Group}!set\+Spacing@{set\+Spacing}}
+\index{set\+Spacing@{set\+Spacing}!Q\+C\+P\+Bars\+Group@{Q\+C\+P\+Bars\+Group}}
+\subsubsection[{set\+Spacing}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Bars\+Group\+::set\+Spacing (
+\begin{DoxyParamCaption}
+\item[{double}]{spacing}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_bars_group_aa553d327479d72a0c3dafcc724a190e2}
+Sets the spacing between adjacent bars. What the number passed as {\itshape spacing} actually means, is defined by the current \doxyref{Spacing\+Type}{p.}{class_q_c_p_bars_group_a4c0521120a97e60bbca37677a37075b6}, which can be set with \doxyref{set\+Spacing\+Type}{p.}{class_q_c_p_bars_group_a2c7e2d61b10594a4555b615e1fcaf49e}.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{set\+Spacing\+Type}{p.}{class_q_c_p_bars_group_a2c7e2d61b10594a4555b615e1fcaf49e} 
+\end{DoxySeeAlso}
+\index{Q\+C\+P\+Bars\+Group@{Q\+C\+P\+Bars\+Group}!set\+Spacing\+Type@{set\+Spacing\+Type}}
+\index{set\+Spacing\+Type@{set\+Spacing\+Type}!Q\+C\+P\+Bars\+Group@{Q\+C\+P\+Bars\+Group}}
+\subsubsection[{set\+Spacing\+Type}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Bars\+Group\+::set\+Spacing\+Type (
+\begin{DoxyParamCaption}
+\item[{{\bf Spacing\+Type}}]{spacing\+Type}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_bars_group_a2c7e2d61b10594a4555b615e1fcaf49e}
+Sets how the spacing between adjacent bars is interpreted. See \doxyref{Spacing\+Type}{p.}{class_q_c_p_bars_group_a4c0521120a97e60bbca37677a37075b6}.
+
+The actual spacing can then be specified with \doxyref{set\+Spacing}{p.}{class_q_c_p_bars_group_aa553d327479d72a0c3dafcc724a190e2}.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{set\+Spacing}{p.}{class_q_c_p_bars_group_aa553d327479d72a0c3dafcc724a190e2} 
+\end{DoxySeeAlso}
+\index{Q\+C\+P\+Bars\+Group@{Q\+C\+P\+Bars\+Group}!size@{size}}
+\index{size@{size}!Q\+C\+P\+Bars\+Group@{Q\+C\+P\+Bars\+Group}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}int Q\+C\+P\+Bars\+Group\+::size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_q_c_p_bars_group_af07364189c5717a158ec95b609687532}
+Returns the number of \doxyref{Q\+C\+P\+Bars}{p.}{class_q_c_p_bars} plottables that are part of this group. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf qcustomplot.\+h}\item 
+{\bf qcustomplot.\+cpp}\end{DoxyCompactItemize}

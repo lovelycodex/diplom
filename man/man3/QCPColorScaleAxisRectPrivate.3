@@ -1,0 +1,60 @@
+.TH "QCPColorScaleAxisRectPrivate" 3 "Thu Jun 18 2015" "Version v.2" "Voice analyze" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+QCPColorScaleAxisRectPrivate \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQCPColorScaleAxisRectPrivate\fP (\fBQCPColorScale\fP *parentColorScale)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBdraw\fP (\fBQCPPainter\fP *painter)"
+.br
+.ti -1c
+.RI "void \fBupdateGradientImage\fP ()"
+.br
+.ti -1c
+.RI "Q_SLOT void \fBaxisSelectionChanged\fP (QCPAxis::SelectableParts selectedParts)"
+.br
+.ti -1c
+.RI "Q_SLOT void \fBaxisSelectableChanged\fP (QCPAxis::SelectableParts selectableParts)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBQCPColorScale\fP * \fBmParentColorScale\fP"
+.br
+.ti -1c
+.RI "QImage \fBmGradientImage\fP"
+.br
+.ti -1c
+.RI "bool \fBmGradientImageInvalidated\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBQCPColorScale\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "QCPColorScaleAxisRectPrivate::QCPColorScaleAxisRectPrivate (\fBQCPColorScale\fP * parentColorScale)\fC [explicit]\fP"
+Creates a new instance, as a child of \fIparentColorScale\fP\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Voice analyze from the source code\&.

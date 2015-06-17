@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="index.jpe"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Voice analyze
-   &#160;<span id="projectnumber">v.1</span>
+   &#160;<span id="projectnumber">v.2</span>
    </div>
   </td>
  </tr>
@@ -86,6 +86,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#signals">Signals</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="class_widget-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -96,10 +97,29 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 Collaboration diagram for Widget:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_widget__coll__graph.png" border="0" usemap="#_widget_coll__map" alt="Collaboration graph"/></div>
-<map name="_widget_coll__map" id="_widget_coll__map">
-</map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
+Signals</h2></td></tr>
+<tr class="memitem:a9b522925828c2cdaeaee593322c936bc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9b522925828c2cdaeaee593322c936bc"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>PlotSpectrumSignal</b> ()</td></tr>
+<tr class="separator:a9b522925828c2cdaeaee593322c936bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd316c989c14d989bdd63ce1d91682ba"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abd316c989c14d989bdd63ce1d91682ba"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>PlotKaiserWindowSignal</b> ()</td></tr>
+<tr class="separator:abd316c989c14d989bdd63ce1d91682ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9627ed98a7e86aeb8d254d0ea6cc1e6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad9627ed98a7e86aeb8d254d0ea6cc1e6"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>fill_ftt_complex_Signal</b> ()</td></tr>
+<tr class="separator:ad9627ed98a7e86aeb8d254d0ea6cc1e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd0fd3cc9538d8fc577b9625a151efa3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acd0fd3cc9538d8fc577b9625a151efa3"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>post_filtering_Signal</b> ()</td></tr>
+<tr class="separator:acd0fd3cc9538d8fc577b9625a151efa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb347c6b9284291eeb2c2b2f5848bf60"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aeb347c6b9284291eeb2c2b2f5848bf60"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>liftering_Signal</b> ()</td></tr>
+<tr class="separator:aeb347c6b9284291eeb2c2b2f5848bf60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bcb29f9a8e3cb18b79ae2d05df5c917"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2bcb29f9a8e3cb18b79ae2d05df5c917"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>kaiser_window_signal</b> ()</td></tr>
+<tr class="separator:a2bcb29f9a8e3cb18b79ae2d05df5c917"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a29531c7f141e461322981b3b579d4590"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#a29531c7f141e461322981b3b579d4590">Widget</a> (QWidget *parent=0)</td></tr>
@@ -123,13 +143,6 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memitem:aaf7b3689efa3f4b44af59bd9d514ff94"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#aaf7b3689efa3f4b44af59bd9d514ff94">writeToDisk</a> ()</td></tr>
 <tr class="memdesc:aaf7b3689efa3f4b44af59bd9d514ff94"><td class="mdescLeft">&#160;</td><td class="mdescRight">No incoming parameters. Write recording data to disk.  <a href="#aaf7b3689efa3f4b44af59bd9d514ff94">More...</a><br /></td></tr>
 <tr class="separator:aaf7b3689efa3f4b44af59bd9d514ff94"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac924875bf37e21593ee688f588523a28"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#ac924875bf37e21593ee688f588523a28">plotSpectrums</a> (int, float *)</td></tr>
-<tr class="memdesc:ac924875bf37e21593ee688f588523a28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Plot spectrums on two graphs (first- FFT, second - Kaiser Window)  <a href="#ac924875bf37e21593ee688f588523a28">More...</a><br /></td></tr>
-<tr class="separator:ac924875bf37e21593ee688f588523a28"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a80e9384e7e3f3507c654e2a621124060"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a80e9384e7e3f3507c654e2a621124060"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#a80e9384e7e3f3507c654e2a621124060">KaiserWindow</a> ()</td></tr>
-<tr class="memdesc:a80e9384e7e3f3507c654e2a621124060"><td class="mdescLeft">&#160;</td><td class="mdescRight">It is a one-parameter family of window functions used for digital signal processing. <br /></td></tr>
-<tr class="separator:a80e9384e7e3f3507c654e2a621124060"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af10aec37d5a2461ef0c4f85bcd36d37b"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#af10aec37d5a2461ef0c4f85bcd36d37b">I0</a> (float)</td></tr>
 <tr class="memdesc:af10aec37d5a2461ef0c4f85bcd36d37b"><td class="mdescLeft">&#160;</td><td class="mdescRight">zeroth order modified Bessel function of the first kind, which has a complex mathematical description.  <a href="#af10aec37d5a2461ef0c4f85bcd36d37b">More...</a><br /></td></tr>
 <tr class="separator:af10aec37d5a2461ef0c4f85bcd36d37b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -193,41 +206,6 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 </div>
 </div>
-<a class="anchor" id="ac924875bf37e21593ee688f588523a28"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Widget::plotSpectrums </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>number_graph</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float *&#160;</td>
-          <td class="paramname"><em>arr</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Plot spectrums on two graphs (first- FFT, second - Kaiser Window) </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">number_graph</td><td>- which graph to plot </td></tr>
-    <tr><td class="paramname">arr</td><td>- The array which have to plot </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a class="anchor" id="aa230d039c1746fbc0d13159b6ac0b80e"></a>
 <div class="memitem">
 <div class="memproto">
@@ -281,7 +259,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jun 16 2015 19:06:47 for Voice analyze by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jun 18 2015 02:00:48 for Voice analyze by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

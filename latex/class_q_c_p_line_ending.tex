@@ -1,0 +1,210 @@
+\section{Q\+C\+P\+Line\+Ending Class Reference}
+\label{class_q_c_p_line_ending}\index{Q\+C\+P\+Line\+Ending@{Q\+C\+P\+Line\+Ending}}
+
+
+Handles the different ending decorations for line-\/like items.  
+
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf Ending\+Style} \{ \\*
+{\bf es\+None}, 
+{\bf es\+Flat\+Arrow}, 
+{\bf es\+Spike\+Arrow}, 
+{\bf es\+Line\+Arrow}, 
+\\*
+{\bf es\+Disc}, 
+{\bf es\+Square}, 
+{\bf es\+Diamond}, 
+{\bf es\+Bar}, 
+\\*
+{\bf es\+Half\+Bar}, 
+{\bf es\+Skewed\+Bar}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Q\+C\+P\+Line\+Ending} ()
+\item 
+{\bf Q\+C\+P\+Line\+Ending} ({\bf Ending\+Style} style, double width=8, double length=10, bool inverted=false)
+\item 
+{\bf Ending\+Style} {\bfseries style} () const \label{class_q_c_p_line_ending_aea324dbfddbca9895ca8a3a968671299}
+
+\item 
+double {\bfseries width} () const \label{class_q_c_p_line_ending_a028328ee3fb139a40acaf65fb56edf67}
+
+\item 
+double {\bfseries length} () const \label{class_q_c_p_line_ending_a1744315d7b73f6e7ead3621e2cb18c28}
+
+\item 
+bool {\bfseries inverted} () const \label{class_q_c_p_line_ending_aa4ffbb182cbc89fc3d92eb348630502c}
+
+\item 
+void {\bf set\+Style} ({\bf Ending\+Style} style)
+\item 
+void {\bf set\+Width} (double width)
+\item 
+void {\bf set\+Length} (double length)
+\item 
+void {\bf set\+Inverted} (bool inverted)
+\item 
+double {\bfseries bounding\+Distance} () const \label{class_q_c_p_line_ending_a586b45cf738881a70119e353dc1ed59c}
+
+\item 
+double {\bf real\+Length} () const 
+\item 
+void {\bfseries draw} ({\bf Q\+C\+P\+Painter} $\ast$painter, const Q\+Vector2\+D \&pos, const Q\+Vector2\+D \&dir) const \label{class_q_c_p_line_ending_ac4b2fa94bd27b2f008b5fc090fcd7c0b}
+
+\item 
+void {\bfseries draw} ({\bf Q\+C\+P\+Painter} $\ast$painter, const Q\+Vector2\+D \&pos, double angle) const \label{class_q_c_p_line_ending_a05c143b1f66cb68d746c309523c45e3e}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Ending\+Style} {\bfseries m\+Style}\label{class_q_c_p_line_ending_a4696fc9117b60f1ca7690fcd2ba56611}
+
+\item 
+double {\bfseries m\+Width}\label{class_q_c_p_line_ending_aca89d21341133c20dc6825c33a5eac48}
+
+\item 
+double {\bfseries m\+Length}\label{class_q_c_p_line_ending_ae8e1e2566b96c05736cd92662dba8af8}
+
+\item 
+bool {\bfseries m\+Inverted}\label{class_q_c_p_line_ending_a91306fe771d54c955e0af21af14349d5}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Handles the different ending decorations for line-\/like items. 
+
+ For every ending a line-\/like item has, an instance of this class exists. For example, \doxyref{Q\+C\+P\+Item\+Line}{p.}{class_q_c_p_item_line} has two endings which can be set with \doxyref{Q\+C\+P\+Item\+Line\+::set\+Head}{p.}{class_q_c_p_item_line_aebf3d687114d584e0459db6759e2c3c3} and \doxyref{Q\+C\+P\+Item\+Line\+::set\+Tail}{p.}{class_q_c_p_item_line_ac264222c3297a7efe33df9345c811a5f}.
+
+The styles themselves are defined via the enum \doxyref{Q\+C\+P\+Line\+Ending\+::\+Ending\+Style}{p.}{class_q_c_p_line_ending_a5ef16e6876b4b74959c7261d8d4c2cd5}. Most decorations can be modified regarding width and length, see \doxyref{set\+Width}{p.}{class_q_c_p_line_ending_a26dc020ea985a72cc25881ce2115e34e} and \doxyref{set\+Length}{p.}{class_q_c_p_line_ending_ae36fa01763751cd64b7f56c3507e935a}. The direction of the ending decoration (e.\+g. direction an arrow is pointing) is controlled by the line-\/like item. For example, when both endings of a \doxyref{Q\+C\+P\+Item\+Line}{p.}{class_q_c_p_item_line} are set to be arrows, they will point to opposite directions, e.\+g. \char`\"{}outward\char`\"{}. This can be changed by \doxyref{set\+Inverted}{p.}{class_q_c_p_line_ending_a580e4e2360b35ebb8d68f3494aa2335d}, which would make the respective arrow point inward.
+
+Note that due to the overloaded \doxyref{Q\+C\+P\+Line\+Ending}{p.}{class_q_c_p_line_ending} constructor, you may directly specify a \doxyref{Q\+C\+P\+Line\+Ending\+::\+Ending\+Style}{p.}{class_q_c_p_line_ending_a5ef16e6876b4b74959c7261d8d4c2cd5} where actually a \doxyref{Q\+C\+P\+Line\+Ending}{p.}{class_q_c_p_line_ending} is expected, e.\+g. 
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\subsection{Member Enumeration Documentation}
+\index{Q\+C\+P\+Line\+Ending@{Q\+C\+P\+Line\+Ending}!Ending\+Style@{Ending\+Style}}
+\index{Ending\+Style@{Ending\+Style}!Q\+C\+P\+Line\+Ending@{Q\+C\+P\+Line\+Ending}}
+\subsubsection[{Ending\+Style}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Q\+C\+P\+Line\+Ending\+::\+Ending\+Style}}\label{class_q_c_p_line_ending_a5ef16e6876b4b74959c7261d8d4c2cd5}
+Defines the type of ending decoration for line-\/like items, e.\+g. an arrow.
+
+
+
+The width and length of these decorations can be controlled with the functions \doxyref{set\+Width}{p.}{class_q_c_p_line_ending_a26dc020ea985a72cc25881ce2115e34e} and \doxyref{set\+Length}{p.}{class_q_c_p_line_ending_ae36fa01763751cd64b7f56c3507e935a}. Some decorations like \doxyref{es\+Disc}{p.}{class_q_c_p_line_ending_a5ef16e6876b4b74959c7261d8d4c2cd5ae5a3414916817258bcc6dddd605e8f5c}, \doxyref{es\+Square}{p.}{class_q_c_p_line_ending_a5ef16e6876b4b74959c7261d8d4c2cd5ae1836502fa43d8990bb62b2d493a140a}, \doxyref{es\+Diamond}{p.}{class_q_c_p_line_ending_a5ef16e6876b4b74959c7261d8d4c2cd5a378fe5a8b768411b0bc1765210fe7200} and \doxyref{es\+Bar}{p.}{class_q_c_p_line_ending_a5ef16e6876b4b74959c7261d8d4c2cd5a2cf543bbca332df26d89bf779f50469f} only support a width, the length property is ignored.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{Q\+C\+P\+Item\+Line\+::set\+Head}{p.}{class_q_c_p_item_line_aebf3d687114d584e0459db6759e2c3c3}, \doxyref{Q\+C\+P\+Item\+Line\+::set\+Tail}{p.}{class_q_c_p_item_line_ac264222c3297a7efe33df9345c811a5f}, \doxyref{Q\+C\+P\+Item\+Curve\+::set\+Head}{p.}{class_q_c_p_item_curve_a08a30d9cdd63995deea3d9e20430676f}, \doxyref{Q\+C\+P\+Item\+Curve\+::set\+Tail}{p.}{class_q_c_p_item_curve_ac3488d8b1a6489c845dc5bff3ef71124}, \doxyref{Q\+C\+P\+Axis\+::set\+Lower\+Ending}{p.}{class_q_c_p_axis_a08af1c72db9ae4dc8cb8a973d44405ab}, \doxyref{Q\+C\+P\+Axis\+::set\+Upper\+Ending}{p.}{class_q_c_p_axis_a69119b892fc306f651763596685aa377} 
+\end{DoxySeeAlso}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{es\+None@{es\+None}!Q\+C\+P\+Line\+Ending@{Q\+C\+P\+Line\+Ending}}\index{Q\+C\+P\+Line\+Ending@{Q\+C\+P\+Line\+Ending}!es\+None@{es\+None}}\item[{\em 
+es\+None\label{class_q_c_p_line_ending_a5ef16e6876b4b74959c7261d8d4c2cd5aca12d500f50cd6871766801bac30fb03}
+}]No ending decoration. \index{es\+Flat\+Arrow@{es\+Flat\+Arrow}!Q\+C\+P\+Line\+Ending@{Q\+C\+P\+Line\+Ending}}\index{Q\+C\+P\+Line\+Ending@{Q\+C\+P\+Line\+Ending}!es\+Flat\+Arrow@{es\+Flat\+Arrow}}\item[{\em 
+es\+Flat\+Arrow\label{class_q_c_p_line_ending_a5ef16e6876b4b74959c7261d8d4c2cd5a3d7dcea2f100671727c3417142154f8f}
+}]A filled arrow head with a straight/flat back (a triangle) \index{es\+Spike\+Arrow@{es\+Spike\+Arrow}!Q\+C\+P\+Line\+Ending@{Q\+C\+P\+Line\+Ending}}\index{Q\+C\+P\+Line\+Ending@{Q\+C\+P\+Line\+Ending}!es\+Spike\+Arrow@{es\+Spike\+Arrow}}\item[{\em 
+es\+Spike\+Arrow\label{class_q_c_p_line_ending_a5ef16e6876b4b74959c7261d8d4c2cd5ab9964d0d03f812d1e79de15edbeb2cbf}
+}]A filled arrow head with an indented back. \index{es\+Line\+Arrow@{es\+Line\+Arrow}!Q\+C\+P\+Line\+Ending@{Q\+C\+P\+Line\+Ending}}\index{Q\+C\+P\+Line\+Ending@{Q\+C\+P\+Line\+Ending}!es\+Line\+Arrow@{es\+Line\+Arrow}}\item[{\em 
+es\+Line\+Arrow\label{class_q_c_p_line_ending_a5ef16e6876b4b74959c7261d8d4c2cd5a61f78ee8f375fb21cb9d250687bbcbd2}
+}]A non-\/filled arrow head with open back. \index{es\+Disc@{es\+Disc}!Q\+C\+P\+Line\+Ending@{Q\+C\+P\+Line\+Ending}}\index{Q\+C\+P\+Line\+Ending@{Q\+C\+P\+Line\+Ending}!es\+Disc@{es\+Disc}}\item[{\em 
+es\+Disc\label{class_q_c_p_line_ending_a5ef16e6876b4b74959c7261d8d4c2cd5ae5a3414916817258bcc6dddd605e8f5c}
+}]A filled circle. \index{es\+Square@{es\+Square}!Q\+C\+P\+Line\+Ending@{Q\+C\+P\+Line\+Ending}}\index{Q\+C\+P\+Line\+Ending@{Q\+C\+P\+Line\+Ending}!es\+Square@{es\+Square}}\item[{\em 
+es\+Square\label{class_q_c_p_line_ending_a5ef16e6876b4b74959c7261d8d4c2cd5ae1836502fa43d8990bb62b2d493a140a}
+}]A filled square. \index{es\+Diamond@{es\+Diamond}!Q\+C\+P\+Line\+Ending@{Q\+C\+P\+Line\+Ending}}\index{Q\+C\+P\+Line\+Ending@{Q\+C\+P\+Line\+Ending}!es\+Diamond@{es\+Diamond}}\item[{\em 
+es\+Diamond\label{class_q_c_p_line_ending_a5ef16e6876b4b74959c7261d8d4c2cd5a378fe5a8b768411b0bc1765210fe7200}
+}]A filled diamond (45° rotated square) \index{es\+Bar@{es\+Bar}!Q\+C\+P\+Line\+Ending@{Q\+C\+P\+Line\+Ending}}\index{Q\+C\+P\+Line\+Ending@{Q\+C\+P\+Line\+Ending}!es\+Bar@{es\+Bar}}\item[{\em 
+es\+Bar\label{class_q_c_p_line_ending_a5ef16e6876b4b74959c7261d8d4c2cd5a2cf543bbca332df26d89bf779f50469f}
+}]A bar perpendicular to the line. \index{es\+Half\+Bar@{es\+Half\+Bar}!Q\+C\+P\+Line\+Ending@{Q\+C\+P\+Line\+Ending}}\index{Q\+C\+P\+Line\+Ending@{Q\+C\+P\+Line\+Ending}!es\+Half\+Bar@{es\+Half\+Bar}}\item[{\em 
+es\+Half\+Bar\label{class_q_c_p_line_ending_a5ef16e6876b4b74959c7261d8d4c2cd5a126c390f0c359fcd8df1fc5e38d26d5b}
+}]A bar perpendicular to the line, pointing out to only one side (to which side can be changed with \doxyref{set\+Inverted}{p.}{class_q_c_p_line_ending_a580e4e2360b35ebb8d68f3494aa2335d}) \index{es\+Skewed\+Bar@{es\+Skewed\+Bar}!Q\+C\+P\+Line\+Ending@{Q\+C\+P\+Line\+Ending}}\index{Q\+C\+P\+Line\+Ending@{Q\+C\+P\+Line\+Ending}!es\+Skewed\+Bar@{es\+Skewed\+Bar}}\item[{\em 
+es\+Skewed\+Bar\label{class_q_c_p_line_ending_a5ef16e6876b4b74959c7261d8d4c2cd5a2b2cc96e757ca9bcd91fb70221ed43ab}
+}]A bar that is skewed (skew controllable via \doxyref{set\+Length}{p.}{class_q_c_p_line_ending_ae36fa01763751cd64b7f56c3507e935a}) \end{description}
+\end{Desc}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Q\+C\+P\+Line\+Ending@{Q\+C\+P\+Line\+Ending}!Q\+C\+P\+Line\+Ending@{Q\+C\+P\+Line\+Ending}}
+\index{Q\+C\+P\+Line\+Ending@{Q\+C\+P\+Line\+Ending}!Q\+C\+P\+Line\+Ending@{Q\+C\+P\+Line\+Ending}}
+\subsubsection[{Q\+C\+P\+Line\+Ending}]{\setlength{\rightskip}{0pt plus 5cm}Q\+C\+P\+Line\+Ending\+::\+Q\+C\+P\+Line\+Ending (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_line_ending_af2eaf8123b000d97fbd11929c669f61b}
+Creates a \doxyref{Q\+C\+P\+Line\+Ending}{p.}{class_q_c_p_line_ending} instance with default values (style \doxyref{es\+None}{p.}{class_q_c_p_line_ending_a5ef16e6876b4b74959c7261d8d4c2cd5aca12d500f50cd6871766801bac30fb03}). \index{Q\+C\+P\+Line\+Ending@{Q\+C\+P\+Line\+Ending}!Q\+C\+P\+Line\+Ending@{Q\+C\+P\+Line\+Ending}}
+\index{Q\+C\+P\+Line\+Ending@{Q\+C\+P\+Line\+Ending}!Q\+C\+P\+Line\+Ending@{Q\+C\+P\+Line\+Ending}}
+\subsubsection[{Q\+C\+P\+Line\+Ending}]{\setlength{\rightskip}{0pt plus 5cm}Q\+C\+P\+Line\+Ending\+::\+Q\+C\+P\+Line\+Ending (
+\begin{DoxyParamCaption}
+\item[{{\bf Q\+C\+P\+Line\+Ending\+::\+Ending\+Style}}]{style, }
+\item[{double}]{width = {\ttfamily 8}, }
+\item[{double}]{length = {\ttfamily 10}, }
+\item[{bool}]{inverted = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_line_ending_abb2abc7542f0c7a3c081d878248896a4}
+Creates a \doxyref{Q\+C\+P\+Line\+Ending}{p.}{class_q_c_p_line_ending} instance with the specified values. 
+
+\subsection{Member Function Documentation}
+\index{Q\+C\+P\+Line\+Ending@{Q\+C\+P\+Line\+Ending}!real\+Length@{real\+Length}}
+\index{real\+Length@{real\+Length}!Q\+C\+P\+Line\+Ending@{Q\+C\+P\+Line\+Ending}}
+\subsubsection[{real\+Length}]{\setlength{\rightskip}{0pt plus 5cm}double Q\+C\+P\+Line\+Ending\+::real\+Length (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_q_c_p_line_ending_a6a528e6dc5aabe1077a573b045715f03}
+Starting from the origin of this line ending (which is style specific), returns the length covered by the line ending symbol, in backward direction.
+
+For example, the \doxyref{es\+Spike\+Arrow}{p.}{class_q_c_p_line_ending_a5ef16e6876b4b74959c7261d8d4c2cd5ab9964d0d03f812d1e79de15edbeb2cbf} has a shorter real length than a \doxyref{es\+Flat\+Arrow}{p.}{class_q_c_p_line_ending_a5ef16e6876b4b74959c7261d8d4c2cd5a3d7dcea2f100671727c3417142154f8f}, even if both have the same \doxyref{set\+Length}{p.}{class_q_c_p_line_ending_ae36fa01763751cd64b7f56c3507e935a} value, because the spike arrow has an inward curved back, which reduces the length along its center axis (the drawing origin for arrows is at the tip).
+
+This function is used for precise, style specific placement of line endings, for example in Q\+C\+P\+Axes. \index{Q\+C\+P\+Line\+Ending@{Q\+C\+P\+Line\+Ending}!set\+Inverted@{set\+Inverted}}
+\index{set\+Inverted@{set\+Inverted}!Q\+C\+P\+Line\+Ending@{Q\+C\+P\+Line\+Ending}}
+\subsubsection[{set\+Inverted}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Line\+Ending\+::set\+Inverted (
+\begin{DoxyParamCaption}
+\item[{bool}]{inverted}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_line_ending_a580e4e2360b35ebb8d68f3494aa2335d}
+Sets whether the ending decoration shall be inverted. For example, an arrow decoration will point inward when {\itshape inverted} is set to true.
+
+Note that also the {\itshape width} direction is inverted. For symmetrical ending styles like arrows or discs, this doesn\textquotesingle{}t make a difference. However, asymmetric styles like \doxyref{es\+Half\+Bar}{p.}{class_q_c_p_line_ending_a5ef16e6876b4b74959c7261d8d4c2cd5a126c390f0c359fcd8df1fc5e38d26d5b} are affected by it, which can be used to control to which side the half bar points to. \index{Q\+C\+P\+Line\+Ending@{Q\+C\+P\+Line\+Ending}!set\+Length@{set\+Length}}
+\index{set\+Length@{set\+Length}!Q\+C\+P\+Line\+Ending@{Q\+C\+P\+Line\+Ending}}
+\subsubsection[{set\+Length}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Line\+Ending\+::set\+Length (
+\begin{DoxyParamCaption}
+\item[{double}]{length}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_line_ending_ae36fa01763751cd64b7f56c3507e935a}
+Sets the length of the ending decoration, if the style supports it. On arrows, for example, the length defines the size in pointing direction.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{set\+Width}{p.}{class_q_c_p_line_ending_a26dc020ea985a72cc25881ce2115e34e} 
+\end{DoxySeeAlso}
+\index{Q\+C\+P\+Line\+Ending@{Q\+C\+P\+Line\+Ending}!set\+Style@{set\+Style}}
+\index{set\+Style@{set\+Style}!Q\+C\+P\+Line\+Ending@{Q\+C\+P\+Line\+Ending}}
+\subsubsection[{set\+Style}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Line\+Ending\+::set\+Style (
+\begin{DoxyParamCaption}
+\item[{{\bf Q\+C\+P\+Line\+Ending\+::\+Ending\+Style}}]{style}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_line_ending_a56953b9cb8ed1bed0f025c3935f16910}
+Sets the style of the ending decoration. \index{Q\+C\+P\+Line\+Ending@{Q\+C\+P\+Line\+Ending}!set\+Width@{set\+Width}}
+\index{set\+Width@{set\+Width}!Q\+C\+P\+Line\+Ending@{Q\+C\+P\+Line\+Ending}}
+\subsubsection[{set\+Width}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Line\+Ending\+::set\+Width (
+\begin{DoxyParamCaption}
+\item[{double}]{width}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_line_ending_a26dc020ea985a72cc25881ce2115e34e}
+Sets the width of the ending decoration, if the style supports it. On arrows, for example, the width defines the size perpendicular to the arrow\textquotesingle{}s pointing direction.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{set\+Length}{p.}{class_q_c_p_line_ending_ae36fa01763751cd64b7f56c3507e935a} 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf qcustomplot.\+h}\item 
+{\bf qcustomplot.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,9 @@
+<map id="QCPRange::expand" name="QCPRange::expand">
+<area shape="rect" id="node2" href="$class_q_c_p_range.html#a6437bdf29a7ebc2c88a6045c4e622384" title="QCPRange::expanded" alt="" coords="219,5,379,32"/>
+<area shape="rect" id="node3" href="$class_q_c_p_axis.html#a499345f02ebce4b23d8ccec96e58daa9" title="QCPAxis::rescale" alt="" coords="234,56,363,83"/>
+<area shape="rect" id="node5" href="$class_q_c_p_abstract_plottable.html#a1acecfcca3e7fcda00fcbaa3c886386f" title="QCPAbstractPlottable\l::rescaleKeyAxis" alt="" coords="219,107,378,149"/>
+<area shape="rect" id="node7" href="$class_q_c_p_abstract_plottable.html#abfd0805eb1d955c0111a990246658324" title="QCPAbstractPlottable\l::rescaleValueAxis" alt="" coords="219,173,378,214"/>
+<area shape="rect" id="node8" href="$class_q_c_p_color_scale.html#a425983db4478543924ddbd04ea20a356" title="QCPColorScale::rescaleData\lRange" alt="" coords="197,238,400,279"/>
+<area shape="rect" id="node4" href="$class_q_custom_plot.html#ad86528f2cee6c7e446dea4a6e8839935" title="QCustomPlot::rescaleAxes" alt="" coords="448,56,639,83"/>
+<area shape="rect" id="node6" href="$class_q_c_p_abstract_plottable.html#a7e8fc3be43c27ccacd70a7bf9d74a5cd" title="QCPAbstractPlottable\l::rescaleAxes" alt="" coords="464,139,623,181"/>
+</map>

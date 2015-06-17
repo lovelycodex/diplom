@@ -1,0 +1,346 @@
+.TH "QCPColorMap" 3 "Thu Jun 18 2015" "Version v.2" "Voice analyze" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+QCPColorMap \- A plottable representing a two-dimensional color map in a plot\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBdataRangeChanged\fP (\fBQCPRange\fP newRange)"
+.br
+.ti -1c
+.RI "void \fBdataScaleTypeChanged\fP (\fBQCPAxis::ScaleType\fP scaleType)"
+.br
+.ti -1c
+.RI "void \fBgradientChanged\fP (\fBQCPColorGradient\fP newGradient)"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQCPColorMap\fP (\fBQCPAxis\fP *keyAxis, \fBQCPAxis\fP *valueAxis)"
+.br
+.ti -1c
+.RI "\fBQCPColorMapData\fP * \fBdata\fP () const "
+.br
+.ti -1c
+.RI "\fBQCPRange\fP \fBdataRange\fP () const "
+.br
+.ti -1c
+.RI "\fBQCPAxis::ScaleType\fP \fBdataScaleType\fP () const "
+.br
+.ti -1c
+.RI "bool \fBinterpolate\fP () const "
+.br
+.ti -1c
+.RI "bool \fBtightBoundary\fP () const "
+.br
+.ti -1c
+.RI "\fBQCPColorGradient\fP \fBgradient\fP () const "
+.br
+.ti -1c
+.RI "\fBQCPColorScale\fP * \fBcolorScale\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetData\fP (\fBQCPColorMapData\fP *\fBdata\fP, bool copy=false)"
+.br
+.ti -1c
+.RI "Q_SLOT void \fBsetDataRange\fP (const \fBQCPRange\fP &dataRange)"
+.br
+.ti -1c
+.RI "Q_SLOT void \fBsetDataScaleType\fP (\fBQCPAxis::ScaleType\fP scaleType)"
+.br
+.ti -1c
+.RI "Q_SLOT void \fBsetGradient\fP (const \fBQCPColorGradient\fP &gradient)"
+.br
+.ti -1c
+.RI "void \fBsetInterpolate\fP (bool enabled)"
+.br
+.ti -1c
+.RI "void \fBsetTightBoundary\fP (bool enabled)"
+.br
+.ti -1c
+.RI "void \fBsetColorScale\fP (\fBQCPColorScale\fP *colorScale)"
+.br
+.ti -1c
+.RI "void \fBrescaleDataRange\fP (bool recalculateDataBounds=false)"
+.br
+.ti -1c
+.RI "Q_SLOT void \fBupdateLegendIcon\fP (Qt::TransformationMode transformMode=Qt::SmoothTransformation, const QSize &thumbSize=QSize(32, 18))"
+.br
+.ti -1c
+.RI "virtual void \fBclearData\fP ()"
+.br
+.ti -1c
+.RI "virtual double \fBselectTest\fP (const QPointF &pos, bool onlySelectable, QVariant *details=0) const "
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBupdateMapImage\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBdraw\fP (\fBQCPPainter\fP *painter)"
+.br
+.ti -1c
+.RI "virtual void \fBdrawLegendIcon\fP (\fBQCPPainter\fP *painter, const QRectF &rect) const "
+.br
+.ti -1c
+.RI "virtual \fBQCPRange\fP \fBgetKeyRange\fP (bool &foundRange, \fBSignDomain\fP inSignDomain=\fBsdBoth\fP) const "
+.br
+.ti -1c
+.RI "virtual \fBQCPRange\fP \fBgetValueRange\fP (bool &foundRange, \fBSignDomain\fP inSignDomain=\fBsdBoth\fP) const "
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBQCPRange\fP \fBmDataRange\fP"
+.br
+.ti -1c
+.RI "\fBQCPAxis::ScaleType\fP \fBmDataScaleType\fP"
+.br
+.ti -1c
+.RI "\fBQCPColorMapData\fP * \fBmMapData\fP"
+.br
+.ti -1c
+.RI "\fBQCPColorGradient\fP \fBmGradient\fP"
+.br
+.ti -1c
+.RI "bool \fBmInterpolate\fP"
+.br
+.ti -1c
+.RI "bool \fBmTightBoundary\fP"
+.br
+.ti -1c
+.RI "QPointer< \fBQCPColorScale\fP > \fBmColorScale\fP"
+.br
+.ti -1c
+.RI "QImage \fBmMapImage\fP"
+.br
+.ti -1c
+.RI "QImage \fBmUndersampledMapImage\fP"
+.br
+.ti -1c
+.RI "QPixmap \fBmLegendIcon\fP"
+.br
+.ti -1c
+.RI "bool \fBmMapImageInvalidated\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBQCustomPlot\fP"
+.br
+.ti -1c
+.RI "class \fBQCPLegend\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+A plottable representing a two-dimensional color map in a plot\&. 
+
+
+.PP
+The data is stored in the class \fBQCPColorMapData\fP, which can be accessed via the \fBdata()\fP method\&.
+.PP
+A color map has three dimensions to represent a data point: The \fIkey\fP dimension, the \fIvalue\fP dimension and the \fIdata\fP dimension\&. As with other plottables such as graphs, \fIkey\fP and \fIvalue\fP correspond to two orthogonal axes on the \fBQCustomPlot\fP surface that you specify in the QColorMap constructor\&. The \fIdata\fP dimension however is encoded as the color of the point at (\fIkey\fP, \fIvalue\fP)\&.
+.PP
+Set the number of points (or \fIcells\fP) in the key/value dimension via \fBQCPColorMapData::setSize\fP\&. The plot coordinate range over which these points will be displayed is specified via \fBQCPColorMapData::setRange\fP\&. The first cell will be centered on the lower range boundary and the last cell will be centered on the upper range boundary\&. The data can be set by either accessing the cells directly with \fBQCPColorMapData::setCell\fP or by addressing the cells via their plot coordinates with \fBQCPColorMapData::setData\fP\&. If possible, you should prefer setCell, since it doesn't need to do any coordinate transformation and thus performs a bit better\&.
+.PP
+The cell with index (0, 0) is at the bottom left, if the color map uses normal (i\&.e\&. not reversed) key and value axes\&.
+.PP
+To show the user which colors correspond to which \fIdata\fP values, a \fBQCPColorScale\fP is typically placed to the right of the axis rect\&. See the documentation there for details on how to add and use a color scale\&.
+.SH "Changing the appearance"
+.PP
+The central part of the appearance is the color gradient, which can be specified via \fBsetGradient\fP\&. See the documentation of \fBQCPColorGradient\fP for details on configuring a color gradient\&.
+.PP
+The \fIdata\fP range that is mapped to the colors of the gradient can be specified with \fBsetDataRange\fP\&. To make the data range encompass the whole data set minimum to maximum, call \fBrescaleDataRange\fP\&.
+.SH "Usage"
+.PP
+Like all data representing objects in \fBQCustomPlot\fP, the \fBQCPColorMap\fP is a plottable (\fBQCPAbstractPlottable\fP)\&. So the plottable-interface of \fBQCustomPlot\fP applies (\fBQCustomPlot::plottable\fP, \fBQCustomPlot::addPlottable\fP, \fBQCustomPlot::removePlottable\fP, etc\&.)
+.PP
+Usually, you first create an instance and add it to the customPlot: 
+.PP
+.nf
+
+.fi
+.PP
+and then modify the properties of the newly created color map, e\&.g\&.: 
+.PP
+.nf
+
+.fi
+.PP
+ 
+.PP
+\fBNote:\fP
+.RS 4
+The \fBQCPColorMap\fP always displays the data at equal key/value intervals, even if the key or value axis is set to a logarithmic scaling\&. If you want to use \fBQCPColorMap\fP with logarithmic axes, you shouldn't use the \fBQCPColorMapData::setData\fP method as it uses a linear transformation to determine the cell index\&. Rather directly access the cell index with \fBQCPColorMapData::setCell\fP\&. 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "QCPColorMap::QCPColorMap (\fBQCPAxis\fP * keyAxis, \fBQCPAxis\fP * valueAxis)\fC [explicit]\fP"
+Constructs a color map with the specified \fIkeyAxis\fP and \fIvalueAxis\fP\&.
+.PP
+The constructed \fBQCPColorMap\fP can be added to the plot with \fBQCustomPlot::addPlottable\fP, \fBQCustomPlot\fP then takes ownership of the color map\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "void QCPColorMap::clearData ()\fC [virtual]\fP"
+Clears the colormap data by calling \fBQCPColorMapData::clear()\fP on the internal data\&. This also resizes the map to 0x0 cells\&. 
+.PP
+Implements \fBQCPAbstractPlottable\fP\&.
+.SS "\fBQCPColorMapData\fP * QCPColorMap::data () const\fC [inline]\fP"
+Returns a pointer to the internal data storage of type \fBQCPColorMapData\fP\&. Access this to modify data points (cells) and the color map key/value range\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetData\fP 
+.RE
+.PP
+
+.SS "void QCPColorMap::dataRangeChanged (\fBQCPRange\fP newRange)\fC [signal]\fP"
+This signal is emitted when the data range changes\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetDataRange\fP 
+.RE
+.PP
+
+.SS "void QCPColorMap::dataScaleTypeChanged (\fBQCPAxis::ScaleType\fP scaleType)\fC [signal]\fP"
+This signal is emitted when the data scale type changes\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetDataScaleType\fP 
+.RE
+.PP
+
+.SS "void QCPColorMap::gradientChanged (\fBQCPColorGradient\fP newGradient)\fC [signal]\fP"
+This signal is emitted when the gradient changes\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetGradient\fP 
+.RE
+.PP
+
+.SS "void QCPColorMap::rescaleDataRange (bool recalculateDataBounds = \fCfalse\fP)"
+Sets the data range (\fBsetDataRange\fP) to span the minimum and maximum values that occur in the current data set\&. This corresponds to the \fBrescaleKeyAxis\fP or \fBrescaleValueAxis\fP methods, only for the third data dimension of the color map\&.
+.PP
+The minimum and maximum values of the data set are buffered in the internal \fBQCPColorMapData\fP instance (\fBdata\fP)\&. As data is updated via its \fBQCPColorMapData::setCell\fP or \fBQCPColorMapData::setData\fP, the buffered minimum and maximum values are updated, too\&. For performance reasons, however, they are only updated in an expanding fashion\&. So the buffered maximum can only increase and the buffered minimum can only decrease\&. In consequence, changes to the data that actually lower the maximum of the data set (by overwriting the cell holding the current maximum with a smaller value), aren't recognized and the buffered maximum overestimates the true maximum of the data set\&. The same happens for the buffered minimum\&. To recalculate the true minimum and maximum by explicitly looking at each cell, the method \fBQCPColorMapData::recalculateDataBounds\fP can be used\&. For convenience, setting the parameter \fIrecalculateDataBounds\fP calls this method before setting the data range to the buffered minimum and maximum\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetDataRange\fP 
+.RE
+.PP
+
+.SS "double QCPColorMap::selectTest (const QPointF & pos, bool onlySelectable, QVariant * details = \fC0\fP) const\fC [virtual]\fP"
+This function is used to decide whether a click hits a layerable object or not\&.
+.PP
+\fIpos\fP is a point in pixel coordinates on the \fBQCustomPlot\fP surface\&. This function returns the shortest pixel distance of this point to the object\&. If the object is either invisible or the distance couldn't be determined, -1\&.0 is returned\&. Further, if \fIonlySelectable\fP is true and the object is not selectable, -1\&.0 is returned, too\&.
+.PP
+If the object is represented not by single lines but by an area like a \fBQCPItemText\fP or the bars of a \fBQCPBars\fP plottable, a click inside the area should also be considered a hit\&. In these cases this function thus returns a constant value greater zero but still below the parent plot's selection tolerance\&. (typically the selectionTolerance multiplied by 0\&.99)\&.
+.PP
+Providing a constant value for area objects allows selecting line objects even when they are obscured by such area objects, by clicking close to the lines (i\&.e\&. closer than 0\&.99*selectionTolerance)\&.
+.PP
+The actual setting of the selection state is not done by this function\&. This is handled by the parent \fBQCustomPlot\fP when the mouseReleaseEvent occurs, and the finally selected object is notified via the selectEvent/deselectEvent methods\&.
+.PP
+\fIdetails\fP is an optional output parameter\&. Every layerable subclass may place any information in \fIdetails\fP\&. This information will be passed to \fBselectEvent\fP when the parent \fBQCustomPlot\fP decides on the basis of this selectTest call, that the object was successfully selected\&. The subsequent call to \fBselectEvent\fP will carry the \fIdetails\fP\&. This is useful for multi-part objects (like \fBQCPAxis\fP)\&. This way, a possibly complex calculation to decide which part was clicked is only done once in \fBselectTest\fP\&. The result (i\&.e\&. the actually clicked part) can then be placed in \fIdetails\fP\&. So in the subsequent \fBselectEvent\fP, the decision which part was selected doesn't have to be done a second time for a single selection operation\&.
+.PP
+You may pass 0 as \fIdetails\fP to indicate that you are not interested in those selection details\&.
+.PP
+\fBSee also:\fP
+.RS 4
+selectEvent, deselectEvent, \fBQCustomPlot::setInteractions\fP 
+.RE
+.PP
+
+.PP
+Implements \fBQCPAbstractPlottable\fP\&.
+.SS "void QCPColorMap::setColorScale (\fBQCPColorScale\fP * colorScale)"
+Associates the color scale \fIcolorScale\fP with this color map\&.
+.PP
+This means that both the color scale and the color map synchronize their gradient, data range and data scale type (\fBsetGradient\fP, \fBsetDataRange\fP, \fBsetDataScaleType\fP)\&. Multiple color maps can be associated with one single color scale\&. This causes the color maps to also synchronize those properties, via the mutual color scale\&.
+.PP
+This function causes the color map to adopt the current color gradient, data range and data scale type of \fIcolorScale\fP\&. After this call, you may change these properties at either the color map or the color scale, and the setting will be applied to both\&.
+.PP
+Pass 0 as \fIcolorScale\fP to disconnect the color scale from this color map again\&. 
+.SS "void QCPColorMap::setData (\fBQCPColorMapData\fP * data, bool copy = \fCfalse\fP)"
+Replaces the current \fBdata\fP with the provided \fIdata\fP\&.
+.PP
+If \fIcopy\fP is set to true, the \fIdata\fP object will only be copied\&. if false, the color map takes ownership of the passed data and replaces the internal data pointer with it\&. This is significantly faster than copying for large datasets\&. 
+.SS "void QCPColorMap::setDataRange (const \fBQCPRange\fP & dataRange)"
+Sets the data range of this color map to \fIdataRange\fP\&. The data range defines which data values are mapped to the color gradient\&.
+.PP
+To make the data range span the full range of the data set, use \fBrescaleDataRange\fP\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBQCPColorScale::setDataRange\fP 
+.RE
+.PP
+
+.SS "void QCPColorMap::setDataScaleType (\fBQCPAxis::ScaleType\fP scaleType)"
+Sets whether the data is correlated with the color gradient linearly or logarithmically\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBQCPColorScale::setDataScaleType\fP 
+.RE
+.PP
+
+.SS "void QCPColorMap::setGradient (const \fBQCPColorGradient\fP & gradient)"
+Sets the color gradient that is used to represent the data\&. For more details on how to create an own gradient or use one of the preset gradients, see \fBQCPColorGradient\fP\&.
+.PP
+The colors defined by the gradient will be used to represent data values in the currently set data range, see \fBsetDataRange\fP\&. Data points that are outside this data range will either be colored uniformly with the respective gradient boundary color, or the gradient will repeat, depending on \fBQCPColorGradient::setPeriodic\fP\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBQCPColorScale::setGradient\fP 
+.RE
+.PP
+
+.SS "void QCPColorMap::setInterpolate (bool enabled)"
+Sets whether the color map image shall use bicubic interpolation when displaying the color map shrinked or expanded, and not at a 1:1 pixel-to-data scale\&.
+.PP
+A 10*10 color map, with interpolation and without interpolation enabled
+.SS "void QCPColorMap::setTightBoundary (bool enabled)"
+Sets whether the outer most data rows and columns are clipped to the specified key and value range (see \fBQCPColorMapData::setKeyRange\fP, \fBQCPColorMapData::setValueRange\fP)\&.
+.PP
+if \fIenabled\fP is set to false, the data points at the border of the color map are drawn with the same width and height as all other data points\&. Since the data points are represented by rectangles of one color centered on the data coordinate, this means that the shown color map extends by half a data point over the specified key/value range in each direction\&.
+.PP
+A color map, with tight boundary enabled and disabled
+.SS "void QCPColorMap::updateLegendIcon (Qt::TransformationMode transformMode = \fCQt::SmoothTransformation\fP, const QSize & thumbSize = \fCQSize(32, 18)\fP)"
+Takes the current appearance of the color map and updates the legend icon, which is used to represent this color map in the legend (see \fBQCPLegend\fP)\&.
+.PP
+The \fItransformMode\fP specifies whether the rescaling is done by a faster, low quality image scaling algorithm (Qt::FastTransformation) or by a slower, higher quality algorithm (Qt::SmoothTransformation)\&.
+.PP
+The current color map appearance is scaled down to \fIthumbSize\fP\&. Ideally, this should be equal to the size of the legend icon (see \fBQCPLegend::setIconSize\fP)\&. If it isn't exactly the configured legend icon size, the thumb will be rescaled during drawing of the legend item\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetDataRange\fP 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Voice analyze from the source code\&.

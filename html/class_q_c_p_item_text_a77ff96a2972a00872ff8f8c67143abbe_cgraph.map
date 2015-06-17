@@ -1,0 +1,12 @@
+<map id="QCPItemText::QCPItemText" name="QCPItemText::QCPItemText">
+<area shape="rect" id="node2" href="$class_q_c_p_item_text.html#a4bcc10cd97952c3f749d75824b5077f0" title="QCPItemText::setRotation" alt="" coords="269,5,455,32"/>
+<area shape="rect" id="node3" href="$class_q_c_p_item_text.html#ab5bc0684c4d1bed81949a11b34dba478" title="QCPItemText::setTextAlignment" alt="" coords="249,56,475,83"/>
+<area shape="rect" id="node4" href="$class_q_c_p_item_text.html#a781cdf8c640fc6a055dcff1e675c8c7a" title="QCPItemText::setPosition\lAlignment" alt="" coords="271,107,453,149"/>
+<area shape="rect" id="node5" href="$class_q_c_p_item_text.html#a3dacdda0ac88f99a05b333b977c48747" title="QCPItemText::setText" alt="" coords="282,173,442,200"/>
+<area shape="rect" id="node6" href="$class_q_c_p_item_text.html#a9b9ec6eea0eb0603977ff84d4c78d0a3" title="QCPItemText::setPen" alt="" coords="283,224,441,251"/>
+<area shape="rect" id="node7" href="$class_q_c_p_item_text.html#a291febe586f0da3f1c392e77bef4aa20" title="QCPItemText::setSelectedPen" alt="" coords="255,275,469,301"/>
+<area shape="rect" id="node8" href="$class_q_c_p_item_text.html#a1c7e131516df2ed8d941ef31240ded8e" title="QCPItemText::setBrush" alt="" coords="277,325,447,352"/>
+<area shape="rect" id="node9" href="$class_q_c_p_item_text.html#a6b8377eeb2af75eb9528422671ac16cb" title="QCPItemText::setSelected\lBrush" alt="" coords="267,377,457,418"/>
+<area shape="rect" id="node10" href="$class_q_c_p_item_text.html#aa51efc0841fe52da9eaf8aff6fc8a8b2" title="QCPItemText::setColor" alt="" coords="279,443,445,469"/>
+<area shape="rect" id="node11" href="$class_q_c_p_item_text.html#ae7ba0bdb75c897b028388e45bfd435fa" title="QCPItemText::setSelected\lColor" alt="" coords="267,494,457,535"/>
+</map>

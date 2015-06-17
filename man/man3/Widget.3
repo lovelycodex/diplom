@@ -1,0 +1,118 @@
+.TH "Widget" 3 "Thu Jun 18 2015" "Version v.2" "Voice analyze" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Widget \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBPlotSpectrumSignal\fP ()"
+.br
+.ti -1c
+.RI "void \fBPlotKaiserWindowSignal\fP ()"
+.br
+.ti -1c
+.RI "void \fBfill_ftt_complex_Signal\fP ()"
+.br
+.ti -1c
+.RI "void \fBpost_filtering_Signal\fP ()"
+.br
+.ti -1c
+.RI "void \fBliftering_Signal\fP ()"
+.br
+.ti -1c
+.RI "void \fBkaiser_window_signal\fP ()"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBWidget\fP (QWidget *parent=0)"
+.br
+.RI "\fIDefault constructor\&. Set a start up configuration\&. \fP"
+.ti -1c
+.RI "\fB~Widget\fP ()"
+.br
+.RI "\fI\fBWidget::~Widget\fP Defaul destructor\&. \fP"
+.ti -1c
+.RI "void \fBstartRecording\fP ()"
+.br
+.RI "\fIStarts the record and set default confuration for audio file\&. If start record is failure free RECBUF is comming\&. \fP"
+.ti -1c
+.RI "void \fBstopRecording\fP ()"
+.br
+.RI "\fINo incoming parameters\&. Get data from RCHAN\&. Creating the stream file\&. If BASS_StreamCreateFile is failure colled BASS_Free()\&. \fP"
+.ti -1c
+.RI "void \fBupdateInputInfo\fP ()"
+.br
+.RI "\fI\fBWidget::updateInputInfo\fP\&. \fP"
+.ti -1c
+.RI "void \fBwriteToDisk\fP ()"
+.br
+.RI "\fINo incoming parameters\&. Write recording data to disk\&. \fP"
+.ti -1c
+.RI "float \fBI0\fP (float)"
+.br
+.RI "\fIzeroth order modified Bessel function of the first kind, which has a complex mathematical description\&. \fP"
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Widget::Widget (QWidget * parent = \fC0\fP)\fC [explicit]\fP"
+
+.PP
+Default constructor\&. Set a start up configuration\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIQWidget\fP *parent - Link to parent \fBWidget\fP (default is null)\&. 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "float Widget::I0 (float x)"
+
+.PP
+zeroth order modified Bessel function of the first kind, which has a complex mathematical description\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIx\fP 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+.RE
+.PP
+
+.SS "void Widget::stopRecording ()"
+
+.PP
+No incoming parameters\&. Get data from RCHAN\&. Creating the stream file\&. If BASS_StreamCreateFile is failure colled BASS_Free()\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fINo\fP params 
+.RE
+.PP
+
+.SS "void Widget::writeToDisk ()"
+
+.PP
+No incoming parameters\&. Write recording data to disk\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fINo\fP param 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Voice analyze from the source code\&.

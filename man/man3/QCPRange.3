@@ -1,0 +1,237 @@
+.TH "QCPRange" 3 "Thu Jun 18 2015" "Version v.2" "Voice analyze" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+QCPRange \- Represents the range an axis is encompassing\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQCPRange\fP ()"
+.br
+.ti -1c
+.RI "\fBQCPRange\fP (double lower, double upper)"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBQCPRange\fP &other) const "
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBQCPRange\fP &other) const "
+.br
+.ti -1c
+.RI "\fBQCPRange\fP & \fBoperator+=\fP (const double &value)"
+.br
+.ti -1c
+.RI "\fBQCPRange\fP & \fBoperator-=\fP (const double &value)"
+.br
+.ti -1c
+.RI "\fBQCPRange\fP & \fBoperator*=\fP (const double &value)"
+.br
+.ti -1c
+.RI "\fBQCPRange\fP & \fBoperator/=\fP (const double &value)"
+.br
+.ti -1c
+.RI "double \fBsize\fP () const "
+.br
+.ti -1c
+.RI "double \fBcenter\fP () const "
+.br
+.ti -1c
+.RI "void \fBnormalize\fP ()"
+.br
+.ti -1c
+.RI "void \fBexpand\fP (const \fBQCPRange\fP &otherRange)"
+.br
+.ti -1c
+.RI "\fBQCPRange\fP \fBexpanded\fP (const \fBQCPRange\fP &otherRange) const "
+.br
+.ti -1c
+.RI "\fBQCPRange\fP \fBsanitizedForLogScale\fP () const "
+.br
+.ti -1c
+.RI "\fBQCPRange\fP \fBsanitizedForLinScale\fP () const "
+.br
+.ti -1c
+.RI "bool \fBcontains\fP (double value) const "
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static bool \fBvalidRange\fP (double lower, double upper)"
+.br
+.ti -1c
+.RI "static bool \fBvalidRange\fP (const \fBQCPRange\fP &range)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "double \fBlower\fP"
+.br
+.ti -1c
+.RI "double \fBupper\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const double \fBminRange\fP = 1e-280"
+.br
+.ti -1c
+.RI "static const double \fBmaxRange\fP = 1e250"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "const \fBQCPRange\fP \fBoperator+\fP (const \fBQCPRange\fP &, double)"
+.br
+.ti -1c
+.RI "const \fBQCPRange\fP \fBoperator+\fP (double, const \fBQCPRange\fP &)"
+.br
+.ti -1c
+.RI "const \fBQCPRange\fP \fBoperator-\fP (const \fBQCPRange\fP &range, double value)"
+.br
+.ti -1c
+.RI "const \fBQCPRange\fP \fBoperator*\fP (const \fBQCPRange\fP &range, double value)"
+.br
+.ti -1c
+.RI "const \fBQCPRange\fP \fBoperator*\fP (double value, const \fBQCPRange\fP &range)"
+.br
+.ti -1c
+.RI "const \fBQCPRange\fP \fBoperator/\fP (const \fBQCPRange\fP &range, double value)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents the range an axis is encompassing\&. 
+
+contains a \fIlower\fP and \fIupper\fP double value and provides convenience input, output and modification functions\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBQCPAxis::setRange\fP 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "QCPRange::QCPRange ()"
+Constructs a range with \fIlower\fP and \fIupper\fP set to zero\&. 
+.SS "QCPRange::QCPRange (double lower, double upper)"
+This is an overloaded member function, provided for convenience\&. It differs from the above function only in what argument(s) it accepts\&. Constructs a range with the specified \fIlower\fP and \fIupper\fP values\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "double QCPRange::center () const"
+Returns the center of the range, i\&.e\&. (\fIupper+\fIlower\fP)*0\fP\&.5 
+.SS "bool QCPRange::contains (double value) const"
+Returns true when \fIvalue\fP lies within or exactly on the borders of the range\&. 
+.SS "void QCPRange::expand (const \fBQCPRange\fP & otherRange)"
+Expands this range such that \fIotherRange\fP is contained in the new range\&. It is assumed that both this range and \fIotherRange\fP are normalized (see \fBnormalize\fP)\&.
+.PP
+If \fIotherRange\fP is already inside the current range, this function does nothing\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBexpanded\fP 
+.RE
+.PP
+
+.SS "\fBQCPRange\fP QCPRange::expanded (const \fBQCPRange\fP & otherRange) const"
+Returns an expanded range that contains this and \fIotherRange\fP\&. It is assumed that both this range and \fIotherRange\fP are normalized (see \fBnormalize\fP)\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBexpand\fP 
+.RE
+.PP
+
+.SS "void QCPRange::normalize ()"
+Makes sure \fIlower\fP is numerically smaller than \fIupper\fP\&. If this is not the case, the values are swapped\&. 
+.SS "\fBQCPRange\fP & QCPRange::operator*= (const double & value)\fC [inline]\fP"
+Multiplies both boundaries of the range by \fIvalue\fP\&. 
+.SS "\fBQCPRange\fP & QCPRange::operator+= (const double & value)\fC [inline]\fP"
+Adds \fIvalue\fP to both boundaries of the range\&. 
+.SS "\fBQCPRange\fP & QCPRange::operator-= (const double & value)\fC [inline]\fP"
+Subtracts \fIvalue\fP from both boundaries of the range\&. 
+.SS "\fBQCPRange\fP & QCPRange::operator/= (const double & value)\fC [inline]\fP"
+Divides both boundaries of the range by \fIvalue\fP\&. 
+.SS "\fBQCPRange\fP QCPRange::sanitizedForLinScale () const"
+Returns a sanitized version of the range\&. Sanitized means for linear scales, that \fIlower\fP will always be numerically smaller (or equal) to \fIupper\fP\&. 
+.SS "\fBQCPRange\fP QCPRange::sanitizedForLogScale () const"
+Returns a sanitized version of the range\&. Sanitized means for logarithmic scales, that the range won't span the positive and negative sign domain, i\&.e\&. contain zero\&. Further \fIlower\fP will always be numerically smaller (or equal) to \fIupper\fP\&.
+.PP
+If the original range does span positive and negative sign domains or contains zero, the returned range will try to approximate the original range as good as possible\&. If the positive interval of the original range is wider than the negative interval, the returned range will only contain the positive interval, with lower bound set to \fIrangeFac\fP or \fIrangeFac\fP *\fIupper\fP, whichever is closer to zero\&. Same procedure is used if the negative interval is wider than the positive interval, this time by changing the \fIupper\fP bound\&. 
+.SS "double QCPRange::size () const"
+Returns the size of the range, i\&.e\&. \fIupper-\fIlower\fP \fP 
+.SS "bool QCPRange::validRange (double lower, double upper)\fC [static]\fP"
+Checks, whether the specified range is within valid bounds, which are defined as \fBQCPRange::maxRange\fP and \fBQCPRange::minRange\fP\&. A valid range means: 
+.PD 0
+
+.IP "\(bu" 2
+range bounds within -maxRange and maxRange 
+.IP "\(bu" 2
+range size above minRange 
+.IP "\(bu" 2
+range size below maxRange 
+.PP
+
+.SS "bool QCPRange::validRange (const \fBQCPRange\fP & range)\fC [static]\fP"
+This is an overloaded member function, provided for convenience\&. It differs from the above function only in what argument(s) it accepts\&. Checks, whether the specified range is within valid bounds, which are defined as \fBQCPRange::maxRange\fP and \fBQCPRange::minRange\fP\&. A valid range means: 
+.PD 0
+
+.IP "\(bu" 2
+range bounds within -maxRange and maxRange 
+.IP "\(bu" 2
+range size above minRange 
+.IP "\(bu" 2
+range size below maxRange 
+.PP
+
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "const \fBQCPRange\fP operator* (const \fBQCPRange\fP & range, double value)\fC [friend]\fP"
+Multiplies both boundaries of the range by \fIvalue\fP\&. 
+.SS "const \fBQCPRange\fP operator* (double value, const \fBQCPRange\fP & range)\fC [friend]\fP"
+Multiplies both boundaries of the range by \fIvalue\fP\&. 
+.SS "const \fBQCPRange\fP operator+ (const \fBQCPRange\fP & range, double value)\fC [friend]\fP"
+Adds \fIvalue\fP to both boundaries of the range\&. 
+.SS "const \fBQCPRange\fP operator+ (double value, const \fBQCPRange\fP & range)\fC [friend]\fP"
+Adds \fIvalue\fP to both boundaries of the range\&. 
+.SS "const \fBQCPRange\fP operator- (const \fBQCPRange\fP & range, double value)\fC [friend]\fP"
+Subtracts \fIvalue\fP from both boundaries of the range\&. 
+.SS "const \fBQCPRange\fP operator/ (const \fBQCPRange\fP & range, double value)\fC [friend]\fP"
+Divides both boundaries of the range by \fIvalue\fP\&. 
+.SH "Member Data Documentation"
+.PP 
+.SS "const double QCPRange::maxRange = 1e250\fC [static]\fP"
+Maximum values (negative and positive) the range will accept in range-changing functions\&. Larger absolute values would cause errors due to the 11-bit exponent of double precision numbers, corresponding to a maximum magnitude of roughly 1e308\&. Since the number of planck-volumes in the entire visible universe is only ~1e183, this should be enough\&. 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBvalidRange\fP, \fBminRange\fP 
+.RE
+.PP
+
+.SS "const double QCPRange::minRange = 1e-280\fC [static]\fP"
+Minimum range size (\fIupper\fP - \fIlower\fP) the range changing functions will accept\&. Smaller intervals would cause errors due to the 11-bit exponent of double precision numbers, corresponding to a minimum magnitude of roughly 1e-308\&. 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBvalidRange\fP, \fBmaxRange\fP 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Voice analyze from the source code\&.

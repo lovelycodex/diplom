@@ -1,0 +1,77 @@
+.TH "QCPPlottableLegendItem" 3 "Thu Jun 18 2015" "Version v.2" "Voice analyze" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+QCPPlottableLegendItem \- A legend item representing a plottable with an icon and the plottable name\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQCPPlottableLegendItem\fP (\fBQCPLegend\fP *parent, \fBQCPAbstractPlottable\fP *plottable)"
+.br
+.ti -1c
+.RI "\fBQCPAbstractPlottable\fP * \fBplottable\fP ()"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBdraw\fP (\fBQCPPainter\fP *painter)"
+.br
+.ti -1c
+.RI "virtual QSize \fBminimumSizeHint\fP () const "
+.br
+.ti -1c
+.RI "QPen \fBgetIconBorderPen\fP () const "
+.br
+.ti -1c
+.RI "QColor \fBgetTextColor\fP () const "
+.br
+.ti -1c
+.RI "QFont \fBgetFont\fP () const "
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBQCPAbstractPlottable\fP * \fBmPlottable\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+A legend item representing a plottable with an icon and the plottable name\&. 
+
+This is the standard legend item for plottables\&. It displays an icon of the plottable next to the plottable name\&. The icon is drawn by the respective plottable itself (\fBQCPAbstractPlottable::drawLegendIcon\fP), and tries to give an intuitive symbol for the plottable\&. For example, the \fBQCPGraph\fP draws a centered horizontal line and/or a single scatter point in the middle\&.
+.PP
+Legend items of this type are always associated with one plottable (retrievable via the plottable() function and settable with the constructor)\&. You may change the font of the plottable name with \fBsetFont\fP\&. Icon padding and border pen is taken from the parent \fBQCPLegend\fP, see \fBQCPLegend::setIconBorderPen\fP and \fBQCPLegend::setIconTextPadding\fP\&.
+.PP
+The function \fBQCPAbstractPlottable::addToLegend\fP/\fBQCPAbstractPlottable::removeFromLegend\fP creates/removes legend items of this type in the default implementation\&. However, these functions may be reimplemented such that a different kind of legend item (e\&.g a direct subclass of \fBQCPAbstractLegendItem\fP) is used for that plottable\&.
+.PP
+Since \fBQCPLegend\fP is based on \fBQCPLayoutGrid\fP, a legend item itself is just a subclass of \fBQCPLayoutElement\fP\&. While it could be added to a legend (or any other layout) via the normal layout interface, \fBQCPLegend\fP has specialized functions for handling legend items conveniently, see the documentation of \fBQCPLegend\fP\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "QCPPlottableLegendItem::QCPPlottableLegendItem (\fBQCPLegend\fP * parent, \fBQCPAbstractPlottable\fP * plottable)"
+Creates a new legend item associated with \fIplottable\fP\&.
+.PP
+Once it's created, it can be added to the legend via \fBQCPLegend::addItem\fP\&.
+.PP
+A more convenient way of adding/removing a plottable to/from the legend is via the functions \fBQCPAbstractPlottable::addToLegend\fP and \fBQCPAbstractPlottable::removeFromLegend\fP\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "QSize QCPPlottableLegendItem::minimumSizeHint () const\fC [protected]\fP, \fC [virtual]\fP"
+Returns the minimum size this layout element (the inner \fBrect\fP) may be compressed to\&.
+.PP
+if a minimum size (\fBsetMinimumSize\fP) was not set manually, parent layouts consult this function to determine the minimum allowed size of this layout element\&. (A manual minimum size is considered set if it is non-zero\&.) 
+.PP
+Reimplemented from \fBQCPLayoutElement\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Voice analyze from the source code\&.

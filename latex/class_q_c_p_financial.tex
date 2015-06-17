@@ -1,0 +1,563 @@
+\section{Q\+C\+P\+Financial Class Reference}
+\label{class_q_c_p_financial}\index{Q\+C\+P\+Financial@{Q\+C\+P\+Financial}}
+
+
+A plottable representing a financial stock chart.  
+
+
+
+
+Collaboration diagram for Q\+C\+P\+Financial\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_financial__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf Chart\+Style} \{ {\bf cs\+Ohlc}, 
+{\bf cs\+Candlestick}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Q\+C\+P\+Financial} ({\bf Q\+C\+P\+Axis} $\ast$key\+Axis, {\bf Q\+C\+P\+Axis} $\ast$value\+Axis)
+\item 
+{\bf Q\+C\+P\+Financial\+Data\+Map} $\ast$ {\bf data} () const 
+\item 
+{\bf Chart\+Style} {\bfseries chart\+Style} () const \label{class_q_c_p_financial_a0888c9308cc5fcb4daa70184f9582412}
+
+\item 
+double {\bfseries width} () const \label{class_q_c_p_financial_a71ccaa04cdade0ec08a2117db6e4a4ce}
+
+\item 
+bool {\bfseries two\+Colored} () const \label{class_q_c_p_financial_a2bab30fc4eee38a0da3a05846b8d7ac7}
+
+\item 
+Q\+Brush {\bfseries brush\+Positive} () const \label{class_q_c_p_financial_acb69536a334fae7fc31b2bfd4eca81f5}
+
+\item 
+Q\+Brush {\bfseries brush\+Negative} () const \label{class_q_c_p_financial_a91e09b31ce341c17b917e77fdc68d84e}
+
+\item 
+Q\+Pen {\bfseries pen\+Positive} () const \label{class_q_c_p_financial_a544899bde79d06e17ccefcb9926d87ce}
+
+\item 
+Q\+Pen {\bfseries pen\+Negative} () const \label{class_q_c_p_financial_a557fe911aa04f70c1734c8fa09994148}
+
+\item 
+void {\bf set\+Data} ({\bf Q\+C\+P\+Financial\+Data\+Map} $\ast${\bf data}, bool copy=false)
+\item 
+void {\bf set\+Data} (const Q\+Vector$<$ double $>$ \&key, const Q\+Vector$<$ double $>$ \&open, const Q\+Vector$<$ double $>$ \&high, const Q\+Vector$<$ double $>$ \&low, const Q\+Vector$<$ double $>$ \&close)
+\item 
+void {\bf set\+Chart\+Style} ({\bf Chart\+Style} style)
+\item 
+void {\bf set\+Width} (double width)
+\item 
+void {\bf set\+Two\+Colored} (bool two\+Colored)
+\item 
+void {\bf set\+Brush\+Positive} (const Q\+Brush \&brush)
+\item 
+void {\bf set\+Brush\+Negative} (const Q\+Brush \&brush)
+\item 
+void {\bf set\+Pen\+Positive} (const Q\+Pen \&pen)
+\item 
+void {\bf set\+Pen\+Negative} (const Q\+Pen \&pen)
+\item 
+void {\bf add\+Data} (const {\bf Q\+C\+P\+Financial\+Data\+Map} \&data\+Map)
+\item 
+void {\bf add\+Data} (const {\bf Q\+C\+P\+Financial\+Data} \&{\bf data})
+\item 
+void {\bf add\+Data} (double key, double open, double high, double low, double close)
+\item 
+void {\bf add\+Data} (const Q\+Vector$<$ double $>$ \&key, const Q\+Vector$<$ double $>$ \&open, const Q\+Vector$<$ double $>$ \&high, const Q\+Vector$<$ double $>$ \&low, const Q\+Vector$<$ double $>$ \&close)
+\item 
+void {\bf remove\+Data\+Before} (double key)
+\item 
+void {\bf remove\+Data\+After} (double key)
+\item 
+void {\bf remove\+Data} (double from\+Key, double to\+Key)
+\item 
+void {\bf remove\+Data} (double key)
+\item 
+virtual void {\bf clear\+Data} ()
+\item 
+virtual double {\bf select\+Test} (const Q\+Point\+F \&pos, bool only\+Selectable, Q\+Variant $\ast$details=0) const 
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf Q\+C\+P\+Financial\+Data\+Map} {\bf time\+Series\+To\+Ohlc} (const Q\+Vector$<$ double $>$ \&time, const Q\+Vector$<$ double $>$ \&value, double time\+Bin\+Size, double time\+Bin\+Offset=0)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries draw} ({\bf Q\+C\+P\+Painter} $\ast$painter)\label{class_q_c_p_financial_ad71a59a1b42616594831e04e52c92120}
+
+\item 
+virtual void {\bfseries draw\+Legend\+Icon} ({\bf Q\+C\+P\+Painter} $\ast$painter, const Q\+Rect\+F \&rect) const \label{class_q_c_p_financial_aca85e8435b092cc8c3e5de65fcfb22c8}
+
+\item 
+virtual {\bf Q\+C\+P\+Range} {\bfseries get\+Key\+Range} (bool \&found\+Range, {\bf Sign\+Domain} in\+Sign\+Domain={\bf sd\+Both}) const \label{class_q_c_p_financial_acc747f4a9b4fddfb14eb9d803349a534}
+
+\item 
+virtual {\bf Q\+C\+P\+Range} {\bfseries get\+Value\+Range} (bool \&found\+Range, {\bf Sign\+Domain} in\+Sign\+Domain={\bf sd\+Both}) const \label{class_q_c_p_financial_ab2b5f3ef9a503ba32ead32081333f4e7}
+
+\item 
+void {\bfseries draw\+Ohlc\+Plot} ({\bf Q\+C\+P\+Painter} $\ast$painter, const Q\+C\+P\+Financial\+Data\+Map\+::const\+\_\+iterator \&begin, const Q\+C\+P\+Financial\+Data\+Map\+::const\+\_\+iterator \&end)\label{class_q_c_p_financial_a3c3007a7434e29d042c77ccf4f497e66}
+
+\item 
+void {\bfseries draw\+Candlestick\+Plot} ({\bf Q\+C\+P\+Painter} $\ast$painter, const Q\+C\+P\+Financial\+Data\+Map\+::const\+\_\+iterator \&begin, const Q\+C\+P\+Financial\+Data\+Map\+::const\+\_\+iterator \&end)\label{class_q_c_p_financial_a71f5081da0e5ab9c40a488ad40cff122}
+
+\item 
+double {\bfseries ohlc\+Select\+Test} (const Q\+Point\+F \&pos, const Q\+C\+P\+Financial\+Data\+Map\+::const\+\_\+iterator \&begin, const Q\+C\+P\+Financial\+Data\+Map\+::const\+\_\+iterator \&end) const \label{class_q_c_p_financial_a9c7d79351e728a67bfb6821c1d1bd6c0}
+
+\item 
+double {\bfseries candlestick\+Select\+Test} (const Q\+Point\+F \&pos, const Q\+C\+P\+Financial\+Data\+Map\+::const\+\_\+iterator \&begin, const Q\+C\+P\+Financial\+Data\+Map\+::const\+\_\+iterator \&end) const \label{class_q_c_p_financial_abd0137244a17d5486a01ee442b083333}
+
+\item 
+void {\bfseries get\+Visible\+Data\+Bounds} (Q\+C\+P\+Financial\+Data\+Map\+::const\+\_\+iterator \&lower, Q\+C\+P\+Financial\+Data\+Map\+::const\+\_\+iterator \&upper) const \label{class_q_c_p_financial_aca2edf9f19fae733cdb6bd4549019b84}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Q\+C\+P\+Financial\+Data\+Map} $\ast$ {\bfseries m\+Data}\label{class_q_c_p_financial_a475f63587ca1077d8c30aaf2b71ae026}
+
+\item 
+{\bf Chart\+Style} {\bfseries m\+Chart\+Style}\label{class_q_c_p_financial_ab65c2ce8d6354451870bb44b894c1e92}
+
+\item 
+double {\bfseries m\+Width}\label{class_q_c_p_financial_af630e5eb8485146b9c777e63fd1cf993}
+
+\item 
+bool {\bfseries m\+Two\+Colored}\label{class_q_c_p_financial_a6afe919190b884d9bac026cefcc8c0a8}
+
+\item 
+Q\+Brush {\bfseries m\+Brush\+Positive}\label{class_q_c_p_financial_ab7e6eed16260a2f88ca6bd940dffea79}
+
+\item 
+Q\+Brush {\bfseries m\+Brush\+Negative}\label{class_q_c_p_financial_acb0e31874b7a1deb56bd42e8ab3e68f2}
+
+\item 
+Q\+Pen {\bfseries m\+Pen\+Positive}\label{class_q_c_p_financial_aa6599186f417ba615caebb3f6c762bd8}
+
+\item 
+Q\+Pen {\bfseries m\+Pen\+Negative}\label{class_q_c_p_financial_a263fbfefde2cc19c8d4024a8319c2bbb}
+
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries Q\+Custom\+Plot}\label{class_q_c_p_financial_a1cdf9df76adcfae45261690aa0ca2198}
+
+\item 
+class {\bfseries Q\+C\+P\+Legend}\label{class_q_c_p_financial_a8429035e7adfbd7f05805a6530ad5e3b}
+
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+A plottable representing a financial stock chart. 
+
+
+
+This plottable represents time series data binned to certain intervals, mainly used for stock charts. The two common representations O\+H\+L\+C (Open-\/\+High-\/\+Low-\/\+Close) bars and Candlesticks can be set via \doxyref{set\+Chart\+Style}{p.}{class_q_c_p_financial_a5a59175d36279d71596e64d7bb65596f}.
+
+The data is passed via \doxyref{set\+Data}{p.}{class_q_c_p_financial_adf12a86082f1e488df6a4e8603f8fd6d} as a set of open/high/low/close values at certain keys (typically times). This means the data must be already binned appropriately. If data is only available as a series of values (e.\+g. {\itshape price} against {\itshape time}), you can use the static convenience function \doxyref{time\+Series\+To\+Ohlc}{p.}{class_q_c_p_financial_a0c3453d1c03e320950fdd2df54e3ebc8} to generate binned O\+H\+L\+C-\/data which can then be passed to \doxyref{set\+Data}{p.}{class_q_c_p_financial_adf12a86082f1e488df6a4e8603f8fd6d}.
+
+The width of the O\+H\+L\+C bars/candlesticks can be controlled with \doxyref{set\+Width}{p.}{class_q_c_p_financial_a99633f8bac86a61d534ae5eeb1a3068f} and is given in plot key coordinates. A typical choice is to set it to (or slightly less than) one bin interval width.\subsection{Changing the appearance}\label{class_q_c_p_statistical_box_appearance}
+Charts can be either single-\/ or two-\/colored (\doxyref{set\+Two\+Colored}{p.}{class_q_c_p_financial_a138e44aac160a17a9676652e240c5f08}). If set to be single-\/colored, lines are drawn with the plottable\textquotesingle{}s pen (\doxyref{set\+Pen}{p.}{class_q_c_p_abstract_plottable_ab74b09ae4c0e7e13142fe4b5bf46cac7}) and fills with the brush (\doxyref{set\+Brush}{p.}{class_q_c_p_abstract_plottable_a7a4b92144dca6453a1f0f210e27edc74}).
+
+If set to two-\/colored, positive changes of the value during an interval ({\itshape close} $>$= {\itshape open}) are represented with a different pen and brush than negative changes ({\itshape close} $<$ {\itshape open}). These can be configured with \doxyref{set\+Pen\+Positive}{p.}{class_q_c_p_financial_ac58aa3adc7a35aab0088764b840683e5}, \doxyref{set\+Pen\+Negative}{p.}{class_q_c_p_financial_afe5c07e94ccea01a75b3a2476993c346}, \doxyref{set\+Brush\+Positive}{p.}{class_q_c_p_financial_a5ebff2b1764efd07cc44942e67821829}, and \doxyref{set\+Brush\+Negative}{p.}{class_q_c_p_financial_a8bbdd87629f9144b3ef51af660c0961a}. In two-\/colored mode, the normal plottable pen/brush is ignored. Upon selection however, the normal selected pen/brush (\doxyref{set\+Selected\+Pen}{p.}{class_q_c_p_abstract_plottable_a6911603cad23ab0469b108224517516f}, \doxyref{set\+Selected\+Brush}{p.}{class_q_c_p_abstract_plottable_ae8c816874089f7a44001e8618e81a9dc}) is used, irrespective of whether the chart is single-\/ or two-\/colored. 
+
+\subsection{Member Enumeration Documentation}
+\index{Q\+C\+P\+Financial@{Q\+C\+P\+Financial}!Chart\+Style@{Chart\+Style}}
+\index{Chart\+Style@{Chart\+Style}!Q\+C\+P\+Financial@{Q\+C\+P\+Financial}}
+\subsubsection[{Chart\+Style}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Q\+C\+P\+Financial\+::\+Chart\+Style}}\label{class_q_c_p_financial_a0f800e21ee98d646dfc6f8f89d10ebfb}
+Defines the possible representations of O\+H\+L\+C data in the plot.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{set\+Chart\+Style}{p.}{class_q_c_p_financial_a5a59175d36279d71596e64d7bb65596f} 
+\end{DoxySeeAlso}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{cs\+Ohlc@{cs\+Ohlc}!Q\+C\+P\+Financial@{Q\+C\+P\+Financial}}\index{Q\+C\+P\+Financial@{Q\+C\+P\+Financial}!cs\+Ohlc@{cs\+Ohlc}}\item[{\em 
+cs\+Ohlc\label{class_q_c_p_financial_a0f800e21ee98d646dfc6f8f89d10ebfba3a516016c9298d3e95dd82aa203c4390}
+}]Open-\/\+High-\/\+Low-\/\+Close bar representation. \index{cs\+Candlestick@{cs\+Candlestick}!Q\+C\+P\+Financial@{Q\+C\+P\+Financial}}\index{Q\+C\+P\+Financial@{Q\+C\+P\+Financial}!cs\+Candlestick@{cs\+Candlestick}}\item[{\em 
+cs\+Candlestick\label{class_q_c_p_financial_a0f800e21ee98d646dfc6f8f89d10ebfbac803cbd39f26e3f206bcc7028679e62f}
+}]Candlestick representation. \end{description}
+\end{Desc}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Q\+C\+P\+Financial@{Q\+C\+P\+Financial}!Q\+C\+P\+Financial@{Q\+C\+P\+Financial}}
+\index{Q\+C\+P\+Financial@{Q\+C\+P\+Financial}!Q\+C\+P\+Financial@{Q\+C\+P\+Financial}}
+\subsubsection[{Q\+C\+P\+Financial}]{\setlength{\rightskip}{0pt plus 5cm}Q\+C\+P\+Financial\+::\+Q\+C\+P\+Financial (
+\begin{DoxyParamCaption}
+\item[{{\bf Q\+C\+P\+Axis} $\ast$}]{key\+Axis, }
+\item[{{\bf Q\+C\+P\+Axis} $\ast$}]{value\+Axis}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\label{class_q_c_p_financial_a4702d5248feeb9d1ec6e3ce725b10b32}
+Constructs a financial chart which uses {\itshape key\+Axis} as its key axis (\char`\"{}x\char`\"{}) and {\itshape value\+Axis} as its value axis (\char`\"{}y\char`\"{}). {\itshape key\+Axis} and {\itshape value\+Axis} must reside in the same \doxyref{Q\+Custom\+Plot}{p.}{class_q_custom_plot} instance and not have the same orientation. If either of these restrictions is violated, a corresponding message is printed to the debug output (q\+Debug), the construction is not aborted, though.
+
+The constructed \doxyref{Q\+C\+P\+Financial}{p.}{class_q_c_p_financial} can be added to the plot with \doxyref{Q\+Custom\+Plot\+::add\+Plottable}{p.}{class_q_custom_plot_ab7ad9174f701f9c6f64e378df77927a6}, \doxyref{Q\+Custom\+Plot}{p.}{class_q_custom_plot} then takes ownership of the financial chart. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_financial_a4702d5248feeb9d1ec6e3ce725b10b32_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{Q\+C\+P\+Financial@{Q\+C\+P\+Financial}!add\+Data@{add\+Data}}
+\index{add\+Data@{add\+Data}!Q\+C\+P\+Financial@{Q\+C\+P\+Financial}}
+\subsubsection[{add\+Data}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Financial\+::add\+Data (
+\begin{DoxyParamCaption}
+\item[{const {\bf Q\+C\+P\+Financial\+Data\+Map} \&}]{data\+Map}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_financial_a1a83396f97fcc68f2b7aa8d9782feffe}
+Adds the provided data points in {\itshape data\+Map} to the current data.
+
+Alternatively, you can also access and modify the data via the \doxyref{data}{p.}{class_q_c_p_financial_a58e05aefa057d16edfcc0334cf81c241} method, which returns a pointer to the internal \doxyref{Q\+C\+P\+Financial\+Data\+Map}{p.}{qcustomplot_8h_a745c09823fae0974b50beca9bc3b3d7d}.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{remove\+Data}{p.}{class_q_c_p_financial_a048c741d3c8cc5709c2c44b759fdf27c} 
+\end{DoxySeeAlso}
+\index{Q\+C\+P\+Financial@{Q\+C\+P\+Financial}!add\+Data@{add\+Data}}
+\index{add\+Data@{add\+Data}!Q\+C\+P\+Financial@{Q\+C\+P\+Financial}}
+\subsubsection[{add\+Data}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Financial\+::add\+Data (
+\begin{DoxyParamCaption}
+\item[{const {\bf Q\+C\+P\+Financial\+Data} \&}]{data}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_financial_a3b6144b48a6a8e63236fc5bf70d40c00}
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Adds the provided single data point in {\itshape data} to the current data.
+
+Alternatively, you can also access and modify the data via the \doxyref{data}{p.}{class_q_c_p_financial_a58e05aefa057d16edfcc0334cf81c241} method, which returns a pointer to the internal \doxyref{Q\+C\+P\+Financial\+Data}{p.}{class_q_c_p_financial_data}.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{remove\+Data}{p.}{class_q_c_p_financial_a048c741d3c8cc5709c2c44b759fdf27c} 
+\end{DoxySeeAlso}
+\index{Q\+C\+P\+Financial@{Q\+C\+P\+Financial}!add\+Data@{add\+Data}}
+\index{add\+Data@{add\+Data}!Q\+C\+P\+Financial@{Q\+C\+P\+Financial}}
+\subsubsection[{add\+Data}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Financial\+::add\+Data (
+\begin{DoxyParamCaption}
+\item[{double}]{key, }
+\item[{double}]{open, }
+\item[{double}]{high, }
+\item[{double}]{low, }
+\item[{double}]{close}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_financial_a688bbd052e00a02954ddb0068b378170}
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Adds the provided single data point given by {\itshape key}, {\itshape open}, {\itshape high}, {\itshape low}, and {\itshape close} to the current data.
+
+Alternatively, you can also access and modify the data via the \doxyref{data}{p.}{class_q_c_p_financial_a58e05aefa057d16edfcc0334cf81c241} method, which returns a pointer to the internal \doxyref{Q\+C\+P\+Financial\+Data}{p.}{class_q_c_p_financial_data}.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{remove\+Data}{p.}{class_q_c_p_financial_a048c741d3c8cc5709c2c44b759fdf27c} 
+\end{DoxySeeAlso}
+\index{Q\+C\+P\+Financial@{Q\+C\+P\+Financial}!add\+Data@{add\+Data}}
+\index{add\+Data@{add\+Data}!Q\+C\+P\+Financial@{Q\+C\+P\+Financial}}
+\subsubsection[{add\+Data}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Financial\+::add\+Data (
+\begin{DoxyParamCaption}
+\item[{const Q\+Vector$<$ double $>$ \&}]{key, }
+\item[{const Q\+Vector$<$ double $>$ \&}]{open, }
+\item[{const Q\+Vector$<$ double $>$ \&}]{high, }
+\item[{const Q\+Vector$<$ double $>$ \&}]{low, }
+\item[{const Q\+Vector$<$ double $>$ \&}]{close}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_financial_aa1abe3bdafb297497f09cdbdc4db3958}
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Adds the provided open/high/low/close data to the current data.
+
+Alternatively, you can also access and modify the data via the \doxyref{data}{p.}{class_q_c_p_financial_a58e05aefa057d16edfcc0334cf81c241} method, which returns a pointer to the internal \doxyref{Q\+C\+P\+Financial\+Data}{p.}{class_q_c_p_financial_data}.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{remove\+Data}{p.}{class_q_c_p_financial_a048c741d3c8cc5709c2c44b759fdf27c} 
+\end{DoxySeeAlso}
+\index{Q\+C\+P\+Financial@{Q\+C\+P\+Financial}!clear\+Data@{clear\+Data}}
+\index{clear\+Data@{clear\+Data}!Q\+C\+P\+Financial@{Q\+C\+P\+Financial}}
+\subsubsection[{clear\+Data}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Financial\+::clear\+Data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_q_c_p_financial_a11fd49928c33e55e27b7319c6927864a}
+Removes all data points.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{remove\+Data}{p.}{class_q_c_p_financial_a048c741d3c8cc5709c2c44b759fdf27c}, \doxyref{remove\+Data\+After}{p.}{class_q_c_p_financial_aa0fcd357005288c833a230c7874825ba}, \doxyref{remove\+Data\+Before}{p.}{class_q_c_p_financial_a097c0383c7c1e9042ca7f93cb439d15a} 
+\end{DoxySeeAlso}
+
+
+Implements {\bf Q\+C\+P\+Abstract\+Plottable} \doxyref{}{p.}{class_q_c_p_abstract_plottable_a86e5b8fd4b6ff4f4084e7ea4c573fc53}.
+
+\index{Q\+C\+P\+Financial@{Q\+C\+P\+Financial}!data@{data}}
+\index{data@{data}!Q\+C\+P\+Financial@{Q\+C\+P\+Financial}}
+\subsubsection[{data}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+C\+P\+Financial\+Data\+Map} $\ast$ Q\+C\+P\+Financial\+::data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_q_c_p_financial_a58e05aefa057d16edfcc0334cf81c241}
+Returns a pointer to the internal data storage of type \doxyref{Q\+C\+P\+Financial\+Data\+Map}{p.}{qcustomplot_8h_a745c09823fae0974b50beca9bc3b3d7d}. You may use it to directly manipulate the data, which may be more convenient and faster than using the regular \doxyref{set\+Data}{p.}{class_q_c_p_financial_adf12a86082f1e488df6a4e8603f8fd6d} or \doxyref{add\+Data}{p.}{class_q_c_p_financial_a1a83396f97fcc68f2b7aa8d9782feffe} methods, in certain situations. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{class_q_c_p_financial_a58e05aefa057d16edfcc0334cf81c241_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Financial@{Q\+C\+P\+Financial}!remove\+Data@{remove\+Data}}
+\index{remove\+Data@{remove\+Data}!Q\+C\+P\+Financial@{Q\+C\+P\+Financial}}
+\subsubsection[{remove\+Data}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Financial\+::remove\+Data (
+\begin{DoxyParamCaption}
+\item[{double}]{from\+Key, }
+\item[{double}]{to\+Key}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_financial_a048c741d3c8cc5709c2c44b759fdf27c}
+Removes all data points with keys between {\itshape from\+Key} and {\itshape to\+Key}. if {\itshape from\+Key} is greater or equal to {\itshape to\+Key}, the function does nothing. To remove a single data point with known key, use \doxyref{remove\+Data(double key)}{p.}{class_q_c_p_financial_ae527d8a11290906b083d1ab598c380ea}.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{add\+Data}{p.}{class_q_c_p_financial_a1a83396f97fcc68f2b7aa8d9782feffe}, \doxyref{clear\+Data}{p.}{class_q_c_p_financial_a11fd49928c33e55e27b7319c6927864a} 
+\end{DoxySeeAlso}
+\index{Q\+C\+P\+Financial@{Q\+C\+P\+Financial}!remove\+Data@{remove\+Data}}
+\index{remove\+Data@{remove\+Data}!Q\+C\+P\+Financial@{Q\+C\+P\+Financial}}
+\subsubsection[{remove\+Data}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Financial\+::remove\+Data (
+\begin{DoxyParamCaption}
+\item[{double}]{key}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_financial_ae527d8a11290906b083d1ab598c380ea}
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Removes a single data point at {\itshape key}. If the position is not known with absolute precision, consider using \doxyref{remove\+Data(double from\+Key, double to\+Key)}{p.}{class_q_c_p_financial_a048c741d3c8cc5709c2c44b759fdf27c} with a small fuzziness interval around the suspected position, depeding on the precision with which the key is known.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{add\+Data}{p.}{class_q_c_p_financial_a1a83396f97fcc68f2b7aa8d9782feffe}, \doxyref{clear\+Data}{p.}{class_q_c_p_financial_a11fd49928c33e55e27b7319c6927864a} 
+\end{DoxySeeAlso}
+\index{Q\+C\+P\+Financial@{Q\+C\+P\+Financial}!remove\+Data\+After@{remove\+Data\+After}}
+\index{remove\+Data\+After@{remove\+Data\+After}!Q\+C\+P\+Financial@{Q\+C\+P\+Financial}}
+\subsubsection[{remove\+Data\+After}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Financial\+::remove\+Data\+After (
+\begin{DoxyParamCaption}
+\item[{double}]{key}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_financial_aa0fcd357005288c833a230c7874825ba}
+Removes all data points with keys greater than {\itshape key}.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{add\+Data}{p.}{class_q_c_p_financial_a1a83396f97fcc68f2b7aa8d9782feffe}, \doxyref{clear\+Data}{p.}{class_q_c_p_financial_a11fd49928c33e55e27b7319c6927864a} 
+\end{DoxySeeAlso}
+\index{Q\+C\+P\+Financial@{Q\+C\+P\+Financial}!remove\+Data\+Before@{remove\+Data\+Before}}
+\index{remove\+Data\+Before@{remove\+Data\+Before}!Q\+C\+P\+Financial@{Q\+C\+P\+Financial}}
+\subsubsection[{remove\+Data\+Before}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Financial\+::remove\+Data\+Before (
+\begin{DoxyParamCaption}
+\item[{double}]{key}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_financial_a097c0383c7c1e9042ca7f93cb439d15a}
+Removes all data points with keys smaller than {\itshape key}.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{add\+Data}{p.}{class_q_c_p_financial_a1a83396f97fcc68f2b7aa8d9782feffe}, \doxyref{clear\+Data}{p.}{class_q_c_p_financial_a11fd49928c33e55e27b7319c6927864a} 
+\end{DoxySeeAlso}
+\index{Q\+C\+P\+Financial@{Q\+C\+P\+Financial}!select\+Test@{select\+Test}}
+\index{select\+Test@{select\+Test}!Q\+C\+P\+Financial@{Q\+C\+P\+Financial}}
+\subsubsection[{select\+Test}]{\setlength{\rightskip}{0pt plus 5cm}double Q\+C\+P\+Financial\+::select\+Test (
+\begin{DoxyParamCaption}
+\item[{const Q\+Point\+F \&}]{pos, }
+\item[{bool}]{only\+Selectable, }
+\item[{Q\+Variant $\ast$}]{details = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_q_c_p_financial_adf6cff00a55f775487d375fe4df5e95b}
+This function is used to decide whether a click hits a layerable object or not.
+
+{\itshape pos} is a point in pixel coordinates on the \doxyref{Q\+Custom\+Plot}{p.}{class_q_custom_plot} surface. This function returns the shortest pixel distance of this point to the object. If the object is either invisible or the distance couldn\textquotesingle{}t be determined, -\/1.\+0 is returned. Further, if {\itshape only\+Selectable} is true and the object is not selectable, -\/1.\+0 is returned, too.
+
+If the object is represented not by single lines but by an area like a \doxyref{Q\+C\+P\+Item\+Text}{p.}{class_q_c_p_item_text} or the bars of a \doxyref{Q\+C\+P\+Bars}{p.}{class_q_c_p_bars} plottable, a click inside the area should also be considered a hit. In these cases this function thus returns a constant value greater zero but still below the parent plot\textquotesingle{}s selection tolerance. (typically the selection\+Tolerance multiplied by 0.\+99).
+
+Providing a constant value for area objects allows selecting line objects even when they are obscured by such area objects, by clicking close to the lines (i.\+e. closer than 0.\+99$\ast$selection\+Tolerance).
+
+The actual setting of the selection state is not done by this function. This is handled by the parent \doxyref{Q\+Custom\+Plot}{p.}{class_q_custom_plot} when the mouse\+Release\+Event occurs, and the finally selected object is notified via the select\+Event/deselect\+Event methods.
+
+{\itshape details} is an optional output parameter. Every layerable subclass may place any information in {\itshape details}. This information will be passed to select\+Event when the parent \doxyref{Q\+Custom\+Plot}{p.}{class_q_custom_plot} decides on the basis of this select\+Test call, that the object was successfully selected. The subsequent call to select\+Event will carry the {\itshape details}. This is useful for multi-\/part objects (like \doxyref{Q\+C\+P\+Axis}{p.}{class_q_c_p_axis}). This way, a possibly complex calculation to decide which part was clicked is only done once in \doxyref{select\+Test}{p.}{class_q_c_p_financial_adf6cff00a55f775487d375fe4df5e95b}. The result (i.\+e. the actually clicked part) can then be placed in {\itshape details}. So in the subsequent select\+Event, the decision which part was selected doesn\textquotesingle{}t have to be done a second time for a single selection operation.
+
+You may pass 0 as {\itshape details} to indicate that you are not interested in those selection details.
+
+\begin{DoxySeeAlso}{See also}
+select\+Event, deselect\+Event, \doxyref{Q\+Custom\+Plot\+::set\+Interactions}{p.}{class_q_custom_plot_a5ee1e2f6ae27419deca53e75907c27e5} 
+\end{DoxySeeAlso}
+
+
+Implements {\bf Q\+C\+P\+Abstract\+Plottable} \doxyref{}{p.}{class_q_c_p_abstract_plottable_a38efe9641d972992a3d44204bc80ec1d}.
+
+\index{Q\+C\+P\+Financial@{Q\+C\+P\+Financial}!set\+Brush\+Negative@{set\+Brush\+Negative}}
+\index{set\+Brush\+Negative@{set\+Brush\+Negative}!Q\+C\+P\+Financial@{Q\+C\+P\+Financial}}
+\subsubsection[{set\+Brush\+Negative}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Financial\+::set\+Brush\+Negative (
+\begin{DoxyParamCaption}
+\item[{const Q\+Brush \&}]{brush}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_financial_a8bbdd87629f9144b3ef51af660c0961a}
+If \doxyref{set\+Two\+Colored}{p.}{class_q_c_p_financial_a138e44aac160a17a9676652e240c5f08} is set to true, this function controls the brush that is used to draw fills of data points with a negative trend (i.\+e. bars/candlesticks with close $<$ open).
+
+If {\itshape two\+Colored} is false, the normal plottable\textquotesingle{}s pen and brush are used (\doxyref{set\+Pen}{p.}{class_q_c_p_abstract_plottable_ab74b09ae4c0e7e13142fe4b5bf46cac7}, \doxyref{set\+Brush}{p.}{class_q_c_p_abstract_plottable_a7a4b92144dca6453a1f0f210e27edc74}).
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{set\+Brush\+Positive}{p.}{class_q_c_p_financial_a5ebff2b1764efd07cc44942e67821829}, \doxyref{set\+Pen\+Negative}{p.}{class_q_c_p_financial_afe5c07e94ccea01a75b3a2476993c346}, \doxyref{set\+Pen\+Positive}{p.}{class_q_c_p_financial_ac58aa3adc7a35aab0088764b840683e5} 
+\end{DoxySeeAlso}
+\index{Q\+C\+P\+Financial@{Q\+C\+P\+Financial}!set\+Brush\+Positive@{set\+Brush\+Positive}}
+\index{set\+Brush\+Positive@{set\+Brush\+Positive}!Q\+C\+P\+Financial@{Q\+C\+P\+Financial}}
+\subsubsection[{set\+Brush\+Positive}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Financial\+::set\+Brush\+Positive (
+\begin{DoxyParamCaption}
+\item[{const Q\+Brush \&}]{brush}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_financial_a5ebff2b1764efd07cc44942e67821829}
+If \doxyref{set\+Two\+Colored}{p.}{class_q_c_p_financial_a138e44aac160a17a9676652e240c5f08} is set to true, this function controls the brush that is used to draw fills of data points with a positive trend (i.\+e. bars/candlesticks with close $>$= open).
+
+If {\itshape two\+Colored} is false, the normal plottable\textquotesingle{}s pen and brush are used (\doxyref{set\+Pen}{p.}{class_q_c_p_abstract_plottable_ab74b09ae4c0e7e13142fe4b5bf46cac7}, \doxyref{set\+Brush}{p.}{class_q_c_p_abstract_plottable_a7a4b92144dca6453a1f0f210e27edc74}).
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{set\+Brush\+Negative}{p.}{class_q_c_p_financial_a8bbdd87629f9144b3ef51af660c0961a}, \doxyref{set\+Pen\+Positive}{p.}{class_q_c_p_financial_ac58aa3adc7a35aab0088764b840683e5}, \doxyref{set\+Pen\+Negative}{p.}{class_q_c_p_financial_afe5c07e94ccea01a75b3a2476993c346} 
+\end{DoxySeeAlso}
+\index{Q\+C\+P\+Financial@{Q\+C\+P\+Financial}!set\+Chart\+Style@{set\+Chart\+Style}}
+\index{set\+Chart\+Style@{set\+Chart\+Style}!Q\+C\+P\+Financial@{Q\+C\+P\+Financial}}
+\subsubsection[{set\+Chart\+Style}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Financial\+::set\+Chart\+Style (
+\begin{DoxyParamCaption}
+\item[{{\bf Q\+C\+P\+Financial\+::\+Chart\+Style}}]{style}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_financial_a5a59175d36279d71596e64d7bb65596f}
+Sets which representation style shall be used to display the O\+H\+L\+C data. \index{Q\+C\+P\+Financial@{Q\+C\+P\+Financial}!set\+Data@{set\+Data}}
+\index{set\+Data@{set\+Data}!Q\+C\+P\+Financial@{Q\+C\+P\+Financial}}
+\subsubsection[{set\+Data}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Financial\+::set\+Data (
+\begin{DoxyParamCaption}
+\item[{{\bf Q\+C\+P\+Financial\+Data\+Map} $\ast$}]{data, }
+\item[{bool}]{copy = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_financial_adf12a86082f1e488df6a4e8603f8fd6d}
+Replaces the current data with the provided {\itshape data}.
+
+If {\itshape copy} is set to true, data points in {\itshape data} will only be copied. if false, the plottable takes ownership of the passed data and replaces the internal data pointer with it. This is significantly faster than copying for large datasets.
+
+Alternatively, you can also access and modify the plottable\textquotesingle{}s data via the \doxyref{data}{p.}{class_q_c_p_financial_a58e05aefa057d16edfcc0334cf81c241} method, which returns a pointer to the internal \doxyref{Q\+C\+P\+Financial\+Data\+Map}{p.}{qcustomplot_8h_a745c09823fae0974b50beca9bc3b3d7d}.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{time\+Series\+To\+Ohlc}{p.}{class_q_c_p_financial_a0c3453d1c03e320950fdd2df54e3ebc8} 
+\end{DoxySeeAlso}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{class_q_c_p_financial_adf12a86082f1e488df6a4e8603f8fd6d_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Financial@{Q\+C\+P\+Financial}!set\+Data@{set\+Data}}
+\index{set\+Data@{set\+Data}!Q\+C\+P\+Financial@{Q\+C\+P\+Financial}}
+\subsubsection[{set\+Data}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Financial\+::set\+Data (
+\begin{DoxyParamCaption}
+\item[{const Q\+Vector$<$ double $>$ \&}]{key, }
+\item[{const Q\+Vector$<$ double $>$ \&}]{open, }
+\item[{const Q\+Vector$<$ double $>$ \&}]{high, }
+\item[{const Q\+Vector$<$ double $>$ \&}]{low, }
+\item[{const Q\+Vector$<$ double $>$ \&}]{close}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_financial_a886881339d6447432af55adaad748c3c}
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Replaces the current data with the provided open/high/low/close data. The provided vectors should have equal length. Else, the number of added points will be the size of the smallest vector.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{time\+Series\+To\+Ohlc}{p.}{class_q_c_p_financial_a0c3453d1c03e320950fdd2df54e3ebc8} 
+\end{DoxySeeAlso}
+\index{Q\+C\+P\+Financial@{Q\+C\+P\+Financial}!set\+Pen\+Negative@{set\+Pen\+Negative}}
+\index{set\+Pen\+Negative@{set\+Pen\+Negative}!Q\+C\+P\+Financial@{Q\+C\+P\+Financial}}
+\subsubsection[{set\+Pen\+Negative}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Financial\+::set\+Pen\+Negative (
+\begin{DoxyParamCaption}
+\item[{const Q\+Pen \&}]{pen}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_financial_afe5c07e94ccea01a75b3a2476993c346}
+If \doxyref{set\+Two\+Colored}{p.}{class_q_c_p_financial_a138e44aac160a17a9676652e240c5f08} is set to true, this function controls the pen that is used to draw outlines of data points with a negative trend (i.\+e. bars/candlesticks with close $<$ open).
+
+If {\itshape two\+Colored} is false, the normal plottable\textquotesingle{}s pen and brush are used (\doxyref{set\+Pen}{p.}{class_q_c_p_abstract_plottable_ab74b09ae4c0e7e13142fe4b5bf46cac7}, \doxyref{set\+Brush}{p.}{class_q_c_p_abstract_plottable_a7a4b92144dca6453a1f0f210e27edc74}).
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{set\+Pen\+Positive}{p.}{class_q_c_p_financial_ac58aa3adc7a35aab0088764b840683e5}, \doxyref{set\+Brush\+Negative}{p.}{class_q_c_p_financial_a8bbdd87629f9144b3ef51af660c0961a}, \doxyref{set\+Brush\+Positive}{p.}{class_q_c_p_financial_a5ebff2b1764efd07cc44942e67821829} 
+\end{DoxySeeAlso}
+\index{Q\+C\+P\+Financial@{Q\+C\+P\+Financial}!set\+Pen\+Positive@{set\+Pen\+Positive}}
+\index{set\+Pen\+Positive@{set\+Pen\+Positive}!Q\+C\+P\+Financial@{Q\+C\+P\+Financial}}
+\subsubsection[{set\+Pen\+Positive}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Financial\+::set\+Pen\+Positive (
+\begin{DoxyParamCaption}
+\item[{const Q\+Pen \&}]{pen}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_financial_ac58aa3adc7a35aab0088764b840683e5}
+If \doxyref{set\+Two\+Colored}{p.}{class_q_c_p_financial_a138e44aac160a17a9676652e240c5f08} is set to true, this function controls the pen that is used to draw outlines of data points with a positive trend (i.\+e. bars/candlesticks with close $>$= open).
+
+If {\itshape two\+Colored} is false, the normal plottable\textquotesingle{}s pen and brush are used (\doxyref{set\+Pen}{p.}{class_q_c_p_abstract_plottable_ab74b09ae4c0e7e13142fe4b5bf46cac7}, \doxyref{set\+Brush}{p.}{class_q_c_p_abstract_plottable_a7a4b92144dca6453a1f0f210e27edc74}).
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{set\+Pen\+Negative}{p.}{class_q_c_p_financial_afe5c07e94ccea01a75b3a2476993c346}, \doxyref{set\+Brush\+Positive}{p.}{class_q_c_p_financial_a5ebff2b1764efd07cc44942e67821829}, \doxyref{set\+Brush\+Negative}{p.}{class_q_c_p_financial_a8bbdd87629f9144b3ef51af660c0961a} 
+\end{DoxySeeAlso}
+\index{Q\+C\+P\+Financial@{Q\+C\+P\+Financial}!set\+Two\+Colored@{set\+Two\+Colored}}
+\index{set\+Two\+Colored@{set\+Two\+Colored}!Q\+C\+P\+Financial@{Q\+C\+P\+Financial}}
+\subsubsection[{set\+Two\+Colored}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Financial\+::set\+Two\+Colored (
+\begin{DoxyParamCaption}
+\item[{bool}]{two\+Colored}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_financial_a138e44aac160a17a9676652e240c5f08}
+Sets whether this chart shall contrast positive from negative trends per data point by using two separate colors to draw the respective bars/candlesticks.
+
+If {\itshape two\+Colored} is false, the normal plottable\textquotesingle{}s pen and brush are used (\doxyref{set\+Pen}{p.}{class_q_c_p_abstract_plottable_ab74b09ae4c0e7e13142fe4b5bf46cac7}, \doxyref{set\+Brush}{p.}{class_q_c_p_abstract_plottable_a7a4b92144dca6453a1f0f210e27edc74}).
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{set\+Pen\+Positive}{p.}{class_q_c_p_financial_ac58aa3adc7a35aab0088764b840683e5}, \doxyref{set\+Pen\+Negative}{p.}{class_q_c_p_financial_afe5c07e94ccea01a75b3a2476993c346}, \doxyref{set\+Brush\+Positive}{p.}{class_q_c_p_financial_a5ebff2b1764efd07cc44942e67821829}, \doxyref{set\+Brush\+Negative}{p.}{class_q_c_p_financial_a8bbdd87629f9144b3ef51af660c0961a} 
+\end{DoxySeeAlso}
+\index{Q\+C\+P\+Financial@{Q\+C\+P\+Financial}!set\+Width@{set\+Width}}
+\index{set\+Width@{set\+Width}!Q\+C\+P\+Financial@{Q\+C\+P\+Financial}}
+\subsubsection[{set\+Width}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Financial\+::set\+Width (
+\begin{DoxyParamCaption}
+\item[{double}]{width}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_financial_a99633f8bac86a61d534ae5eeb1a3068f}
+Sets the width of the individual bars/candlesticks to {\itshape width} in plot key coordinates.
+
+A typical choice is to set it to (or slightly less than) one bin interval width. \index{Q\+C\+P\+Financial@{Q\+C\+P\+Financial}!time\+Series\+To\+Ohlc@{time\+Series\+To\+Ohlc}}
+\index{time\+Series\+To\+Ohlc@{time\+Series\+To\+Ohlc}!Q\+C\+P\+Financial@{Q\+C\+P\+Financial}}
+\subsubsection[{time\+Series\+To\+Ohlc}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+C\+P\+Financial\+Data\+Map} Q\+C\+P\+Financial\+::time\+Series\+To\+Ohlc (
+\begin{DoxyParamCaption}
+\item[{const Q\+Vector$<$ double $>$ \&}]{time, }
+\item[{const Q\+Vector$<$ double $>$ \&}]{value, }
+\item[{double}]{time\+Bin\+Size, }
+\item[{double}]{time\+Bin\+Offset = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_q_c_p_financial_a0c3453d1c03e320950fdd2df54e3ebc8}
+A convenience function that converts time series data ({\itshape value} against {\itshape time}) to O\+H\+L\+C binned data points. The return value can then be passed on to \doxyref{set\+Data}{p.}{class_q_c_p_financial_adf12a86082f1e488df6a4e8603f8fd6d}.
+
+The size of the bins can be controlled with {\itshape time\+Bin\+Size} in the same units as {\itshape time} is given. For example, if the unit of {\itshape time} is seconds and single O\+H\+L\+C/\+Candlesticks should span an hour each, set {\itshape time\+Bin\+Size} to 3600.
+
+{\itshape time\+Bin\+Offset} allows to control precisely at what {\itshape time} coordinate a bin should start. The value passed as {\itshape time\+Bin\+Offset} doesn\textquotesingle{}t need to be in the range encompassed by the {\itshape time} keys. It merely defines the mathematical offset/phase of the bins that will be used to process the data. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf qcustomplot.\+h}\item 
+{\bf qcustomplot.\+cpp}\end{DoxyCompactItemize}

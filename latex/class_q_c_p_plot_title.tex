@@ -1,0 +1,332 @@
+\section{Q\+C\+P\+Plot\+Title Class Reference}
+\label{class_q_c_p_plot_title}\index{Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}}
+
+
+A layout element displaying a plot title text.  
+
+
+
+
+Collaboration diagram for Q\+C\+P\+Plot\+Title\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_plot_title__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf selection\+Changed} (bool selected)
+\item 
+void {\bfseries selectable\+Changed} (bool selectable)\label{class_q_c_p_plot_title_a5eac3c17a4dbabb75250bc1210a83cfc}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Q\+C\+P\+Plot\+Title} ({\bf Q\+Custom\+Plot} $\ast$parent\+Plot)
+\item 
+{\bf Q\+C\+P\+Plot\+Title} ({\bf Q\+Custom\+Plot} $\ast$parent\+Plot, const Q\+String \&text)
+\item 
+Q\+String {\bfseries text} () const \label{class_q_c_p_plot_title_aeaa6f2384a611e8a610262b976b3cee5}
+
+\item 
+Q\+Font {\bfseries font} () const \label{class_q_c_p_plot_title_aa5f4cf007db51ccdd1c137191f564119}
+
+\item 
+Q\+Color {\bfseries text\+Color} () const \label{class_q_c_p_plot_title_a69f2cae768ff84dbf9f8a387ad617781}
+
+\item 
+Q\+Font {\bfseries selected\+Font} () const \label{class_q_c_p_plot_title_aa865a3656e01ee8db41837afa892f2a3}
+
+\item 
+Q\+Color {\bfseries selected\+Text\+Color} () const \label{class_q_c_p_plot_title_ab2262e40edfc41540c1dbc1c4234f9d2}
+
+\item 
+bool {\bfseries selectable} () const \label{class_q_c_p_plot_title_a8d75c7cbcf2049c9512a3335d6f11416}
+
+\item 
+bool {\bfseries selected} () const \label{class_q_c_p_plot_title_a9771f3a4bca026484d7c8b5d953b5e82}
+
+\item 
+void {\bf set\+Text} (const Q\+String \&text)
+\item 
+void {\bf set\+Font} (const Q\+Font \&font)
+\item 
+void {\bf set\+Text\+Color} (const Q\+Color \&color)
+\item 
+void {\bf set\+Selected\+Font} (const Q\+Font \&font)
+\item 
+void {\bf set\+Selected\+Text\+Color} (const Q\+Color \&color)
+\item 
+Q\+\_\+\+S\+L\+O\+T void {\bf set\+Selectable} (bool selectable)
+\item 
+Q\+\_\+\+S\+L\+O\+T void {\bf set\+Selected} (bool selected)
+\item 
+virtual double {\bf select\+Test} (const Q\+Point\+F \&pos, bool only\+Selectable, Q\+Variant $\ast$details=0) const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries apply\+Default\+Antialiasing\+Hint} ({\bf Q\+C\+P\+Painter} $\ast$painter) const \label{class_q_c_p_plot_title_a0e2a491864bf8d8e8b159ef38e9d85bd}
+
+\item 
+virtual void {\bfseries draw} ({\bf Q\+C\+P\+Painter} $\ast$painter)\label{class_q_c_p_plot_title_ae4f1f8d24489628dabb7256363b097d2}
+
+\item 
+virtual Q\+Size {\bf minimum\+Size\+Hint} () const 
+\item 
+virtual Q\+Size {\bf maximum\+Size\+Hint} () const 
+\item 
+virtual void {\bfseries select\+Event} (Q\+Mouse\+Event $\ast$event, bool additive, const Q\+Variant \&details, bool $\ast$selection\+State\+Changed)\label{class_q_c_p_plot_title_a22672ef2abe442b1e73b7ee04cff9bdd}
+
+\item 
+virtual void {\bfseries deselect\+Event} (bool $\ast$selection\+State\+Changed)\label{class_q_c_p_plot_title_ac6dfce05bebdb9bd0bfacd5ff02f3325}
+
+\item 
+Q\+Font {\bfseries main\+Font} () const \label{class_q_c_p_plot_title_a7e74004e3a68118b16491848708a8b3a}
+
+\item 
+Q\+Color {\bfseries main\+Text\+Color} () const \label{class_q_c_p_plot_title_ac1b02546563a2e76f97d78a576f82f5a}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Q\+String {\bfseries m\+Text}\label{class_q_c_p_plot_title_a0d961bfac1211d59d3b0bc30d35f6379}
+
+\item 
+Q\+Font {\bfseries m\+Font}\label{class_q_c_p_plot_title_ad9e2c2a2e941f3444cb692a51df0df62}
+
+\item 
+Q\+Color {\bfseries m\+Text\+Color}\label{class_q_c_p_plot_title_a5d7f834d6522c1a72fb0682c0b7ebe13}
+
+\item 
+Q\+Font {\bfseries m\+Selected\+Font}\label{class_q_c_p_plot_title_a95003186c39bbab902873a8ef4cbb547}
+
+\item 
+Q\+Color {\bfseries m\+Selected\+Text\+Color}\label{class_q_c_p_plot_title_a8b9760e62af92814c4effdd7ad69c5f9}
+
+\item 
+Q\+Rect {\bfseries m\+Text\+Bounding\+Rect}\label{class_q_c_p_plot_title_a7178a0f6c1e633c144c17b4de4e0b840}
+
+\item 
+bool {\bfseries m\+Selectable}\label{class_q_c_p_plot_title_aadefb5e2b19b1cc7deda0a55ec747884}
+
+\item 
+bool {\bfseries m\+Selected}\label{class_q_c_p_plot_title_afef1342a20f5ca985a20b9cfdc03d815}
+
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+A layout element displaying a plot title text. 
+
+The text may be specified with \doxyref{set\+Text}{p.}{class_q_c_p_plot_title_aae5a93e88050dfb2cbf6adc087516821}, theformatting can be controlled with \doxyref{set\+Font}{p.}{class_q_c_p_plot_title_a199fc7170802ea65006c371875349e37} and \doxyref{set\+Text\+Color}{p.}{class_q_c_p_plot_title_a71273e3a0ca6b4c151591b37b9e5ce33}.
+
+A plot title can be added as follows\+: 
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+ Since a plot title is a common requirement, \doxyref{Q\+Custom\+Plot}{p.}{class_q_custom_plot} offers specialized selection signals for easy interaction with \doxyref{Q\+C\+P\+Plot\+Title}{p.}{class_q_c_p_plot_title}. If a layout element of type \doxyref{Q\+C\+P\+Plot\+Title}{p.}{class_q_c_p_plot_title} is clicked, the signal \doxyref{Q\+Custom\+Plot\+::title\+Click}{p.}{class_q_custom_plot_a2137a819e518fee7edd1c0bf5984d8d6} is emitted. A double click emits the \doxyref{Q\+Custom\+Plot\+::title\+Double\+Click}{p.}{class_q_custom_plot_ad51d65f6abf5edfaeef6e0519a4c1a2f} signal. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}!Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}}
+\index{Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}!Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}}
+\subsubsection[{Q\+C\+P\+Plot\+Title}]{\setlength{\rightskip}{0pt plus 5cm}Q\+C\+P\+Plot\+Title\+::\+Q\+C\+P\+Plot\+Title (
+\begin{DoxyParamCaption}
+\item[{{\bf Q\+Custom\+Plot} $\ast$}]{parent\+Plot}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\label{class_q_c_p_plot_title_aaae17bee2de6d6a1e695f76fb1abed03}
+Creates a new \doxyref{Q\+C\+P\+Plot\+Title}{p.}{class_q_c_p_plot_title} instance and sets default values. The initial text is empty (\doxyref{set\+Text}{p.}{class_q_c_p_plot_title_aae5a93e88050dfb2cbf6adc087516821}).
+
+To set the title text in the constructor, rather use \doxyref{Q\+C\+P\+Plot\+Title(\+Q\+Custom\+Plot $\ast$parent\+Plot, const Q\+String \&text)}{p.}{class_q_c_p_plot_title_a90b9f46ceccbeee41f71c895a8c7ee1f}. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_plot_title_aaae17bee2de6d6a1e695f76fb1abed03_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}!Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}}
+\index{Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}!Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}}
+\subsubsection[{Q\+C\+P\+Plot\+Title}]{\setlength{\rightskip}{0pt plus 5cm}Q\+C\+P\+Plot\+Title\+::\+Q\+C\+P\+Plot\+Title (
+\begin{DoxyParamCaption}
+\item[{{\bf Q\+Custom\+Plot} $\ast$}]{parent\+Plot, }
+\item[{const Q\+String \&}]{text}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\label{class_q_c_p_plot_title_a90b9f46ceccbeee41f71c895a8c7ee1f}
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Creates a new \doxyref{Q\+C\+P\+Plot\+Title}{p.}{class_q_c_p_plot_title} instance and sets default values. The initial text is set to {\itshape text}. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_plot_title_a90b9f46ceccbeee41f71c895a8c7ee1f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}!maximum\+Size\+Hint@{maximum\+Size\+Hint}}
+\index{maximum\+Size\+Hint@{maximum\+Size\+Hint}!Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}}
+\subsubsection[{maximum\+Size\+Hint}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Size Q\+C\+P\+Plot\+Title\+::maximum\+Size\+Hint (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{class_q_c_p_plot_title_a2afaf11a379038e5ca58040a0eb0ae4c}
+Returns the maximum size this layout element (the inner \doxyref{rect}{p.}{class_q_c_p_layout_element_affdfea003469aac3d0fac5f4e06171bc}) may be expanded to.
+
+if a maximum size (\doxyref{set\+Maximum\+Size}{p.}{class_q_c_p_layout_element_a74eb5280a737ab44833d506db65efd95}) was not set manually, parent layouts consult this function to determine the maximum allowed size of this layout element. (A manual maximum size is considered set if it is smaller than Qt\textquotesingle{}s Q\+W\+I\+D\+G\+E\+T\+S\+I\+Z\+E\+\_\+\+M\+A\+X.) 
+
+Reimplemented from {\bf Q\+C\+P\+Layout\+Element} \doxyref{}{p.}{class_q_c_p_layout_element_adbd3a00fec44c977150c6be7329eb801}.
+
+\index{Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}!minimum\+Size\+Hint@{minimum\+Size\+Hint}}
+\index{minimum\+Size\+Hint@{minimum\+Size\+Hint}!Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}}
+\subsubsection[{minimum\+Size\+Hint}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Size Q\+C\+P\+Plot\+Title\+::minimum\+Size\+Hint (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{class_q_c_p_plot_title_a695e6037e72a1e129387e7e4a980faea}
+Returns the minimum size this layout element (the inner \doxyref{rect}{p.}{class_q_c_p_layout_element_affdfea003469aac3d0fac5f4e06171bc}) may be compressed to.
+
+if a minimum size (\doxyref{set\+Minimum\+Size}{p.}{class_q_c_p_layout_element_a5dd29a3c8bc88440c97c06b67be7886b}) was not set manually, parent layouts consult this function to determine the minimum allowed size of this layout element. (A manual minimum size is considered set if it is non-\/zero.) 
+
+Reimplemented from {\bf Q\+C\+P\+Layout\+Element} \doxyref{}{p.}{class_q_c_p_layout_element_aebe14fb71f858c0f98caf8d342a9864a}.
+
+\index{Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}!selection\+Changed@{selection\+Changed}}
+\index{selection\+Changed@{selection\+Changed}!Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}}
+\subsubsection[{selection\+Changed}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Plot\+Title\+::selection\+Changed (
+\begin{DoxyParamCaption}
+\item[{bool}]{selected}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{class_q_c_p_plot_title_a3a01ede2da3b0b5eda33aa5274cc3523}
+This signal is emitted when the selection state has changed to {\itshape selected}, either by user interaction or by a direct call to \doxyref{set\+Selected}{p.}{class_q_c_p_plot_title_a8d441a889d371307df86f1ab7687a333}.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{set\+Selected}{p.}{class_q_c_p_plot_title_a8d441a889d371307df86f1ab7687a333}, \doxyref{set\+Selectable}{p.}{class_q_c_p_plot_title_a8866b07b9fa14877d4cefbf38406c5dd} 
+\end{DoxySeeAlso}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_plot_title_a3a01ede2da3b0b5eda33aa5274cc3523_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}!select\+Test@{select\+Test}}
+\index{select\+Test@{select\+Test}!Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}}
+\subsubsection[{select\+Test}]{\setlength{\rightskip}{0pt plus 5cm}double Q\+C\+P\+Plot\+Title\+::select\+Test (
+\begin{DoxyParamCaption}
+\item[{const Q\+Point\+F \&}]{pos, }
+\item[{bool}]{only\+Selectable, }
+\item[{Q\+Variant $\ast$}]{details = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_q_c_p_plot_title_a5b7ae716be9134a48f4e378feb0e6699}
+Layout elements are sensitive to events inside their outer rect. If {\itshape pos} is within the outer rect, this method returns a value corresponding to 0.\+99 times the parent plot\textquotesingle{}s selection tolerance. However, layout elements are not selectable by default. So if {\itshape only\+Selectable} is true, -\/1.\+0 is returned.
+
+See \doxyref{Q\+C\+P\+Layerable\+::select\+Test}{p.}{class_q_c_p_layerable_a4001c4d0dfec55598efa4d531f2179a9} for a general explanation of this virtual method.
+
+\doxyref{Q\+C\+P\+Layout\+Element}{p.}{class_q_c_p_layout_element} subclasses may reimplement this method to provide more specific selection test behaviour. 
+
+Reimplemented from {\bf Q\+C\+P\+Layout\+Element} \doxyref{}{p.}{class_q_c_p_layout_element_a9fcf5d0ea19f2c23b2b528bce2c6f095}.
+
+\index{Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}!set\+Font@{set\+Font}}
+\index{set\+Font@{set\+Font}!Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}}
+\subsubsection[{set\+Font}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Plot\+Title\+::set\+Font (
+\begin{DoxyParamCaption}
+\item[{const Q\+Font \&}]{font}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_plot_title_a199fc7170802ea65006c371875349e37}
+Sets the {\itshape font} of the title text.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{set\+Text\+Color}{p.}{class_q_c_p_plot_title_a71273e3a0ca6b4c151591b37b9e5ce33}, \doxyref{set\+Selected\+Font}{p.}{class_q_c_p_plot_title_a5245980ead999ceed51dbe702d0e3131} 
+\end{DoxySeeAlso}
+\index{Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}!set\+Selectable@{set\+Selectable}}
+\index{set\+Selectable@{set\+Selectable}!Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}}
+\subsubsection[{set\+Selectable}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Plot\+Title\+::set\+Selectable (
+\begin{DoxyParamCaption}
+\item[{bool}]{selectable}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_plot_title_a8866b07b9fa14877d4cefbf38406c5dd}
+Sets whether the user may select this plot title to {\itshape selectable}.
+
+Note that even when {\itshape selectable} is set to {\ttfamily false}, the selection state may be changed programmatically via \doxyref{set\+Selected}{p.}{class_q_c_p_plot_title_a8d441a889d371307df86f1ab7687a333}. \index{Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}!set\+Selected@{set\+Selected}}
+\index{set\+Selected@{set\+Selected}!Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}}
+\subsubsection[{set\+Selected}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Plot\+Title\+::set\+Selected (
+\begin{DoxyParamCaption}
+\item[{bool}]{selected}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_plot_title_a8d441a889d371307df86f1ab7687a333}
+Sets the selection state of this plot title to {\itshape selected}. If the selection has changed, \doxyref{selection\+Changed}{p.}{class_q_c_p_plot_title_a3a01ede2da3b0b5eda33aa5274cc3523} is emitted.
+
+Note that this function can change the selection state independently of the current \doxyref{set\+Selectable}{p.}{class_q_c_p_plot_title_a8866b07b9fa14877d4cefbf38406c5dd} state. \index{Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}!set\+Selected\+Font@{set\+Selected\+Font}}
+\index{set\+Selected\+Font@{set\+Selected\+Font}!Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}}
+\subsubsection[{set\+Selected\+Font}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Plot\+Title\+::set\+Selected\+Font (
+\begin{DoxyParamCaption}
+\item[{const Q\+Font \&}]{font}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_plot_title_a5245980ead999ceed51dbe702d0e3131}
+Sets the {\itshape font} of the title text that will be used if the plot title is selected (\doxyref{set\+Selected}{p.}{class_q_c_p_plot_title_a8d441a889d371307df86f1ab7687a333}).
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{set\+Font}{p.}{class_q_c_p_plot_title_a199fc7170802ea65006c371875349e37} 
+\end{DoxySeeAlso}
+\index{Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}!set\+Selected\+Text\+Color@{set\+Selected\+Text\+Color}}
+\index{set\+Selected\+Text\+Color@{set\+Selected\+Text\+Color}!Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}}
+\subsubsection[{set\+Selected\+Text\+Color}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Plot\+Title\+::set\+Selected\+Text\+Color (
+\begin{DoxyParamCaption}
+\item[{const Q\+Color \&}]{color}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_plot_title_a09ffd8c52ac8824d00382f84be391b66}
+Sets the {\itshape color} of the title text that will be used if the plot title is selected (\doxyref{set\+Selected}{p.}{class_q_c_p_plot_title_a8d441a889d371307df86f1ab7687a333}).
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{set\+Text\+Color}{p.}{class_q_c_p_plot_title_a71273e3a0ca6b4c151591b37b9e5ce33} 
+\end{DoxySeeAlso}
+\index{Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}!set\+Text@{set\+Text}}
+\index{set\+Text@{set\+Text}!Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}}
+\subsubsection[{set\+Text}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Plot\+Title\+::set\+Text (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{text}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_plot_title_aae5a93e88050dfb2cbf6adc087516821}
+Sets the text that will be displayed to {\itshape text}. Multiple lines can be created by insertion of \char`\"{}\textbackslash{}n\char`\"{}.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{set\+Font}{p.}{class_q_c_p_plot_title_a199fc7170802ea65006c371875349e37}, \doxyref{set\+Text\+Color}{p.}{class_q_c_p_plot_title_a71273e3a0ca6b4c151591b37b9e5ce33} 
+\end{DoxySeeAlso}
+\index{Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}!set\+Text\+Color@{set\+Text\+Color}}
+\index{set\+Text\+Color@{set\+Text\+Color}!Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}}
+\subsubsection[{set\+Text\+Color}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Plot\+Title\+::set\+Text\+Color (
+\begin{DoxyParamCaption}
+\item[{const Q\+Color \&}]{color}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_plot_title_a71273e3a0ca6b4c151591b37b9e5ce33}
+Sets the {\itshape color} of the title text.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{set\+Font}{p.}{class_q_c_p_plot_title_a199fc7170802ea65006c371875349e37}, \doxyref{set\+Selected\+Text\+Color}{p.}{class_q_c_p_plot_title_a09ffd8c52ac8824d00382f84be391b66} 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf qcustomplot.\+h}\item 
+{\bf qcustomplot.\+cpp}\end{DoxyCompactItemize}

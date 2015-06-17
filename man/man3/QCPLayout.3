@@ -1,0 +1,212 @@
+.TH "QCPLayout" 3 "Thu Jun 18 2015" "Version v.2" "Voice analyze" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+QCPLayout \- The abstract base class for layouts\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQCPLayout\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBupdate\fP (\fBUpdatePhase\fP phase)"
+.br
+.ti -1c
+.RI "virtual QList< \fBQCPLayoutElement\fP * > \fBelements\fP (bool recursive) const "
+.br
+.ti -1c
+.RI "virtual int \fBelementCount\fP () const =0"
+.br
+.ti -1c
+.RI "virtual \fBQCPLayoutElement\fP * \fBelementAt\fP (int index) const =0"
+.br
+.ti -1c
+.RI "virtual \fBQCPLayoutElement\fP * \fBtakeAt\fP (int index)=0"
+.br
+.ti -1c
+.RI "virtual bool \fBtake\fP (\fBQCPLayoutElement\fP *element)=0"
+.br
+.ti -1c
+.RI "virtual void \fBsimplify\fP ()"
+.br
+.ti -1c
+.RI "bool \fBremoveAt\fP (int index)"
+.br
+.ti -1c
+.RI "bool \fBremove\fP (\fBQCPLayoutElement\fP *element)"
+.br
+.ti -1c
+.RI "void \fBclear\fP ()"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBupdateLayout\fP ()"
+.br
+.ti -1c
+.RI "void \fBsizeConstraintsChanged\fP () const "
+.br
+.ti -1c
+.RI "void \fBadoptElement\fP (\fBQCPLayoutElement\fP *el)"
+.br
+.ti -1c
+.RI "void \fBreleaseElement\fP (\fBQCPLayoutElement\fP *el)"
+.br
+.ti -1c
+.RI "QVector< int > \fBgetSectionSizes\fP (QVector< int > maxSizes, QVector< int > minSizes, QVector< double > stretchFactors, int totalSize) const "
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBQCPLayoutElement\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+The abstract base class for layouts\&. 
+
+This is an abstract base class for layout elements whose main purpose is to define the position and size of other child layout elements\&. In most cases, layouts don't draw anything themselves (but there are exceptions to this, e\&.g\&. \fBQCPLegend\fP)\&.
+.PP
+\fBQCPLayout\fP derives from \fBQCPLayoutElement\fP, and thus can itself be nested in other layouts\&.
+.PP
+\fBQCPLayout\fP introduces a common interface for accessing and manipulating the child elements\&. Those functions are most notably \fBelementCount\fP, \fBelementAt\fP, \fBtakeAt\fP, \fBtake\fP, \fBsimplify\fP, \fBremoveAt\fP, \fBremove\fP and \fBclear\fP\&. Individual subclasses may add more functions to this interface which are more specialized to the form of the layout\&. For example, \fBQCPLayoutGrid\fP adds functions that take row and column indices to access cells of the layout grid more conveniently\&.
+.PP
+Since this is an abstract base class, you can't instantiate it directly\&. Rather use one of its subclasses like \fBQCPLayoutGrid\fP or \fBQCPLayoutInset\fP\&.
+.PP
+For a general introduction to the layout system, see the dedicated documentation page \fBThe Layout System\fP\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "QCPLayout::QCPLayout ()\fC [explicit]\fP"
+Creates an instance of \fBQCPLayout\fP and sets default values\&. Note that since \fBQCPLayout\fP is an abstract base class, it can't be instantiated directly\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "void QCPLayout::clear ()"
+Removes and deletes all layout elements in this layout\&. Finally calls \fBsimplify\fP to make sure all empty cells are collapsed\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBremove\fP, \fBremoveAt\fP 
+.RE
+.PP
+
+.SS "\fBQCPLayoutElement\fP * QCPLayout::elementAt (int index) const\fC [pure virtual]\fP"
+Returns the element in the cell with the given \fIindex\fP\&. If \fIindex\fP is invalid, returns 0\&.
+.PP
+Note that even if \fIindex\fP is valid, the respective cell may be empty in some layouts (e\&.g\&. \fBQCPLayoutGrid\fP), so this function may return 0 in those cases\&. You may use this function to check whether a cell is empty or not\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBelements\fP, \fBelementCount\fP, \fBtakeAt\fP 
+.RE
+.PP
+
+.PP
+Implemented in \fBQCPLayoutInset\fP, and \fBQCPLayoutGrid\fP\&.
+.SS "int QCPLayout::elementCount () const\fC [pure virtual]\fP"
+Returns the number of elements/cells in the layout\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBelements\fP, \fBelementAt\fP 
+.RE
+.PP
+
+.PP
+Implemented in \fBQCPLayoutInset\fP, and \fBQCPLayoutGrid\fP\&.
+.SS "QList< \fBQCPLayoutElement\fP * > QCPLayout::elements (bool recursive) const\fC [virtual]\fP"
+Returns a list of all child elements in this layout element\&. If \fIrecursive\fP is true, all sub-child elements are included in the list, too\&.
+.PP
+\fBWarning:\fP
+.RS 4
+There may be entries with value 0 in the returned list\&. (For example, \fBQCPLayoutGrid\fP may have empty cells which yield 0 at the respective index\&.) 
+.RE
+.PP
+
+.PP
+Reimplemented from \fBQCPLayoutElement\fP\&.
+.PP
+Reimplemented in \fBQCPLayoutGrid\fP\&.
+.SS "bool QCPLayout::remove (\fBQCPLayoutElement\fP * element)"
+Removes and deletes the provided \fIelement\fP\&. Returns true on success\&. If \fIelement\fP is not in the layout, returns false\&.
+.PP
+This function internally uses \fBtakeAt\fP to remove the element from the layout and then deletes the element\&. Note that some layouts don't remove the respective cell right away but leave an empty cell after successful removal of the layout element\&. To collapse empty cells, use \fBsimplify\fP\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBremoveAt\fP, \fBtake\fP 
+.RE
+.PP
+
+.SS "bool QCPLayout::removeAt (int index)"
+Removes and deletes the element at the provided \fIindex\fP\&. Returns true on success\&. If \fIindex\fP is invalid or points to an empty cell, returns false\&.
+.PP
+This function internally uses \fBtakeAt\fP to remove the element from the layout and then deletes the returned element\&. Note that some layouts don't remove the respective cell right away but leave an empty cell after successful removal of the layout element\&. To collapse empty cells, use \fBsimplify\fP\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBremove\fP, \fBtakeAt\fP 
+.RE
+.PP
+
+.SS "void QCPLayout::simplify ()\fC [virtual]\fP"
+Simplifies the layout by collapsing empty cells\&. The exact behavior depends on subclasses, the default implementation does nothing\&.
+.PP
+Not all layouts need simplification\&. For example, \fBQCPLayoutInset\fP doesn't use explicit simplification while \fBQCPLayoutGrid\fP does\&. 
+.PP
+Reimplemented in \fBQCPLayoutInset\fP, and \fBQCPLayoutGrid\fP\&.
+.SS "void QCPLayout::sizeConstraintsChanged () const\fC [protected]\fP"
+Subclasses call this method to report changed (minimum/maximum) size constraints\&.
+.PP
+If the parent of this layout is again a \fBQCPLayout\fP, forwards the call to the parent's \fBsizeConstraintsChanged\fP\&. If the parent is a QWidget (i\&.e\&. is the \fBQCustomPlot::plotLayout\fP of \fBQCustomPlot\fP), calls QWidget::updateGeometry, so if the \fBQCustomPlot\fP widget is inside a Qt QLayout, it may update itself and resize cells accordingly\&. 
+.SS "bool QCPLayout::take (\fBQCPLayoutElement\fP * element)\fC [pure virtual]\fP"
+Removes the specified \fIelement\fP from the layout and returns true on success\&.
+.PP
+If the \fIelement\fP isn't in this layout, returns false\&.
+.PP
+Note that some layouts don't remove the respective cell right away but leave an empty cell after successful removal of the layout element\&. To collapse empty cells, use \fBsimplify\fP\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBtakeAt\fP 
+.RE
+.PP
+
+.PP
+Implemented in \fBQCPLayoutInset\fP, and \fBQCPLayoutGrid\fP\&.
+.SS "\fBQCPLayoutElement\fP * QCPLayout::takeAt (int index)\fC [pure virtual]\fP"
+Removes the element with the given \fIindex\fP from the layout and returns it\&.
+.PP
+If the \fIindex\fP is invalid or the cell with that index is empty, returns 0\&.
+.PP
+Note that some layouts don't remove the respective cell right away but leave an empty cell after successful removal of the layout element\&. To collapse empty cells, use \fBsimplify\fP\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBelementAt\fP, \fBtake\fP 
+.RE
+.PP
+
+.PP
+Implemented in \fBQCPLayoutInset\fP, and \fBQCPLayoutGrid\fP\&.
+.SS "void QCPLayout::update (\fBUpdatePhase\fP phase)\fC [virtual]\fP"
+First calls the \fBQCPLayoutElement::update\fP base class implementation to update the margins on this layout\&.
+.PP
+Then calls \fBupdateLayout\fP which subclasses reimplement to reposition and resize their cells\&.
+.PP
+Finally, \fBupdate\fP is called on all child elements\&. 
+.PP
+Reimplemented from \fBQCPLayoutElement\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Voice analyze from the source code\&.

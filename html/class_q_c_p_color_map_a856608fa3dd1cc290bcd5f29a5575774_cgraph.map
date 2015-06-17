@@ -1,0 +1,8 @@
+<map id="QCPColorMap::rescaleDataRange" name="QCPColorMap::rescaleDataRange">
+<area shape="rect" id="node2" href="$class_q_c_p_color_map_data.html#ab235ade8a4d64bd3adb26a99b3dd57ee" title="QCPColorMapData::recalculate\lDataBounds" alt="" coords="248,5,467,47"/>
+<area shape="rect" id="node3" href="$class_q_c_p_color_map.html#a980b42837821159786a85b4b7dcb8774" title="QCPColorMap::setDataRange" alt="" coords="253,71,461,98"/>
+<area shape="rect" id="node4" href="$class_q_c_p_range.html#ab38bd4841c77c7bb86c9eea0f142dcc0" title="QCPRange::validRange" alt="" coords="530,13,697,39"/>
+<area shape="rect" id="node5" href="$class_q_c_p_range.html#aaf6a9046e78d91eeb8e89584fe46b034" title="QCPRange::sanitizedForLog\lScale" alt="" coords="515,64,712,105"/>
+<area shape="rect" id="node7" href="$class_q_c_p_range.html#a1ff029704c29a75adbc1dc36cecaf44c" title="QCPRange::sanitizedForLin\lScale" alt="" coords="517,129,709,171"/>
+<area shape="rect" id="node6" href="$class_q_c_p_range.html#af914a7740269b0604d0827c634a878a9" title="QCPRange::normalize" alt="" coords="760,105,920,131"/>
+</map>

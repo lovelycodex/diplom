@@ -1,0 +1,280 @@
+\section{Q\+C\+P\+Item\+Pixmap Class Reference}
+\label{class_q_c_p_item_pixmap}\index{Q\+C\+P\+Item\+Pixmap@{Q\+C\+P\+Item\+Pixmap}}
+
+
+An arbitrary pixmap.  
+
+
+
+
+Collaboration diagram for Q\+C\+P\+Item\+Pixmap\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_item_pixmap__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Q\+C\+P\+Item\+Pixmap} ({\bf Q\+Custom\+Plot} $\ast$parent\+Plot)
+\item 
+Q\+Pixmap {\bfseries pixmap} () const \label{class_q_c_p_item_pixmap_a73dea89e0eb45127a2705e2c7991b8d8}
+
+\item 
+bool {\bfseries scaled} () const \label{class_q_c_p_item_pixmap_a54026b89dff3c60376c2360f01b6fb83}
+
+\item 
+Qt\+::\+Aspect\+Ratio\+Mode {\bfseries aspect\+Ratio\+Mode} () const \label{class_q_c_p_item_pixmap_ac5b95c097169e107a61eebbb7c77523c}
+
+\item 
+Qt\+::\+Transformation\+Mode {\bfseries transformation\+Mode} () const \label{class_q_c_p_item_pixmap_a1d4751a7b9588354fc8e726d891153f7}
+
+\item 
+Q\+Pen {\bfseries pen} () const \label{class_q_c_p_item_pixmap_ab2b821c80cfade589472e933b9c4361f}
+
+\item 
+Q\+Pen {\bfseries selected\+Pen} () const \label{class_q_c_p_item_pixmap_af8e839d7c7b84e214608feda3caec2bc}
+
+\item 
+void {\bf set\+Pixmap} (const Q\+Pixmap \&pixmap)
+\item 
+void {\bf set\+Scaled} (bool scaled, Qt\+::\+Aspect\+Ratio\+Mode aspect\+Ratio\+Mode=Qt\+::\+Keep\+Aspect\+Ratio, Qt\+::\+Transformation\+Mode transformation\+Mode=Qt\+::\+Smooth\+Transformation)
+\item 
+void {\bf set\+Pen} (const Q\+Pen \&pen)
+\item 
+void {\bf set\+Selected\+Pen} (const Q\+Pen \&pen)
+\item 
+virtual double {\bf select\+Test} (const Q\+Point\+F \&pos, bool only\+Selectable, Q\+Variant $\ast$details=0) const 
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Q\+C\+P\+Item\+Position} $\ast$const {\bfseries top\+Left}\label{class_q_c_p_item_pixmap_a43c281ef6ad46f3cf04f365289abe51a}
+
+\item 
+{\bf Q\+C\+P\+Item\+Position} $\ast$const {\bfseries bottom\+Right}\label{class_q_c_p_item_pixmap_abcc38063f9502b876bf6615c45cc0994}
+
+\item 
+{\bf Q\+C\+P\+Item\+Anchor} $\ast$const {\bfseries top}\label{class_q_c_p_item_pixmap_af7a156590b1d59ab21b453c430c56a7c}
+
+\item 
+{\bf Q\+C\+P\+Item\+Anchor} $\ast$const {\bfseries top\+Right}\label{class_q_c_p_item_pixmap_a72eabd0010be41a4ec1b22aa983d2aa1}
+
+\item 
+{\bf Q\+C\+P\+Item\+Anchor} $\ast$const {\bfseries right}\label{class_q_c_p_item_pixmap_ac9c0fd231f9e285765978a05d13f8280}
+
+\item 
+{\bf Q\+C\+P\+Item\+Anchor} $\ast$const {\bfseries bottom}\label{class_q_c_p_item_pixmap_ad7da77f530868e846151eff8a28fb948}
+
+\item 
+{\bf Q\+C\+P\+Item\+Anchor} $\ast$const {\bfseries bottom\+Left}\label{class_q_c_p_item_pixmap_a01943e569233382b3627e24636b0fff2}
+
+\item 
+{\bf Q\+C\+P\+Item\+Anchor} $\ast$const {\bfseries left}\label{class_q_c_p_item_pixmap_a8c85fcb8cb8ce292859a0499d16539b1}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bfseries Anchor\+Index} \{ \\*
+{\bfseries ai\+Top}, 
+{\bfseries ai\+Top\+Right}, 
+{\bfseries ai\+Right}, 
+{\bfseries ai\+Bottom}, 
+\\*
+{\bfseries ai\+Bottom\+Left}, 
+{\bfseries ai\+Left}
+ \}\label{class_q_c_p_item_pixmap_a0ea7f65edb7395e02de521915f221174}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries draw} ({\bf Q\+C\+P\+Painter} $\ast$painter)\label{class_q_c_p_item_pixmap_a879e8076c2db01a38b34cfa73ec95d2f}
+
+\item 
+virtual Q\+Point\+F {\bfseries anchor\+Pixel\+Point} (int anchor\+Id) const \label{class_q_c_p_item_pixmap_a88abce3c1027f371cddcf6dad35ffbb1}
+
+\item 
+void {\bfseries update\+Scaled\+Pixmap} (Q\+Rect final\+Rect=Q\+Rect(), bool flip\+Horz=false, bool flip\+Vert=false)\label{class_q_c_p_item_pixmap_a8bced3027b326b290726cd1979c7cfc6}
+
+\item 
+Q\+Rect {\bfseries get\+Final\+Rect} (bool $\ast$flipped\+Horz=0, bool $\ast$flipped\+Vert=0) const \label{class_q_c_p_item_pixmap_a245ef0c626cab7096a810442f2f6a2d9}
+
+\item 
+Q\+Pen {\bfseries main\+Pen} () const \label{class_q_c_p_item_pixmap_af21085516585c475dc9d839e7f377233}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Pixmap {\bfseries m\+Pixmap}\label{class_q_c_p_item_pixmap_a1396cce7f26c7b8e9512906284380c4d}
+
+\item 
+Q\+Pixmap {\bfseries m\+Scaled\+Pixmap}\label{class_q_c_p_item_pixmap_a2ebc66e15b9f1264563d58f29ba1bc00}
+
+\item 
+bool {\bfseries m\+Scaled}\label{class_q_c_p_item_pixmap_a8fe670a529cd46a9b8afd9fc1203bc3f}
+
+\item 
+Qt\+::\+Aspect\+Ratio\+Mode {\bfseries m\+Aspect\+Ratio\+Mode}\label{class_q_c_p_item_pixmap_a8dc6b6c1e106ac523efae22d5fe55bab}
+
+\item 
+Qt\+::\+Transformation\+Mode {\bfseries m\+Transformation\+Mode}\label{class_q_c_p_item_pixmap_ac9ecad3b9842363754e32eda2cf821bd}
+
+\item 
+Q\+Pen {\bfseries m\+Pen}\label{class_q_c_p_item_pixmap_acfee1124eb51a1887aaf8de10777c7a1}
+
+\item 
+Q\+Pen {\bfseries m\+Selected\+Pen}\label{class_q_c_p_item_pixmap_a0949e5bb6a261fc4e9668e28e2effcfa}
+
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+An arbitrary pixmap. 
+
+ It has two positions, {\itshape top\+Left} and {\itshape bottom\+Right}, which define the rectangle the pixmap will be drawn in. Depending on the scale setting (\doxyref{set\+Scaled}{p.}{class_q_c_p_item_pixmap_ab4d44529a1c6c8d37d0ea7560e042777}), the pixmap will be either scaled to fit the rectangle or be drawn aligned to the top\+Left position.
+
+If scaling is enabled and {\itshape top\+Left} is further to the bottom/right than {\itshape bottom\+Right} (as shown on the right side of the example image), the pixmap will be flipped in the respective orientations. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Q\+C\+P\+Item\+Pixmap@{Q\+C\+P\+Item\+Pixmap}!Q\+C\+P\+Item\+Pixmap@{Q\+C\+P\+Item\+Pixmap}}
+\index{Q\+C\+P\+Item\+Pixmap@{Q\+C\+P\+Item\+Pixmap}!Q\+C\+P\+Item\+Pixmap@{Q\+C\+P\+Item\+Pixmap}}
+\subsubsection[{Q\+C\+P\+Item\+Pixmap}]{\setlength{\rightskip}{0pt plus 5cm}Q\+C\+P\+Item\+Pixmap\+::\+Q\+C\+P\+Item\+Pixmap (
+\begin{DoxyParamCaption}
+\item[{{\bf Q\+Custom\+Plot} $\ast$}]{parent\+Plot}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_item_pixmap_aa6de42a37261b21a5480e7da122345c3}
+Creates a rectangle item and sets default values.
+
+The constructed item can be added to the plot with \doxyref{Q\+Custom\+Plot\+::add\+Item}{p.}{class_q_custom_plot_aa500620379262321685cb7a7674cbd2a}. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_item_pixmap_aa6de42a37261b21a5480e7da122345c3_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{Q\+C\+P\+Item\+Pixmap@{Q\+C\+P\+Item\+Pixmap}!select\+Test@{select\+Test}}
+\index{select\+Test@{select\+Test}!Q\+C\+P\+Item\+Pixmap@{Q\+C\+P\+Item\+Pixmap}}
+\subsubsection[{select\+Test}]{\setlength{\rightskip}{0pt plus 5cm}double Q\+C\+P\+Item\+Pixmap\+::select\+Test (
+\begin{DoxyParamCaption}
+\item[{const Q\+Point\+F \&}]{pos, }
+\item[{bool}]{only\+Selectable, }
+\item[{Q\+Variant $\ast$}]{details = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_q_c_p_item_pixmap_a9f8436aa141fa0fb504191c882c2f4d9}
+This function is used to decide whether a click hits a layerable object or not.
+
+{\itshape pos} is a point in pixel coordinates on the \doxyref{Q\+Custom\+Plot}{p.}{class_q_custom_plot} surface. This function returns the shortest pixel distance of this point to the object. If the object is either invisible or the distance couldn\textquotesingle{}t be determined, -\/1.\+0 is returned. Further, if {\itshape only\+Selectable} is true and the object is not selectable, -\/1.\+0 is returned, too.
+
+If the object is represented not by single lines but by an area like a \doxyref{Q\+C\+P\+Item\+Text}{p.}{class_q_c_p_item_text} or the bars of a \doxyref{Q\+C\+P\+Bars}{p.}{class_q_c_p_bars} plottable, a click inside the area should also be considered a hit. In these cases this function thus returns a constant value greater zero but still below the parent plot\textquotesingle{}s selection tolerance. (typically the selection\+Tolerance multiplied by 0.\+99).
+
+Providing a constant value for area objects allows selecting line objects even when they are obscured by such area objects, by clicking close to the lines (i.\+e. closer than 0.\+99$\ast$selection\+Tolerance).
+
+The actual setting of the selection state is not done by this function. This is handled by the parent \doxyref{Q\+Custom\+Plot}{p.}{class_q_custom_plot} when the mouse\+Release\+Event occurs, and the finally selected object is notified via the select\+Event/deselect\+Event methods.
+
+{\itshape details} is an optional output parameter. Every layerable subclass may place any information in {\itshape details}. This information will be passed to select\+Event when the parent \doxyref{Q\+Custom\+Plot}{p.}{class_q_custom_plot} decides on the basis of this select\+Test call, that the object was successfully selected. The subsequent call to select\+Event will carry the {\itshape details}. This is useful for multi-\/part objects (like \doxyref{Q\+C\+P\+Axis}{p.}{class_q_c_p_axis}). This way, a possibly complex calculation to decide which part was clicked is only done once in \doxyref{select\+Test}{p.}{class_q_c_p_item_pixmap_a9f8436aa141fa0fb504191c882c2f4d9}. The result (i.\+e. the actually clicked part) can then be placed in {\itshape details}. So in the subsequent select\+Event, the decision which part was selected doesn\textquotesingle{}t have to be done a second time for a single selection operation.
+
+You may pass 0 as {\itshape details} to indicate that you are not interested in those selection details.
+
+\begin{DoxySeeAlso}{See also}
+select\+Event, deselect\+Event, \doxyref{Q\+Custom\+Plot\+::set\+Interactions}{p.}{class_q_custom_plot_a5ee1e2f6ae27419deca53e75907c27e5} 
+\end{DoxySeeAlso}
+
+
+Implements {\bf Q\+C\+P\+Abstract\+Item} \doxyref{}{p.}{class_q_c_p_abstract_item_a96d522d10ffc0413b9a366c6f7f0476b}.
+
+\index{Q\+C\+P\+Item\+Pixmap@{Q\+C\+P\+Item\+Pixmap}!set\+Pen@{set\+Pen}}
+\index{set\+Pen@{set\+Pen}!Q\+C\+P\+Item\+Pixmap@{Q\+C\+P\+Item\+Pixmap}}
+\subsubsection[{set\+Pen}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Item\+Pixmap\+::set\+Pen (
+\begin{DoxyParamCaption}
+\item[{const Q\+Pen \&}]{pen}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_item_pixmap_acdade1305edb4b5cae14f97fd132065f}
+Sets the pen that will be used to draw a border around the pixmap.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{set\+Selected\+Pen}{p.}{class_q_c_p_item_pixmap_afc5e479e88e53740176ce77cb70dd67a}, set\+Brush 
+\end{DoxySeeAlso}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_item_pixmap_acdade1305edb4b5cae14f97fd132065f_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Item\+Pixmap@{Q\+C\+P\+Item\+Pixmap}!set\+Pixmap@{set\+Pixmap}}
+\index{set\+Pixmap@{set\+Pixmap}!Q\+C\+P\+Item\+Pixmap@{Q\+C\+P\+Item\+Pixmap}}
+\subsubsection[{set\+Pixmap}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Item\+Pixmap\+::set\+Pixmap (
+\begin{DoxyParamCaption}
+\item[{const Q\+Pixmap \&}]{pixmap}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_item_pixmap_a726b69ea4025edf48f9b29b6450548a7}
+Sets the pixmap that will be displayed. \index{Q\+C\+P\+Item\+Pixmap@{Q\+C\+P\+Item\+Pixmap}!set\+Scaled@{set\+Scaled}}
+\index{set\+Scaled@{set\+Scaled}!Q\+C\+P\+Item\+Pixmap@{Q\+C\+P\+Item\+Pixmap}}
+\subsubsection[{set\+Scaled}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Item\+Pixmap\+::set\+Scaled (
+\begin{DoxyParamCaption}
+\item[{bool}]{scaled, }
+\item[{Qt\+::\+Aspect\+Ratio\+Mode}]{aspect\+Ratio\+Mode = {\ttfamily Qt\+:\+:KeepAspectRatio}, }
+\item[{Qt\+::\+Transformation\+Mode}]{transformation\+Mode = {\ttfamily Qt\+:\+:SmoothTransformation}}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_item_pixmap_ab4d44529a1c6c8d37d0ea7560e042777}
+Sets whether the pixmap will be scaled to fit the rectangle defined by the {\itshape top\+Left} and {\itshape bottom\+Right} positions. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_item_pixmap_ab4d44529a1c6c8d37d0ea7560e042777_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Item\+Pixmap@{Q\+C\+P\+Item\+Pixmap}!set\+Selected\+Pen@{set\+Selected\+Pen}}
+\index{set\+Selected\+Pen@{set\+Selected\+Pen}!Q\+C\+P\+Item\+Pixmap@{Q\+C\+P\+Item\+Pixmap}}
+\subsubsection[{set\+Selected\+Pen}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Item\+Pixmap\+::set\+Selected\+Pen (
+\begin{DoxyParamCaption}
+\item[{const Q\+Pen \&}]{pen}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_item_pixmap_afc5e479e88e53740176ce77cb70dd67a}
+Sets the pen that will be used to draw a border around the pixmap when selected
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{set\+Pen}{p.}{class_q_c_p_item_pixmap_acdade1305edb4b5cae14f97fd132065f}, \doxyref{set\+Selected}{p.}{class_q_c_p_abstract_item_a203de94ad586cc44d16c9565f49d3378} 
+\end{DoxySeeAlso}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_item_pixmap_afc5e479e88e53740176ce77cb70dd67a_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf qcustomplot.\+h}\item 
+{\bf qcustomplot.\+cpp}\end{DoxyCompactItemize}

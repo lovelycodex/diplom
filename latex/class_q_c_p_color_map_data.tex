@@ -1,0 +1,541 @@
+\section{Q\+C\+P\+Color\+Map\+Data Class Reference}
+\label{class_q_c_p_color_map_data}\index{Q\+C\+P\+Color\+Map\+Data@{Q\+C\+P\+Color\+Map\+Data}}
+
+
+Holds the two-\/dimensional data of a \doxyref{Q\+C\+P\+Color\+Map}{p.}{class_q_c_p_color_map} plottable.  
+
+
+
+
+Collaboration diagram for Q\+C\+P\+Color\+Map\+Data\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=203pt]{class_q_c_p_color_map_data__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Q\+C\+P\+Color\+Map\+Data} (int key\+Size, int value\+Size, const {\bf Q\+C\+P\+Range} \&key\+Range, const {\bf Q\+C\+P\+Range} \&value\+Range)
+\item 
+{\bf Q\+C\+P\+Color\+Map\+Data} (const {\bf Q\+C\+P\+Color\+Map\+Data} \&other)
+\item 
+{\bf Q\+C\+P\+Color\+Map\+Data} \& {\bf operator=} (const {\bf Q\+C\+P\+Color\+Map\+Data} \&other)
+\item 
+int {\bfseries key\+Size} () const \label{class_q_c_p_color_map_data_aa8d7811686fdfea964947715210c4af8}
+
+\item 
+int {\bfseries value\+Size} () const \label{class_q_c_p_color_map_data_ab880be6bc587f34e8d22fe77ef6b57e9}
+
+\item 
+{\bf Q\+C\+P\+Range} {\bfseries key\+Range} () const \label{class_q_c_p_color_map_data_a4765180639742460f64ab6c97c745c08}
+
+\item 
+{\bf Q\+C\+P\+Range} {\bfseries value\+Range} () const \label{class_q_c_p_color_map_data_a025be4d7ba0494fd7b38a5a56c737f2a}
+
+\item 
+{\bf Q\+C\+P\+Range} {\bfseries data\+Bounds} () const \label{class_q_c_p_color_map_data_a9ff433248ee226ea0c469ae6cc2489fd}
+
+\item 
+double {\bfseries data} (double key, double value)\label{class_q_c_p_color_map_data_a2c33807b008cdb9e1394245c294c0eaf}
+
+\item 
+double {\bfseries cell} (int key\+Index, int value\+Index)\label{class_q_c_p_color_map_data_af51ecd21f347adbf87b4cce4e1f5cbd6}
+
+\item 
+void {\bf set\+Size} (int key\+Size, int value\+Size)
+\item 
+void {\bf set\+Key\+Size} (int key\+Size)
+\item 
+void {\bf set\+Value\+Size} (int value\+Size)
+\item 
+void {\bf set\+Range} (const {\bf Q\+C\+P\+Range} \&key\+Range, const {\bf Q\+C\+P\+Range} \&value\+Range)
+\item 
+void {\bf set\+Key\+Range} (const {\bf Q\+C\+P\+Range} \&key\+Range)
+\item 
+void {\bf set\+Value\+Range} (const {\bf Q\+C\+P\+Range} \&value\+Range)
+\item 
+void {\bf set\+Data} (double key, double value, double z)
+\item 
+void {\bf set\+Cell} (int key\+Index, int value\+Index, double z)
+\item 
+void {\bf recalculate\+Data\+Bounds} ()
+\item 
+void {\bf clear} ()
+\item 
+void {\bf fill} (double z)
+\item 
+bool {\bf is\+Empty} () const 
+\item 
+void {\bf coord\+To\+Cell} (double key, double value, int $\ast$key\+Index, int $\ast$value\+Index) const 
+\item 
+void {\bf cell\+To\+Coord} (int key\+Index, int value\+Index, double $\ast$key, double $\ast$value) const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries m\+Key\+Size}\label{class_q_c_p_color_map_data_a354e06462023340fbc03894b22499f6d}
+
+\item 
+int {\bfseries m\+Value\+Size}\label{class_q_c_p_color_map_data_ae8ee9093632a59f55eb4fc06579ed256}
+
+\item 
+{\bf Q\+C\+P\+Range} {\bfseries m\+Key\+Range}\label{class_q_c_p_color_map_data_aaaafd0d7d0f153dbd152f3daf34254ee}
+
+\item 
+{\bf Q\+C\+P\+Range} {\bfseries m\+Value\+Range}\label{class_q_c_p_color_map_data_a225bb96f10c1a27b51ae59249477dbef}
+
+\item 
+bool {\bfseries m\+Is\+Empty}\label{class_q_c_p_color_map_data_a10e91aa89ed05bd177b1f81e07b465b8}
+
+\item 
+double $\ast$ {\bfseries m\+Data}\label{class_q_c_p_color_map_data_ac1682862022f575191351c9825187d39}
+
+\item 
+{\bf Q\+C\+P\+Range} {\bfseries m\+Data\+Bounds}\label{class_q_c_p_color_map_data_a1798b3dcc0a27091d196bfd156dcb3f2}
+
+\item 
+bool {\bfseries m\+Data\+Modified}\label{class_q_c_p_color_map_data_ad3cc682da2ac14e5acdbc05cf4d3d93b}
+
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries Q\+C\+P\+Color\+Map}\label{class_q_c_p_color_map_data_afa9d9eab63af3e6f20f882c8d7cc9f20}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Holds the two-\/dimensional data of a \doxyref{Q\+C\+P\+Color\+Map}{p.}{class_q_c_p_color_map} plottable. 
+
+This class is a data storage for \doxyref{Q\+C\+P\+Color\+Map}{p.}{class_q_c_p_color_map}. It holds a two-\/dimensional array, which \doxyref{Q\+C\+P\+Color\+Map}{p.}{class_q_c_p_color_map} then displays as a 2\+D image in the plot, where the array values are represented by a color, depending on the value.
+
+The size of the array can be controlled via \doxyref{set\+Size}{p.}{class_q_c_p_color_map_data_a0d9ff35c299d0478b682bfbcdd9c097e} (or \doxyref{set\+Key\+Size}{p.}{class_q_c_p_color_map_data_ac7ef70e383aface34b44dbde49234b6b}, \doxyref{set\+Value\+Size}{p.}{class_q_c_p_color_map_data_a0893c9e3914513048b45e3429ffd16f2}). Which plot coordinates these cells correspond to can be configured with \doxyref{set\+Range}{p.}{class_q_c_p_color_map_data_aad9c1c7c703c1339489fc730517c83d4} (or \doxyref{set\+Key\+Range}{p.}{class_q_c_p_color_map_data_a0738c485f3c9df9ea1241b7a8bb6a86e}, \doxyref{set\+Value\+Range}{p.}{class_q_c_p_color_map_data_ada1b2680ba96a5f4175b6d341cf75d23}).
+
+The data cells can be accessed in two ways\+: They can be directly addressed by an integer index with \doxyref{set\+Cell}{p.}{class_q_c_p_color_map_data_a8e75eaf8746596319032a93f3d2d0683}. This is the fastest method. Alternatively, they can be addressed by their plot coordinate with \doxyref{set\+Data}{p.}{class_q_c_p_color_map_data_afd2083ccfd6987ec94aa7ef8e91ca39a}. plot coordinate to cell index transformations and vice versa are provided by the functions \doxyref{coord\+To\+Cell}{p.}{class_q_c_p_color_map_data_a26e33c5ec7094b60136350bcd77d3737} and \doxyref{cell\+To\+Coord}{p.}{class_q_c_p_color_map_data_ac96d6e84befe7b9951b5da6d4d4a2a47}.
+
+This class also buffers the minimum and maximum values that are in the data set, to provide \doxyref{Q\+C\+P\+Color\+Map\+::rescale\+Data\+Range}{p.}{class_q_c_p_color_map_a856608fa3dd1cc290bcd5f29a5575774} with the necessary information quickly. Setting a cell to a value that is greater than the current maximum increases this maximum to the new value. However, setting the cell that currently holds the maximum value to a smaller value doesn\textquotesingle{}t decrease the maximum again, because finding the true new maximum would require going through the entire data array, which might be time consuming. The same holds for the data minimum. This functionality is given by \doxyref{recalculate\+Data\+Bounds}{p.}{class_q_c_p_color_map_data_ab235ade8a4d64bd3adb26a99b3dd57ee}, such that you can decide when it is sensible to find the true current minimum and maximum. The method \doxyref{Q\+C\+P\+Color\+Map\+::rescale\+Data\+Range}{p.}{class_q_c_p_color_map_a856608fa3dd1cc290bcd5f29a5575774} offers a convenience parameter {\itshape recalculate\+Data\+Bounds} which may be set to true to automatically call \doxyref{recalculate\+Data\+Bounds}{p.}{class_q_c_p_color_map_data_ab235ade8a4d64bd3adb26a99b3dd57ee} internally. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Q\+C\+P\+Color\+Map\+Data@{Q\+C\+P\+Color\+Map\+Data}!Q\+C\+P\+Color\+Map\+Data@{Q\+C\+P\+Color\+Map\+Data}}
+\index{Q\+C\+P\+Color\+Map\+Data@{Q\+C\+P\+Color\+Map\+Data}!Q\+C\+P\+Color\+Map\+Data@{Q\+C\+P\+Color\+Map\+Data}}
+\subsubsection[{Q\+C\+P\+Color\+Map\+Data}]{\setlength{\rightskip}{0pt plus 5cm}Q\+C\+P\+Color\+Map\+Data\+::\+Q\+C\+P\+Color\+Map\+Data (
+\begin{DoxyParamCaption}
+\item[{int}]{key\+Size, }
+\item[{int}]{value\+Size, }
+\item[{const {\bf Q\+C\+P\+Range} \&}]{key\+Range, }
+\item[{const {\bf Q\+C\+P\+Range} \&}]{value\+Range}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_color_map_data_aac9d8eb81e18e240d89d56c01933fd23}
+Constructs a new \doxyref{Q\+C\+P\+Color\+Map\+Data}{p.}{class_q_c_p_color_map_data} instance. The instance has {\itshape key\+Size} cells in the key direction and {\itshape value\+Size} cells in the value direction. These cells will be displayed by the \doxyref{Q\+C\+P\+Color\+Map}{p.}{class_q_c_p_color_map} at the coordinates {\itshape key\+Range} and {\itshape value\+Range}.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{set\+Size}{p.}{class_q_c_p_color_map_data_a0d9ff35c299d0478b682bfbcdd9c097e}, \doxyref{set\+Key\+Size}{p.}{class_q_c_p_color_map_data_ac7ef70e383aface34b44dbde49234b6b}, \doxyref{set\+Value\+Size}{p.}{class_q_c_p_color_map_data_a0893c9e3914513048b45e3429ffd16f2}, \doxyref{set\+Range}{p.}{class_q_c_p_color_map_data_aad9c1c7c703c1339489fc730517c83d4}, \doxyref{set\+Key\+Range}{p.}{class_q_c_p_color_map_data_a0738c485f3c9df9ea1241b7a8bb6a86e}, \doxyref{set\+Value\+Range}{p.}{class_q_c_p_color_map_data_ada1b2680ba96a5f4175b6d341cf75d23} 
+\end{DoxySeeAlso}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_color_map_data_aac9d8eb81e18e240d89d56c01933fd23_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Color\+Map\+Data@{Q\+C\+P\+Color\+Map\+Data}!Q\+C\+P\+Color\+Map\+Data@{Q\+C\+P\+Color\+Map\+Data}}
+\index{Q\+C\+P\+Color\+Map\+Data@{Q\+C\+P\+Color\+Map\+Data}!Q\+C\+P\+Color\+Map\+Data@{Q\+C\+P\+Color\+Map\+Data}}
+\subsubsection[{Q\+C\+P\+Color\+Map\+Data}]{\setlength{\rightskip}{0pt plus 5cm}Q\+C\+P\+Color\+Map\+Data\+::\+Q\+C\+P\+Color\+Map\+Data (
+\begin{DoxyParamCaption}
+\item[{const {\bf Q\+C\+P\+Color\+Map\+Data} \&}]{other}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_color_map_data_a7f2145d86473263494abb9bf1de20436}
+Constructs a new \doxyref{Q\+C\+P\+Color\+Map\+Data}{p.}{class_q_c_p_color_map_data} instance copying the data and range of {\itshape other}. 
+
+\subsection{Member Function Documentation}
+\index{Q\+C\+P\+Color\+Map\+Data@{Q\+C\+P\+Color\+Map\+Data}!cell\+To\+Coord@{cell\+To\+Coord}}
+\index{cell\+To\+Coord@{cell\+To\+Coord}!Q\+C\+P\+Color\+Map\+Data@{Q\+C\+P\+Color\+Map\+Data}}
+\subsubsection[{cell\+To\+Coord}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Color\+Map\+Data\+::cell\+To\+Coord (
+\begin{DoxyParamCaption}
+\item[{int}]{key\+Index, }
+\item[{int}]{value\+Index, }
+\item[{double $\ast$}]{key, }
+\item[{double $\ast$}]{value}
+\end{DoxyParamCaption}
+) const}\label{class_q_c_p_color_map_data_ac96d6e84befe7b9951b5da6d4d4a2a47}
+Transforms cell indices given by {\itshape key\+Index} and {\itshape value\+Index} to cell indices of this \doxyref{Q\+C\+P\+Color\+Map\+Data}{p.}{class_q_c_p_color_map_data} instance. The resulting coordinates are returned via the output parameters {\itshape key} and {\itshape value}.
+
+If you are only interested in a key or value coordinate, you may pass 0 as {\itshape key} or {\itshape value}.
+
+\begin{DoxyNote}{Note}
+The \doxyref{Q\+C\+P\+Color\+Map}{p.}{class_q_c_p_color_map} always displays the data at equal key/value intervals, even if the key or value axis is set to a logarithmic scaling. If you want to use \doxyref{Q\+C\+P\+Color\+Map}{p.}{class_q_c_p_color_map} with logarithmic axes, you shouldn\textquotesingle{}t use the \doxyref{Q\+C\+P\+Color\+Map\+Data\+::cell\+To\+Coord}{p.}{class_q_c_p_color_map_data_ac96d6e84befe7b9951b5da6d4d4a2a47} method as it uses a linear transformation to determine the cell index.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxyref{coord\+To\+Cell}{p.}{class_q_c_p_color_map_data_a26e33c5ec7094b60136350bcd77d3737}, \doxyref{Q\+C\+P\+Axis\+::pixel\+To\+Coord}{p.}{class_q_c_p_axis_ae9289ef7043b9d966af88eaa95b037d1} 
+\end{DoxySeeAlso}
+\index{Q\+C\+P\+Color\+Map\+Data@{Q\+C\+P\+Color\+Map\+Data}!clear@{clear}}
+\index{clear@{clear}!Q\+C\+P\+Color\+Map\+Data@{Q\+C\+P\+Color\+Map\+Data}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Color\+Map\+Data\+::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_color_map_data_a9910ba830e96955bd5c8e5bef1e77ef3}
+Frees the internal data memory.
+
+This is equivalent to calling \doxyref{set\+Size(0, 0)}{p.}{class_q_c_p_color_map_data_a0d9ff35c299d0478b682bfbcdd9c097e}. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_color_map_data_a9910ba830e96955bd5c8e5bef1e77ef3_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_color_map_data_a9910ba830e96955bd5c8e5bef1e77ef3_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Color\+Map\+Data@{Q\+C\+P\+Color\+Map\+Data}!coord\+To\+Cell@{coord\+To\+Cell}}
+\index{coord\+To\+Cell@{coord\+To\+Cell}!Q\+C\+P\+Color\+Map\+Data@{Q\+C\+P\+Color\+Map\+Data}}
+\subsubsection[{coord\+To\+Cell}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Color\+Map\+Data\+::coord\+To\+Cell (
+\begin{DoxyParamCaption}
+\item[{double}]{key, }
+\item[{double}]{value, }
+\item[{int $\ast$}]{key\+Index, }
+\item[{int $\ast$}]{value\+Index}
+\end{DoxyParamCaption}
+) const}\label{class_q_c_p_color_map_data_a26e33c5ec7094b60136350bcd77d3737}
+Transforms plot coordinates given by {\itshape key} and {\itshape value} to cell indices of this \doxyref{Q\+C\+P\+Color\+Map\+Data}{p.}{class_q_c_p_color_map_data} instance. The resulting cell indices are returned via the output parameters {\itshape key\+Index} and {\itshape value\+Index}.
+
+The retrieved key/value cell indices can then be used for example with \doxyref{set\+Cell}{p.}{class_q_c_p_color_map_data_a8e75eaf8746596319032a93f3d2d0683}.
+
+If you are only interested in a key or value index, you may pass 0 as {\itshape value\+Index} or {\itshape key\+Index}.
+
+\begin{DoxyNote}{Note}
+The \doxyref{Q\+C\+P\+Color\+Map}{p.}{class_q_c_p_color_map} always displays the data at equal key/value intervals, even if the key or value axis is set to a logarithmic scaling. If you want to use \doxyref{Q\+C\+P\+Color\+Map}{p.}{class_q_c_p_color_map} with logarithmic axes, you shouldn\textquotesingle{}t use the \doxyref{Q\+C\+P\+Color\+Map\+Data\+::coord\+To\+Cell}{p.}{class_q_c_p_color_map_data_a26e33c5ec7094b60136350bcd77d3737} method as it uses a linear transformation to determine the cell index.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxyref{cell\+To\+Coord}{p.}{class_q_c_p_color_map_data_ac96d6e84befe7b9951b5da6d4d4a2a47}, \doxyref{Q\+C\+P\+Axis\+::coord\+To\+Pixel}{p.}{class_q_c_p_axis_a985ae693b842fb0422b4390fe36d299a} 
+\end{DoxySeeAlso}
+\index{Q\+C\+P\+Color\+Map\+Data@{Q\+C\+P\+Color\+Map\+Data}!fill@{fill}}
+\index{fill@{fill}!Q\+C\+P\+Color\+Map\+Data@{Q\+C\+P\+Color\+Map\+Data}}
+\subsubsection[{fill}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Color\+Map\+Data\+::fill (
+\begin{DoxyParamCaption}
+\item[{double}]{z}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_color_map_data_a350f783260eb9b5de5c7b5e0d5d3e3c2}
+Sets all cells to the value {\itshape z}. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_color_map_data_a350f783260eb9b5de5c7b5e0d5d3e3c2_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Color\+Map\+Data@{Q\+C\+P\+Color\+Map\+Data}!is\+Empty@{is\+Empty}}
+\index{is\+Empty@{is\+Empty}!Q\+C\+P\+Color\+Map\+Data@{Q\+C\+P\+Color\+Map\+Data}}
+\subsubsection[{is\+Empty}]{\setlength{\rightskip}{0pt plus 5cm}bool Q\+C\+P\+Color\+Map\+Data\+::is\+Empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_q_c_p_color_map_data_a986009324aee1fc5f696db46bd03dde5}
+Returns whether this instance carries no data. This is equivalent to having a size where at least one of the dimensions is 0 (see \doxyref{set\+Size}{p.}{class_q_c_p_color_map_data_a0d9ff35c299d0478b682bfbcdd9c097e}). 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_color_map_data_a986009324aee1fc5f696db46bd03dde5_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Color\+Map\+Data@{Q\+C\+P\+Color\+Map\+Data}!operator=@{operator=}}
+\index{operator=@{operator=}!Q\+C\+P\+Color\+Map\+Data@{Q\+C\+P\+Color\+Map\+Data}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+C\+P\+Color\+Map\+Data} \& Q\+C\+P\+Color\+Map\+Data\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Q\+C\+P\+Color\+Map\+Data} \&}]{other}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_color_map_data_afdf4dd1b2f5714234fe84709b85c2a8d}
+Overwrites this color map data instance with the data stored in {\itshape other}. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_color_map_data_afdf4dd1b2f5714234fe84709b85c2a8d_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Color\+Map\+Data@{Q\+C\+P\+Color\+Map\+Data}!recalculate\+Data\+Bounds@{recalculate\+Data\+Bounds}}
+\index{recalculate\+Data\+Bounds@{recalculate\+Data\+Bounds}!Q\+C\+P\+Color\+Map\+Data@{Q\+C\+P\+Color\+Map\+Data}}
+\subsubsection[{recalculate\+Data\+Bounds}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Color\+Map\+Data\+::recalculate\+Data\+Bounds (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_color_map_data_ab235ade8a4d64bd3adb26a99b3dd57ee}
+Goes through the data and updates the buffered minimum and maximum data values.
+
+Calling this method is only advised if you are about to call \doxyref{Q\+C\+P\+Color\+Map\+::rescale\+Data\+Range}{p.}{class_q_c_p_color_map_a856608fa3dd1cc290bcd5f29a5575774} and can not guarantee that the cells holding the maximum or minimum data haven\textquotesingle{}t been overwritten with a smaller or larger value respectively, since the buffered maximum/minimum values have been updated the last time. Why this is the case is explained in the class description (\doxyref{Q\+C\+P\+Color\+Map\+Data}{p.}{class_q_c_p_color_map_data}).
+
+Note that the method \doxyref{Q\+C\+P\+Color\+Map\+::rescale\+Data\+Range}{p.}{class_q_c_p_color_map_a856608fa3dd1cc290bcd5f29a5575774} provides a parameter {\itshape recalculate\+Data\+Bounds} for convenience. Setting this to true will call this method for you, before doing the rescale. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_color_map_data_ab235ade8a4d64bd3adb26a99b3dd57ee_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Color\+Map\+Data@{Q\+C\+P\+Color\+Map\+Data}!set\+Cell@{set\+Cell}}
+\index{set\+Cell@{set\+Cell}!Q\+C\+P\+Color\+Map\+Data@{Q\+C\+P\+Color\+Map\+Data}}
+\subsubsection[{set\+Cell}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Color\+Map\+Data\+::set\+Cell (
+\begin{DoxyParamCaption}
+\item[{int}]{key\+Index, }
+\item[{int}]{value\+Index, }
+\item[{double}]{z}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_color_map_data_a8e75eaf8746596319032a93f3d2d0683}
+Sets the data of the cell with indices {\itshape key\+Index} and {\itshape value\+Index} to {\itshape z}. The indices enumerate the cells starting from zero, up to the map\textquotesingle{}s size-\/1 in the respective dimension (see \doxyref{set\+Size}{p.}{class_q_c_p_color_map_data_a0d9ff35c299d0478b682bfbcdd9c097e}).
+
+In the standard plot configuration (horizontal key axis and vertical value axis, both not range-\/reversed), the cell with indices (0, 0) is in the bottom left corner and the cell with indices (key\+Size-\/1, value\+Size-\/1) is in the top right corner of the color map.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{set\+Data}{p.}{class_q_c_p_color_map_data_afd2083ccfd6987ec94aa7ef8e91ca39a}, \doxyref{set\+Size}{p.}{class_q_c_p_color_map_data_a0d9ff35c299d0478b682bfbcdd9c097e} 
+\end{DoxySeeAlso}
+\index{Q\+C\+P\+Color\+Map\+Data@{Q\+C\+P\+Color\+Map\+Data}!set\+Data@{set\+Data}}
+\index{set\+Data@{set\+Data}!Q\+C\+P\+Color\+Map\+Data@{Q\+C\+P\+Color\+Map\+Data}}
+\subsubsection[{set\+Data}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Color\+Map\+Data\+::set\+Data (
+\begin{DoxyParamCaption}
+\item[{double}]{key, }
+\item[{double}]{value, }
+\item[{double}]{z}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_color_map_data_afd2083ccfd6987ec94aa7ef8e91ca39a}
+Sets the data of the cell, which lies at the plot coordinates given by {\itshape key} and {\itshape value}, to {\itshape z}.
+
+\begin{DoxyNote}{Note}
+The \doxyref{Q\+C\+P\+Color\+Map}{p.}{class_q_c_p_color_map} always displays the data at equal key/value intervals, even if the key or value axis is set to a logarithmic scaling. If you want to use \doxyref{Q\+C\+P\+Color\+Map}{p.}{class_q_c_p_color_map} with logarithmic axes, you shouldn\textquotesingle{}t use the \doxyref{Q\+C\+P\+Color\+Map\+Data\+::set\+Data}{p.}{class_q_c_p_color_map_data_afd2083ccfd6987ec94aa7ef8e91ca39a} method as it uses a linear transformation to determine the cell index. Rather directly access the cell index with \doxyref{Q\+C\+P\+Color\+Map\+Data\+::set\+Cell}{p.}{class_q_c_p_color_map_data_a8e75eaf8746596319032a93f3d2d0683}.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxyref{set\+Cell}{p.}{class_q_c_p_color_map_data_a8e75eaf8746596319032a93f3d2d0683}, \doxyref{set\+Range}{p.}{class_q_c_p_color_map_data_aad9c1c7c703c1339489fc730517c83d4} 
+\end{DoxySeeAlso}
+\index{Q\+C\+P\+Color\+Map\+Data@{Q\+C\+P\+Color\+Map\+Data}!set\+Key\+Range@{set\+Key\+Range}}
+\index{set\+Key\+Range@{set\+Key\+Range}!Q\+C\+P\+Color\+Map\+Data@{Q\+C\+P\+Color\+Map\+Data}}
+\subsubsection[{set\+Key\+Range}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Color\+Map\+Data\+::set\+Key\+Range (
+\begin{DoxyParamCaption}
+\item[{const {\bf Q\+C\+P\+Range} \&}]{key\+Range}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_color_map_data_a0738c485f3c9df9ea1241b7a8bb6a86e}
+Sets the coordinate range the data shall be distributed over in the key dimension. Together with the value range, This defines the rectangular area covered by the color map in plot coordinates.
+
+The outer cells will be centered on the range boundaries given to this function. For example, if the key size (\doxyref{set\+Key\+Size}{p.}{class_q_c_p_color_map_data_ac7ef70e383aface34b44dbde49234b6b}) is 3 and {\itshape key\+Range} is set to {\ttfamily \doxyref{Q\+C\+P\+Range(2, 3)}{p.}{class_q_c_p_range}} there will be cells centered on the key coordinates 2, 2.\+5 and 3.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{set\+Range}{p.}{class_q_c_p_color_map_data_aad9c1c7c703c1339489fc730517c83d4}, \doxyref{set\+Value\+Range}{p.}{class_q_c_p_color_map_data_ada1b2680ba96a5f4175b6d341cf75d23}, \doxyref{set\+Size}{p.}{class_q_c_p_color_map_data_a0d9ff35c299d0478b682bfbcdd9c097e} 
+\end{DoxySeeAlso}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_color_map_data_a0738c485f3c9df9ea1241b7a8bb6a86e_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Color\+Map\+Data@{Q\+C\+P\+Color\+Map\+Data}!set\+Key\+Size@{set\+Key\+Size}}
+\index{set\+Key\+Size@{set\+Key\+Size}!Q\+C\+P\+Color\+Map\+Data@{Q\+C\+P\+Color\+Map\+Data}}
+\subsubsection[{set\+Key\+Size}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Color\+Map\+Data\+::set\+Key\+Size (
+\begin{DoxyParamCaption}
+\item[{int}]{key\+Size}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_color_map_data_ac7ef70e383aface34b44dbde49234b6b}
+Resizes the data array to have {\itshape key\+Size} cells in the key dimension.
+
+The current data is discarded and the map cells are set to 0, unless the map had already the requested size.
+
+Setting {\itshape key\+Size} to zero frees the internal data array and \doxyref{is\+Empty}{p.}{class_q_c_p_color_map_data_a986009324aee1fc5f696db46bd03dde5} returns true.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{set\+Key\+Range}{p.}{class_q_c_p_color_map_data_a0738c485f3c9df9ea1241b7a8bb6a86e}, \doxyref{set\+Size}{p.}{class_q_c_p_color_map_data_a0d9ff35c299d0478b682bfbcdd9c097e}, \doxyref{set\+Value\+Size}{p.}{class_q_c_p_color_map_data_a0893c9e3914513048b45e3429ffd16f2} 
+\end{DoxySeeAlso}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_color_map_data_ac7ef70e383aface34b44dbde49234b6b_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Color\+Map\+Data@{Q\+C\+P\+Color\+Map\+Data}!set\+Range@{set\+Range}}
+\index{set\+Range@{set\+Range}!Q\+C\+P\+Color\+Map\+Data@{Q\+C\+P\+Color\+Map\+Data}}
+\subsubsection[{set\+Range}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Color\+Map\+Data\+::set\+Range (
+\begin{DoxyParamCaption}
+\item[{const {\bf Q\+C\+P\+Range} \&}]{key\+Range, }
+\item[{const {\bf Q\+C\+P\+Range} \&}]{value\+Range}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_color_map_data_aad9c1c7c703c1339489fc730517c83d4}
+Sets the coordinate ranges the data shall be distributed over. This defines the rectangular area covered by the color map in plot coordinates.
+
+The outer cells will be centered on the range boundaries given to this function. For example, if the key size (\doxyref{set\+Key\+Size}{p.}{class_q_c_p_color_map_data_ac7ef70e383aface34b44dbde49234b6b}) is 3 and {\itshape key\+Range} is set to {\ttfamily \doxyref{Q\+C\+P\+Range(2, 3)}{p.}{class_q_c_p_range}} there will be cells centered on the key coordinates 2, 2.\+5 and 3.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{set\+Size}{p.}{class_q_c_p_color_map_data_a0d9ff35c299d0478b682bfbcdd9c097e} 
+\end{DoxySeeAlso}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_color_map_data_aad9c1c7c703c1339489fc730517c83d4_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_color_map_data_aad9c1c7c703c1339489fc730517c83d4_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Color\+Map\+Data@{Q\+C\+P\+Color\+Map\+Data}!set\+Size@{set\+Size}}
+\index{set\+Size@{set\+Size}!Q\+C\+P\+Color\+Map\+Data@{Q\+C\+P\+Color\+Map\+Data}}
+\subsubsection[{set\+Size}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Color\+Map\+Data\+::set\+Size (
+\begin{DoxyParamCaption}
+\item[{int}]{key\+Size, }
+\item[{int}]{value\+Size}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_color_map_data_a0d9ff35c299d0478b682bfbcdd9c097e}
+Resizes the data array to have {\itshape key\+Size} cells in the key dimension and {\itshape value\+Size} cells in the value dimension.
+
+The current data is discarded and the map cells are set to 0, unless the map had already the requested size.
+
+Setting at least one of {\itshape key\+Size} or {\itshape value\+Size} to zero frees the internal data array and \doxyref{is\+Empty}{p.}{class_q_c_p_color_map_data_a986009324aee1fc5f696db46bd03dde5} returns true.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{set\+Range}{p.}{class_q_c_p_color_map_data_aad9c1c7c703c1339489fc730517c83d4}, \doxyref{set\+Key\+Size}{p.}{class_q_c_p_color_map_data_ac7ef70e383aface34b44dbde49234b6b}, \doxyref{set\+Value\+Size}{p.}{class_q_c_p_color_map_data_a0893c9e3914513048b45e3429ffd16f2} 
+\end{DoxySeeAlso}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_color_map_data_a0d9ff35c299d0478b682bfbcdd9c097e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_color_map_data_a0d9ff35c299d0478b682bfbcdd9c097e_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Color\+Map\+Data@{Q\+C\+P\+Color\+Map\+Data}!set\+Value\+Range@{set\+Value\+Range}}
+\index{set\+Value\+Range@{set\+Value\+Range}!Q\+C\+P\+Color\+Map\+Data@{Q\+C\+P\+Color\+Map\+Data}}
+\subsubsection[{set\+Value\+Range}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Color\+Map\+Data\+::set\+Value\+Range (
+\begin{DoxyParamCaption}
+\item[{const {\bf Q\+C\+P\+Range} \&}]{value\+Range}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_color_map_data_ada1b2680ba96a5f4175b6d341cf75d23}
+Sets the coordinate range the data shall be distributed over in the value dimension. Together with the key range, This defines the rectangular area covered by the color map in plot coordinates.
+
+The outer cells will be centered on the range boundaries given to this function. For example, if the value size (\doxyref{set\+Value\+Size}{p.}{class_q_c_p_color_map_data_a0893c9e3914513048b45e3429ffd16f2}) is 3 and {\itshape value\+Range} is set to {\ttfamily \doxyref{Q\+C\+P\+Range(2, 3)}{p.}{class_q_c_p_range}} there will be cells centered on the value coordinates 2, 2.\+5 and 3.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{set\+Range}{p.}{class_q_c_p_color_map_data_aad9c1c7c703c1339489fc730517c83d4}, \doxyref{set\+Key\+Range}{p.}{class_q_c_p_color_map_data_a0738c485f3c9df9ea1241b7a8bb6a86e}, \doxyref{set\+Size}{p.}{class_q_c_p_color_map_data_a0d9ff35c299d0478b682bfbcdd9c097e} 
+\end{DoxySeeAlso}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_color_map_data_ada1b2680ba96a5f4175b6d341cf75d23_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Color\+Map\+Data@{Q\+C\+P\+Color\+Map\+Data}!set\+Value\+Size@{set\+Value\+Size}}
+\index{set\+Value\+Size@{set\+Value\+Size}!Q\+C\+P\+Color\+Map\+Data@{Q\+C\+P\+Color\+Map\+Data}}
+\subsubsection[{set\+Value\+Size}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Color\+Map\+Data\+::set\+Value\+Size (
+\begin{DoxyParamCaption}
+\item[{int}]{value\+Size}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_color_map_data_a0893c9e3914513048b45e3429ffd16f2}
+Resizes the data array to have {\itshape value\+Size} cells in the value dimension.
+
+The current data is discarded and the map cells are set to 0, unless the map had already the requested size.
+
+Setting {\itshape value\+Size} to zero frees the internal data array and \doxyref{is\+Empty}{p.}{class_q_c_p_color_map_data_a986009324aee1fc5f696db46bd03dde5} returns true.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{set\+Value\+Range}{p.}{class_q_c_p_color_map_data_ada1b2680ba96a5f4175b6d341cf75d23}, \doxyref{set\+Size}{p.}{class_q_c_p_color_map_data_a0d9ff35c299d0478b682bfbcdd9c097e}, \doxyref{set\+Key\+Size}{p.}{class_q_c_p_color_map_data_ac7ef70e383aface34b44dbde49234b6b} 
+\end{DoxySeeAlso}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_color_map_data_a0893c9e3914513048b45e3429ffd16f2_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf qcustomplot.\+h}\item 
+{\bf qcustomplot.\+cpp}\end{DoxyCompactItemize}

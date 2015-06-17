@@ -1,0 +1,11 @@
+<map id="QCPAbstractPlottable::rescaleAxes" name="QCPAbstractPlottable::rescaleAxes">
+<area shape="rect" id="node2" href="$class_q_c_p_abstract_plottable.html#a1acecfcca3e7fcda00fcbaa3c886386f" title="QCPAbstractPlottable\l::rescaleKeyAxis" alt="" coords="212,106,371,147"/>
+<area shape="rect" id="node10" href="$class_q_c_p_abstract_plottable.html#abfd0805eb1d955c0111a990246658324" title="QCPAbstractPlottable\l::rescaleValueAxis" alt="" coords="212,40,371,82"/>
+<area shape="rect" id="node3" href="$class_q_c_p_range.html#a0fa1bc8048be50d52bea93a8caf08305" title="QCPRange::expand" alt="" coords="419,29,563,56"/>
+<area shape="rect" id="node4" href="$class_q_c_p_range.html#ab38bd4841c77c7bb86c9eea0f142dcc0" title="QCPRange::validRange" alt="" coords="626,122,793,149"/>
+<area shape="rect" id="node5" href="$class_q_c_p_range.html#afa57c13049b965edb6fd1c00ac56338a" title="QCPRange::size" alt="" coords="429,80,552,106"/>
+<area shape="rect" id="node6" href="$class_q_c_p_axis.html#aebdfea5d44c3a0ad2b4700cd4d25b641" title="QCPAxis::setRange" alt="" coords="419,181,562,208"/>
+<area shape="rect" id="node7" href="$class_q_c_p_range.html#aaf6a9046e78d91eeb8e89584fe46b034" title="QCPRange::sanitizedForLog\lScale" alt="" coords="611,239,808,280"/>
+<area shape="rect" id="node9" href="$class_q_c_p_range.html#a1ff029704c29a75adbc1dc36cecaf44c" title="QCPRange::sanitizedForLin\lScale" alt="" coords="613,174,805,215"/>
+<area shape="rect" id="node8" href="$class_q_c_p_range.html#af914a7740269b0604d0827c634a878a9" title="QCPRange::normalize" alt="" coords="856,214,1016,241"/>
+</map>

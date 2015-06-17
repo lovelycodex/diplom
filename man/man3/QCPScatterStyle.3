@@ -1,0 +1,351 @@
+.TH "QCPScatterStyle" 3 "Thu Jun 18 2015" "Version v.2" "Voice analyze" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+QCPScatterStyle \- Represents the visual appearance of scatter points\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBScatterShape\fP { \fBssNone\fP, \fBssDot\fP, \fBssCross\fP, \fBssPlus\fP, \fBssCircle\fP, \fBssDisc\fP, \fBssSquare\fP, \fBssDiamond\fP, \fBssStar\fP, \fBssTriangle\fP, \fBssTriangleInverted\fP, \fBssCrossSquare\fP, \fBssPlusSquare\fP, \fBssCrossCircle\fP, \fBssPlusCircle\fP, \fBssPeace\fP, \fBssPixmap\fP, \fBssCustom\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQCPScatterStyle\fP ()"
+.br
+.ti -1c
+.RI "\fBQCPScatterStyle\fP (\fBScatterShape\fP shape, double size=6)"
+.br
+.ti -1c
+.RI "\fBQCPScatterStyle\fP (\fBScatterShape\fP shape, const QColor &color, double size)"
+.br
+.ti -1c
+.RI "\fBQCPScatterStyle\fP (\fBScatterShape\fP shape, const QColor &color, const QColor &fill, double size)"
+.br
+.ti -1c
+.RI "\fBQCPScatterStyle\fP (\fBScatterShape\fP shape, const QPen &pen, const QBrush &brush, double size)"
+.br
+.ti -1c
+.RI "\fBQCPScatterStyle\fP (const QPixmap &pixmap)"
+.br
+.ti -1c
+.RI "\fBQCPScatterStyle\fP (const QPainterPath &customPath, const QPen &pen, const QBrush &brush=Qt::NoBrush, double size=6)"
+.br
+.ti -1c
+.RI "double \fBsize\fP () const "
+.br
+.ti -1c
+.RI "\fBScatterShape\fP \fBshape\fP () const "
+.br
+.ti -1c
+.RI "QPen \fBpen\fP () const "
+.br
+.ti -1c
+.RI "QBrush \fBbrush\fP () const "
+.br
+.ti -1c
+.RI "QPixmap \fBpixmap\fP () const "
+.br
+.ti -1c
+.RI "QPainterPath \fBcustomPath\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetSize\fP (double size)"
+.br
+.ti -1c
+.RI "void \fBsetShape\fP (\fBScatterShape\fP shape)"
+.br
+.ti -1c
+.RI "void \fBsetPen\fP (const QPen &pen)"
+.br
+.ti -1c
+.RI "void \fBsetBrush\fP (const QBrush &brush)"
+.br
+.ti -1c
+.RI "void \fBsetPixmap\fP (const QPixmap &pixmap)"
+.br
+.ti -1c
+.RI "void \fBsetCustomPath\fP (const QPainterPath &customPath)"
+.br
+.ti -1c
+.RI "bool \fBisNone\fP () const "
+.br
+.ti -1c
+.RI "bool \fBisPenDefined\fP () const "
+.br
+.ti -1c
+.RI "void \fBapplyTo\fP (\fBQCPPainter\fP *painter, const QPen &defaultPen) const "
+.br
+.ti -1c
+.RI "void \fBdrawShape\fP (\fBQCPPainter\fP *painter, QPointF pos) const "
+.br
+.ti -1c
+.RI "void \fBdrawShape\fP (\fBQCPPainter\fP *painter, double x, double y) const "
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "double \fBmSize\fP"
+.br
+.ti -1c
+.RI "\fBScatterShape\fP \fBmShape\fP"
+.br
+.ti -1c
+.RI "QPen \fBmPen\fP"
+.br
+.ti -1c
+.RI "QBrush \fBmBrush\fP"
+.br
+.ti -1c
+.RI "QPixmap \fBmPixmap\fP"
+.br
+.ti -1c
+.RI "QPainterPath \fBmCustomPath\fP"
+.br
+.ti -1c
+.RI "bool \fBmPenDefined\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents the visual appearance of scatter points\&. 
+
+This class holds information about shape, color and size of scatter points\&. In plottables like \fBQCPGraph\fP it is used to store how scatter points shall be drawn\&. For example, \fBQCPGraph::setScatterStyle\fP takes a \fBQCPScatterStyle\fP instance\&.
+.PP
+A scatter style consists of a shape (\fBsetShape\fP), a line color (\fBsetPen\fP) and possibly a fill (\fBsetBrush\fP), if the shape provides a fillable area\&. Further, the size of the shape can be controlled with \fBsetSize\fP\&.
+.SH "Specifying a scatter style"
+.PP
+You can set all these configurations either by calling the respective functions on an instance: 
+.PP
+.nf
+
+.fi
+.PP
+ Or you can use one of the various constructors that take different parameter combinations, making it easy to specify a scatter style in a single call, like so: 
+.PP
+.nf
+
+.fi
+.PP
+ 
+.SH "Leaving the color/pen up to the plottable"
+.PP
+There are two constructors which leave the pen undefined: \fBQCPScatterStyle()\fP and \fBQCPScatterStyle(ScatterShape shape, double size)\fP\&. If those constructors are used, a call to \fBisPenDefined\fP will return false\&. It leads to scatter points that inherit the pen from the plottable that uses the scatter style\&. Thus, if such a scatter style is passed to \fBQCPGraph\fP, the line color of the graph (\fBQCPGraph::setPen\fP) will be used by the scatter points\&. This makes it very convenient to set up typical scatter settings:
+.PP
+.PP
+.nf
+.fi
+.PP
+ Notice that it wasn't even necessary to explicitly call a \fBQCPScatterStyle\fP constructor\&. This works because \fBQCPScatterStyle\fP provides a constructor that can transform a \fBScatterShape\fP directly into a \fBQCPScatterStyle\fP instance (that's the \fBQCPScatterStyle(ScatterShape shape, double size)\fP constructor with a default for \fIsize\fP)\&. In those cases, C++ allows directly supplying a \fBScatterShape\fP, where actually a \fBQCPScatterStyle\fP is expected\&.
+.SH "Custom shapes and pixmaps"
+.PP
+\fBQCPScatterStyle\fP supports drawing custom shapes and arbitrary pixmaps as scatter points\&.
+.PP
+For custom shapes, you can provide a QPainterPath with the desired shape to the \fBsetCustomPath\fP function or call the constructor that takes a painter path\&. The scatter shape will automatically be set to \fBssCustom\fP\&.
+.PP
+For pixmaps, you call \fBsetPixmap\fP with the desired QPixmap\&. Alternatively you can use the constructor that takes a QPixmap\&. The scatter shape will automatically be set to \fBssPixmap\fP\&. Note that \fBsetSize\fP does not influence the appearance of the pixmap\&. 
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBQCPScatterStyle::ScatterShape\fP"
+Defines the shape used for scatter points\&.
+.PP
+On plottables/items that draw scatters, the sizes of these visualizations (with exception of \fBssDot\fP and \fBssPixmap\fP) can be controlled with the \fBsetSize\fP function\&. Scatters are drawn with the pen and brush specified with \fBsetPen\fP and \fBsetBrush\fP\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIssNone \fP\fP
+no scatter symbols are drawn (e\&.g\&. in \fBQCPGraph\fP, data only represented with lines) 
+.TP
+\fB\fIssDot \fP\fP
+{ssDot\&.png} a single pixel (use \fBssDisc\fP or \fBssCircle\fP if you want a round shape with a certain radius) 
+.TP
+\fB\fIssCross \fP\fP
+{ssCross\&.png} a cross 
+.TP
+\fB\fIssPlus \fP\fP
+{ssPlus\&.png} a plus 
+.TP
+\fB\fIssCircle \fP\fP
+{ssCircle\&.png} a circle 
+.TP
+\fB\fIssDisc \fP\fP
+{ssDisc\&.png} a circle which is filled with the pen's color (not the brush as with ssCircle) 
+.TP
+\fB\fIssSquare \fP\fP
+{ssSquare\&.png} a square 
+.TP
+\fB\fIssDiamond \fP\fP
+{ssDiamond\&.png} a diamond 
+.TP
+\fB\fIssStar \fP\fP
+{ssStar\&.png} a star with eight arms, i\&.e\&. a combination of cross and plus 
+.TP
+\fB\fIssTriangle \fP\fP
+{ssTriangle\&.png} an equilateral triangle, standing on baseline 
+.TP
+\fB\fIssTriangleInverted \fP\fP
+{ssTriangleInverted\&.png} an equilateral triangle, standing on corner 
+.TP
+\fB\fIssCrossSquare \fP\fP
+{ssCrossSquare\&.png} a square with a cross inside 
+.TP
+\fB\fIssPlusSquare \fP\fP
+{ssPlusSquare\&.png} a square with a plus inside 
+.TP
+\fB\fIssCrossCircle \fP\fP
+{ssCrossCircle\&.png} a circle with a cross inside 
+.TP
+\fB\fIssPlusCircle \fP\fP
+{ssPlusCircle\&.png} a circle with a plus inside 
+.TP
+\fB\fIssPeace \fP\fP
+{ssPeace\&.png} a circle, with one vertical and two downward diagonal lines 
+.TP
+\fB\fIssPixmap \fP\fP
+a custom pixmap specified by \fBsetPixmap\fP, centered on the data point coordinates 
+.TP
+\fB\fIssCustom \fP\fP
+custom painter operations are performed per scatter (As QPainterPath, see \fBsetCustomPath\fP) 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "QCPScatterStyle::QCPScatterStyle ()"
+Creates a new \fBQCPScatterStyle\fP instance with size set to 6\&. No shape, pen or brush is defined\&.
+.PP
+Since the pen is undefined (\fBisPenDefined\fP returns false), the scatter color will be inherited from the plottable that uses this scatter style\&. 
+.SS "QCPScatterStyle::QCPScatterStyle (\fBScatterShape\fP shape, double size = \fC6\fP)"
+Creates a new \fBQCPScatterStyle\fP instance with shape set to \fIshape\fP and size to \fIsize\fP\&. No pen or brush is defined\&.
+.PP
+Since the pen is undefined (\fBisPenDefined\fP returns false), the scatter color will be inherited from the plottable that uses this scatter style\&. 
+.SS "QCPScatterStyle::QCPScatterStyle (\fBScatterShape\fP shape, const QColor & color, double size)"
+Creates a new \fBQCPScatterStyle\fP instance with shape set to \fIshape\fP, the pen color set to \fIcolor\fP, and size to \fIsize\fP\&. No brush is defined, i\&.e\&. the scatter point will not be filled\&. 
+.SS "QCPScatterStyle::QCPScatterStyle (\fBScatterShape\fP shape, const QColor & color, const QColor & fill, double size)"
+Creates a new \fBQCPScatterStyle\fP instance with shape set to \fIshape\fP, the pen color set to \fIcolor\fP, the brush color to \fIfill\fP (with a solid pattern), and size to \fIsize\fP\&. 
+.SS "QCPScatterStyle::QCPScatterStyle (\fBScatterShape\fP shape, const QPen & pen, const QBrush & brush, double size)"
+Creates a new \fBQCPScatterStyle\fP instance with shape set to \fIshape\fP, the pen set to \fIpen\fP, the brush to \fIbrush\fP, and size to \fIsize\fP\&.
+.PP
+\fBWarning:\fP
+.RS 4
+In some cases it might be tempting to directly use a pen style like \fCQt::NoPen\fP as \fIpen\fP and a color like \fCQt::blue\fP as \fIbrush\fP\&. Notice however, that the corresponding call
+.br
+\fC\fBQCPScatterStyle(QCPScatterShape::ssCircle, Qt::NoPen, Qt::blue, 5)\fP\fP
+.br
+doesn't necessarily lead C++ to use this constructor in some cases, but might mistake \fCQt::NoPen\fP for a QColor and use the \fBQCPScatterStyle(ScatterShape shape, const QColor &color, const QColor &fill, double size)\fP constructor instead (which will lead to an unexpected look of the scatter points)\&. To prevent this, be more explicit with the parameter types\&. For example, use \fCQBrush(Qt::blue)\fP instead of just \fCQt::blue\fP, to clearly point out to the compiler that this constructor is wanted\&. 
+.RE
+.PP
+
+.SS "QCPScatterStyle::QCPScatterStyle (const QPixmap & pixmap)"
+Creates a new \fBQCPScatterStyle\fP instance which will show the specified \fIpixmap\fP\&. The scatter shape is set to \fBssPixmap\fP\&. 
+.SS "QCPScatterStyle::QCPScatterStyle (const QPainterPath & customPath, const QPen & pen, const QBrush & brush = \fCQt::NoBrush\fP, double size = \fC6\fP)"
+Creates a new \fBQCPScatterStyle\fP instance with a custom shape that is defined via \fIcustomPath\fP\&. The scatter shape is set to \fBssCustom\fP\&.
+.PP
+The custom shape line will be drawn with \fIpen\fP and filled with \fIbrush\fP\&. The size has a slightly different meaning than for built-in scatter points: The custom path will be drawn scaled by a factor of \fIsize/6\&.0\fP\&. Since the default \fIsize\fP is 6, the custom path will appear at a its natural size by default\&. To double the size of the path for example, set \fIsize\fP to 12\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "void QCPScatterStyle::applyTo (\fBQCPPainter\fP * painter, const QPen & defaultPen) const"
+Applies the pen and the brush of this scatter style to \fIpainter\fP\&. If this scatter style has an undefined pen (\fBisPenDefined\fP), sets the pen of \fIpainter\fP to \fIdefaultPen\fP instead\&.
+.PP
+This function is used by plottables (or any class that wants to draw scatters) just before a number of scatters with this style shall be drawn with the \fIpainter\fP\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBdrawShape\fP 
+.RE
+.PP
+
+.SS "void QCPScatterStyle::drawShape (\fBQCPPainter\fP * painter, QPointF pos) const"
+Draws the scatter shape with \fIpainter\fP at position \fIpos\fP\&.
+.PP
+This function does not modify the pen or the brush on the painter, as \fBapplyTo\fP is meant to be called before scatter points are drawn with \fBdrawShape\fP\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBapplyTo\fP 
+.RE
+.PP
+
+.SS "void QCPScatterStyle::drawShape (\fBQCPPainter\fP * painter, double x, double y) const"
+This is an overloaded member function, provided for convenience\&. It differs from the above function only in what argument(s) it accepts\&. Draws the scatter shape with \fIpainter\fP at position \fIx\fP and \fIy\fP\&. 
+.SS "bool QCPScatterStyle::isNone () const\fC [inline]\fP"
+Returns whether the scatter shape is \fBssNone\fP\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetShape\fP 
+.RE
+.PP
+
+.SS "bool QCPScatterStyle::isPenDefined () const\fC [inline]\fP"
+Returns whether a pen has been defined for this scatter style\&.
+.PP
+The pen is undefined if a constructor is called that does not carry \fIpen\fP as parameter\&. Those are \fBQCPScatterStyle()\fP and \fBQCPScatterStyle(ScatterShape shape, double size)\fP\&. If the pen is left undefined, the scatter color will be inherited from the plottable that uses this scatter style\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetPen\fP 
+.RE
+.PP
+
+.SS "void QCPScatterStyle::setBrush (const QBrush & brush)"
+Sets the brush that will be used to fill scatter points to \fIbrush\fP\&. Note that not all scatter shapes have fillable areas\&. For example, \fBssPlus\fP does not while \fBssCircle\fP does\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetPen\fP 
+.RE
+.PP
+
+.SS "void QCPScatterStyle::setCustomPath (const QPainterPath & customPath)"
+Sets the custom shape that will be drawn as scatter point to \fIcustomPath\fP\&.
+.PP
+The scatter shape is automatically set to \fBssCustom\fP\&. 
+.SS "void QCPScatterStyle::setPen (const QPen & pen)"
+Sets the pen that will be used to draw scatter points to \fIpen\fP\&.
+.PP
+If the pen was previously undefined (see \fBisPenDefined\fP), the pen is considered defined after a call to this function, even if \fIpen\fP is \fCQt::NoPen\fP\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetBrush\fP 
+.RE
+.PP
+
+.SS "void QCPScatterStyle::setPixmap (const QPixmap & pixmap)"
+Sets the pixmap that will be drawn as scatter point to \fIpixmap\fP\&.
+.PP
+Note that \fBsetSize\fP does not influence the appearance of the pixmap\&.
+.PP
+The scatter shape is automatically set to \fBssPixmap\fP\&. 
+.SS "void QCPScatterStyle::setShape (\fBQCPScatterStyle::ScatterShape\fP shape)"
+Sets the shape to \fIshape\fP\&.
+.PP
+Note that the calls \fBsetPixmap\fP and \fBsetCustomPath\fP automatically set the shape to \fBssPixmap\fP and \fBssCustom\fP, respectively\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetSize\fP 
+.RE
+.PP
+
+.SS "void QCPScatterStyle::setSize (double size)"
+Sets the size (pixel diameter) of the drawn scatter points to \fIsize\fP\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetShape\fP 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Voice analyze from the source code\&.

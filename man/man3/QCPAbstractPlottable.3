@@ -1,0 +1,502 @@
+.TH "QCPAbstractPlottable" 3 "Thu Jun 18 2015" "Version v.2" "Voice analyze" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+QCPAbstractPlottable \- The abstract base class for all data representing objects in a plot\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBselectionChanged\fP (bool selected)"
+.br
+.ti -1c
+.RI "void \fBselectableChanged\fP (bool selectable)"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQCPAbstractPlottable\fP (\fBQCPAxis\fP *keyAxis, \fBQCPAxis\fP *valueAxis)"
+.br
+.ti -1c
+.RI "QString \fBname\fP () const "
+.br
+.ti -1c
+.RI "bool \fBantialiasedFill\fP () const "
+.br
+.ti -1c
+.RI "bool \fBantialiasedScatters\fP () const "
+.br
+.ti -1c
+.RI "bool \fBantialiasedErrorBars\fP () const "
+.br
+.ti -1c
+.RI "QPen \fBpen\fP () const "
+.br
+.ti -1c
+.RI "QPen \fBselectedPen\fP () const "
+.br
+.ti -1c
+.RI "QBrush \fBbrush\fP () const "
+.br
+.ti -1c
+.RI "QBrush \fBselectedBrush\fP () const "
+.br
+.ti -1c
+.RI "\fBQCPAxis\fP * \fBkeyAxis\fP () const "
+.br
+.ti -1c
+.RI "\fBQCPAxis\fP * \fBvalueAxis\fP () const "
+.br
+.ti -1c
+.RI "bool \fBselectable\fP () const "
+.br
+.ti -1c
+.RI "bool \fBselected\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetName\fP (const QString &name)"
+.br
+.ti -1c
+.RI "void \fBsetAntialiasedFill\fP (bool enabled)"
+.br
+.ti -1c
+.RI "void \fBsetAntialiasedScatters\fP (bool enabled)"
+.br
+.ti -1c
+.RI "void \fBsetAntialiasedErrorBars\fP (bool enabled)"
+.br
+.ti -1c
+.RI "void \fBsetPen\fP (const QPen &pen)"
+.br
+.ti -1c
+.RI "void \fBsetSelectedPen\fP (const QPen &pen)"
+.br
+.ti -1c
+.RI "void \fBsetBrush\fP (const QBrush &brush)"
+.br
+.ti -1c
+.RI "void \fBsetSelectedBrush\fP (const QBrush &brush)"
+.br
+.ti -1c
+.RI "void \fBsetKeyAxis\fP (\fBQCPAxis\fP *axis)"
+.br
+.ti -1c
+.RI "void \fBsetValueAxis\fP (\fBQCPAxis\fP *axis)"
+.br
+.ti -1c
+.RI "Q_SLOT void \fBsetSelectable\fP (bool selectable)"
+.br
+.ti -1c
+.RI "Q_SLOT void \fBsetSelected\fP (bool selected)"
+.br
+.ti -1c
+.RI "virtual void \fBclearData\fP ()=0"
+.br
+.ti -1c
+.RI "virtual double \fBselectTest\fP (const QPointF &pos, bool onlySelectable, QVariant *details=0) const =0"
+.br
+.ti -1c
+.RI "virtual bool \fBaddToLegend\fP ()"
+.br
+.ti -1c
+.RI "virtual bool \fBremoveFromLegend\fP () const "
+.br
+.ti -1c
+.RI "void \fBrescaleAxes\fP (bool onlyEnlarge=false) const "
+.br
+.ti -1c
+.RI "void \fBrescaleKeyAxis\fP (bool onlyEnlarge=false) const "
+.br
+.ti -1c
+.RI "void \fBrescaleValueAxis\fP (bool onlyEnlarge=false) const "
+.br
+.in -1c
+.SS "Protected Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBSignDomain\fP { \fBsdNegative\fP, \fBsdBoth\fP, \fBsdPositive\fP }"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual QRect \fBclipRect\fP () const "
+.br
+.ti -1c
+.RI "virtual void \fBdraw\fP (\fBQCPPainter\fP *painter)=0"
+.br
+.ti -1c
+.RI "virtual \fBQCP::Interaction\fP \fBselectionCategory\fP () const "
+.br
+.ti -1c
+.RI "void \fBapplyDefaultAntialiasingHint\fP (\fBQCPPainter\fP *painter) const "
+.br
+.ti -1c
+.RI "virtual void \fBselectEvent\fP (QMouseEvent *event, bool additive, const QVariant &details, bool *selectionStateChanged)"
+.br
+.ti -1c
+.RI "virtual void \fBdeselectEvent\fP (bool *selectionStateChanged)"
+.br
+.ti -1c
+.RI "virtual void \fBdrawLegendIcon\fP (\fBQCPPainter\fP *painter, const QRectF &rect) const =0"
+.br
+.ti -1c
+.RI "virtual \fBQCPRange\fP \fBgetKeyRange\fP (bool &foundRange, \fBSignDomain\fP inSignDomain=\fBsdBoth\fP) const =0"
+.br
+.ti -1c
+.RI "virtual \fBQCPRange\fP \fBgetValueRange\fP (bool &foundRange, \fBSignDomain\fP inSignDomain=\fBsdBoth\fP) const =0"
+.br
+.ti -1c
+.RI "void \fBcoordsToPixels\fP (double key, double value, double &x, double &y) const "
+.br
+.ti -1c
+.RI "const QPointF \fBcoordsToPixels\fP (double key, double value) const "
+.br
+.ti -1c
+.RI "void \fBpixelsToCoords\fP (double x, double y, double &key, double &value) const "
+.br
+.ti -1c
+.RI "void \fBpixelsToCoords\fP (const QPointF &pixelPos, double &key, double &value) const "
+.br
+.ti -1c
+.RI "QPen \fBmainPen\fP () const "
+.br
+.ti -1c
+.RI "QBrush \fBmainBrush\fP () const "
+.br
+.ti -1c
+.RI "void \fBapplyFillAntialiasingHint\fP (\fBQCPPainter\fP *painter) const "
+.br
+.ti -1c
+.RI "void \fBapplyScattersAntialiasingHint\fP (\fBQCPPainter\fP *painter) const "
+.br
+.ti -1c
+.RI "void \fBapplyErrorBarsAntialiasingHint\fP (\fBQCPPainter\fP *painter) const "
+.br
+.ti -1c
+.RI "double \fBdistSqrToLine\fP (const QPointF &start, const QPointF &end, const QPointF &point) const "
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "QString \fBmName\fP"
+.br
+.ti -1c
+.RI "bool \fBmAntialiasedFill\fP"
+.br
+.ti -1c
+.RI "bool \fBmAntialiasedScatters\fP"
+.br
+.ti -1c
+.RI "bool \fBmAntialiasedErrorBars\fP"
+.br
+.ti -1c
+.RI "QPen \fBmPen\fP"
+.br
+.ti -1c
+.RI "QPen \fBmSelectedPen\fP"
+.br
+.ti -1c
+.RI "QBrush \fBmBrush\fP"
+.br
+.ti -1c
+.RI "QBrush \fBmSelectedBrush\fP"
+.br
+.ti -1c
+.RI "QPointer< \fBQCPAxis\fP > \fBmKeyAxis\fP"
+.br
+.ti -1c
+.RI "QPointer< \fBQCPAxis\fP > \fBmValueAxis\fP"
+.br
+.ti -1c
+.RI "bool \fBmSelectable\fP"
+.br
+.ti -1c
+.RI "bool \fBmSelected\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBQCustomPlot\fP"
+.br
+.ti -1c
+.RI "class \fBQCPAxis\fP"
+.br
+.ti -1c
+.RI "class \fBQCPPlottableLegendItem\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+The abstract base class for all data representing objects in a plot\&. 
+
+It defines a very basic interface like name, pen, brush, visibility etc\&. Since this class is abstract, it can't be instantiated\&. Use one of the subclasses or create a subclass yourself to create new ways of displaying data (see 'Creating own plottables' below)\&.
+.PP
+All further specifics are in the subclasses, for example: 
+.PD 0
+
+.IP "\(bu" 2
+A normal graph with possibly a line, scatter points and error bars: \fBQCPGraph\fP (typically created with \fBQCustomPlot::addGraph\fP) 
+.IP "\(bu" 2
+A parametric curve: \fBQCPCurve\fP 
+.IP "\(bu" 2
+A bar chart: \fBQCPBars\fP 
+.IP "\(bu" 2
+A statistical box plot: \fBQCPStatisticalBox\fP 
+.IP "\(bu" 2
+A color encoded two-dimensional map: \fBQCPColorMap\fP 
+.IP "\(bu" 2
+An OHLC/Candlestick chart: \fBQCPFinancial\fP
+.PP
+.SH "Creating own plottables"
+.PP
+To create an own plottable, you implement a subclass of \fBQCPAbstractPlottable\fP\&. These are the pure virtual functions, you must implement: 
+.PD 0
+
+.IP "\(bu" 2
+\fBclearData\fP 
+.IP "\(bu" 2
+\fBselectTest\fP 
+.IP "\(bu" 2
+\fBdraw\fP 
+.IP "\(bu" 2
+\fBdrawLegendIcon\fP 
+.IP "\(bu" 2
+\fBgetKeyRange\fP 
+.IP "\(bu" 2
+\fBgetValueRange\fP
+.PP
+See the documentation of those functions for what they need to do\&.
+.PP
+For drawing your plot, you can use the \fBcoordsToPixels\fP functions to translate a point in plot coordinates to pixel coordinates\&. This function is quite convenient, because it takes the orientation of the key and value axes into account for you (x and y are swapped when the key axis is vertical and the value axis horizontal)\&. If you are worried about performance (i\&.e\&. you need to translate many points in a loop like \fBQCPGraph\fP), you can directly use \fBQCPAxis::coordToPixel\fP\&. However, you must then take care about the orientation of the axis yourself\&.
+.PP
+Here are some important members you inherit from \fBQCPAbstractPlottable\fP: \fBQCustomPlot\fP *\fBmParentPlot\fP  A pointer to the parent \fBQCustomPlot\fP instance\&. The parent plot is inferred from the axes that are passed in the constructor\&. QString \fBmName\fP  The name of the plottable\&. QPen \fBmPen\fP  The generic pen of the plottable\&. You should use this pen for the most prominent data representing lines in the plottable (e\&.g \fBQCPGraph\fP uses this pen for its graph lines and scatters) QPen \fBmSelectedPen\fP  The generic pen that should be used when the plottable is selected (hint: \fBmainPen\fP gives you the right pen, depending on selection state)\&. QBrush \fBmBrush\fP  The generic brush of the plottable\&. You should use this brush for the most prominent fillable structures in the plottable (e\&.g\&. \fBQCPGraph\fP uses this brush to control filling under the graph) QBrush \fBmSelectedBrush\fP  The generic brush that should be used when the plottable is selected (hint: \fBmainBrush\fP gives you the right brush, depending on selection state)\&. QPointer<QCPAxis>\fBmKeyAxis\fP, \fBmValueAxis\fP  The key and value axes this plottable is attached to\&. Call their \fBQCPAxis::coordToPixel\fP functions to translate coordinates to pixels in either the key or value dimension\&. Make sure to check whether the pointer is null before using it\&. If one of the axes is null, don't draw the plottable\&. bool \fBmSelected\fP  indicates whether the plottable is selected or not\&.  
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBQCPAbstractPlottable::SignDomain\fP\fC [protected]\fP"
+Represents negative and positive sign domain for passing to \fBgetKeyRange\fP and \fBgetValueRange\fP\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIsdNegative \fP\fP
+The negative sign domain, i\&.e\&. numbers smaller than zero\&. 
+.TP
+\fB\fIsdBoth \fP\fP
+Both sign domains, including zero, i\&.e\&. all (rational) numbers\&. 
+.TP
+\fB\fIsdPositive \fP\fP
+The positive sign domain, i\&.e\&. numbers greater than zero\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "QCPAbstractPlottable::QCPAbstractPlottable (\fBQCPAxis\fP * keyAxis, \fBQCPAxis\fP * valueAxis)"
+Constructs an abstract plottable which uses \fIkeyAxis\fP as its key axis ('x') and \fIvalueAxis\fP as its value axis ('y')\&. \fIkeyAxis\fP and \fIvalueAxis\fP must reside in the same \fBQCustomPlot\fP instance and have perpendicular orientations\&. If either of these restrictions is violated, a corresponding message is printed to the debug output (qDebug), the construction is not aborted, though\&.
+.PP
+Since \fBQCPAbstractPlottable\fP is an abstract class that defines the basic interface to plottables, it can't be directly instantiated\&.
+.PP
+You probably want one of the subclasses like \fBQCPGraph\fP or \fBQCPCurve\fP instead\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "bool QCPAbstractPlottable::addToLegend ()\fC [virtual]\fP"
+Adds this plottable to the legend of the parent \fBQCustomPlot\fP (\fBQCustomPlot::legend\fP)\&.
+.PP
+Normally, a \fBQCPPlottableLegendItem\fP is created and inserted into the legend\&. If the plottable needs a more specialized representation in the legend, this function will take this into account and instead create the specialized subclass of \fBQCPAbstractLegendItem\fP\&.
+.PP
+Returns true on success, i\&.e\&. when the legend exists and a legend item associated with this plottable isn't already in the legend\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBremoveFromLegend\fP, \fBQCPLegend::addItem\fP 
+.RE
+.PP
+
+.SS "void QCPAbstractPlottable::clearData ()\fC [pure virtual]\fP"
+Clears all data in the plottable\&. 
+.PP
+Implemented in \fBQCPFinancial\fP, \fBQCPColorMap\fP, \fBQCPStatisticalBox\fP, \fBQCPBars\fP, \fBQCPCurve\fP, and \fBQCPGraph\fP\&.
+.SS "bool QCPAbstractPlottable::removeFromLegend () const\fC [virtual]\fP"
+Removes the plottable from the legend of the parent \fBQCustomPlot\fP\&. This means the \fBQCPAbstractLegendItem\fP (usually a \fBQCPPlottableLegendItem\fP) that is associated with this plottable is removed\&.
+.PP
+Returns true on success, i\&.e\&. if the legend exists and a legend item associated with this plottable was found and removed\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBaddToLegend\fP, \fBQCPLegend::removeItem\fP 
+.RE
+.PP
+
+.SS "void QCPAbstractPlottable::rescaleAxes (bool onlyEnlarge = \fCfalse\fP) const"
+Rescales the key and value axes associated with this plottable to contain all displayed data, so the whole plottable is visible\&. If the scaling of an axis is logarithmic, rescaleAxes will make sure not to rescale to an illegal range i\&.e\&. a range containing different signs and/or zero\&. Instead it will stay in the current sign domain and ignore all parts of the plottable that lie outside of that domain\&.
+.PP
+\fIonlyEnlarge\fP makes sure the ranges are only expanded, never reduced\&. So it's possible to show multiple plottables in their entirety by multiple calls to rescaleAxes where the first call has \fIonlyEnlarge\fP set to false (the default), and all subsequent set to true\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBrescaleKeyAxis\fP, \fBrescaleValueAxis\fP, \fBQCustomPlot::rescaleAxes\fP, \fBQCPAxis::rescale\fP 
+.RE
+.PP
+
+.SS "void QCPAbstractPlottable::rescaleKeyAxis (bool onlyEnlarge = \fCfalse\fP) const"
+Rescales the key axis of the plottable so the whole plottable is visible\&.
+.PP
+See \fBrescaleAxes\fP for detailed behaviour\&. 
+.SS "void QCPAbstractPlottable::rescaleValueAxis (bool onlyEnlarge = \fCfalse\fP) const"
+Rescales the value axis of the plottable so the whole plottable is visible\&.
+.PP
+Returns true if the axis was actually scaled\&. This might not be the case if this plottable has an invalid range, e\&.g\&. because it has no data points\&.
+.PP
+See \fBrescaleAxes\fP for detailed behaviour\&. 
+.SS "void QCPAbstractPlottable::selectableChanged (bool selectable)\fC [signal]\fP"
+This signal is emitted when the selectability of this plottable has changed\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetSelectable\fP 
+.RE
+.PP
+
+.SS "void QCPAbstractPlottable::selectionChanged (bool selected)\fC [signal]\fP"
+This signal is emitted when the selection state of this plottable has changed, either by user interaction or by a direct call to \fBsetSelected\fP\&. 
+.SS "virtual double QCPAbstractPlottable::selectTest (const QPointF & pos, bool onlySelectable, QVariant * details = \fC0\fP) const\fC [pure virtual]\fP"
+This function is used to decide whether a click hits a layerable object or not\&.
+.PP
+\fIpos\fP is a point in pixel coordinates on the \fBQCustomPlot\fP surface\&. This function returns the shortest pixel distance of this point to the object\&. If the object is either invisible or the distance couldn't be determined, -1\&.0 is returned\&. Further, if \fIonlySelectable\fP is true and the object is not selectable, -1\&.0 is returned, too\&.
+.PP
+If the object is represented not by single lines but by an area like a \fBQCPItemText\fP or the bars of a \fBQCPBars\fP plottable, a click inside the area should also be considered a hit\&. In these cases this function thus returns a constant value greater zero but still below the parent plot's selection tolerance\&. (typically the selectionTolerance multiplied by 0\&.99)\&.
+.PP
+Providing a constant value for area objects allows selecting line objects even when they are obscured by such area objects, by clicking close to the lines (i\&.e\&. closer than 0\&.99*selectionTolerance)\&.
+.PP
+The actual setting of the selection state is not done by this function\&. This is handled by the parent \fBQCustomPlot\fP when the mouseReleaseEvent occurs, and the finally selected object is notified via the selectEvent/deselectEvent methods\&.
+.PP
+\fIdetails\fP is an optional output parameter\&. Every layerable subclass may place any information in \fIdetails\fP\&. This information will be passed to \fBselectEvent\fP when the parent \fBQCustomPlot\fP decides on the basis of this selectTest call, that the object was successfully selected\&. The subsequent call to \fBselectEvent\fP will carry the \fIdetails\fP\&. This is useful for multi-part objects (like \fBQCPAxis\fP)\&. This way, a possibly complex calculation to decide which part was clicked is only done once in \fBselectTest\fP\&. The result (i\&.e\&. the actually clicked part) can then be placed in \fIdetails\fP\&. So in the subsequent \fBselectEvent\fP, the decision which part was selected doesn't have to be done a second time for a single selection operation\&.
+.PP
+You may pass 0 as \fIdetails\fP to indicate that you are not interested in those selection details\&.
+.PP
+\fBSee also:\fP
+.RS 4
+selectEvent, deselectEvent, \fBQCustomPlot::setInteractions\fP 
+.RE
+.PP
+
+.PP
+Reimplemented from \fBQCPLayerable\fP\&.
+.PP
+Implemented in \fBQCPFinancial\fP, \fBQCPColorMap\fP, \fBQCPStatisticalBox\fP, \fBQCPBars\fP, \fBQCPCurve\fP, and \fBQCPGraph\fP\&.
+.SS "void QCPAbstractPlottable::setAntialiasedErrorBars (bool enabled)"
+Sets whether the error bars of this plottable are drawn antialiased or not\&.
+.PP
+Note that this setting may be overridden by \fBQCustomPlot::setAntialiasedElements\fP and \fBQCustomPlot::setNotAntialiasedElements\fP\&. 
+.SS "void QCPAbstractPlottable::setAntialiasedFill (bool enabled)"
+Sets whether fills of this plottable are drawn antialiased or not\&.
+.PP
+Note that this setting may be overridden by \fBQCustomPlot::setAntialiasedElements\fP and \fBQCustomPlot::setNotAntialiasedElements\fP\&. 
+.SS "void QCPAbstractPlottable::setAntialiasedScatters (bool enabled)"
+Sets whether the scatter symbols of this plottable are drawn antialiased or not\&.
+.PP
+Note that this setting may be overridden by \fBQCustomPlot::setAntialiasedElements\fP and \fBQCustomPlot::setNotAntialiasedElements\fP\&. 
+.SS "void QCPAbstractPlottable::setBrush (const QBrush & brush)"
+The brush is used to draw basic fills of the plottable representation in the plot\&. The Fill can be a color, gradient or texture, see the usage of QBrush\&.
+.PP
+For example, the \fBQCPGraph\fP subclass draws the fill under the graph with this brush, when it's not set to Qt::NoBrush\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetPen\fP 
+.RE
+.PP
+
+.SS "void QCPAbstractPlottable::setKeyAxis (\fBQCPAxis\fP * axis)"
+The key axis of a plottable can be set to any axis of a \fBQCustomPlot\fP, as long as it is orthogonal to the plottable's value axis\&. This function performs no checks to make sure this is the case\&. The typical mathematical choice is to use the x-axis (\fBQCustomPlot::xAxis\fP) as key axis and the y-axis (\fBQCustomPlot::yAxis\fP) as value axis\&.
+.PP
+Normally, the key and value axes are set in the constructor of the plottable (or \fBQCustomPlot::addGraph\fP when working with QCPGraphs through the dedicated graph interface)\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetValueAxis\fP 
+.RE
+.PP
+
+.SS "void QCPAbstractPlottable::setName (const QString & name)"
+The name is the textual representation of this plottable as it is displayed in the legend (\fBQCPLegend\fP)\&. It may contain any UTF-8 characters, including newlines\&. 
+.SS "void QCPAbstractPlottable::setPen (const QPen & pen)"
+The pen is used to draw basic lines that make up the plottable representation in the plot\&.
+.PP
+For example, the \fBQCPGraph\fP subclass draws its graph lines with this pen\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetBrush\fP 
+.RE
+.PP
+
+.SS "void QCPAbstractPlottable::setSelectable (bool selectable)"
+Sets whether the user can (de-)select this plottable by clicking on the \fBQCustomPlot\fP surface\&. (When \fBQCustomPlot::setInteractions\fP contains iSelectPlottables\&.)
+.PP
+However, even when \fIselectable\fP was set to false, it is possible to set the selection manually, by calling \fBsetSelected\fP directly\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetSelected\fP 
+.RE
+.PP
+
+.SS "void QCPAbstractPlottable::setSelected (bool selected)"
+Sets whether this plottable is selected or not\&. When selected, it uses a different pen and brush to draw its lines and fills, see \fBsetSelectedPen\fP and \fBsetSelectedBrush\fP\&.
+.PP
+The entire selection mechanism for plottables is handled automatically when \fBQCustomPlot::setInteractions\fP contains iSelectPlottables\&. You only need to call this function when you wish to change the selection state manually\&.
+.PP
+This function can change the selection state even when \fBsetSelectable\fP was set to false\&.
+.PP
+emits the \fBselectionChanged\fP signal when \fIselected\fP is different from the previous selection state\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetSelectable\fP, \fBselectTest\fP 
+.RE
+.PP
+
+.SS "void QCPAbstractPlottable::setSelectedBrush (const QBrush & brush)"
+When the plottable is selected, this brush is used to draw fills instead of the normal brush set via \fBsetBrush\fP\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetSelected\fP, \fBsetSelectable\fP, \fBsetSelectedPen\fP, \fBselectTest\fP 
+.RE
+.PP
+
+.SS "void QCPAbstractPlottable::setSelectedPen (const QPen & pen)"
+When the plottable is selected, this pen is used to draw basic lines instead of the normal pen set via \fBsetPen\fP\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetSelected\fP, \fBsetSelectable\fP, \fBsetSelectedBrush\fP, \fBselectTest\fP 
+.RE
+.PP
+
+.SS "void QCPAbstractPlottable::setValueAxis (\fBQCPAxis\fP * axis)"
+The value axis of a plottable can be set to any axis of a \fBQCustomPlot\fP, as long as it is orthogonal to the plottable's key axis\&. This function performs no checks to make sure this is the case\&. The typical mathematical choice is to use the x-axis (\fBQCustomPlot::xAxis\fP) as key axis and the y-axis (\fBQCustomPlot::yAxis\fP) as value axis\&.
+.PP
+Normally, the key and value axes are set in the constructor of the plottable (or \fBQCustomPlot::addGraph\fP when working with QCPGraphs through the dedicated graph interface)\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetKeyAxis\fP 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Voice analyze from the source code\&.

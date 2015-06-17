@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="index.jpe"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Voice analyze
-   &#160;<span id="projectnumber">v.1</span>
+   &#160;<span id="projectnumber">v.2</span>
    </div>
   </td>
  </tr>
@@ -247,6 +247,15 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>QCPAxisRect</b></td>
 <p>It is possible to provide 0 as <em>plot</em>. In that case, you should assign a parent plot at a later time with initializeParentPlot.</p>
 <p>The layerable's parent layerable is set to <em>parentLayerable</em>, if provided. Direct layerable parents are mainly used to control visibility in a hierarchy of layerables. This means a layerable is only drawn, if all its ancestor layerables are also visible. Note that <em>parentLayerable</em> does not become the QObject-parent (for memory management) of this layerable, <em>plot</em> does. </p>
 
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_q_c_p_layerable_a74c0fa237f29bf0e49565013fc5d1ec0_cgraph.png" border="0" usemap="#class_q_c_p_layerable_a74c0fa237f29bf0e49565013fc5d1ec0_cgraph" alt=""/></div>
+<map name="class_q_c_p_layerable_a74c0fa237f29bf0e49565013fc5d1ec0_cgraph" id="class_q_c_p_layerable_a74c0fa237f29bf0e49565013fc5d1ec0_cgraph">
+<area shape="rect" id="node2" href="class_q_c_p_layerable.html#ab0d0da6d2de45a118886d2c8e16d5a54" title="QCPLayerable::setLayer" alt="" coords="271,5,446,32"/><area shape="rect" id="node3" href="class_q_custom_plot.html#af73057345656cbd1463454982d808b00" title="QCustomPlot::currentLayer" alt="" coords="261,56,456,83"/></map>
+</div>
+</p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -273,6 +282,15 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>QCPAxisRect</b></td>
 </div><div class="memdoc">
 <p>This signal is emitted when the layer of this layerable changes, i.e. this layerable is moved to a different layer.</p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_c_p_layerable.html#ab0d0da6d2de45a118886d2c8e16d5a54">setLayer</a> </dd></dl>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_q_c_p_layerable_abbf8657cedea73ac1c3499b521c90eba_icgraph.png" border="0" usemap="#class_q_c_p_layerable_abbf8657cedea73ac1c3499b521c90eba_icgraph" alt=""/></div>
+<map name="class_q_c_p_layerable_abbf8657cedea73ac1c3499b521c90eba_icgraph" id="class_q_c_p_layerable_abbf8657cedea73ac1c3499b521c90eba_icgraph">
+<area shape="rect" id="node2" href="class_q_c_p_color_scale_axis_rect_private.html#ad3b242f75dd2b33581364a4e668a80db" title="QCPColorScaleAxisRectPrivate\l::QCPColorScaleAxisRectPrivate" alt="" coords="260,5,483,47"/></map>
+</div>
+</p>
 
 </div>
 </div>
@@ -317,6 +335,15 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>QCPAxisRect</b></td>
 <p>Returns whether this layerable is visible, taking the visibility of the layerable parent and the visibility of the layer this layerable is on into account. This is the method that is consulted to decide whether a layerable shall be drawn or not.</p>
 <p>If this layerable has a direct layerable parent (usually set via hierarchies implemented in subclasses, like in the case of <a class="el" href="class_q_c_p_layout_element.html" title="The abstract base class for all objects that form the layout system. ">QCPLayoutElement</a>), this function returns true only if this layerable has its visibility set to true and the parent layerable's <a class="el" href="class_q_c_p_layerable.html#a30809f7455e9794bca7b6c737622fa63">realVisibility</a> returns true.</p>
 <p>If this layerable doesn't have a direct layerable parent, returns the state of this layerable's visibility. </p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_q_c_p_layerable_a30809f7455e9794bca7b6c737622fa63_icgraph.png" border="0" usemap="#class_q_c_p_layerable_a30809f7455e9794bca7b6c737622fa63_icgraph" alt=""/></div>
+<map name="class_q_c_p_layerable_a30809f7455e9794bca7b6c737622fa63_icgraph" id="class_q_c_p_layerable_a30809f7455e9794bca7b6c737622fa63_icgraph">
+<area shape="rect" id="node2" href="class_q_custom_plot.html#a840458186d4483c8a42d6a399448d38f" title="QCustomPlot::layoutElementAt" alt="" coords="248,5,468,32"/></map>
+</div>
+</p>
 
 </div>
 </div>
@@ -386,6 +413,15 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>QCPAxisRect</b></td>
 <p>Sets whether this object will be drawn antialiased or not.</p>
 <p>Note that antialiasing settings may be overridden by <a class="el" href="class_q_custom_plot.html#af6f91e5eab1be85f67c556e98c3745e8">QCustomPlot::setAntialiasedElements</a> and <a class="el" href="class_q_custom_plot.html#ae10d685b5eabea2999fb8775ca173c24">QCustomPlot::setNotAntialiasedElements</a>. </p>
 
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_q_c_p_layerable_a4fd43e89be4a553ead41652565ff0581_icgraph.png" border="0" usemap="#class_q_c_p_layerable_a4fd43e89be4a553ead41652565ff0581_icgraph" alt=""/></div>
+<map name="class_q_c_p_layerable_a4fd43e89be4a553ead41652565ff0581_icgraph" id="class_q_c_p_layerable_a4fd43e89be4a553ead41652565ff0581_icgraph">
+<area shape="rect" id="node2" href="class_q_c_p_grid.html#acd1cdd2909625388a13048b698494a17" title="QCPGrid::QCPGrid" alt="" coords="284,5,420,32"/><area shape="rect" id="node3" href="class_q_c_p_axis.html#ac62c042968bae0e6d474fcfc57c9b71f" title="QCPAxis::QCPAxis" alt="" coords="284,56,420,83"/><area shape="rect" id="node4" href="class_q_c_p_legend.html#a0001a456989bd07ea378883651fabd72" title="QCPLegend::QCPLegend" alt="" coords="263,107,441,133"/></map>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="ab0d0da6d2de45a118886d2c8e16d5a54"></a>
@@ -403,6 +439,15 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>QCPAxisRect</b></td>
 </div><div class="memdoc">
 <p>Sets the <em>layer</em> of this layerable object. The object will be placed on top of the other objects already on <em>layer</em>.</p>
 <p>Returns true on success, i.e. if <em>layer</em> is a valid layer. </p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_q_c_p_layerable_ab0d0da6d2de45a118886d2c8e16d5a54_icgraph.png" border="0" usemap="#class_q_c_p_layerable_ab0d0da6d2de45a118886d2c8e16d5a54_icgraph" alt=""/></div>
+<map name="class_q_c_p_layerable_ab0d0da6d2de45a118886d2c8e16d5a54_icgraph" id="class_q_c_p_layerable_ab0d0da6d2de45a118886d2c8e16d5a54_icgraph">
+<area shape="rect" id="node2" href="class_q_c_p_layerable.html#a74c0fa237f29bf0e49565013fc5d1ec0" title="QCPLayerable::QCPLayerable" alt="" coords="235,5,443,32"/><area shape="rect" id="node3" href="class_q_c_p_layerable.html#ab25a0e7b897993b44447caee0f142083" title="QCPLayerable::setLayer" alt="" coords="252,56,427,83"/><area shape="rect" id="node4" href="class_q_c_p_axis.html#ac62c042968bae0e6d474fcfc57c9b71f" title="QCPAxis::QCPAxis" alt="" coords="271,107,407,133"/><area shape="rect" id="node5" href="class_q_custom_plot.html#a45b99626558651a6428b83972b0b34b8" title="QCustomPlot::QCustomPlot" alt="" coords="240,157,439,184"/><area shape="rect" id="node6" href="class_q_custom_plot.html#ab7ad9174f701f9c6f64e378df77927a6" title="QCustomPlot::addPlottable" alt="" coords="242,208,437,235"/><area shape="rect" id="node8" href="class_q_c_p_abstract_legend_item.html#afaff87610e8da0fa238ecf552872d774" title="QCPAbstractLegendItem\l::QCPAbstractLegendItem" alt="" coords="246,259,433,301"/><area shape="rect" id="node9" href="class_q_c_p_plot_title.html#aaae17bee2de6d6a1e695f76fb1abed03" title="QCPPlotTitle::QCPPlotTitle" alt="" coords="247,325,431,352"/><area shape="rect" id="node10" href="class_q_c_p_color_scale_axis_rect_private.html#ad3b242f75dd2b33581364a4e668a80db" title="QCPColorScaleAxisRectPrivate\l::QCPColorScaleAxisRectPrivate" alt="" coords="228,377,451,418"/><area shape="rect" id="node7" href="class_q_custom_plot.html#a6fb2873d35a8a8089842d81a70a54167" title="QCustomPlot::addGraph" alt="" coords="499,208,676,235"/></map>
+</div>
+</p>
 
 </div>
 </div>
@@ -422,6 +467,15 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>QCPAxisRect</b></td>
 <p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Sets the layer of this layerable object by name</p>
 <p>Returns true on success, i.e. if <em>layerName</em> is a valid layer name. </p>
 
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_q_c_p_layerable_ab25a0e7b897993b44447caee0f142083_cgraph.png" border="0" usemap="#class_q_c_p_layerable_ab25a0e7b897993b44447caee0f142083_cgraph" alt=""/></div>
+<map name="class_q_c_p_layerable_ab25a0e7b897993b44447caee0f142083_cgraph" id="class_q_c_p_layerable_ab25a0e7b897993b44447caee0f142083_cgraph">
+<area shape="rect" id="node2" href="class_q_custom_plot.html#aac492da01782820454e9136a8db28182" title="QCustomPlot::layer" alt="" coords="243,5,388,32"/><area shape="rect" id="node3" href="class_q_c_p_layerable.html#ab0d0da6d2de45a118886d2c8e16d5a54" title="QCPLayerable::setLayer" alt="" coords="228,56,403,83"/></map>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a3bed99ddc396b48ce3ebfdc0418744f8"></a>
@@ -439,6 +493,15 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>QCPAxisRect</b></td>
 </div><div class="memdoc">
 <p>Sets the visibility of this layerable object. If an object is not visible, it will not be drawn on the <a class="el" href="class_q_custom_plot.html" title="The central class of the library. This is the QWidget which displays the plot and interacts with the ...">QCustomPlot</a> surface, and user interaction with it (e.g. click and selection) is not possible. </p>
 
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_q_c_p_layerable_a3bed99ddc396b48ce3ebfdc0418744f8_icgraph.png" border="0" usemap="#class_q_c_p_layerable_a3bed99ddc396b48ce3ebfdc0418744f8_icgraph" alt=""/></div>
+<map name="class_q_c_p_layerable_a3bed99ddc396b48ce3ebfdc0418744f8_icgraph" id="class_q_c_p_layerable_a3bed99ddc396b48ce3ebfdc0418744f8_icgraph">
+<area shape="rect" id="node2" href="class_q_c_p_axis.html#ac62c042968bae0e6d474fcfc57c9b71f" title="QCPAxis::QCPAxis" alt="" coords="277,5,413,32"/><area shape="rect" id="node3" href="class_q_custom_plot.html#a45b99626558651a6428b83972b0b34b8" title="QCustomPlot::QCustomPlot" alt="" coords="245,56,444,83"/><area shape="rect" id="node4" href="class_q_c_p_axis_rect.html#a60b31dece805462c1b82eea2e69ba042" title="QCPAxisRect::QCPAxisRect" alt="" coords="249,107,441,133"/><area shape="rect" id="node5" href="class_q_c_p_axis_rect.html#a5fa906175447b14206954f77fc7f1ef4" title="QCPAxisRect::setupFullAxesBox" alt="" coords="233,157,456,184"/><area shape="rect" id="node6" href="class_q_c_p_color_scale_axis_rect_private.html#ad3b242f75dd2b33581364a4e668a80db" title="QCPColorScaleAxisRectPrivate\l::QCPColorScaleAxisRectPrivate" alt="" coords="233,209,456,250"/></map>
+</div>
+</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
@@ -448,7 +511,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>QCPAxisRect</b></td>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jun 16 2015 19:06:47 for Voice analyze by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jun 18 2015 02:00:47 for Voice analyze by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

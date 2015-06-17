@@ -1,0 +1,14 @@
+<map id="QCPLayout::takeAt" name="QCPLayout::takeAt">
+<area shape="rect" id="node2" href="$class_q_c_p_layout.html#a2403f684fee3ce47132faaeed00bb066" title="QCPLayout::removeAt" alt="" coords="196,60,359,87"/>
+<area shape="rect" id="node3" href="$class_q_c_p_layout.html#a02883bdf2769b5b227f0232dba1ac4ee" title="QCPLayout::clear" alt="" coords="429,35,559,61"/>
+<area shape="rect" id="node4" href="$class_q_c_p_layout_grid.html#a08bba60e4acd20165526a8fd7f986b58" title="QCPLayoutGrid::simplify" alt="" coords="407,85,581,112"/>
+<area shape="rect" id="node5" href="$class_q_c_p_legend.html#ac91595c3eaa746fe6321d2eb952c63bb" title="QCPLegend::removeItem" alt="" coords="629,85,812,112"/>
+<area shape="rect" id="node6" href="$class_q_c_p_abstract_plottable.html#aa1f350e510326d012b9a9c9249736c83" title="QCPAbstractPlottable\l::removeFromLegend" alt="" coords="866,49,1025,90"/>
+<area shape="rect" id="node13" href="$class_q_c_p_legend.html#a24795c7250eb5214fcea16b7217b4dfb" title="QCPLegend::clearItems" alt="" coords="860,115,1031,141"/>
+<area shape="rect" id="node7" href="$class_q_custom_plot.html#af3dafd56884208474f311d6226513ab2" title="QCustomPlot::removePlottable" alt="" coords="1079,56,1297,83"/>
+<area shape="rect" id="node8" href="$class_q_custom_plot.html#afc210e0021480f8119bccf37839dbcc8" title="QCustomPlot::removePlottable" alt="" coords="1345,5,1564,32"/>
+<area shape="rect" id="node9" href="$class_q_custom_plot.html#a9a409bb3201878adb7ffba1c89c4e004" title="QCustomPlot::clearPlottables" alt="" coords="1351,56,1559,83"/>
+<area shape="rect" id="node10" href="$class_q_custom_plot.html#a903561be895fb6528a770d66ac5e6713" title="QCustomPlot::removeGraph" alt="" coords="1353,107,1556,133"/>
+<area shape="rect" id="node11" href="$class_q_custom_plot.html#a9554b3d2d5b10c0f884bd4010b6c192c" title="QCustomPlot::removeGraph" alt="" coords="1612,81,1815,108"/>
+<area shape="rect" id="node12" href="$class_q_custom_plot.html#ab0f3abff2d2f7df3668b5836f39207fa" title="QCustomPlot::clearGraphs" alt="" coords="1618,132,1809,159"/>
+</map>

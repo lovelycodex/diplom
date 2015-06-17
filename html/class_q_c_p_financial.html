@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="index.jpe"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Voice analyze
-   &#160;<span id="projectnumber">v.1</span>
+   &#160;<span id="projectnumber">v.2</span>
    </div>
   </td>
  </tr>
@@ -554,6 +554,15 @@ Changing the appearance</h1>
 <p>Constructs a financial chart which uses <em>keyAxis</em> as its key axis ("x") and <em>valueAxis</em> as its value axis ("y"). <em>keyAxis</em> and <em>valueAxis</em> must reside in the same <a class="el" href="class_q_custom_plot.html" title="The central class of the library. This is the QWidget which displays the plot and interacts with the ...">QCustomPlot</a> instance and not have the same orientation. If either of these restrictions is violated, a corresponding message is printed to the debug output (qDebug), the construction is not aborted, though.</p>
 <p>The constructed <a class="el" href="class_q_c_p_financial.html" title="A plottable representing a financial stock chart. ">QCPFinancial</a> can be added to the plot with <a class="el" href="class_q_custom_plot.html#ab7ad9174f701f9c6f64e378df77927a6">QCustomPlot::addPlottable</a>, <a class="el" href="class_q_custom_plot.html" title="The central class of the library. This is the QWidget which displays the plot and interacts with the ...">QCustomPlot</a> then takes ownership of the financial chart. </p>
 
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_q_c_p_financial_a4702d5248feeb9d1ec6e3ce725b10b32_cgraph.png" border="0" usemap="#class_q_c_p_financial_a4702d5248feeb9d1ec6e3ce725b10b32_cgraph" alt=""/></div>
+<map name="class_q_c_p_financial_a4702d5248feeb9d1ec6e3ce725b10b32_cgraph" id="class_q_c_p_financial_a4702d5248feeb9d1ec6e3ce725b10b32_cgraph">
+<area shape="rect" id="node2" href="class_q_c_p_abstract_plottable.html#a6911603cad23ab0469b108224517516f" title="QCPAbstractPlottable\l::setSelectedPen" alt="" coords="248,5,407,47"/><area shape="rect" id="node3" href="class_q_c_p_abstract_plottable.html#ae8c816874089f7a44001e8618e81a9dc" title="QCPAbstractPlottable\l::setSelectedBrush" alt="" coords="248,71,407,112"/></map>
+</div>
+</p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -740,6 +749,15 @@ Changing the appearance</h1>
 </table>
 </div><div class="memdoc">
 <p>Returns a pointer to the internal data storage of type <a class="el" href="qcustomplot_8h.html#a745c09823fae0974b50beca9bc3b3d7d">QCPFinancialDataMap</a>. You may use it to directly manipulate the data, which may be more convenient and faster than using the regular <a class="el" href="class_q_c_p_financial.html#adf12a86082f1e488df6a4e8603f8fd6d">setData</a> or <a class="el" href="class_q_c_p_financial.html#a1a83396f97fcc68f2b7aa8d9782feffe">addData</a> methods, in certain situations. </p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_q_c_p_financial_a58e05aefa057d16edfcc0334cf81c241_icgraph.png" border="0" usemap="#class_q_c_p_financial_a58e05aefa057d16edfcc0334cf81c241_icgraph" alt=""/></div>
+<map name="class_q_c_p_financial_a58e05aefa057d16edfcc0334cf81c241_icgraph" id="class_q_c_p_financial_a58e05aefa057d16edfcc0334cf81c241_icgraph">
+<area shape="rect" id="node2" href="class_q_c_p_financial.html#adf12a86082f1e488df6a4e8603f8fd6d" title="QCPFinancial::setData" alt="" coords="195,5,357,32"/></map>
+</div>
+</p>
 
 </div>
 </div>
@@ -959,6 +977,15 @@ Changing the appearance</h1>
 <p>Alternatively, you can also access and modify the plottable's data via the <a class="el" href="class_q_c_p_financial.html#a58e05aefa057d16edfcc0334cf81c241">data</a> method, which returns a pointer to the internal <a class="el" href="qcustomplot_8h.html#a745c09823fae0974b50beca9bc3b3d7d">QCPFinancialDataMap</a>.</p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_c_p_financial.html#a0c3453d1c03e320950fdd2df54e3ebc8">timeSeriesToOhlc</a> </dd></dl>
 
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_q_c_p_financial_adf12a86082f1e488df6a4e8603f8fd6d_cgraph.png" border="0" usemap="#class_q_c_p_financial_adf12a86082f1e488df6a4e8603f8fd6d_cgraph" alt=""/></div>
+<map name="class_q_c_p_financial_adf12a86082f1e488df6a4e8603f8fd6d_cgraph" id="class_q_c_p_financial_adf12a86082f1e488df6a4e8603f8fd6d_cgraph">
+<area shape="rect" id="node2" href="class_q_c_p_financial.html#a58e05aefa057d16edfcc0334cf81c241" title="QCPFinancial::data" alt="" coords="216,5,357,32"/></map>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a886881339d6447432af55adaad748c3c"></a>
@@ -1139,7 +1166,7 @@ Changing the appearance</h1>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jun 16 2015 19:06:46 for Voice analyze by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jun 18 2015 02:00:47 for Voice analyze by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

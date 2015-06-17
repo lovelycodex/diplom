@@ -1,0 +1,11 @@
+<map id="QCPAxis::orientation" name="QCPAxis::orientation">
+<area shape="rect" id="node2" href="$class_q_c_p_axis.html#af4bbd446dcaee5a83ac30ce9bcd6e125" title="QCPAxis::setScaleRatio" alt="" coords="237,5,408,32"/>
+<area shape="rect" id="node3" href="$class_q_c_p_axis.html#ae9289ef7043b9d966af88eaa95b037d1" title="QCPAxis::pixelToCoord" alt="" coords="240,56,405,83"/>
+<area shape="rect" id="node4" href="$class_q_c_p_axis.html#a985ae693b842fb0422b4390fe36d299a" title="QCPAxis::coordToPixel" alt="" coords="241,107,404,133"/>
+<area shape="rect" id="node5" href="$class_q_c_p_abstract_plottable.html#af78a036e40db6f53a31abadc5323715a" title="QCPAbstractPlottable\l::QCPAbstractPlottable" alt="" coords="239,158,406,199"/>
+<area shape="rect" id="node6" href="$class_q_c_p_color_scale.html#a1bf9bdb291927c422dd66b404b206f1f" title="QCPColorScale::setType" alt="" coords="235,224,410,251"/>
+<area shape="rect" id="node8" href="$class_q_c_p_color_scale.html#a21c51a55e4fd581b6feadca9ee5b38d5" title="QCPColorScale::setRangeDrag" alt="" coords="215,275,431,301"/>
+<area shape="rect" id="node9" href="$class_q_c_p_color_scale.html#a96bd60fb6317ad6821841b539c93eeeb" title="QCPColorScale::setRangeZoom" alt="" coords="211,325,435,352"/>
+<area shape="rect" id="node10" href="$class_q_c_p_color_map.html#a5d8158b62d55fcfeaabcb68ce0083e87" title="QCPColorMap::updateLegendIcon" alt="" coords="205,376,440,403"/>
+<area shape="rect" id="node7" href="$class_q_c_p_color_scale.html#aa8debce1be38b54287c04d4f584394b4" title="QCPColorScale::QCPColorScale" alt="" coords="488,224,708,251"/>
+</map>

@@ -1,0 +1,74 @@
+.TH "QCPFinancialData" 3 "Thu Jun 18 2015" "Version v.2" "Voice analyze" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+QCPFinancialData \- Holds the data of one single data point for \fBQCPFinancial\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQCPFinancialData\fP ()"
+.br
+.ti -1c
+.RI "\fBQCPFinancialData\fP (double key, double open, double high, double low, double close)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "double \fBkey\fP"
+.br
+.ti -1c
+.RI "double \fBopen\fP"
+.br
+.ti -1c
+.RI "double \fBhigh\fP"
+.br
+.ti -1c
+.RI "double \fBlow\fP"
+.br
+.ti -1c
+.RI "double \fBclose\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Holds the data of one single data point for \fBQCPFinancial\fP\&. 
+
+The container for storing multiple data points is \fBQCPFinancialDataMap\fP\&.
+.PP
+The stored data is: 
+.PD 0
+
+.IP "\(bu" 2
+\fIkey:\fP coordinate on the key axis of this data point 
+.IP "\(bu" 2
+\fIopen:\fP The opening value at the data point 
+.IP "\(bu" 2
+\fIhigh:\fP The high/maximum value at the data point 
+.IP "\(bu" 2
+\fIlow:\fP The low/minimum value at the data point 
+.IP "\(bu" 2
+\fIclose:\fP The closing value at the data point
+.PP
+\fBSee also:\fP
+.RS 4
+\fBQCPFinancialDataMap\fP 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "QCPFinancialData::QCPFinancialData ()"
+Constructs a data point with key and all values set to zero\&. 
+.SS "QCPFinancialData::QCPFinancialData (double key, double open, double high, double low, double close)"
+Constructs a data point with the specified \fIkey\fP and OHLC values\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Voice analyze from the source code\&.

@@ -1,0 +1,341 @@
+.TH "QCPLayoutElement" 3 "Thu Jun 18 2015" "Version v.2" "Voice analyze" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+QCPLayoutElement \- The abstract base class for all objects that form \fBthe layout system\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBUpdatePhase\fP { \fBupPreparation\fP, \fBupMargins\fP, \fBupLayout\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQCPLayoutElement\fP (\fBQCustomPlot\fP *parentPlot=0)"
+.br
+.ti -1c
+.RI "\fBQCPLayout\fP * \fBlayout\fP () const "
+.br
+.ti -1c
+.RI "QRect \fBrect\fP () const "
+.br
+.ti -1c
+.RI "QRect \fBouterRect\fP () const "
+.br
+.ti -1c
+.RI "QMargins \fBmargins\fP () const "
+.br
+.ti -1c
+.RI "QMargins \fBminimumMargins\fP () const "
+.br
+.ti -1c
+.RI "QCP::MarginSides \fBautoMargins\fP () const "
+.br
+.ti -1c
+.RI "QSize \fBminimumSize\fP () const "
+.br
+.ti -1c
+.RI "QSize \fBmaximumSize\fP () const "
+.br
+.ti -1c
+.RI "\fBQCPMarginGroup\fP * \fBmarginGroup\fP (\fBQCP::MarginSide\fP side) const "
+.br
+.ti -1c
+.RI "QHash< \fBQCP::MarginSide\fP, \fBQCPMarginGroup\fP * > \fBmarginGroups\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetOuterRect\fP (const QRect &\fBrect\fP)"
+.br
+.ti -1c
+.RI "void \fBsetMargins\fP (const QMargins &margins)"
+.br
+.ti -1c
+.RI "void \fBsetMinimumMargins\fP (const QMargins &margins)"
+.br
+.ti -1c
+.RI "void \fBsetAutoMargins\fP (QCP::MarginSides sides)"
+.br
+.ti -1c
+.RI "void \fBsetMinimumSize\fP (const QSize &size)"
+.br
+.ti -1c
+.RI "void \fBsetMinimumSize\fP (int width, int height)"
+.br
+.ti -1c
+.RI "void \fBsetMaximumSize\fP (const QSize &size)"
+.br
+.ti -1c
+.RI "void \fBsetMaximumSize\fP (int width, int height)"
+.br
+.ti -1c
+.RI "void \fBsetMarginGroup\fP (QCP::MarginSides sides, \fBQCPMarginGroup\fP *group)"
+.br
+.ti -1c
+.RI "virtual void \fBupdate\fP (\fBUpdatePhase\fP phase)"
+.br
+.ti -1c
+.RI "virtual QSize \fBminimumSizeHint\fP () const "
+.br
+.ti -1c
+.RI "virtual QSize \fBmaximumSizeHint\fP () const "
+.br
+.ti -1c
+.RI "virtual QList< \fBQCPLayoutElement\fP * > \fBelements\fP (bool recursive) const "
+.br
+.ti -1c
+.RI "virtual double \fBselectTest\fP (const QPointF &pos, bool onlySelectable, QVariant *details=0) const "
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual int \fBcalculateAutoMargin\fP (\fBQCP::MarginSide\fP side)"
+.br
+.ti -1c
+.RI "virtual void \fBmousePressEvent\fP (QMouseEvent *event)"
+.br
+.ti -1c
+.RI "virtual void \fBmouseMoveEvent\fP (QMouseEvent *event)"
+.br
+.ti -1c
+.RI "virtual void \fBmouseReleaseEvent\fP (QMouseEvent *event)"
+.br
+.ti -1c
+.RI "virtual void \fBmouseDoubleClickEvent\fP (QMouseEvent *event)"
+.br
+.ti -1c
+.RI "virtual void \fBwheelEvent\fP (QWheelEvent *event)"
+.br
+.ti -1c
+.RI "virtual void \fBapplyDefaultAntialiasingHint\fP (\fBQCPPainter\fP *painter) const "
+.br
+.ti -1c
+.RI "virtual void \fBdraw\fP (\fBQCPPainter\fP *painter)"
+.br
+.ti -1c
+.RI "virtual void \fBparentPlotInitialized\fP (\fBQCustomPlot\fP *parentPlot)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBQCPLayout\fP * \fBmParentLayout\fP"
+.br
+.ti -1c
+.RI "QSize \fBmMinimumSize\fP"
+.br
+.ti -1c
+.RI "QSize \fBmMaximumSize\fP"
+.br
+.ti -1c
+.RI "QRect \fBmRect\fP"
+.br
+.ti -1c
+.RI "QRect \fBmOuterRect\fP"
+.br
+.ti -1c
+.RI "QMargins \fBmMargins\fP"
+.br
+.ti -1c
+.RI "QMargins \fBmMinimumMargins\fP"
+.br
+.ti -1c
+.RI "QCP::MarginSides \fBmAutoMargins\fP"
+.br
+.ti -1c
+.RI "QHash< \fBQCP::MarginSide\fP, \fBQCPMarginGroup\fP * > \fBmMarginGroups\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBQCustomPlot\fP"
+.br
+.ti -1c
+.RI "class \fBQCPLayout\fP"
+.br
+.ti -1c
+.RI "class \fBQCPMarginGroup\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+The abstract base class for all objects that form \fBthe layout system\fP\&. 
+
+This is an abstract base class\&. As such, it can't be instantiated directly, rather use one of its subclasses\&.
+.PP
+A Layout element is a rectangular object which can be placed in layouts\&. It has an outer rect (QCPLayoutElement::outerRect) and an inner rect (\fBQCPLayoutElement::rect\fP)\&. The difference between outer and inner rect is called its margin\&. The margin can either be set to automatic or manual (\fBsetAutoMargins\fP) on a per-side basis\&. If a side is set to manual, that margin can be set explicitly with \fBsetMargins\fP and will stay fixed at that value\&. If it's set to automatic, the layout element subclass will control the value itself (via \fBcalculateAutoMargin\fP)\&.
+.PP
+Layout elements can be placed in layouts (base class \fBQCPLayout\fP) like \fBQCPLayoutGrid\fP\&. The top level layout is reachable via \fBQCustomPlot::plotLayout\fP, and is a \fBQCPLayoutGrid\fP\&. Since \fBQCPLayout\fP itself derives from \fBQCPLayoutElement\fP, layouts can be nested\&.
+.PP
+Thus in \fBQCustomPlot\fP one can divide layout elements into two categories: The ones that are invisible by themselves, because they don't draw anything\&. Their only purpose is to manage the position and size of other layout elements\&. This category of layout elements usually use \fBQCPLayout\fP as base class\&. Then there is the category of layout elements which actually draw something\&. For example, \fBQCPAxisRect\fP, \fBQCPLegend\fP and \fBQCPPlotTitle\fP are of this category\&. This does not necessarily mean that the latter category can't have child layout elements\&. \fBQCPLegend\fP for instance, actually derives from \fBQCPLayoutGrid\fP and the individual legend items are child layout elements in the grid layout\&. 
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBQCPLayoutElement::UpdatePhase\fP"
+Defines the phases of the update process, that happens just before a replot\&. At each phase, \fBupdate\fP is called with the according UpdatePhase value\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIupPreparation \fP\fP
+Phase used for any type of preparation that needs to be done before margin calculation and layout\&. 
+.TP
+\fB\fIupMargins \fP\fP
+Phase in which the margins are calculated and set\&. 
+.TP
+\fB\fIupLayout \fP\fP
+Final phase in which the layout system places the rects of the elements\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "QCPLayoutElement::QCPLayoutElement (\fBQCustomPlot\fP * parentPlot = \fC0\fP)\fC [explicit]\fP"
+Creates an instance of \fBQCPLayoutElement\fP and sets default values\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "QList< \fBQCPLayoutElement\fP * > QCPLayoutElement::elements (bool recursive) const\fC [virtual]\fP"
+Returns a list of all child elements in this layout element\&. If \fIrecursive\fP is true, all sub-child elements are included in the list, too\&.
+.PP
+\fBWarning:\fP
+.RS 4
+There may be entries with value 0 in the returned list\&. (For example, \fBQCPLayoutGrid\fP may have empty cells which yield 0 at the respective index\&.) 
+.RE
+.PP
+
+.PP
+Reimplemented in \fBQCPAxisRect\fP, \fBQCPLayoutGrid\fP, and \fBQCPLayout\fP\&.
+.SS "\fBQCPLayout\fP * QCPLayoutElement::layout () const\fC [inline]\fP"
+Returns the parent layout of this layout element\&. 
+.SS "QSize QCPLayoutElement::maximumSizeHint () const\fC [virtual]\fP"
+Returns the maximum size this layout element (the inner \fBrect\fP) may be expanded to\&.
+.PP
+if a maximum size (\fBsetMaximumSize\fP) was not set manually, parent layouts consult this function to determine the maximum allowed size of this layout element\&. (A manual maximum size is considered set if it is smaller than Qt's QWIDGETSIZE_MAX\&.) 
+.PP
+Reimplemented in \fBQCPPlotTitle\fP, and \fBQCPLayoutGrid\fP\&.
+.SS "QSize QCPLayoutElement::minimumSizeHint () const\fC [virtual]\fP"
+Returns the minimum size this layout element (the inner \fBrect\fP) may be compressed to\&.
+.PP
+if a minimum size (\fBsetMinimumSize\fP) was not set manually, parent layouts consult this function to determine the minimum allowed size of this layout element\&. (A manual minimum size is considered set if it is non-zero\&.) 
+.PP
+Reimplemented in \fBQCPPlotTitle\fP, \fBQCPPlottableLegendItem\fP, and \fBQCPLayoutGrid\fP\&.
+.SS "void QCPLayoutElement::mouseDoubleClickEvent (QMouseEvent * event)\fC [inline]\fP, \fC [protected]\fP, \fC [virtual]\fP"
+This event is called, if the mouse is double-clicked inside the outer rect of this layout element\&. 
+.SS "void QCPLayoutElement::mouseMoveEvent (QMouseEvent * event)\fC [inline]\fP, \fC [protected]\fP, \fC [virtual]\fP"
+This event is called, if the mouse is moved inside the outer rect of this layout element\&. 
+.PP
+Reimplemented in \fBQCPColorScale\fP, and \fBQCPAxisRect\fP\&.
+.SS "void QCPLayoutElement::mousePressEvent (QMouseEvent * event)\fC [inline]\fP, \fC [protected]\fP, \fC [virtual]\fP"
+This event is called, if the mouse was pressed while being inside the outer rect of this layout element\&. 
+.PP
+Reimplemented in \fBQCPColorScale\fP, and \fBQCPAxisRect\fP\&.
+.SS "void QCPLayoutElement::mouseReleaseEvent (QMouseEvent * event)\fC [inline]\fP, \fC [protected]\fP, \fC [virtual]\fP"
+This event is called, if the mouse was previously pressed inside the outer rect of this layout element and is now released\&. 
+.PP
+Reimplemented in \fBQCPColorScale\fP, and \fBQCPAxisRect\fP\&.
+.SS "QRect QCPLayoutElement::rect () const\fC [inline]\fP"
+Returns the inner rect of this layout element\&. The inner rect is the outer rect (\fBsetOuterRect\fP) shrinked by the margins (\fBsetMargins\fP, \fBsetAutoMargins\fP)\&.
+.PP
+In some cases, the area between outer and inner rect is left blank\&. In other cases the margin area is used to display peripheral graphics while the main content is in the inner rect\&. This is where automatic margin calculation becomes interesting because it allows the layout element to adapt the margins to the peripheral graphics it wants to draw\&. For example, \fBQCPAxisRect\fP draws the axis labels and tick labels in the margin area, thus needs to adjust the margins (if \fBsetAutoMargins\fP is enabled) according to the space required by the labels of the axes\&. 
+.SS "double QCPLayoutElement::selectTest (const QPointF & pos, bool onlySelectable, QVariant * details = \fC0\fP) const\fC [virtual]\fP"
+Layout elements are sensitive to events inside their outer rect\&. If \fIpos\fP is within the outer rect, this method returns a value corresponding to 0\&.99 times the parent plot's selection tolerance\&. However, layout elements are not selectable by default\&. So if \fIonlySelectable\fP is true, -1\&.0 is returned\&.
+.PP
+See \fBQCPLayerable::selectTest\fP for a general explanation of this virtual method\&.
+.PP
+\fBQCPLayoutElement\fP subclasses may reimplement this method to provide more specific selection test behaviour\&. 
+.PP
+Reimplemented from \fBQCPLayerable\fP\&.
+.PP
+Reimplemented in \fBQCPPlotTitle\fP, \fBQCPLegend\fP, \fBQCPAbstractLegendItem\fP, and \fBQCPLayoutInset\fP\&.
+.SS "void QCPLayoutElement::setAutoMargins (QCP::MarginSides sides)"
+Sets on which sides the margin shall be calculated automatically\&. If a side is calculated automatically, a minimum margin value may be provided with \fBsetMinimumMargins\fP\&. If a side is set to be controlled manually, the value may be specified with \fBsetMargins\fP\&.
+.PP
+Margin sides that are under automatic control may participate in a \fBQCPMarginGroup\fP (see \fBsetMarginGroup\fP), to synchronize (align) it with other layout elements in the plot\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetMinimumMargins\fP, \fBsetMargins\fP 
+.RE
+.PP
+
+.SS "void QCPLayoutElement::setMarginGroup (QCP::MarginSides sides, \fBQCPMarginGroup\fP * group)"
+Sets the margin \fIgroup\fP of the specified margin \fIsides\fP\&.
+.PP
+Margin groups allow synchronizing specified margins across layout elements, see the documentation of \fBQCPMarginGroup\fP\&.
+.PP
+To unset the margin group of \fIsides\fP, set \fIgroup\fP to 0\&.
+.PP
+Note that margin groups only work for margin sides that are set to automatic (\fBsetAutoMargins\fP)\&. 
+.SS "void QCPLayoutElement::setMargins (const QMargins & margins)"
+Sets the margins of this layout element\&. If \fBsetAutoMargins\fP is disabled for some or all sides, this function is used to manually set the margin on those sides\&. Sides that are still set to be handled automatically are ignored and may have any value in \fImargins\fP\&.
+.PP
+The margin is the distance between the outer rect (controlled by the parent layout via \fBsetOuterRect\fP) and the inner \fBrect\fP (which usually contains the main content of this layout element)\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetAutoMargins\fP 
+.RE
+.PP
+
+.SS "void QCPLayoutElement::setMaximumSize (const QSize & size)"
+Sets the maximum size for the inner \fBrect\fP of this layout element\&. A parent layout tries to respect the \fIsize\fP here by changing row/column sizes in the layout accordingly\&. 
+.SS "void QCPLayoutElement::setMaximumSize (int width, int height)"
+This is an overloaded member function, provided for convenience\&. It differs from the above function only in what argument(s) it accepts\&.
+.PP
+Sets the maximum size for the inner \fBrect\fP of this layout element\&. 
+.SS "void QCPLayoutElement::setMinimumMargins (const QMargins & margins)"
+If \fBsetAutoMargins\fP is enabled on some or all margins, this function is used to provide minimum values for those margins\&.
+.PP
+The minimum values are not enforced on margin sides that were set to be under manual control via \fBsetAutoMargins\fP\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetAutoMargins\fP 
+.RE
+.PP
+
+.SS "void QCPLayoutElement::setMinimumSize (const QSize & size)"
+Sets the minimum size for the inner \fBrect\fP of this layout element\&. A parent layout tries to respect the \fIsize\fP here by changing row/column sizes in the layout accordingly\&.
+.PP
+If the parent layout size is not sufficient to satisfy all minimum size constraints of its child layout elements, the layout may set a size that is actually smaller than \fIsize\fP\&. \fBQCustomPlot\fP propagates the layout's size constraints to the outside by setting its own minimum QWidget size accordingly, so violations of \fIsize\fP should be exceptions\&. 
+.SS "void QCPLayoutElement::setMinimumSize (int width, int height)"
+This is an overloaded member function, provided for convenience\&. It differs from the above function only in what argument(s) it accepts\&.
+.PP
+Sets the minimum size for the inner \fBrect\fP of this layout element\&. 
+.SS "void QCPLayoutElement::setOuterRect (const QRect & rect)"
+Sets the outer rect of this layout element\&. If the layout element is inside a layout, the layout sets the position and size of this layout element using this function\&.
+.PP
+Calling this function externally has no effect, since the layout will overwrite any changes to the outer rect upon the next replot\&.
+.PP
+The layout element will adapt its inner \fBrect\fP by applying the margins inward to the outer rect\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBrect\fP 
+.RE
+.PP
+
+.SS "void QCPLayoutElement::update (\fBUpdatePhase\fP phase)\fC [virtual]\fP"
+Updates the layout element and sub-elements\&. This function is automatically called before every replot by the parent layout element\&. It is called multiple times, once for every \fBUpdatePhase\fP\&. The phases are run through in the order of the enum values\&. For details about what happens at the different phases, see the documentation of \fBUpdatePhase\fP\&.
+.PP
+Layout elements that have child elements should call the \fBupdate\fP method of their child elements, and pass the current \fIphase\fP unchanged\&.
+.PP
+The default implementation executes the automatic margin mechanism in the \fBupMargins\fP phase\&. Subclasses should make sure to call the base class implementation\&. 
+.PP
+Reimplemented in \fBQCPColorScale\fP, \fBQCPAxisRect\fP, and \fBQCPLayout\fP\&.
+.SS "void QCPLayoutElement::wheelEvent (QWheelEvent * event)\fC [inline]\fP, \fC [protected]\fP, \fC [virtual]\fP"
+This event is called, if the mouse wheel is scrolled while the cursor is inside the rect of this layout element\&. 
+.PP
+Reimplemented in \fBQCPColorScale\fP, and \fBQCPAxisRect\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Voice analyze from the source code\&.

@@ -1,0 +1,9 @@
+<map id="QCustomPlot::saveRastered" name="QCustomPlot::saveRastered">
+<area shape="rect" id="node2" href="$class_q_custom_plot.html#aabb974d71ce96c137dc04eb6eab844fe" title="QCustomPlot::toPixmap" alt="" coords="255,81,429,108"/>
+<area shape="rect" id="node3" href="$class_q_c_p_painter.html#a0a41146ccd619dceab6e25ec7b46b044" title="QCPPainter::begin" alt="" coords="503,5,641,32"/>
+<area shape="rect" id="node4" href="$class_q_custom_plot.html#a953ecdbc28018e7e84cb6213ad3d88c2" title="QCustomPlot::viewport" alt="" coords="489,56,655,83"/>
+<area shape="rect" id="node5" href="$class_q_custom_plot.html#a3f9bc4b939dd8aaba9339fd09f273fc4" title="QCustomPlot::setViewport" alt="" coords="477,107,667,133"/>
+<area shape="rect" id="node8" href="$class_q_c_p_painter.html#af6b1f7d2bbc548b10aa55d8b6ad49577" title="QCPPainter::setMode" alt="" coords="493,157,651,184"/>
+<area shape="rect" id="node6" href="$class_q_c_p_layout_element.html#a38975ea13e36de8e53391ce41d94bc0f" title="QCPLayoutElement::setOuterRect" alt="" coords="715,107,952,133"/>
+<area shape="rect" id="node7" href="$class_q_c_p_layout_element.html#affdfea003469aac3d0fac5f4e06171bc" title="QCPLayoutElement::rect" alt="" coords="1000,107,1179,133"/>
+</map>

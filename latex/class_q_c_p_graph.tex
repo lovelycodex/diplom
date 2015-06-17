@@ -1,0 +1,941 @@
+\section{Q\+C\+P\+Graph Class Reference}
+\label{class_q_c_p_graph}\index{Q\+C\+P\+Graph@{Q\+C\+P\+Graph}}
+
+
+A plottable representing a graph in a plot.  
+
+
+
+
+Collaboration diagram for Q\+C\+P\+Graph\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_graph__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf Line\+Style} \{ \\*
+{\bf ls\+None}, 
+{\bf ls\+Line}, 
+{\bf ls\+Step\+Left}, 
+{\bf ls\+Step\+Right}, 
+\\*
+{\bf ls\+Step\+Center}, 
+{\bf ls\+Impulse}
+ \}
+\item 
+enum {\bf Error\+Type} \{ {\bf et\+None}, 
+{\bf et\+Key}, 
+{\bf et\+Value}, 
+{\bf et\+Both}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Q\+C\+P\+Graph} ({\bf Q\+C\+P\+Axis} $\ast$key\+Axis, {\bf Q\+C\+P\+Axis} $\ast$value\+Axis)
+\item 
+{\bf Q\+C\+P\+Data\+Map} $\ast$ {\bf data} () const 
+\item 
+{\bf Line\+Style} {\bfseries line\+Style} () const \label{class_q_c_p_graph_ad6db8d31abeac256a285fc68d6b9b9be}
+
+\item 
+{\bf Q\+C\+P\+Scatter\+Style} {\bfseries scatter\+Style} () const \label{class_q_c_p_graph_ae0227c79f4e42a350c2c99fb2fb879db}
+
+\item 
+{\bf Error\+Type} {\bfseries error\+Type} () const \label{class_q_c_p_graph_a250bcdf78abac87bc6d46ee6fd99a92d}
+
+\item 
+Q\+Pen {\bfseries error\+Pen} () const \label{class_q_c_p_graph_a83455e01093bb899f3b59d4a6fdcd57b}
+
+\item 
+double {\bfseries error\+Bar\+Size} () const \label{class_q_c_p_graph_ae31efdcbc6ba3d73a7aeb83c774f958a}
+
+\item 
+bool {\bfseries error\+Bar\+Skip\+Symbol} () const \label{class_q_c_p_graph_a04dbc050ff04561658ab1e7f3df37a01}
+
+\item 
+{\bf Q\+C\+P\+Graph} $\ast$ {\bfseries channel\+Fill\+Graph} () const \label{class_q_c_p_graph_a5369f23863e04a6164f8b66d49fd18f4}
+
+\item 
+bool {\bfseries adaptive\+Sampling} () const \label{class_q_c_p_graph_ad3bea28ec910eedfa9b788928d610de0}
+
+\item 
+void {\bf set\+Data} ({\bf Q\+C\+P\+Data\+Map} $\ast${\bf data}, bool copy=false)
+\item 
+void {\bf set\+Data} (const Q\+Vector$<$ double $>$ \&key, const Q\+Vector$<$ double $>$ \&value)
+\item 
+void {\bf set\+Data\+Key\+Error} (const Q\+Vector$<$ double $>$ \&key, const Q\+Vector$<$ double $>$ \&value, const Q\+Vector$<$ double $>$ \&key\+Error)
+\item 
+void {\bf set\+Data\+Key\+Error} (const Q\+Vector$<$ double $>$ \&key, const Q\+Vector$<$ double $>$ \&value, const Q\+Vector$<$ double $>$ \&key\+Error\+Minus, const Q\+Vector$<$ double $>$ \&key\+Error\+Plus)
+\item 
+void {\bf set\+Data\+Value\+Error} (const Q\+Vector$<$ double $>$ \&key, const Q\+Vector$<$ double $>$ \&value, const Q\+Vector$<$ double $>$ \&value\+Error)
+\item 
+void {\bf set\+Data\+Value\+Error} (const Q\+Vector$<$ double $>$ \&key, const Q\+Vector$<$ double $>$ \&value, const Q\+Vector$<$ double $>$ \&value\+Error\+Minus, const Q\+Vector$<$ double $>$ \&value\+Error\+Plus)
+\item 
+void {\bf set\+Data\+Both\+Error} (const Q\+Vector$<$ double $>$ \&key, const Q\+Vector$<$ double $>$ \&value, const Q\+Vector$<$ double $>$ \&key\+Error, const Q\+Vector$<$ double $>$ \&value\+Error)
+\item 
+void {\bf set\+Data\+Both\+Error} (const Q\+Vector$<$ double $>$ \&key, const Q\+Vector$<$ double $>$ \&value, const Q\+Vector$<$ double $>$ \&key\+Error\+Minus, const Q\+Vector$<$ double $>$ \&key\+Error\+Plus, const Q\+Vector$<$ double $>$ \&value\+Error\+Minus, const Q\+Vector$<$ double $>$ \&value\+Error\+Plus)
+\item 
+void {\bf set\+Line\+Style} ({\bf Line\+Style} ls)
+\item 
+void {\bf set\+Scatter\+Style} (const {\bf Q\+C\+P\+Scatter\+Style} \&style)
+\item 
+void {\bf set\+Error\+Type} ({\bf Error\+Type} error\+Type)
+\item 
+void {\bf set\+Error\+Pen} (const Q\+Pen \&pen)
+\item 
+void {\bf set\+Error\+Bar\+Size} (double size)
+\item 
+void {\bf set\+Error\+Bar\+Skip\+Symbol} (bool enabled)
+\item 
+void {\bf set\+Channel\+Fill\+Graph} ({\bf Q\+C\+P\+Graph} $\ast$target\+Graph)
+\item 
+void {\bf set\+Adaptive\+Sampling} (bool enabled)
+\item 
+void {\bf add\+Data} (const {\bf Q\+C\+P\+Data\+Map} \&data\+Map)
+\item 
+void {\bf add\+Data} (const {\bf Q\+C\+P\+Data} \&{\bf data})
+\item 
+void {\bf add\+Data} (double key, double value)
+\item 
+void {\bf add\+Data} (const Q\+Vector$<$ double $>$ \&keys, const Q\+Vector$<$ double $>$ \&values)
+\item 
+void {\bf remove\+Data\+Before} (double key)
+\item 
+void {\bf remove\+Data\+After} (double key)
+\item 
+void {\bf remove\+Data} (double from\+Key, double to\+Key)
+\item 
+void {\bf remove\+Data} (double key)
+\item 
+virtual void {\bf clear\+Data} ()
+\item 
+virtual double {\bf select\+Test} (const Q\+Point\+F \&pos, bool only\+Selectable, Q\+Variant $\ast$details=0) const 
+\item 
+void {\bf rescale\+Axes} (bool only\+Enlarge, bool include\+Error\+Bars) const 
+\item 
+void {\bf rescale\+Key\+Axis} (bool only\+Enlarge, bool include\+Error\+Bars) const 
+\item 
+void {\bf rescale\+Value\+Axis} (bool only\+Enlarge, bool include\+Error\+Bars) const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries draw} ({\bf Q\+C\+P\+Painter} $\ast$painter)\label{class_q_c_p_graph_a659218cc62c2a7786213d9dd429c1c8d}
+
+\item 
+virtual void {\bfseries draw\+Legend\+Icon} ({\bf Q\+C\+P\+Painter} $\ast$painter, const Q\+Rect\+F \&rect) const \label{class_q_c_p_graph_a32115df0e940cf8ca7b687873c2d02ee}
+
+\item 
+virtual {\bf Q\+C\+P\+Range} {\bfseries get\+Key\+Range} (bool \&found\+Range, {\bf Sign\+Domain} in\+Sign\+Domain={\bf sd\+Both}) const \label{class_q_c_p_graph_afc246ce6201ff564ac440efaec52ab11}
+
+\item 
+virtual {\bf Q\+C\+P\+Range} {\bfseries get\+Value\+Range} (bool \&found\+Range, {\bf Sign\+Domain} in\+Sign\+Domain={\bf sd\+Both}) const \label{class_q_c_p_graph_a856e90b8ab6b31c344b14a863ab9e5d2}
+
+\item 
+virtual {\bf Q\+C\+P\+Range} {\bf get\+Key\+Range} (bool \&found\+Range, {\bf Sign\+Domain} in\+Sign\+Domain, bool include\+Errors) const 
+\item 
+virtual {\bf Q\+C\+P\+Range} {\bf get\+Value\+Range} (bool \&found\+Range, {\bf Sign\+Domain} in\+Sign\+Domain, bool include\+Errors) const 
+\item 
+virtual void {\bfseries draw\+Fill} ({\bf Q\+C\+P\+Painter} $\ast$painter, Q\+Vector$<$ Q\+Point\+F $>$ $\ast$line\+Data) const \label{class_q_c_p_graph_ad6d07926e6d6b7cfa70258780d47b7a0}
+
+\item 
+virtual void {\bfseries draw\+Scatter\+Plot} ({\bf Q\+C\+P\+Painter} $\ast$painter, Q\+Vector$<$ {\bf Q\+C\+P\+Data} $>$ $\ast$scatter\+Data) const \label{class_q_c_p_graph_a6bdc385b122ce06134d4196373ae2250}
+
+\item 
+virtual void {\bfseries draw\+Line\+Plot} ({\bf Q\+C\+P\+Painter} $\ast$painter, Q\+Vector$<$ Q\+Point\+F $>$ $\ast$line\+Data) const \label{class_q_c_p_graph_acebc22c3385829b19a87e6281fe6ade2}
+
+\item 
+virtual void {\bfseries draw\+Impulse\+Plot} ({\bf Q\+C\+P\+Painter} $\ast$painter, Q\+Vector$<$ Q\+Point\+F $>$ $\ast$line\+Data) const \label{class_q_c_p_graph_abc01180629621f1e47e94559227d3d8c}
+
+\item 
+void {\bfseries get\+Prepared\+Data} (Q\+Vector$<$ {\bf Q\+C\+P\+Data} $>$ $\ast$line\+Data, Q\+Vector$<$ {\bf Q\+C\+P\+Data} $>$ $\ast$scatter\+Data) const \label{class_q_c_p_graph_ab420b46ba638dc3252439fe16687b244}
+
+\item 
+void {\bfseries get\+Plot\+Data} (Q\+Vector$<$ Q\+Point\+F $>$ $\ast$line\+Data, Q\+Vector$<$ {\bf Q\+C\+P\+Data} $>$ $\ast$scatter\+Data) const \label{class_q_c_p_graph_a466c661e015188971c862031af946693}
+
+\item 
+void {\bfseries get\+Scatter\+Plot\+Data} (Q\+Vector$<$ {\bf Q\+C\+P\+Data} $>$ $\ast$scatter\+Data) const \label{class_q_c_p_graph_a45c4214b59ea11aa6d8d112bdc3b0e03}
+
+\item 
+void {\bfseries get\+Line\+Plot\+Data} (Q\+Vector$<$ Q\+Point\+F $>$ $\ast$line\+Pixel\+Data, Q\+Vector$<$ {\bf Q\+C\+P\+Data} $>$ $\ast$scatter\+Data) const \label{class_q_c_p_graph_ae3d82ffd0c9a883482aabf47b0e6b5ee}
+
+\item 
+void {\bfseries get\+Step\+Left\+Plot\+Data} (Q\+Vector$<$ Q\+Point\+F $>$ $\ast$line\+Pixel\+Data, Q\+Vector$<$ {\bf Q\+C\+P\+Data} $>$ $\ast$scatter\+Data) const \label{class_q_c_p_graph_a609cf4a78045b4d2a679bdff7623847e}
+
+\item 
+void {\bfseries get\+Step\+Right\+Plot\+Data} (Q\+Vector$<$ Q\+Point\+F $>$ $\ast$line\+Pixel\+Data, Q\+Vector$<$ {\bf Q\+C\+P\+Data} $>$ $\ast$scatter\+Data) const \label{class_q_c_p_graph_a3b9b8c8dc7a6fd9be6e253c25ee31809}
+
+\item 
+void {\bfseries get\+Step\+Center\+Plot\+Data} (Q\+Vector$<$ Q\+Point\+F $>$ $\ast$line\+Pixel\+Data, Q\+Vector$<$ {\bf Q\+C\+P\+Data} $>$ $\ast$scatter\+Data) const \label{class_q_c_p_graph_ad3713e7d8eb85a0afc34a81a5db5cd27}
+
+\item 
+void {\bfseries get\+Impulse\+Plot\+Data} (Q\+Vector$<$ Q\+Point\+F $>$ $\ast$line\+Pixel\+Data, Q\+Vector$<$ {\bf Q\+C\+P\+Data} $>$ $\ast$scatter\+Data) const \label{class_q_c_p_graph_a1ca2b0762505767f116892609fb02062}
+
+\item 
+void {\bfseries draw\+Error} ({\bf Q\+C\+P\+Painter} $\ast$painter, double x, double y, const {\bf Q\+C\+P\+Data} \&{\bf data}) const \label{class_q_c_p_graph_a4df6807066ce877705e999773e7ffbc4}
+
+\item 
+void {\bfseries get\+Visible\+Data\+Bounds} (Q\+C\+P\+Data\+Map\+::const\+\_\+iterator \&lower, Q\+C\+P\+Data\+Map\+::const\+\_\+iterator \&upper) const \label{class_q_c_p_graph_a6a317cb14a83dae0841c7041a63d6d9d}
+
+\item 
+int {\bfseries count\+Data\+In\+Bounds} (const Q\+C\+P\+Data\+Map\+::const\+\_\+iterator \&lower, const Q\+C\+P\+Data\+Map\+::const\+\_\+iterator \&upper, int max\+Count) const \label{class_q_c_p_graph_a13f6a3aa60227e03ab1f7aa8eec6589f}
+
+\item 
+void {\bfseries add\+Fill\+Base\+Points} (Q\+Vector$<$ Q\+Point\+F $>$ $\ast$line\+Data) const \label{class_q_c_p_graph_a5fa7884620d7c54b81dfbd255d97b636}
+
+\item 
+void {\bfseries remove\+Fill\+Base\+Points} (Q\+Vector$<$ Q\+Point\+F $>$ $\ast$line\+Data) const \label{class_q_c_p_graph_ad31b49a90e91e538fd9caf011c913a68}
+
+\item 
+Q\+Point\+F {\bfseries lower\+Fill\+Base\+Point} (double lower\+Key) const \label{class_q_c_p_graph_a41f982e8ceaefe6a53eb7432f26d64b6}
+
+\item 
+Q\+Point\+F {\bfseries upper\+Fill\+Base\+Point} (double upper\+Key) const \label{class_q_c_p_graph_a363d066c179e0f46cc93c12bafb0bfba}
+
+\item 
+const Q\+Polygon\+F {\bfseries get\+Channel\+Fill\+Polygon} (const Q\+Vector$<$ Q\+Point\+F $>$ $\ast$line\+Data) const \label{class_q_c_p_graph_a0374b7268e35cab9802a6be2b5d726d7}
+
+\item 
+int {\bfseries find\+Index\+Below\+X} (const Q\+Vector$<$ Q\+Point\+F $>$ $\ast${\bf data}, double x) const \label{class_q_c_p_graph_a6f4e9461d5925be9228fc4760249a04f}
+
+\item 
+int {\bfseries find\+Index\+Above\+X} (const Q\+Vector$<$ Q\+Point\+F $>$ $\ast${\bf data}, double x) const \label{class_q_c_p_graph_abab2a75b5e63630432bdd1f3b57f07fa}
+
+\item 
+int {\bfseries find\+Index\+Below\+Y} (const Q\+Vector$<$ Q\+Point\+F $>$ $\ast${\bf data}, double y) const \label{class_q_c_p_graph_a6c4d556de3d1e02f548401001f72c6ff}
+
+\item 
+int {\bfseries find\+Index\+Above\+Y} (const Q\+Vector$<$ Q\+Point\+F $>$ $\ast${\bf data}, double y) const \label{class_q_c_p_graph_adf50243f1df203883a2187089734bfcb}
+
+\item 
+double {\bfseries point\+Distance} (const Q\+Point\+F \&pixel\+Point) const \label{class_q_c_p_graph_af93762a12a481a7edb4b3dd9e330dff1}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Q\+C\+P\+Data\+Map} $\ast$ {\bfseries m\+Data}\label{class_q_c_p_graph_a8457c840f69a0ac49f61d30a509c5d08}
+
+\item 
+Q\+Pen {\bfseries m\+Error\+Pen}\label{class_q_c_p_graph_aa35681a24165c2831301091a87b662ce}
+
+\item 
+{\bf Line\+Style} {\bfseries m\+Line\+Style}\label{class_q_c_p_graph_a8604fd98402035a63375849f7341ee25}
+
+\item 
+{\bf Q\+C\+P\+Scatter\+Style} {\bfseries m\+Scatter\+Style}\label{class_q_c_p_graph_a4aa36241f166ccd1f75fc8f24e4a3247}
+
+\item 
+{\bf Error\+Type} {\bfseries m\+Error\+Type}\label{class_q_c_p_graph_a29e64273db201aeadebc61c870720a36}
+
+\item 
+double {\bfseries m\+Error\+Bar\+Size}\label{class_q_c_p_graph_a7b51c8d09510f9d195b5e765ccbcf05b}
+
+\item 
+bool {\bfseries m\+Error\+Bar\+Skip\+Symbol}\label{class_q_c_p_graph_acf631d7dbd1055a69ab3b63094868557}
+
+\item 
+Q\+Pointer$<$ {\bf Q\+C\+P\+Graph} $>$ {\bfseries m\+Channel\+Fill\+Graph}\label{class_q_c_p_graph_a2f1777c7accf8244fc640c33f0b04577}
+
+\item 
+bool {\bfseries m\+Adaptive\+Sampling}\label{class_q_c_p_graph_aa951e78aeba714cf443be6da2e52502e}
+
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries Q\+Custom\+Plot}\label{class_q_c_p_graph_a1cdf9df76adcfae45261690aa0ca2198}
+
+\item 
+class {\bfseries Q\+C\+P\+Legend}\label{class_q_c_p_graph_a8429035e7adfbd7f05805a6530ad5e3b}
+
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+A plottable representing a graph in a plot. 
+
+
+
+Usually \doxyref{Q\+Custom\+Plot}{p.}{class_q_custom_plot} creates graphs internally via \doxyref{Q\+Custom\+Plot\+::add\+Graph}{p.}{class_q_custom_plot_a6fb2873d35a8a8089842d81a70a54167} and the resulting instance is accessed via \doxyref{Q\+Custom\+Plot\+::graph}{p.}{class_q_custom_plot_a6d3ed93c2bf46ab7fa670d66be4cddaf}.
+
+To plot data, assign it with the \doxyref{set\+Data}{p.}{class_q_c_p_graph_a1df2fd710545c8ba3b2c99a39a27bf8b} or \doxyref{add\+Data}{p.}{class_q_c_p_graph_aa5c6181d84db72ce4dbe9dc15a34ef4f} functions. Alternatively, you can also access and modify the graph\textquotesingle{}s data via the \doxyref{data}{p.}{class_q_c_p_graph_a2f58436df4f86a2792b776a21642b3d9} method, which returns a pointer to the internal \doxyref{Q\+C\+P\+Data\+Map}{p.}{qcustomplot_8h_a84a9c4a4c2216ccfdcb5f3067cda76e3}.
+
+Graphs are used to display single-\/valued data. Single-\/valued means that there should only be one data point per unique key coordinate. In other words, the graph can\textquotesingle{}t have {\itshape loops}. If you do want to plot non-\/single-\/valued curves, rather use the \doxyref{Q\+C\+P\+Curve}{p.}{class_q_c_p_curve} plottable.
+
+Gaps in the graph line can be created by adding data points with Na\+N as value ({\ttfamily q\+Q\+Na\+N()} or {\ttfamily std\+::numeric\+\_\+limits$<$double$>$\+::quiet\+\_\+\+Na\+N()}) in between the two data points that shall be separated.\subsection{Changing the appearance}\label{class_q_c_p_statistical_box_appearance}
+The appearance of the graph is mainly determined by the line style, scatter style, brush and pen of the graph (\doxyref{set\+Line\+Style}{p.}{class_q_c_p_graph_a513fecccff5b2a50ce53f665338c60ff}, \doxyref{set\+Scatter\+Style}{p.}{class_q_c_p_graph_a12bd17a8ba21983163ec5d8f42a9fea5}, \doxyref{set\+Brush}{p.}{class_q_c_p_abstract_plottable_a7a4b92144dca6453a1f0f210e27edc74}, \doxyref{set\+Pen}{p.}{class_q_c_p_abstract_plottable_ab74b09ae4c0e7e13142fe4b5bf46cac7}).\subsubsection{Filling under or between graphs}\label{class_q_c_p_graph_filling}
+\doxyref{Q\+C\+P\+Graph}{p.}{class_q_c_p_graph} knows two types of fills\+: Normal graph fills towards the zero-\/value-\/line parallel to the key axis of the graph, and fills between two graphs, called channel fills. To enable a fill, just set a brush with \doxyref{set\+Brush}{p.}{class_q_c_p_abstract_plottable_a7a4b92144dca6453a1f0f210e27edc74} which is neither Qt\+::\+No\+Brush nor fully transparent.
+
+By default, a normal fill towards the zero-\/value-\/line will be drawn. To set up a channel fill between this graph and another one, call \doxyref{set\+Channel\+Fill\+Graph}{p.}{class_q_c_p_graph_a2d03156df1b64037a2e36cfa50351ca3} with the other graph as parameter.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{Q\+Custom\+Plot\+::add\+Graph}{p.}{class_q_custom_plot_a6fb2873d35a8a8089842d81a70a54167}, \doxyref{Q\+Custom\+Plot\+::graph}{p.}{class_q_custom_plot_a6d3ed93c2bf46ab7fa670d66be4cddaf} 
+\end{DoxySeeAlso}
+
+
+\subsection{Member Enumeration Documentation}
+\index{Q\+C\+P\+Graph@{Q\+C\+P\+Graph}!Error\+Type@{Error\+Type}}
+\index{Error\+Type@{Error\+Type}!Q\+C\+P\+Graph@{Q\+C\+P\+Graph}}
+\subsubsection[{Error\+Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Q\+C\+P\+Graph\+::\+Error\+Type}}\label{class_q_c_p_graph_ad23b514404bd2cb3216f57c90904d6af}
+Defines what kind of error bars are drawn for each data point \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{et\+None@{et\+None}!Q\+C\+P\+Graph@{Q\+C\+P\+Graph}}\index{Q\+C\+P\+Graph@{Q\+C\+P\+Graph}!et\+None@{et\+None}}\item[{\em 
+et\+None\label{class_q_c_p_graph_ad23b514404bd2cb3216f57c90904d6afaeae745e7cc1766bb8546e35d4b76a711}
+}]No error bars are shown. \index{et\+Key@{et\+Key}!Q\+C\+P\+Graph@{Q\+C\+P\+Graph}}\index{Q\+C\+P\+Graph@{Q\+C\+P\+Graph}!et\+Key@{et\+Key}}\item[{\em 
+et\+Key\label{class_q_c_p_graph_ad23b514404bd2cb3216f57c90904d6afa2a5d89cd76fb8b6b18d71b8f6f6c0f43}
+}]Error bars for the key dimension of the data point are shown. \index{et\+Value@{et\+Value}!Q\+C\+P\+Graph@{Q\+C\+P\+Graph}}\index{Q\+C\+P\+Graph@{Q\+C\+P\+Graph}!et\+Value@{et\+Value}}\item[{\em 
+et\+Value\label{class_q_c_p_graph_ad23b514404bd2cb3216f57c90904d6afa147022ccdc49f6bd48f904cb4f61872e}
+}]Error bars for the value dimension of the data point are shown. \index{et\+Both@{et\+Both}!Q\+C\+P\+Graph@{Q\+C\+P\+Graph}}\index{Q\+C\+P\+Graph@{Q\+C\+P\+Graph}!et\+Both@{et\+Both}}\item[{\em 
+et\+Both\label{class_q_c_p_graph_ad23b514404bd2cb3216f57c90904d6afa761cb7d61670c1e2efecccd8974409ab}
+}]Error bars for both key and value dimensions of the data point are shown. \end{description}
+\end{Desc}
+\index{Q\+C\+P\+Graph@{Q\+C\+P\+Graph}!Line\+Style@{Line\+Style}}
+\index{Line\+Style@{Line\+Style}!Q\+C\+P\+Graph@{Q\+C\+P\+Graph}}
+\subsubsection[{Line\+Style}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Q\+C\+P\+Graph\+::\+Line\+Style}}\label{class_q_c_p_graph_ad60175cd9b5cac937c5ee685c32c0859}
+Defines how the graph\textquotesingle{}s line is represented visually in the plot. The line is drawn with the current pen of the graph (\doxyref{set\+Pen}{p.}{class_q_c_p_abstract_plottable_ab74b09ae4c0e7e13142fe4b5bf46cac7}). \begin{DoxySeeAlso}{See also}
+\doxyref{set\+Line\+Style}{p.}{class_q_c_p_graph_a513fecccff5b2a50ce53f665338c60ff} 
+\end{DoxySeeAlso}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{ls\+None@{ls\+None}!Q\+C\+P\+Graph@{Q\+C\+P\+Graph}}\index{Q\+C\+P\+Graph@{Q\+C\+P\+Graph}!ls\+None@{ls\+None}}\item[{\em 
+ls\+None\label{class_q_c_p_graph_ad60175cd9b5cac937c5ee685c32c0859aea9591b933733cc7b20786b71e60fa04}
+}]data points are not connected with any lines (e.\+g. data only represented with symbols according to the scatter style, see \doxyref{set\+Scatter\+Style}{p.}{class_q_c_p_graph_a12bd17a8ba21983163ec5d8f42a9fea5}) \index{ls\+Line@{ls\+Line}!Q\+C\+P\+Graph@{Q\+C\+P\+Graph}}\index{Q\+C\+P\+Graph@{Q\+C\+P\+Graph}!ls\+Line@{ls\+Line}}\item[{\em 
+ls\+Line\label{class_q_c_p_graph_ad60175cd9b5cac937c5ee685c32c0859a3c42a27b15aa3c92d399082fad8b7515}
+}]data points are connected by a straight line \index{ls\+Step\+Left@{ls\+Step\+Left}!Q\+C\+P\+Graph@{Q\+C\+P\+Graph}}\index{Q\+C\+P\+Graph@{Q\+C\+P\+Graph}!ls\+Step\+Left@{ls\+Step\+Left}}\item[{\em 
+ls\+Step\+Left\label{class_q_c_p_graph_ad60175cd9b5cac937c5ee685c32c0859ae10568bda57836487d9dec5eba1d6c6e}
+}]line is drawn as steps where the step height is the value of the left data point \index{ls\+Step\+Right@{ls\+Step\+Right}!Q\+C\+P\+Graph@{Q\+C\+P\+Graph}}\index{Q\+C\+P\+Graph@{Q\+C\+P\+Graph}!ls\+Step\+Right@{ls\+Step\+Right}}\item[{\em 
+ls\+Step\+Right\label{class_q_c_p_graph_ad60175cd9b5cac937c5ee685c32c0859a9c37951f7d11aa070100fd16f2935c9e}
+}]line is drawn as steps where the step height is the value of the right data point \index{ls\+Step\+Center@{ls\+Step\+Center}!Q\+C\+P\+Graph@{Q\+C\+P\+Graph}}\index{Q\+C\+P\+Graph@{Q\+C\+P\+Graph}!ls\+Step\+Center@{ls\+Step\+Center}}\item[{\em 
+ls\+Step\+Center\label{class_q_c_p_graph_ad60175cd9b5cac937c5ee685c32c0859a5adf7b04da215a40a764c21294ea7366}
+}]line is drawn as steps where the step is in between two data points \index{ls\+Impulse@{ls\+Impulse}!Q\+C\+P\+Graph@{Q\+C\+P\+Graph}}\index{Q\+C\+P\+Graph@{Q\+C\+P\+Graph}!ls\+Impulse@{ls\+Impulse}}\item[{\em 
+ls\+Impulse\label{class_q_c_p_graph_ad60175cd9b5cac937c5ee685c32c0859aa3b358b4ae7cca94aceeb8e529c12ebb}
+}]each data point is represented by a line parallel to the value axis, which reaches from the data point to the zero-\/value-\/line \end{description}
+\end{Desc}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Q\+C\+P\+Graph@{Q\+C\+P\+Graph}!Q\+C\+P\+Graph@{Q\+C\+P\+Graph}}
+\index{Q\+C\+P\+Graph@{Q\+C\+P\+Graph}!Q\+C\+P\+Graph@{Q\+C\+P\+Graph}}
+\subsubsection[{Q\+C\+P\+Graph}]{\setlength{\rightskip}{0pt plus 5cm}Q\+C\+P\+Graph\+::\+Q\+C\+P\+Graph (
+\begin{DoxyParamCaption}
+\item[{{\bf Q\+C\+P\+Axis} $\ast$}]{key\+Axis, }
+\item[{{\bf Q\+C\+P\+Axis} $\ast$}]{value\+Axis}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\label{class_q_c_p_graph_a0393a38cf7183cbf46348eb6cf9a5a6c}
+Constructs a graph which uses {\itshape key\+Axis} as its key axis (\char`\"{}x\char`\"{}) and {\itshape value\+Axis} as its value axis (\char`\"{}y\char`\"{}). {\itshape key\+Axis} and {\itshape value\+Axis} must reside in the same \doxyref{Q\+Custom\+Plot}{p.}{class_q_custom_plot} instance and not have the same orientation. If either of these restrictions is violated, a corresponding message is printed to the debug output (q\+Debug), the construction is not aborted, though.
+
+The constructed \doxyref{Q\+C\+P\+Graph}{p.}{class_q_c_p_graph} can be added to the plot with \doxyref{Q\+Custom\+Plot\+::add\+Plottable}{p.}{class_q_custom_plot_ab7ad9174f701f9c6f64e378df77927a6}, \doxyref{Q\+Custom\+Plot}{p.}{class_q_custom_plot} then takes ownership of the graph.
+
+To directly create a graph inside a plot, you can also use the simpler \doxyref{Q\+Custom\+Plot\+::add\+Graph}{p.}{class_q_custom_plot_a6fb2873d35a8a8089842d81a70a54167} function. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_graph_a0393a38cf7183cbf46348eb6cf9a5a6c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{Q\+C\+P\+Graph@{Q\+C\+P\+Graph}!add\+Data@{add\+Data}}
+\index{add\+Data@{add\+Data}!Q\+C\+P\+Graph@{Q\+C\+P\+Graph}}
+\subsubsection[{add\+Data}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Graph\+::add\+Data (
+\begin{DoxyParamCaption}
+\item[{const {\bf Q\+C\+P\+Data\+Map} \&}]{data\+Map}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_graph_aa5c6181d84db72ce4dbe9dc15a34ef4f}
+Adds the provided data points in {\itshape data\+Map} to the current data.
+
+Alternatively, you can also access and modify the graph\textquotesingle{}s data via the \doxyref{data}{p.}{class_q_c_p_graph_a2f58436df4f86a2792b776a21642b3d9} method, which returns a pointer to the internal \doxyref{Q\+C\+P\+Data\+Map}{p.}{qcustomplot_8h_a84a9c4a4c2216ccfdcb5f3067cda76e3}.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{remove\+Data}{p.}{class_q_c_p_graph_a4a0fde50b7db9db0a85b5c5b6b10098f} 
+\end{DoxySeeAlso}
+\index{Q\+C\+P\+Graph@{Q\+C\+P\+Graph}!add\+Data@{add\+Data}}
+\index{add\+Data@{add\+Data}!Q\+C\+P\+Graph@{Q\+C\+P\+Graph}}
+\subsubsection[{add\+Data}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Graph\+::add\+Data (
+\begin{DoxyParamCaption}
+\item[{const {\bf Q\+C\+P\+Data} \&}]{data}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_graph_a80cc91e1e0ef77eb50afc5b366d0efd9}
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Adds the provided single data point in {\itshape data} to the current data.
+
+Alternatively, you can also access and modify the graph\textquotesingle{}s data via the \doxyref{data}{p.}{class_q_c_p_graph_a2f58436df4f86a2792b776a21642b3d9} method, which returns a pointer to the internal \doxyref{Q\+C\+P\+Data\+Map}{p.}{qcustomplot_8h_a84a9c4a4c2216ccfdcb5f3067cda76e3}.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{remove\+Data}{p.}{class_q_c_p_graph_a4a0fde50b7db9db0a85b5c5b6b10098f} 
+\end{DoxySeeAlso}
+\index{Q\+C\+P\+Graph@{Q\+C\+P\+Graph}!add\+Data@{add\+Data}}
+\index{add\+Data@{add\+Data}!Q\+C\+P\+Graph@{Q\+C\+P\+Graph}}
+\subsubsection[{add\+Data}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Graph\+::add\+Data (
+\begin{DoxyParamCaption}
+\item[{double}]{key, }
+\item[{double}]{value}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_graph_a0bf98b1972286cfb7b1c4b7dd6ae2012}
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Adds the provided single data point as {\itshape key} and {\itshape value} pair to the current data.
+
+Alternatively, you can also access and modify the graph\textquotesingle{}s data via the \doxyref{data}{p.}{class_q_c_p_graph_a2f58436df4f86a2792b776a21642b3d9} method, which returns a pointer to the internal \doxyref{Q\+C\+P\+Data\+Map}{p.}{qcustomplot_8h_a84a9c4a4c2216ccfdcb5f3067cda76e3}.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{remove\+Data}{p.}{class_q_c_p_graph_a4a0fde50b7db9db0a85b5c5b6b10098f} 
+\end{DoxySeeAlso}
+\index{Q\+C\+P\+Graph@{Q\+C\+P\+Graph}!add\+Data@{add\+Data}}
+\index{add\+Data@{add\+Data}!Q\+C\+P\+Graph@{Q\+C\+P\+Graph}}
+\subsubsection[{add\+Data}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Graph\+::add\+Data (
+\begin{DoxyParamCaption}
+\item[{const Q\+Vector$<$ double $>$ \&}]{keys, }
+\item[{const Q\+Vector$<$ double $>$ \&}]{values}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_graph_ab6da6377541fe80d892a9893a92db9c6}
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Adds the provided data points as {\itshape key} and {\itshape value} pairs to the current data.
+
+Alternatively, you can also access and modify the graph\textquotesingle{}s data via the \doxyref{data}{p.}{class_q_c_p_graph_a2f58436df4f86a2792b776a21642b3d9} method, which returns a pointer to the internal \doxyref{Q\+C\+P\+Data\+Map}{p.}{qcustomplot_8h_a84a9c4a4c2216ccfdcb5f3067cda76e3}.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{remove\+Data}{p.}{class_q_c_p_graph_a4a0fde50b7db9db0a85b5c5b6b10098f} 
+\end{DoxySeeAlso}
+\index{Q\+C\+P\+Graph@{Q\+C\+P\+Graph}!clear\+Data@{clear\+Data}}
+\index{clear\+Data@{clear\+Data}!Q\+C\+P\+Graph@{Q\+C\+P\+Graph}}
+\subsubsection[{clear\+Data}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Graph\+::clear\+Data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_q_c_p_graph_ad4e94a4e44e5e76fbec81a72a977157d}
+Removes all data points. \begin{DoxySeeAlso}{See also}
+\doxyref{remove\+Data}{p.}{class_q_c_p_graph_a4a0fde50b7db9db0a85b5c5b6b10098f}, \doxyref{remove\+Data\+After}{p.}{class_q_c_p_graph_ae42d645ef617cfc75fc0df58e62c522a}, \doxyref{remove\+Data\+Before}{p.}{class_q_c_p_graph_a9fe0b3e54e8c7b61319bd03337e21e99} 
+\end{DoxySeeAlso}
+
+
+Implements {\bf Q\+C\+P\+Abstract\+Plottable} \doxyref{}{p.}{class_q_c_p_abstract_plottable_a86e5b8fd4b6ff4f4084e7ea4c573fc53}.
+
+\index{Q\+C\+P\+Graph@{Q\+C\+P\+Graph}!data@{data}}
+\index{data@{data}!Q\+C\+P\+Graph@{Q\+C\+P\+Graph}}
+\subsubsection[{data}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+C\+P\+Data\+Map} $\ast$ Q\+C\+P\+Graph\+::data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_q_c_p_graph_a2f58436df4f86a2792b776a21642b3d9}
+Returns a pointer to the internal data storage of type \doxyref{Q\+C\+P\+Data\+Map}{p.}{qcustomplot_8h_a84a9c4a4c2216ccfdcb5f3067cda76e3}. You may use it to directly manipulate the data, which may be more convenient and faster than using the regular \doxyref{set\+Data}{p.}{class_q_c_p_graph_a1df2fd710545c8ba3b2c99a39a27bf8b} or \doxyref{add\+Data}{p.}{class_q_c_p_graph_aa5c6181d84db72ce4dbe9dc15a34ef4f} methods, in certain situations. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_graph_a2f58436df4f86a2792b776a21642b3d9_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Graph@{Q\+C\+P\+Graph}!get\+Key\+Range@{get\+Key\+Range}}
+\index{get\+Key\+Range@{get\+Key\+Range}!Q\+C\+P\+Graph@{Q\+C\+P\+Graph}}
+\subsubsection[{get\+Key\+Range}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+C\+P\+Range} Q\+C\+P\+Graph\+::get\+Key\+Range (
+\begin{DoxyParamCaption}
+\item[{bool \&}]{found\+Range, }
+\item[{{\bf Sign\+Domain}}]{in\+Sign\+Domain, }
+\item[{bool}]{include\+Errors}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{class_q_c_p_graph_aa75c6f028124032416a5cf7145dfba60}
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Allows to specify whether the error bars should be included in the range calculation.
+
+\begin{DoxySeeAlso}{See also}
+get\+Key\+Range(bool \&found\+Range, Sign\+Domain in\+Sign\+Domain) 
+\end{DoxySeeAlso}
+\index{Q\+C\+P\+Graph@{Q\+C\+P\+Graph}!get\+Value\+Range@{get\+Value\+Range}}
+\index{get\+Value\+Range@{get\+Value\+Range}!Q\+C\+P\+Graph@{Q\+C\+P\+Graph}}
+\subsubsection[{get\+Value\+Range}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+C\+P\+Range} Q\+C\+P\+Graph\+::get\+Value\+Range (
+\begin{DoxyParamCaption}
+\item[{bool \&}]{found\+Range, }
+\item[{{\bf Sign\+Domain}}]{in\+Sign\+Domain, }
+\item[{bool}]{include\+Errors}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{class_q_c_p_graph_ab964a21d680af93435d68126d8c5ab29}
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Allows to specify whether the error bars should be included in the range calculation.
+
+\begin{DoxySeeAlso}{See also}
+get\+Value\+Range(bool \&found\+Range, Sign\+Domain in\+Sign\+Domain) 
+\end{DoxySeeAlso}
+\index{Q\+C\+P\+Graph@{Q\+C\+P\+Graph}!remove\+Data@{remove\+Data}}
+\index{remove\+Data@{remove\+Data}!Q\+C\+P\+Graph@{Q\+C\+P\+Graph}}
+\subsubsection[{remove\+Data}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Graph\+::remove\+Data (
+\begin{DoxyParamCaption}
+\item[{double}]{from\+Key, }
+\item[{double}]{to\+Key}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_graph_a4a0fde50b7db9db0a85b5c5b6b10098f}
+Removes all data points with keys between {\itshape from\+Key} and {\itshape to\+Key}. if {\itshape from\+Key} is greater or equal to {\itshape to\+Key}, the function does nothing. To remove a single data point with known key, use \doxyref{remove\+Data(double key)}{p.}{class_q_c_p_graph_a4a706020b4318f118381648ef18aca3f}.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{add\+Data}{p.}{class_q_c_p_graph_aa5c6181d84db72ce4dbe9dc15a34ef4f}, \doxyref{clear\+Data}{p.}{class_q_c_p_graph_ad4e94a4e44e5e76fbec81a72a977157d} 
+\end{DoxySeeAlso}
+\index{Q\+C\+P\+Graph@{Q\+C\+P\+Graph}!remove\+Data@{remove\+Data}}
+\index{remove\+Data@{remove\+Data}!Q\+C\+P\+Graph@{Q\+C\+P\+Graph}}
+\subsubsection[{remove\+Data}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Graph\+::remove\+Data (
+\begin{DoxyParamCaption}
+\item[{double}]{key}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_graph_a4a706020b4318f118381648ef18aca3f}
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Removes a single data point at {\itshape key}. If the position is not known with absolute precision, consider using \doxyref{remove\+Data(double from\+Key, double to\+Key)}{p.}{class_q_c_p_graph_a4a0fde50b7db9db0a85b5c5b6b10098f} with a small fuzziness interval around the suspected position, depeding on the precision with which the key is known.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{add\+Data}{p.}{class_q_c_p_graph_aa5c6181d84db72ce4dbe9dc15a34ef4f}, \doxyref{clear\+Data}{p.}{class_q_c_p_graph_ad4e94a4e44e5e76fbec81a72a977157d} 
+\end{DoxySeeAlso}
+\index{Q\+C\+P\+Graph@{Q\+C\+P\+Graph}!remove\+Data\+After@{remove\+Data\+After}}
+\index{remove\+Data\+After@{remove\+Data\+After}!Q\+C\+P\+Graph@{Q\+C\+P\+Graph}}
+\subsubsection[{remove\+Data\+After}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Graph\+::remove\+Data\+After (
+\begin{DoxyParamCaption}
+\item[{double}]{key}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_graph_ae42d645ef617cfc75fc0df58e62c522a}
+Removes all data points with keys greater than {\itshape key}. \begin{DoxySeeAlso}{See also}
+\doxyref{add\+Data}{p.}{class_q_c_p_graph_aa5c6181d84db72ce4dbe9dc15a34ef4f}, \doxyref{clear\+Data}{p.}{class_q_c_p_graph_ad4e94a4e44e5e76fbec81a72a977157d} 
+\end{DoxySeeAlso}
+\index{Q\+C\+P\+Graph@{Q\+C\+P\+Graph}!remove\+Data\+Before@{remove\+Data\+Before}}
+\index{remove\+Data\+Before@{remove\+Data\+Before}!Q\+C\+P\+Graph@{Q\+C\+P\+Graph}}
+\subsubsection[{remove\+Data\+Before}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Graph\+::remove\+Data\+Before (
+\begin{DoxyParamCaption}
+\item[{double}]{key}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_graph_a9fe0b3e54e8c7b61319bd03337e21e99}
+Removes all data points with keys smaller than {\itshape key}. \begin{DoxySeeAlso}{See also}
+\doxyref{add\+Data}{p.}{class_q_c_p_graph_aa5c6181d84db72ce4dbe9dc15a34ef4f}, \doxyref{clear\+Data}{p.}{class_q_c_p_graph_ad4e94a4e44e5e76fbec81a72a977157d} 
+\end{DoxySeeAlso}
+\index{Q\+C\+P\+Graph@{Q\+C\+P\+Graph}!rescale\+Axes@{rescale\+Axes}}
+\index{rescale\+Axes@{rescale\+Axes}!Q\+C\+P\+Graph@{Q\+C\+P\+Graph}}
+\subsubsection[{rescale\+Axes}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Graph\+::rescale\+Axes (
+\begin{DoxyParamCaption}
+\item[{bool}]{only\+Enlarge, }
+\item[{bool}]{include\+Error\+Bars}
+\end{DoxyParamCaption}
+) const}\label{class_q_c_p_graph_aa35b75b9032800d783df749c8a004ee9}
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Allows to define whether error bars are taken into consideration when determining the new axis range.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{rescale\+Key\+Axis}{p.}{class_q_c_p_graph_a2108a729046b0ab6e0516afb249dab13}, \doxyref{rescale\+Value\+Axis}{p.}{class_q_c_p_graph_a2ba0e1df416486d7e74299ef8cf68bba}, \doxyref{Q\+C\+P\+Abstract\+Plottable\+::rescale\+Axes}{p.}{class_q_c_p_abstract_plottable_a7e8fc3be43c27ccacd70a7bf9d74a5cd}, \doxyref{Q\+Custom\+Plot\+::rescale\+Axes}{p.}{class_q_custom_plot_ad86528f2cee6c7e446dea4a6e8839935} 
+\end{DoxySeeAlso}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_graph_aa35b75b9032800d783df749c8a004ee9_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Graph@{Q\+C\+P\+Graph}!rescale\+Key\+Axis@{rescale\+Key\+Axis}}
+\index{rescale\+Key\+Axis@{rescale\+Key\+Axis}!Q\+C\+P\+Graph@{Q\+C\+P\+Graph}}
+\subsubsection[{rescale\+Key\+Axis}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Graph\+::rescale\+Key\+Axis (
+\begin{DoxyParamCaption}
+\item[{bool}]{only\+Enlarge, }
+\item[{bool}]{include\+Error\+Bars}
+\end{DoxyParamCaption}
+) const}\label{class_q_c_p_graph_a2108a729046b0ab6e0516afb249dab13}
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Allows to define whether error bars (of kind \doxyref{Q\+C\+P\+Graph\+::et\+Key}{p.}{class_q_c_p_graph_ad23b514404bd2cb3216f57c90904d6afa2a5d89cd76fb8b6b18d71b8f6f6c0f43}) are taken into consideration when determining the new axis range.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{rescale\+Axes}{p.}{class_q_c_p_graph_aa35b75b9032800d783df749c8a004ee9}, \doxyref{Q\+C\+P\+Abstract\+Plottable\+::rescale\+Key\+Axis}{p.}{class_q_c_p_abstract_plottable_a1acecfcca3e7fcda00fcbaa3c886386f} 
+\end{DoxySeeAlso}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_graph_a2108a729046b0ab6e0516afb249dab13_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_graph_a2108a729046b0ab6e0516afb249dab13_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Graph@{Q\+C\+P\+Graph}!rescale\+Value\+Axis@{rescale\+Value\+Axis}}
+\index{rescale\+Value\+Axis@{rescale\+Value\+Axis}!Q\+C\+P\+Graph@{Q\+C\+P\+Graph}}
+\subsubsection[{rescale\+Value\+Axis}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Graph\+::rescale\+Value\+Axis (
+\begin{DoxyParamCaption}
+\item[{bool}]{only\+Enlarge, }
+\item[{bool}]{include\+Error\+Bars}
+\end{DoxyParamCaption}
+) const}\label{class_q_c_p_graph_a2ba0e1df416486d7e74299ef8cf68bba}
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Allows to define whether error bars (of kind \doxyref{Q\+C\+P\+Graph\+::et\+Value}{p.}{class_q_c_p_graph_ad23b514404bd2cb3216f57c90904d6afa147022ccdc49f6bd48f904cb4f61872e}) are taken into consideration when determining the new axis range.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{rescale\+Axes}{p.}{class_q_c_p_graph_aa35b75b9032800d783df749c8a004ee9}, \doxyref{Q\+C\+P\+Abstract\+Plottable\+::rescale\+Value\+Axis}{p.}{class_q_c_p_abstract_plottable_abfd0805eb1d955c0111a990246658324} 
+\end{DoxySeeAlso}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_graph_a2ba0e1df416486d7e74299ef8cf68bba_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_graph_a2ba0e1df416486d7e74299ef8cf68bba_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Graph@{Q\+C\+P\+Graph}!select\+Test@{select\+Test}}
+\index{select\+Test@{select\+Test}!Q\+C\+P\+Graph@{Q\+C\+P\+Graph}}
+\subsubsection[{select\+Test}]{\setlength{\rightskip}{0pt plus 5cm}double Q\+C\+P\+Graph\+::select\+Test (
+\begin{DoxyParamCaption}
+\item[{const Q\+Point\+F \&}]{pos, }
+\item[{bool}]{only\+Selectable, }
+\item[{Q\+Variant $\ast$}]{details = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_q_c_p_graph_abc9ff375aabcf2d21cca33d6baf85772}
+This function is used to decide whether a click hits a layerable object or not.
+
+{\itshape pos} is a point in pixel coordinates on the \doxyref{Q\+Custom\+Plot}{p.}{class_q_custom_plot} surface. This function returns the shortest pixel distance of this point to the object. If the object is either invisible or the distance couldn\textquotesingle{}t be determined, -\/1.\+0 is returned. Further, if {\itshape only\+Selectable} is true and the object is not selectable, -\/1.\+0 is returned, too.
+
+If the object is represented not by single lines but by an area like a \doxyref{Q\+C\+P\+Item\+Text}{p.}{class_q_c_p_item_text} or the bars of a \doxyref{Q\+C\+P\+Bars}{p.}{class_q_c_p_bars} plottable, a click inside the area should also be considered a hit. In these cases this function thus returns a constant value greater zero but still below the parent plot\textquotesingle{}s selection tolerance. (typically the selection\+Tolerance multiplied by 0.\+99).
+
+Providing a constant value for area objects allows selecting line objects even when they are obscured by such area objects, by clicking close to the lines (i.\+e. closer than 0.\+99$\ast$selection\+Tolerance).
+
+The actual setting of the selection state is not done by this function. This is handled by the parent \doxyref{Q\+Custom\+Plot}{p.}{class_q_custom_plot} when the mouse\+Release\+Event occurs, and the finally selected object is notified via the select\+Event/deselect\+Event methods.
+
+{\itshape details} is an optional output parameter. Every layerable subclass may place any information in {\itshape details}. This information will be passed to select\+Event when the parent \doxyref{Q\+Custom\+Plot}{p.}{class_q_custom_plot} decides on the basis of this select\+Test call, that the object was successfully selected. The subsequent call to select\+Event will carry the {\itshape details}. This is useful for multi-\/part objects (like \doxyref{Q\+C\+P\+Axis}{p.}{class_q_c_p_axis}). This way, a possibly complex calculation to decide which part was clicked is only done once in \doxyref{select\+Test}{p.}{class_q_c_p_graph_abc9ff375aabcf2d21cca33d6baf85772}. The result (i.\+e. the actually clicked part) can then be placed in {\itshape details}. So in the subsequent select\+Event, the decision which part was selected doesn\textquotesingle{}t have to be done a second time for a single selection operation.
+
+You may pass 0 as {\itshape details} to indicate that you are not interested in those selection details.
+
+\begin{DoxySeeAlso}{See also}
+select\+Event, deselect\+Event, \doxyref{Q\+Custom\+Plot\+::set\+Interactions}{p.}{class_q_custom_plot_a5ee1e2f6ae27419deca53e75907c27e5} 
+\end{DoxySeeAlso}
+
+
+Implements {\bf Q\+C\+P\+Abstract\+Plottable} \doxyref{}{p.}{class_q_c_p_abstract_plottable_a38efe9641d972992a3d44204bc80ec1d}.
+
+\index{Q\+C\+P\+Graph@{Q\+C\+P\+Graph}!set\+Adaptive\+Sampling@{set\+Adaptive\+Sampling}}
+\index{set\+Adaptive\+Sampling@{set\+Adaptive\+Sampling}!Q\+C\+P\+Graph@{Q\+C\+P\+Graph}}
+\subsubsection[{set\+Adaptive\+Sampling}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Graph\+::set\+Adaptive\+Sampling (
+\begin{DoxyParamCaption}
+\item[{bool}]{enabled}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_graph_ab468cd600160f327836aa0644291e64c}
+Sets whether adaptive sampling shall be used when plotting this graph. \doxyref{Q\+Custom\+Plot}{p.}{class_q_custom_plot}\textquotesingle{}s adaptive sampling technique can drastically improve the replot performance for graphs with a larger number of points (e.\+g. above 10,000), without notably changing the appearance of the graph.
+
+By default, adaptive sampling is enabled. Even if enabled, \doxyref{Q\+Custom\+Plot}{p.}{class_q_custom_plot} decides whether adaptive sampling shall actually be used on a per-\/graph basis. So leaving adaptive sampling enabled has no disadvantage in almost all cases.
+
+ As can be seen, line plots experience no visual degradation from adaptive sampling. Outliers are reproduced reliably, as well as the overall shape of the data set. The replot time reduces dramatically though. This allows \doxyref{Q\+Custom\+Plot}{p.}{class_q_custom_plot} to display large amounts of data in realtime.
+
+ Care must be taken when using high-\/density scatter plots in combination with adaptive sampling. The adaptive sampling algorithm treats scatter plots more carefully than line plots which still gives a significant reduction of replot times, but not quite as much as for line plots. This is because scatter plots inherently need more data points to be preserved in order to still resemble the original, non-\/adaptive-\/sampling plot. As shown above, the results still aren\textquotesingle{}t quite identical, as banding occurs for the outer data points. This is in fact intentional, such that the boundaries of the data cloud stay visible to the viewer. How strong the banding appears, depends on the point density, i.\+e. the number of points in the plot.
+
+For some situations with scatter plots it might thus be desirable to manually turn adaptive sampling off. For example, when saving the plot to disk. This can be achieved by setting {\itshape enabled} to false before issuing a command like \doxyref{Q\+Custom\+Plot\+::save\+Png}{p.}{class_q_custom_plot_a7636261aff1f6d25c9da749ece3fc8b8}, and setting {\itshape enabled} back to true afterwards. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_graph_ab468cd600160f327836aa0644291e64c_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Graph@{Q\+C\+P\+Graph}!set\+Channel\+Fill\+Graph@{set\+Channel\+Fill\+Graph}}
+\index{set\+Channel\+Fill\+Graph@{set\+Channel\+Fill\+Graph}!Q\+C\+P\+Graph@{Q\+C\+P\+Graph}}
+\subsubsection[{set\+Channel\+Fill\+Graph}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Graph\+::set\+Channel\+Fill\+Graph (
+\begin{DoxyParamCaption}
+\item[{{\bf Q\+C\+P\+Graph} $\ast$}]{target\+Graph}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_graph_a2d03156df1b64037a2e36cfa50351ca3}
+Sets the target graph for filling the area between this graph and {\itshape target\+Graph} with the current brush (\doxyref{set\+Brush}{p.}{class_q_c_p_abstract_plottable_a7a4b92144dca6453a1f0f210e27edc74}).
+
+When {\itshape target\+Graph} is set to 0, a normal graph fill to the zero-\/value-\/line will be shown. To disable any filling, set the brush to Qt\+::\+No\+Brush.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{set\+Brush}{p.}{class_q_c_p_abstract_plottable_a7a4b92144dca6453a1f0f210e27edc74} 
+\end{DoxySeeAlso}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_graph_a2d03156df1b64037a2e36cfa50351ca3_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Graph@{Q\+C\+P\+Graph}!set\+Data@{set\+Data}}
+\index{set\+Data@{set\+Data}!Q\+C\+P\+Graph@{Q\+C\+P\+Graph}}
+\subsubsection[{set\+Data}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Graph\+::set\+Data (
+\begin{DoxyParamCaption}
+\item[{{\bf Q\+C\+P\+Data\+Map} $\ast$}]{data, }
+\item[{bool}]{copy = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_graph_a1df2fd710545c8ba3b2c99a39a27bf8b}
+Replaces the current data with the provided {\itshape data}.
+
+If {\itshape copy} is set to true, data points in {\itshape data} will only be copied. if false, the graph takes ownership of the passed data and replaces the internal data pointer with it. This is significantly faster than copying for large datasets.
+
+Alternatively, you can also access and modify the graph\textquotesingle{}s data via the \doxyref{data}{p.}{class_q_c_p_graph_a2f58436df4f86a2792b776a21642b3d9} method, which returns a pointer to the internal \doxyref{Q\+C\+P\+Data\+Map}{p.}{qcustomplot_8h_a84a9c4a4c2216ccfdcb5f3067cda76e3}. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{class_q_c_p_graph_a1df2fd710545c8ba3b2c99a39a27bf8b_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Graph@{Q\+C\+P\+Graph}!set\+Data@{set\+Data}}
+\index{set\+Data@{set\+Data}!Q\+C\+P\+Graph@{Q\+C\+P\+Graph}}
+\subsubsection[{set\+Data}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Graph\+::set\+Data (
+\begin{DoxyParamCaption}
+\item[{const Q\+Vector$<$ double $>$ \&}]{key, }
+\item[{const Q\+Vector$<$ double $>$ \&}]{value}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_graph_a4c55d8ac13bfa42c8c93747820891a76}
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Replaces the current data with the provided points in {\itshape key} and {\itshape value} pairs. The provided vectors should have equal length. Else, the number of added points will be the size of the smallest vector. \index{Q\+C\+P\+Graph@{Q\+C\+P\+Graph}!set\+Data\+Both\+Error@{set\+Data\+Both\+Error}}
+\index{set\+Data\+Both\+Error@{set\+Data\+Both\+Error}!Q\+C\+P\+Graph@{Q\+C\+P\+Graph}}
+\subsubsection[{set\+Data\+Both\+Error}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Graph\+::set\+Data\+Both\+Error (
+\begin{DoxyParamCaption}
+\item[{const Q\+Vector$<$ double $>$ \&}]{key, }
+\item[{const Q\+Vector$<$ double $>$ \&}]{value, }
+\item[{const Q\+Vector$<$ double $>$ \&}]{key\+Error, }
+\item[{const Q\+Vector$<$ double $>$ \&}]{value\+Error}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_graph_a873fe46bdb20be5710428e474ade8908}
+Replaces the current data with the provided points in {\itshape key} and {\itshape value} pairs. Additionally the symmetrical key and value errors of the data points are set to the values in {\itshape key\+Error} and {\itshape value\+Error}. For error bars to show appropriately, see \doxyref{set\+Error\+Type}{p.}{class_q_c_p_graph_ac3614d799c3894f2bc646e99c7f73d38}. The provided vectors should have equal length. Else, the number of added points will be the size of the smallest vector.
+
+For asymmetrical errors (plus different from minus), see the overloaded version of this function. \index{Q\+C\+P\+Graph@{Q\+C\+P\+Graph}!set\+Data\+Both\+Error@{set\+Data\+Both\+Error}}
+\index{set\+Data\+Both\+Error@{set\+Data\+Both\+Error}!Q\+C\+P\+Graph@{Q\+C\+P\+Graph}}
+\subsubsection[{set\+Data\+Both\+Error}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Graph\+::set\+Data\+Both\+Error (
+\begin{DoxyParamCaption}
+\item[{const Q\+Vector$<$ double $>$ \&}]{key, }
+\item[{const Q\+Vector$<$ double $>$ \&}]{value, }
+\item[{const Q\+Vector$<$ double $>$ \&}]{key\+Error\+Minus, }
+\item[{const Q\+Vector$<$ double $>$ \&}]{key\+Error\+Plus, }
+\item[{const Q\+Vector$<$ double $>$ \&}]{value\+Error\+Minus, }
+\item[{const Q\+Vector$<$ double $>$ \&}]{value\+Error\+Plus}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_graph_abb75736ecdbf6e6a7501e1da64fb18cf}
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Replaces the current data with the provided points in {\itshape key} and {\itshape value} pairs. Additionally the negative key and value errors of the data points are set to the values in {\itshape key\+Error\+Minus} and {\itshape value\+Error\+Minus}. The positive key and value errors are set to the values in {\itshape key\+Error\+Plus} {\itshape value\+Error\+Plus}. For error bars to show appropriately, see \doxyref{set\+Error\+Type}{p.}{class_q_c_p_graph_ac3614d799c3894f2bc646e99c7f73d38}. The provided vectors should have equal length. Else, the number of added points will be the size of the smallest vector. \index{Q\+C\+P\+Graph@{Q\+C\+P\+Graph}!set\+Data\+Key\+Error@{set\+Data\+Key\+Error}}
+\index{set\+Data\+Key\+Error@{set\+Data\+Key\+Error}!Q\+C\+P\+Graph@{Q\+C\+P\+Graph}}
+\subsubsection[{set\+Data\+Key\+Error}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Graph\+::set\+Data\+Key\+Error (
+\begin{DoxyParamCaption}
+\item[{const Q\+Vector$<$ double $>$ \&}]{key, }
+\item[{const Q\+Vector$<$ double $>$ \&}]{value, }
+\item[{const Q\+Vector$<$ double $>$ \&}]{key\+Error}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_graph_abce9f07c0d722bc3e4fa7bd73c7e5dfa}
+Replaces the current data with the provided points in {\itshape key} and {\itshape value} pairs. Additionally the symmetrical key error of the data points are set to the values in {\itshape key\+Error}. For error bars to show appropriately, see \doxyref{set\+Error\+Type}{p.}{class_q_c_p_graph_ac3614d799c3894f2bc646e99c7f73d38}. The provided vectors should have equal length. Else, the number of added points will be the size of the smallest vector.
+
+For asymmetrical errors (plus different from minus), see the overloaded version of this function. \index{Q\+C\+P\+Graph@{Q\+C\+P\+Graph}!set\+Data\+Key\+Error@{set\+Data\+Key\+Error}}
+\index{set\+Data\+Key\+Error@{set\+Data\+Key\+Error}!Q\+C\+P\+Graph@{Q\+C\+P\+Graph}}
+\subsubsection[{set\+Data\+Key\+Error}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Graph\+::set\+Data\+Key\+Error (
+\begin{DoxyParamCaption}
+\item[{const Q\+Vector$<$ double $>$ \&}]{key, }
+\item[{const Q\+Vector$<$ double $>$ \&}]{value, }
+\item[{const Q\+Vector$<$ double $>$ \&}]{key\+Error\+Minus, }
+\item[{const Q\+Vector$<$ double $>$ \&}]{key\+Error\+Plus}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_graph_ac15c749c5fedf740d5692c6fe67143b8}
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Replaces the current data with the provided points in {\itshape key} and {\itshape value} pairs. Additionally the negative key error of the data points are set to the values in {\itshape key\+Error\+Minus}, the positive key error to {\itshape key\+Error\+Plus}. For error bars to show appropriately, see \doxyref{set\+Error\+Type}{p.}{class_q_c_p_graph_ac3614d799c3894f2bc646e99c7f73d38}. The provided vectors should have equal length. Else, the number of added points will be the size of the smallest vector. \index{Q\+C\+P\+Graph@{Q\+C\+P\+Graph}!set\+Data\+Value\+Error@{set\+Data\+Value\+Error}}
+\index{set\+Data\+Value\+Error@{set\+Data\+Value\+Error}!Q\+C\+P\+Graph@{Q\+C\+P\+Graph}}
+\subsubsection[{set\+Data\+Value\+Error}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Graph\+::set\+Data\+Value\+Error (
+\begin{DoxyParamCaption}
+\item[{const Q\+Vector$<$ double $>$ \&}]{key, }
+\item[{const Q\+Vector$<$ double $>$ \&}]{value, }
+\item[{const Q\+Vector$<$ double $>$ \&}]{value\+Error}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_graph_acba6296eadcb36b93267628b8dae3de5}
+Replaces the current data with the provided points in {\itshape key} and {\itshape value} pairs. Additionally the symmetrical value error of the data points are set to the values in {\itshape value\+Error}. For error bars to show appropriately, see \doxyref{set\+Error\+Type}{p.}{class_q_c_p_graph_ac3614d799c3894f2bc646e99c7f73d38}. The provided vectors should have equal length. Else, the number of added points will be the size of the smallest vector.
+
+For asymmetrical errors (plus different from minus), see the overloaded version of this function. \index{Q\+C\+P\+Graph@{Q\+C\+P\+Graph}!set\+Data\+Value\+Error@{set\+Data\+Value\+Error}}
+\index{set\+Data\+Value\+Error@{set\+Data\+Value\+Error}!Q\+C\+P\+Graph@{Q\+C\+P\+Graph}}
+\subsubsection[{set\+Data\+Value\+Error}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Graph\+::set\+Data\+Value\+Error (
+\begin{DoxyParamCaption}
+\item[{const Q\+Vector$<$ double $>$ \&}]{key, }
+\item[{const Q\+Vector$<$ double $>$ \&}]{value, }
+\item[{const Q\+Vector$<$ double $>$ \&}]{value\+Error\+Minus, }
+\item[{const Q\+Vector$<$ double $>$ \&}]{value\+Error\+Plus}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_graph_a3afbfd7222d739351c69387904776f93}
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Replaces the current data with the provided points in {\itshape key} and {\itshape value} pairs. Additionally the negative value error of the data points are set to the values in {\itshape value\+Error\+Minus}, the positive value error to {\itshape value\+Error\+Plus}. For error bars to show appropriately, see \doxyref{set\+Error\+Type}{p.}{class_q_c_p_graph_ac3614d799c3894f2bc646e99c7f73d38}. The provided vectors should have equal length. Else, the number of added points will be the size of the smallest vector. \index{Q\+C\+P\+Graph@{Q\+C\+P\+Graph}!set\+Error\+Bar\+Size@{set\+Error\+Bar\+Size}}
+\index{set\+Error\+Bar\+Size@{set\+Error\+Bar\+Size}!Q\+C\+P\+Graph@{Q\+C\+P\+Graph}}
+\subsubsection[{set\+Error\+Bar\+Size}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Graph\+::set\+Error\+Bar\+Size (
+\begin{DoxyParamCaption}
+\item[{double}]{size}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_graph_a10f50c5495ce45ef559ec2066194a335}
+Sets the width of the handles at both ends of an error bar in pixels. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_graph_a10f50c5495ce45ef559ec2066194a335_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Graph@{Q\+C\+P\+Graph}!set\+Error\+Bar\+Skip\+Symbol@{set\+Error\+Bar\+Skip\+Symbol}}
+\index{set\+Error\+Bar\+Skip\+Symbol@{set\+Error\+Bar\+Skip\+Symbol}!Q\+C\+P\+Graph@{Q\+C\+P\+Graph}}
+\subsubsection[{set\+Error\+Bar\+Skip\+Symbol}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Graph\+::set\+Error\+Bar\+Skip\+Symbol (
+\begin{DoxyParamCaption}
+\item[{bool}]{enabled}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_graph_ab1c1ee03d8dd94676a564e5e5f11aac2}
+If {\itshape enabled} is set to true, the error bar will not be drawn as a solid line under the scatter symbol but leave some free space around the symbol.
+
+This feature uses the current scatter size (\doxyref{Q\+C\+P\+Scatter\+Style\+::set\+Size}{p.}{class_q_c_p_scatter_style_aaefdd031052892c4136129db68596e0f}) to determine the size of the area to leave blank. So when drawing Pixmaps as scatter points (\doxyref{Q\+C\+P\+Scatter\+Style\+::ss\+Pixmap}{p.}{class_q_c_p_scatter_style_adb31525af6b680e6f1b7472e43859349a8718b849ca7c307b07b8e091efb0c31e}), the scatter size must be set manually to a value corresponding to the size of the Pixmap, if the error bars should leave gaps to its boundaries.
+
+\doxyref{set\+Error\+Type}{p.}{class_q_c_p_graph_ac3614d799c3894f2bc646e99c7f73d38}, set\+Error\+Bar\+Size, set\+Scatter\+Style 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_graph_ab1c1ee03d8dd94676a564e5e5f11aac2_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Graph@{Q\+C\+P\+Graph}!set\+Error\+Pen@{set\+Error\+Pen}}
+\index{set\+Error\+Pen@{set\+Error\+Pen}!Q\+C\+P\+Graph@{Q\+C\+P\+Graph}}
+\subsubsection[{set\+Error\+Pen}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Graph\+::set\+Error\+Pen (
+\begin{DoxyParamCaption}
+\item[{const Q\+Pen \&}]{pen}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_graph_abd4c7f81939e10776ea64603a704f22a}
+Sets the pen with which the error bars will be drawn. \begin{DoxySeeAlso}{See also}
+\doxyref{set\+Error\+Bar\+Size}{p.}{class_q_c_p_graph_a10f50c5495ce45ef559ec2066194a335}, \doxyref{set\+Error\+Type}{p.}{class_q_c_p_graph_ac3614d799c3894f2bc646e99c7f73d38} 
+\end{DoxySeeAlso}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_graph_abd4c7f81939e10776ea64603a704f22a_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Graph@{Q\+C\+P\+Graph}!set\+Error\+Type@{set\+Error\+Type}}
+\index{set\+Error\+Type@{set\+Error\+Type}!Q\+C\+P\+Graph@{Q\+C\+P\+Graph}}
+\subsubsection[{set\+Error\+Type}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Graph\+::set\+Error\+Type (
+\begin{DoxyParamCaption}
+\item[{{\bf Error\+Type}}]{error\+Type}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_graph_ac3614d799c3894f2bc646e99c7f73d38}
+Sets which kind of error bars (Key Error, Value Error or both) should be drawn on each data point. If you set {\itshape error\+Type} to something other than \doxyref{et\+None}{p.}{class_q_c_p_graph_ad23b514404bd2cb3216f57c90904d6afaeae745e7cc1766bb8546e35d4b76a711}, make sure to actually pass error data via the specific set\+Data functions along with the data points (e.\+g. \doxyref{set\+Data\+Value\+Error}{p.}{class_q_c_p_graph_acba6296eadcb36b93267628b8dae3de5}, \doxyref{set\+Data\+Key\+Error}{p.}{class_q_c_p_graph_abce9f07c0d722bc3e4fa7bd73c7e5dfa}, \doxyref{set\+Data\+Both\+Error}{p.}{class_q_c_p_graph_a873fe46bdb20be5710428e474ade8908}).
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{Error\+Type}{p.}{class_q_c_p_graph_ad23b514404bd2cb3216f57c90904d6af} 
+\end{DoxySeeAlso}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_graph_ac3614d799c3894f2bc646e99c7f73d38_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Graph@{Q\+C\+P\+Graph}!set\+Line\+Style@{set\+Line\+Style}}
+\index{set\+Line\+Style@{set\+Line\+Style}!Q\+C\+P\+Graph@{Q\+C\+P\+Graph}}
+\subsubsection[{set\+Line\+Style}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Graph\+::set\+Line\+Style (
+\begin{DoxyParamCaption}
+\item[{{\bf Line\+Style}}]{ls}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_graph_a513fecccff5b2a50ce53f665338c60ff}
+Sets how the single data points are connected in the plot. For scatter-\/only plots, set {\itshape ls} to \doxyref{ls\+None}{p.}{class_q_c_p_graph_ad60175cd9b5cac937c5ee685c32c0859aea9591b933733cc7b20786b71e60fa04} and \doxyref{set\+Scatter\+Style}{p.}{class_q_c_p_graph_a12bd17a8ba21983163ec5d8f42a9fea5} to the desired scatter style.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{set\+Scatter\+Style}{p.}{class_q_c_p_graph_a12bd17a8ba21983163ec5d8f42a9fea5} 
+\end{DoxySeeAlso}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_graph_a513fecccff5b2a50ce53f665338c60ff_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Graph@{Q\+C\+P\+Graph}!set\+Scatter\+Style@{set\+Scatter\+Style}}
+\index{set\+Scatter\+Style@{set\+Scatter\+Style}!Q\+C\+P\+Graph@{Q\+C\+P\+Graph}}
+\subsubsection[{set\+Scatter\+Style}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Graph\+::set\+Scatter\+Style (
+\begin{DoxyParamCaption}
+\item[{const {\bf Q\+C\+P\+Scatter\+Style} \&}]{style}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_graph_a12bd17a8ba21983163ec5d8f42a9fea5}
+Sets the visual appearance of single data points in the plot. If set to \doxyref{Q\+C\+P\+Scatter\+Style\+::ss\+None}{p.}{class_q_c_p_scatter_style_adb31525af6b680e6f1b7472e43859349abd144c291ca274f77053ec68cab6c022}, no scatter points are drawn (e.\+g. for line-\/only-\/plots with appropriate line style).
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{Q\+C\+P\+Scatter\+Style}{p.}{class_q_c_p_scatter_style}, \doxyref{set\+Line\+Style}{p.}{class_q_c_p_graph_a513fecccff5b2a50ce53f665338c60ff} 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf qcustomplot.\+h}\item 
+{\bf qcustomplot.\+cpp}\end{DoxyCompactItemize}

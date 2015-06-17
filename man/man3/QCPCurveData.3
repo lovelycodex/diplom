@@ -1,0 +1,64 @@
+.TH "QCPCurveData" 3 "Thu Jun 18 2015" "Version v.2" "Voice analyze" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+QCPCurveData \- Holds the data of one single data point for \fBQCPCurve\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQCPCurveData\fP ()"
+.br
+.ti -1c
+.RI "\fBQCPCurveData\fP (double t, double key, double value)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "double \fBt\fP"
+.br
+.ti -1c
+.RI "double \fBkey\fP"
+.br
+.ti -1c
+.RI "double \fBvalue\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Holds the data of one single data point for \fBQCPCurve\fP\&. 
+
+The container for storing multiple data points is \fBQCPCurveDataMap\fP\&.
+.PP
+The stored data is: 
+.PD 0
+
+.IP "\(bu" 2
+\fIt:\fP the free parameter of the curve at this curve point (cp\&. the mathematical vector \fI(x(t), y(t))\fP) 
+.IP "\(bu" 2
+\fIkey:\fP coordinate on the key axis of this curve point 
+.IP "\(bu" 2
+\fIvalue:\fP coordinate on the value axis of this curve point
+.PP
+\fBSee also:\fP
+.RS 4
+\fBQCPCurveDataMap\fP 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "QCPCurveData::QCPCurveData ()"
+Constructs a curve data point with t, key and value set to zero\&. 
+.SS "QCPCurveData::QCPCurveData (double t, double key, double value)"
+Constructs a curve data point with the specified \fIt\fP, \fIkey\fP and \fIvalue\fP\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Voice analyze from the source code\&.

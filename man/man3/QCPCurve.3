@@ -1,0 +1,359 @@
+.TH "QCPCurve" 3 "Thu Jun 18 2015" "Version v.2" "Voice analyze" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+QCPCurve \- A plottable representing a parametric curve in a plot\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBLineStyle\fP { \fBlsNone\fP, \fBlsLine\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQCPCurve\fP (\fBQCPAxis\fP *keyAxis, \fBQCPAxis\fP *valueAxis)"
+.br
+.ti -1c
+.RI "\fBQCPCurveDataMap\fP * \fBdata\fP () const "
+.br
+.ti -1c
+.RI "\fBQCPScatterStyle\fP \fBscatterStyle\fP () const "
+.br
+.ti -1c
+.RI "\fBLineStyle\fP \fBlineStyle\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetData\fP (\fBQCPCurveDataMap\fP *data, bool copy=false)"
+.br
+.ti -1c
+.RI "void \fBsetData\fP (const QVector< double > &t, const QVector< double > &key, const QVector< double > &value)"
+.br
+.ti -1c
+.RI "void \fBsetData\fP (const QVector< double > &key, const QVector< double > &value)"
+.br
+.ti -1c
+.RI "void \fBsetScatterStyle\fP (const \fBQCPScatterStyle\fP &style)"
+.br
+.ti -1c
+.RI "void \fBsetLineStyle\fP (\fBLineStyle\fP style)"
+.br
+.ti -1c
+.RI "void \fBaddData\fP (const \fBQCPCurveDataMap\fP &dataMap)"
+.br
+.ti -1c
+.RI "void \fBaddData\fP (const \fBQCPCurveData\fP &data)"
+.br
+.ti -1c
+.RI "void \fBaddData\fP (double t, double key, double value)"
+.br
+.ti -1c
+.RI "void \fBaddData\fP (double key, double value)"
+.br
+.ti -1c
+.RI "void \fBaddData\fP (const QVector< double > &ts, const QVector< double > &keys, const QVector< double > &values)"
+.br
+.ti -1c
+.RI "void \fBremoveDataBefore\fP (double t)"
+.br
+.ti -1c
+.RI "void \fBremoveDataAfter\fP (double t)"
+.br
+.ti -1c
+.RI "void \fBremoveData\fP (double fromt, double tot)"
+.br
+.ti -1c
+.RI "void \fBremoveData\fP (double t)"
+.br
+.ti -1c
+.RI "virtual void \fBclearData\fP ()"
+.br
+.ti -1c
+.RI "virtual double \fBselectTest\fP (const QPointF &pos, bool onlySelectable, QVariant *details=0) const "
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBdraw\fP (\fBQCPPainter\fP *painter)"
+.br
+.ti -1c
+.RI "virtual void \fBdrawLegendIcon\fP (\fBQCPPainter\fP *painter, const QRectF &rect) const "
+.br
+.ti -1c
+.RI "virtual \fBQCPRange\fP \fBgetKeyRange\fP (bool &foundRange, \fBSignDomain\fP inSignDomain=\fBsdBoth\fP) const "
+.br
+.ti -1c
+.RI "virtual \fBQCPRange\fP \fBgetValueRange\fP (bool &foundRange, \fBSignDomain\fP inSignDomain=\fBsdBoth\fP) const "
+.br
+.ti -1c
+.RI "virtual void \fBdrawScatterPlot\fP (\fBQCPPainter\fP *painter, const QVector< QPointF > *pointData) const "
+.br
+.ti -1c
+.RI "void \fBgetCurveData\fP (QVector< QPointF > *lineData) const "
+.br
+.ti -1c
+.RI "int \fBgetRegion\fP (double x, double y, double rectLeft, double rectTop, double rectRight, double rectBottom) const "
+.br
+.ti -1c
+.RI "QPointF \fBgetOptimizedPoint\fP (int prevRegion, double prevKey, double prevValue, double key, double value, double rectLeft, double rectTop, double rectRight, double rectBottom) const "
+.br
+.ti -1c
+.RI "QVector< QPointF > \fBgetOptimizedCornerPoints\fP (int prevRegion, int currentRegion, double prevKey, double prevValue, double key, double value, double rectLeft, double rectTop, double rectRight, double rectBottom) const "
+.br
+.ti -1c
+.RI "bool \fBmayTraverse\fP (int prevRegion, int currentRegion) const "
+.br
+.ti -1c
+.RI "bool \fBgetTraverse\fP (double prevKey, double prevValue, double key, double value, double rectLeft, double rectTop, double rectRight, double rectBottom, QPointF &crossA, QPointF &crossB) const "
+.br
+.ti -1c
+.RI "void \fBgetTraverseCornerPoints\fP (int prevRegion, int currentRegion, double rectLeft, double rectTop, double rectRight, double rectBottom, QVector< QPointF > &beforeTraverse, QVector< QPointF > &afterTraverse) const "
+.br
+.ti -1c
+.RI "double \fBpointDistance\fP (const QPointF &pixelPoint) const "
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBQCPCurveDataMap\fP * \fBmData\fP"
+.br
+.ti -1c
+.RI "\fBQCPScatterStyle\fP \fBmScatterStyle\fP"
+.br
+.ti -1c
+.RI "\fBLineStyle\fP \fBmLineStyle\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBQCustomPlot\fP"
+.br
+.ti -1c
+.RI "class \fBQCPLegend\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+A plottable representing a parametric curve in a plot\&. 
+
+
+.PP
+Unlike \fBQCPGraph\fP, plottables of this type may have multiple points with the same key coordinate, so their visual representation can have \fIloops\fP\&. This is realized by introducing a third coordinate \fIt\fP, which defines the order of the points described by the other two coordinates \fIx\fP and \fIy\fP\&.
+.PP
+To plot data, assign it with the \fBsetData\fP or \fBaddData\fP functions\&.
+.PP
+Gaps in the curve can be created by adding data points with NaN as key and value (\fCqQNaN()\fP or \fCstd::numeric_limits<double>::quiet_NaN()\fP) in between the two data points that shall be separated\&.
+.SH "Changing the appearance"
+.PP
+The appearance of the curve is determined by the pen and the brush (\fBsetPen\fP, \fBsetBrush\fP)\&. 
+.SH "Usage"
+.PP
+Like all data representing objects in \fBQCustomPlot\fP, the \fBQCPCurve\fP is a plottable (\fBQCPAbstractPlottable\fP)\&. So the plottable-interface of \fBQCustomPlot\fP applies (\fBQCustomPlot::plottable\fP, \fBQCustomPlot::addPlottable\fP, \fBQCustomPlot::removePlottable\fP, etc\&.)
+.PP
+Usually, you first create an instance and add it to the customPlot: 
+.PP
+.nf
+
+.fi
+.PP
+and then modify the properties of the newly created plottable, e\&.g\&.: 
+.PP
+.nf
+
+.fi
+.PP
+
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBQCPCurve::LineStyle\fP"
+Defines how the curve's line is represented visually in the plot\&. The line is drawn with the current pen of the curve (\fBsetPen\fP)\&. 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetLineStyle\fP 
+.RE
+.PP
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIlsNone \fP\fP
+No line is drawn between data points (e\&.g\&. only scatters) 
+.TP
+\fB\fIlsLine \fP\fP
+Data points are connected with a straight line\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "QCPCurve::QCPCurve (\fBQCPAxis\fP * keyAxis, \fBQCPAxis\fP * valueAxis)\fC [explicit]\fP"
+Constructs a curve which uses \fIkeyAxis\fP as its key axis ('x') and \fIvalueAxis\fP as its value axis ('y')\&. \fIkeyAxis\fP and \fIvalueAxis\fP must reside in the same \fBQCustomPlot\fP instance and not have the same orientation\&. If either of these restrictions is violated, a corresponding message is printed to the debug output (qDebug), the construction is not aborted, though\&.
+.PP
+The constructed \fBQCPCurve\fP can be added to the plot with \fBQCustomPlot::addPlottable\fP, \fBQCustomPlot\fP then takes ownership of the graph\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "void QCPCurve::addData (const \fBQCPCurveDataMap\fP & dataMap)"
+Adds the provided data points in \fIdataMap\fP to the current data\&. 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBremoveData\fP 
+.RE
+.PP
+
+.SS "void QCPCurve::addData (const \fBQCPCurveData\fP & data)"
+This is an overloaded member function, provided for convenience\&. It differs from the above function only in what argument(s) it accepts\&. Adds the provided single data point in \fIdata\fP to the current data\&. 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBremoveData\fP 
+.RE
+.PP
+
+.SS "void QCPCurve::addData (double t, double key, double value)"
+This is an overloaded member function, provided for convenience\&. It differs from the above function only in what argument(s) it accepts\&. Adds the provided single data point as \fIt\fP, \fIkey\fP and \fIvalue\fP tuple to the current data 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBremoveData\fP 
+.RE
+.PP
+
+.SS "void QCPCurve::addData (double key, double value)"
+This is an overloaded member function, provided for convenience\&. It differs from the above function only in what argument(s) it accepts\&.
+.PP
+Adds the provided single data point as \fIkey\fP and \fIvalue\fP pair to the current data The t parameter of the data point is set to the t of the last data point plus 1\&. If there is no last data point, t will be set to 0\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBremoveData\fP 
+.RE
+.PP
+
+.SS "void QCPCurve::addData (const QVector< double > & ts, const QVector< double > & keys, const QVector< double > & values)"
+This is an overloaded member function, provided for convenience\&. It differs from the above function only in what argument(s) it accepts\&. Adds the provided data points as \fIt\fP, \fIkey\fP and \fIvalue\fP tuples to the current data\&. 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBremoveData\fP 
+.RE
+.PP
+
+.SS "void QCPCurve::clearData ()\fC [virtual]\fP"
+Removes all data points\&. 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBremoveData\fP, \fBremoveDataAfter\fP, \fBremoveDataBefore\fP 
+.RE
+.PP
+
+.PP
+Implements \fBQCPAbstractPlottable\fP\&.
+.SS "void QCPCurve::removeData (double fromt, double tot)"
+Removes all data points with curve parameter t between \fIfromt\fP and \fItot\fP\&. if \fIfromt\fP is greater or equal to \fItot\fP, the function does nothing\&. To remove a single data point with known t, use \fBremoveData(double t)\fP\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBaddData\fP, \fBclearData\fP 
+.RE
+.PP
+
+.SS "void QCPCurve::removeData (double t)"
+This is an overloaded member function, provided for convenience\&. It differs from the above function only in what argument(s) it accepts\&.
+.PP
+Removes a single data point at curve parameter \fIt\fP\&. If the position is not known with absolute precision, consider using \fBremoveData(double fromt, double tot)\fP with a small fuzziness interval around the suspected position, depeding on the precision with which the curve parameter is known\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBaddData\fP, \fBclearData\fP 
+.RE
+.PP
+
+.SS "void QCPCurve::removeDataAfter (double t)"
+Removes all data points with curve parameter t greater than \fIt\fP\&. 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBaddData\fP, \fBclearData\fP 
+.RE
+.PP
+
+.SS "void QCPCurve::removeDataBefore (double t)"
+Removes all data points with curve parameter t smaller than \fIt\fP\&. 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBaddData\fP, \fBclearData\fP 
+.RE
+.PP
+
+.SS "double QCPCurve::selectTest (const QPointF & pos, bool onlySelectable, QVariant * details = \fC0\fP) const\fC [virtual]\fP"
+This function is used to decide whether a click hits a layerable object or not\&.
+.PP
+\fIpos\fP is a point in pixel coordinates on the \fBQCustomPlot\fP surface\&. This function returns the shortest pixel distance of this point to the object\&. If the object is either invisible or the distance couldn't be determined, -1\&.0 is returned\&. Further, if \fIonlySelectable\fP is true and the object is not selectable, -1\&.0 is returned, too\&.
+.PP
+If the object is represented not by single lines but by an area like a \fBQCPItemText\fP or the bars of a \fBQCPBars\fP plottable, a click inside the area should also be considered a hit\&. In these cases this function thus returns a constant value greater zero but still below the parent plot's selection tolerance\&. (typically the selectionTolerance multiplied by 0\&.99)\&.
+.PP
+Providing a constant value for area objects allows selecting line objects even when they are obscured by such area objects, by clicking close to the lines (i\&.e\&. closer than 0\&.99*selectionTolerance)\&.
+.PP
+The actual setting of the selection state is not done by this function\&. This is handled by the parent \fBQCustomPlot\fP when the mouseReleaseEvent occurs, and the finally selected object is notified via the selectEvent/deselectEvent methods\&.
+.PP
+\fIdetails\fP is an optional output parameter\&. Every layerable subclass may place any information in \fIdetails\fP\&. This information will be passed to \fBselectEvent\fP when the parent \fBQCustomPlot\fP decides on the basis of this selectTest call, that the object was successfully selected\&. The subsequent call to \fBselectEvent\fP will carry the \fIdetails\fP\&. This is useful for multi-part objects (like \fBQCPAxis\fP)\&. This way, a possibly complex calculation to decide which part was clicked is only done once in \fBselectTest\fP\&. The result (i\&.e\&. the actually clicked part) can then be placed in \fIdetails\fP\&. So in the subsequent \fBselectEvent\fP, the decision which part was selected doesn't have to be done a second time for a single selection operation\&.
+.PP
+You may pass 0 as \fIdetails\fP to indicate that you are not interested in those selection details\&.
+.PP
+\fBSee also:\fP
+.RS 4
+selectEvent, deselectEvent, \fBQCustomPlot::setInteractions\fP 
+.RE
+.PP
+
+.PP
+Implements \fBQCPAbstractPlottable\fP\&.
+.SS "void QCPCurve::setData (\fBQCPCurveDataMap\fP * data, bool copy = \fCfalse\fP)"
+Replaces the current data with the provided \fIdata\fP\&.
+.PP
+If \fIcopy\fP is set to true, data points in \fIdata\fP will only be copied\&. if false, the plottable takes ownership of the passed data and replaces the internal data pointer with it\&. This is significantly faster than copying for large datasets\&. 
+.SS "void QCPCurve::setData (const QVector< double > & t, const QVector< double > & key, const QVector< double > & value)"
+This is an overloaded member function, provided for convenience\&. It differs from the above function only in what argument(s) it accepts\&.
+.PP
+Replaces the current data with the provided points in \fIt\fP, \fIkey\fP and \fIvalue\fP tuples\&. The provided vectors should have equal length\&. Else, the number of added points will be the size of the smallest vector\&. 
+.SS "void QCPCurve::setData (const QVector< double > & key, const QVector< double > & value)"
+This is an overloaded member function, provided for convenience\&. It differs from the above function only in what argument(s) it accepts\&.
+.PP
+Replaces the current data with the provided \fIkey\fP and \fIvalue\fP pairs\&. The t parameter of each data point will be set to the integer index of the respective key/value pair\&. 
+.SS "void QCPCurve::setLineStyle (\fBQCPCurve::LineStyle\fP style)"
+Sets how the single data points are connected in the plot or how they are represented visually apart from the scatter symbol\&. For scatter-only plots, set \fIstyle\fP to \fBlsNone\fP and \fBsetScatterStyle\fP to the desired scatter style\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetScatterStyle\fP 
+.RE
+.PP
+
+.SS "void QCPCurve::setScatterStyle (const \fBQCPScatterStyle\fP & style)"
+Sets the visual appearance of single data points in the plot\&. If set to \fBQCPScatterStyle::ssNone\fP, no scatter points are drawn (e\&.g\&. for line-only plots with appropriate line style)\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBQCPScatterStyle\fP, \fBsetLineStyle\fP 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Voice analyze from the source code\&.

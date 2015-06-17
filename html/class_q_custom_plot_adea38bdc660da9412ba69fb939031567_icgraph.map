@@ -1,0 +1,12 @@
+<map id="QCustomPlot::plottable" name="QCustomPlot::plottable">
+<area shape="rect" id="node2" href="$class_q_custom_plot.html#ab7ad9174f701f9c6f64e378df77927a6" title="QCustomPlot::addPlottable" alt="" coords="242,31,437,57"/>
+<area shape="rect" id="node4" href="$class_q_custom_plot.html#af3dafd56884208474f311d6226513ab2" title="QCustomPlot::removePlottable" alt="" coords="230,93,449,120"/>
+<area shape="rect" id="node10" href="$class_q_custom_plot.html#a6721b8c689bb7f2f400987e580508fe8" title="QCustomPlot::selectedPlottables" alt="" coords="224,144,455,171"/>
+<area shape="rect" id="node11" href="$class_q_custom_plot.html#ac1d1bc6ae4e13616fb02cef6d9e2188e" title="QCustomPlot::plottableAt" alt="" coords="247,195,431,221"/>
+<area shape="rect" id="node3" href="$class_q_custom_plot.html#a6fb2873d35a8a8089842d81a70a54167" title="QCustomPlot::addGraph" alt="" coords="523,5,701,32"/>
+<area shape="rect" id="node5" href="$class_q_custom_plot.html#afc210e0021480f8119bccf37839dbcc8" title="QCustomPlot::removePlottable" alt="" coords="503,56,721,83"/>
+<area shape="rect" id="node6" href="$class_q_custom_plot.html#a9a409bb3201878adb7ffba1c89c4e004" title="QCustomPlot::clearPlottables" alt="" coords="508,107,716,133"/>
+<area shape="rect" id="node7" href="$class_q_custom_plot.html#a903561be895fb6528a770d66ac5e6713" title="QCustomPlot::removeGraph" alt="" coords="511,157,713,184"/>
+<area shape="rect" id="node8" href="$class_q_custom_plot.html#a9554b3d2d5b10c0f884bd4010b6c192c" title="QCustomPlot::removeGraph" alt="" coords="769,132,972,159"/>
+<area shape="rect" id="node9" href="$class_q_custom_plot.html#ab0f3abff2d2f7df3668b5836f39207fa" title="QCustomPlot::clearGraphs" alt="" coords="775,183,966,209"/>
+</map>

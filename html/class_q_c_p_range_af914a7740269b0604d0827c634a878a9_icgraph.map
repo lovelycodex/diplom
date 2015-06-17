@@ -1,0 +1,28 @@
+<map id="QCPRange::normalize" name="QCPRange::normalize">
+<area shape="rect" id="node2" href="$class_q_c_p_range.html#a1d9d84d084c8f368fdedd42e0978d405" title="QCPRange::QCPRange" alt="" coords="230,285,394,312"/>
+<area shape="rect" id="node3" href="$class_q_c_p_range.html#aaf6a9046e78d91eeb8e89584fe46b034" title="QCPRange::sanitizedForLog\lScale" alt="" coords="213,402,411,443"/>
+<area shape="rect" id="node27" href="$class_q_c_p_range.html#a1ff029704c29a75adbc1dc36cecaf44c" title="QCPRange::sanitizedForLin\lScale" alt="" coords="216,337,408,378"/>
+<area shape="rect" id="node4" href="$class_q_c_p_axis.html#adef29cae617af4f519f6c40d1a866ca6" title="QCPAxis::setScaleType" alt="" coords="781,441,949,468"/>
+<area shape="rect" id="node6" href="$class_q_c_p_axis.html#aebdfea5d44c3a0ad2b4700cd4d25b641" title="QCPAxis::setRange" alt="" coords="508,293,651,320"/>
+<area shape="rect" id="node17" href="$class_q_c_p_axis.html#afcf51227d337db28d1a9ce9a4d1bc91a" title="QCPAxis::setRangeLower" alt="" coords="489,395,669,421"/>
+<area shape="rect" id="node18" href="$class_q_c_p_axis.html#acd3ca1247aa867b540cd5ec30ccd3bef" title="QCPAxis::setRangeUpper" alt="" coords="488,243,671,269"/>
+<area shape="rect" id="node19" href="$class_q_c_p_axis.html#a7072ff96fe690148f1bbcdb4f773ea1c" title="QCPAxis::scaleRange" alt="" coords="501,344,657,371"/>
+<area shape="rect" id="node20" href="$class_q_c_p_color_scale.html#aeb6107d67dd7325145b2498abae67fc3" title="QCPColorScale::setDataScaleType" alt="" coords="459,660,700,687"/>
+<area shape="rect" id="node23" href="$class_q_c_p_color_map.html#a980b42837821159786a85b4b7dcb8774" title="QCPColorMap::setDataRange" alt="" coords="475,500,683,527"/>
+<area shape="rect" id="node24" href="$class_q_c_p_color_map.html#a9d20aa08e3c1f20f22908c45b9c06511" title="QCPColorMap::setDataScaleType" alt="" coords="748,609,981,636"/>
+<area shape="rect" id="node5" href="$class_q_c_p_axis_rect.html#a5fa906175447b14206954f77fc7f1ef4" title="QCPAxisRect::setupFullAxesBox" alt="" coords="1029,416,1252,443"/>
+<area shape="rect" id="node7" href="$class_q_c_p_axis.html#acf60e5b2d631fbc8c4548c3d579cb6d0" title="QCPAxis::setRange" alt="" coords="793,56,936,83"/>
+<area shape="rect" id="node8" href="$class_q_c_p_axis.html#af4bbd446dcaee5a83ac30ce9bcd6e125" title="QCPAxis::setScaleRatio" alt="" coords="779,107,950,133"/>
+<area shape="rect" id="node9" href="$class_q_c_p_axis.html#a499345f02ebce4b23d8ccec96e58daa9" title="QCPAxis::rescale" alt="" coords="800,5,929,32"/>
+<area shape="rect" id="node11" href="$class_q_c_p_abstract_plottable.html#a1acecfcca3e7fcda00fcbaa3c886386f" title="QCPAbstractPlottable\l::rescaleKeyAxis" alt="" coords="785,223,944,265"/>
+<area shape="rect" id="node13" href="$class_q_c_p_abstract_plottable.html#abfd0805eb1d955c0111a990246658324" title="QCPAbstractPlottable\l::rescaleValueAxis" alt="" coords="785,158,944,199"/>
+<area shape="rect" id="node14" href="$class_q_c_p_graph.html#a2108a729046b0ab6e0516afb249dab13" title="QCPGraph::rescaleKeyAxis" alt="" coords="769,289,960,316"/>
+<area shape="rect" id="node16" href="$class_q_c_p_graph.html#a2ba0e1df416486d7e74299ef8cf68bba" title="QCPGraph::rescaleValueAxis" alt="" coords="763,340,967,367"/>
+<area shape="rect" id="node10" href="$class_q_custom_plot.html#ad86528f2cee6c7e446dea4a6e8839935" title="QCustomPlot::rescaleAxes" alt="" coords="1045,5,1236,32"/>
+<area shape="rect" id="node12" href="$class_q_c_p_abstract_plottable.html#a7e8fc3be43c27ccacd70a7bf9d74a5cd" title="QCPAbstractPlottable\l::rescaleAxes" alt="" coords="1061,191,1220,233"/>
+<area shape="rect" id="node15" href="$class_q_c_p_graph.html#aa35b75b9032800d783df749c8a004ee9" title="QCPGraph::rescaleAxes" alt="" coords="1054,315,1227,341"/>
+<area shape="rect" id="node21" href="$class_q_c_p_color_scale.html#a1bf9bdb291927c422dd66b404b206f1f" title="QCPColorScale::setType" alt="" coords="777,660,952,687"/>
+<area shape="rect" id="node22" href="$class_q_c_p_color_scale.html#aa8debce1be38b54287c04d4f584394b4" title="QCPColorScale::QCPColorScale" alt="" coords="1031,660,1251,687"/>
+<area shape="rect" id="node25" href="$class_q_c_p_color_map.html#aa828921db364fe3c6af4619580ab85fd" title="QCPColorMap::setColorScale" alt="" coords="1038,584,1243,611"/>
+<area shape="rect" id="node26" href="$class_q_c_p_color_map.html#a856608fa3dd1cc290bcd5f29a5575774" title="QCPColorMap::rescaleData\lRange" alt="" coords="767,493,962,534"/>
+</map>

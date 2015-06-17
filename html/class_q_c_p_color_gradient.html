@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="index.jpe"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Voice analyze
-   &#160;<span id="projectnumber">v.1</span>
+   &#160;<span id="projectnumber">v.2</span>
    </div>
   </td>
  </tr>
@@ -294,6 +294,15 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>mColorBufferInvalidat
 <p>Constructs a new <a class="el" href="class_q_c_p_color_gradient.html" title="Defines a color gradient for use with e.g. QCPColorMap. ">QCPColorGradient</a> initialized with the colors and color interpolation according to <em>preset</em>.</p>
 <p>The color level count is initialized to 350. </p>
 
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_q_c_p_color_gradient_a546e44df5fa1846400a582c041361c85_cgraph.png" border="0" usemap="#class_q_c_p_color_gradient_a546e44df5fa1846400a582c041361c85_cgraph" alt=""/></div>
+<map name="class_q_c_p_color_gradient_a546e44df5fa1846400a582c041361c85_cgraph" id="class_q_c_p_color_gradient_a546e44df5fa1846400a582c041361c85_cgraph">
+<area shape="rect" id="node2" href="class_q_c_p_color_gradient.html#aa0aeec1528241728b9671bf8e60b1622" title="QCPColorGradient::loadPreset" alt="" coords="259,78,472,105"/><area shape="rect" id="node3" href="class_q_c_p_color_gradient.html#a939213e85f0d1279519d555c5fcfb6ad" title="QCPColorGradient::clearColor\lStops" alt="" coords="520,5,729,47"/><area shape="rect" id="node4" href="class_q_c_p_color_gradient.html#aa13fda86406e1d896a465a409ae63b38" title="QCPColorGradient::setColor\lInterpolation" alt="" coords="525,71,724,112"/><area shape="rect" id="node5" href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e" title="QCPColorGradient::setColor\lStopAt" alt="" coords="525,136,724,177"/></map>
+</div>
+</p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -311,6 +320,15 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>mColorBufferInvalidat
 </div><div class="memdoc">
 <p>Clears all color stops.</p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_c_p_color_gradient.html#a724e828aa6f0ba5011a9392477c35d3a">setColorStops</a>, <a class="el" href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e">setColorStopAt</a> </dd></dl>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_q_c_p_color_gradient_a939213e85f0d1279519d555c5fcfb6ad_icgraph.png" border="0" usemap="#class_q_c_p_color_gradient_a939213e85f0d1279519d555c5fcfb6ad_icgraph" alt=""/></div>
+<map name="class_q_c_p_color_gradient_a939213e85f0d1279519d555c5fcfb6ad_icgraph" id="class_q_c_p_color_gradient_a939213e85f0d1279519d555c5fcfb6ad_icgraph">
+<area shape="rect" id="node2" href="class_q_c_p_color_gradient.html#aa0aeec1528241728b9671bf8e60b1622" title="QCPColorGradient::loadPreset" alt="" coords="263,13,476,39"/><area shape="rect" id="node4" href="class_q_c_p_color_gradient.html#abe04e1d1ccab3d7aa78f2924faed4916" title="QCPColorGradient::inverted" alt="" coords="271,63,468,90"/><area shape="rect" id="node3" href="class_q_c_p_color_gradient.html#a546e44df5fa1846400a582c041361c85" title="QCPColorGradient::QCPColor\lGradient" alt="" coords="524,5,729,47"/></map>
+</div>
+</p>
 
 </div>
 </div>
@@ -364,6 +382,15 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>mColorBufferInvalidat
 <p>This method is used to quickly convert a <em>data</em> array to colors. The colors will be output in the array <em>scanLine</em>. Both <em>data</em> and <em>scanLine</em> must have the length <em>n</em> when passed to this function. The data range that shall be used for mapping the data value to the gradient is passed in <em>range</em>. <em>logarithmic</em> indicates whether the data values shall be mapped to colors logarithmically.</p>
 <p>if <em>data</em> actually contains 2D-data linearized via <code>[row*columnCount + column]</code>, you can set <em>dataIndexFactor</em> to <code>columnCount</code> to convert a column instead of a row of the data array, in <em>scanLine</em>. <em>scanLine</em> will remain a regular (1D) array. This works because <em>data</em> is addressed <code>data[i*dataIndexFactor]</code>. </p>
 
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_q_c_p_color_gradient_aaf423ceb943e177b0ed2c48c811d83dc_cgraph.png" border="0" usemap="#class_q_c_p_color_gradient_aaf423ceb943e177b0ed2c48c811d83dc_cgraph" alt=""/></div>
+<map name="class_q_c_p_color_gradient_aaf423ceb943e177b0ed2c48c811d83dc_cgraph" id="class_q_c_p_color_gradient_aaf423ceb943e177b0ed2c48c811d83dc_cgraph">
+<area shape="rect" id="node2" href="class_q_c_p_range.html#afa57c13049b965edb6fd1c00ac56338a" title="QCPRange::size" alt="" coords="248,5,371,32"/></map>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="abe04e1d1ccab3d7aa78f2924faed4916"></a>
@@ -380,6 +407,15 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>mColorBufferInvalidat
 </div><div class="memdoc">
 <p>Returns an inverted gradient. The inverted gradient has all properties as this <a class="el" href="class_q_c_p_color_gradient.html">QCPColorGradient</a>, but the order of the color stops is inverted.</p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_c_p_color_gradient.html#a724e828aa6f0ba5011a9392477c35d3a">setColorStops</a>, <a class="el" href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e">setColorStopAt</a> </dd></dl>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_q_c_p_color_gradient_abe04e1d1ccab3d7aa78f2924faed4916_cgraph.png" border="0" usemap="#class_q_c_p_color_gradient_abe04e1d1ccab3d7aa78f2924faed4916_cgraph" alt=""/></div>
+<map name="class_q_c_p_color_gradient_abe04e1d1ccab3d7aa78f2924faed4916_cgraph" id="class_q_c_p_color_gradient_abe04e1d1ccab3d7aa78f2924faed4916_cgraph">
+<area shape="rect" id="node2" href="class_q_c_p_color_gradient.html#a939213e85f0d1279519d555c5fcfb6ad" title="QCPColorGradient::clearColor\lStops" alt="" coords="251,5,460,47"/><area shape="rect" id="node3" href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e" title="QCPColorGradient::setColor\lStopAt" alt="" coords="256,71,455,112"/></map>
+</div>
+</p>
 
 </div>
 </div>
@@ -401,6 +437,24 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>mColorBufferInvalidat
 <img src="QCPColorGradient.png" alt="QCPColorGradient.png"/>
 </div>
  
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_q_c_p_color_gradient_aa0aeec1528241728b9671bf8e60b1622_cgraph.png" border="0" usemap="#class_q_c_p_color_gradient_aa0aeec1528241728b9671bf8e60b1622_cgraph" alt=""/></div>
+<map name="class_q_c_p_color_gradient_aa0aeec1528241728b9671bf8e60b1622_cgraph" id="class_q_c_p_color_gradient_aa0aeec1528241728b9671bf8e60b1622_cgraph">
+<area shape="rect" id="node2" href="class_q_c_p_color_gradient.html#a939213e85f0d1279519d555c5fcfb6ad" title="QCPColorGradient::clearColor\lStops" alt="" coords="267,5,476,47"/><area shape="rect" id="node3" href="class_q_c_p_color_gradient.html#aa13fda86406e1d896a465a409ae63b38" title="QCPColorGradient::setColor\lInterpolation" alt="" coords="272,71,471,112"/><area shape="rect" id="node4" href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e" title="QCPColorGradient::setColor\lStopAt" alt="" coords="272,136,471,177"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_q_c_p_color_gradient_aa0aeec1528241728b9671bf8e60b1622_icgraph.png" border="0" usemap="#class_q_c_p_color_gradient_aa0aeec1528241728b9671bf8e60b1622_icgraph" alt=""/></div>
+<map name="class_q_c_p_color_gradient_aa0aeec1528241728b9671bf8e60b1622_icgraph" id="class_q_c_p_color_gradient_aa0aeec1528241728b9671bf8e60b1622_icgraph">
+<area shape="rect" id="node2" href="class_q_c_p_color_gradient.html#a546e44df5fa1846400a582c041361c85" title="QCPColorGradient::QCPColor\lGradient" alt="" coords="267,5,472,47"/></map>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="aa13fda86406e1d896a465a409ae63b38"></a>
@@ -418,6 +472,15 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>mColorBufferInvalidat
 </div><div class="memdoc">
 <p>Sets whether the colors in between the configured color stops (see <a class="el" href="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e">setColorStopAt</a>) shall be interpolated linearly in <a class="el" href="struct_r_g_b.html">RGB</a> or in HSV color space.</p>
 <p>For example, a sweep in <a class="el" href="struct_r_g_b.html">RGB</a> space from red to green will have a muddy brown intermediate color, whereas in HSV space the intermediate color is yellow. </p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_q_c_p_color_gradient_aa13fda86406e1d896a465a409ae63b38_icgraph.png" border="0" usemap="#class_q_c_p_color_gradient_aa13fda86406e1d896a465a409ae63b38_icgraph" alt=""/></div>
+<map name="class_q_c_p_color_gradient_aa13fda86406e1d896a465a409ae63b38_icgraph" id="class_q_c_p_color_gradient_aa13fda86406e1d896a465a409ae63b38_icgraph">
+<area shape="rect" id="node2" href="class_q_c_p_color_gradient.html#aa0aeec1528241728b9671bf8e60b1622" title="QCPColorGradient::loadPreset" alt="" coords="252,13,465,39"/><area shape="rect" id="node3" href="class_q_c_p_color_gradient.html#a546e44df5fa1846400a582c041361c85" title="QCPColorGradient::QCPColor\lGradient" alt="" coords="513,5,719,47"/></map>
+</div>
+</p>
 
 </div>
 </div>
@@ -446,6 +509,15 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>mColorBufferInvalidat
 </div><div class="memdoc">
 <p>Sets the <em>color</em> the gradient will have at the specified <em>position</em> (from 0 to 1). In between these color stops, the color is interpolated according to <a class="el" href="class_q_c_p_color_gradient.html#aa13fda86406e1d896a465a409ae63b38">setColorInterpolation</a>.</p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_c_p_color_gradient.html#a724e828aa6f0ba5011a9392477c35d3a">setColorStops</a>, <a class="el" href="class_q_c_p_color_gradient.html#a939213e85f0d1279519d555c5fcfb6ad">clearColorStops</a> </dd></dl>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_q_c_p_color_gradient_a3b48be5e78079db1bb2a1188a4c3390e_icgraph.png" border="0" usemap="#class_q_c_p_color_gradient_a3b48be5e78079db1bb2a1188a4c3390e_icgraph" alt=""/></div>
+<map name="class_q_c_p_color_gradient_a3b48be5e78079db1bb2a1188a4c3390e_icgraph" id="class_q_c_p_color_gradient_a3b48be5e78079db1bb2a1188a4c3390e_icgraph">
+<area shape="rect" id="node2" href="class_q_c_p_color_gradient.html#aa0aeec1528241728b9671bf8e60b1622" title="QCPColorGradient::loadPreset" alt="" coords="252,13,465,39"/><area shape="rect" id="node4" href="class_q_c_p_color_gradient.html#abe04e1d1ccab3d7aa78f2924faed4916" title="QCPColorGradient::inverted" alt="" coords="260,63,457,90"/><area shape="rect" id="node3" href="class_q_c_p_color_gradient.html#a546e44df5fa1846400a582c041361c85" title="QCPColorGradient::QCPColor\lGradient" alt="" coords="513,5,719,47"/></map>
+</div>
+</p>
 
 </div>
 </div>
@@ -517,7 +589,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>mColorBufferInvalidat
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jun 16 2015 19:06:46 for Voice analyze by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jun 18 2015 02:00:46 for Voice analyze by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

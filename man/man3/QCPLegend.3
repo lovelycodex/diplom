@@ -1,0 +1,492 @@
+.TH "QCPLegend" 3 "Thu Jun 18 2015" "Version v.2" "Voice analyze" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+QCPLegend \- Manages a legend inside a \fBQCustomPlot\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBSelectablePart\fP { \fBspNone\fP = 0x000, \fBspLegendBox\fP = 0x001, \fBspItems\fP = 0x002 }"
+.br
+.in -1c
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBselectionChanged\fP (QCPLegend::SelectableParts parts)"
+.br
+.ti -1c
+.RI "void \fBselectableChanged\fP (QCPLegend::SelectableParts parts)"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQCPLegend\fP ()"
+.br
+.ti -1c
+.RI "QPen \fBborderPen\fP () const "
+.br
+.ti -1c
+.RI "QBrush \fBbrush\fP () const "
+.br
+.ti -1c
+.RI "QFont \fBfont\fP () const "
+.br
+.ti -1c
+.RI "QColor \fBtextColor\fP () const "
+.br
+.ti -1c
+.RI "QSize \fBiconSize\fP () const "
+.br
+.ti -1c
+.RI "int \fBiconTextPadding\fP () const "
+.br
+.ti -1c
+.RI "QPen \fBiconBorderPen\fP () const "
+.br
+.ti -1c
+.RI "SelectableParts \fBselectableParts\fP () const "
+.br
+.ti -1c
+.RI "SelectableParts \fBselectedParts\fP () const "
+.br
+.ti -1c
+.RI "QPen \fBselectedBorderPen\fP () const "
+.br
+.ti -1c
+.RI "QPen \fBselectedIconBorderPen\fP () const "
+.br
+.ti -1c
+.RI "QBrush \fBselectedBrush\fP () const "
+.br
+.ti -1c
+.RI "QFont \fBselectedFont\fP () const "
+.br
+.ti -1c
+.RI "QColor \fBselectedTextColor\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetBorderPen\fP (const QPen &pen)"
+.br
+.ti -1c
+.RI "void \fBsetBrush\fP (const QBrush &brush)"
+.br
+.ti -1c
+.RI "void \fBsetFont\fP (const QFont &font)"
+.br
+.ti -1c
+.RI "void \fBsetTextColor\fP (const QColor &color)"
+.br
+.ti -1c
+.RI "void \fBsetIconSize\fP (const QSize &size)"
+.br
+.ti -1c
+.RI "void \fBsetIconSize\fP (int width, int height)"
+.br
+.ti -1c
+.RI "void \fBsetIconTextPadding\fP (int padding)"
+.br
+.ti -1c
+.RI "void \fBsetIconBorderPen\fP (const QPen &pen)"
+.br
+.ti -1c
+.RI "Q_SLOT void \fBsetSelectableParts\fP (const SelectableParts &selectableParts)"
+.br
+.ti -1c
+.RI "Q_SLOT void \fBsetSelectedParts\fP (const SelectableParts &selectedParts)"
+.br
+.ti -1c
+.RI "void \fBsetSelectedBorderPen\fP (const QPen &pen)"
+.br
+.ti -1c
+.RI "void \fBsetSelectedIconBorderPen\fP (const QPen &pen)"
+.br
+.ti -1c
+.RI "void \fBsetSelectedBrush\fP (const QBrush &brush)"
+.br
+.ti -1c
+.RI "void \fBsetSelectedFont\fP (const QFont &font)"
+.br
+.ti -1c
+.RI "void \fBsetSelectedTextColor\fP (const QColor &color)"
+.br
+.ti -1c
+.RI "virtual double \fBselectTest\fP (const QPointF &pos, bool onlySelectable, QVariant *details=0) const "
+.br
+.ti -1c
+.RI "\fBQCPAbstractLegendItem\fP * \fBitem\fP (int index) const "
+.br
+.ti -1c
+.RI "\fBQCPPlottableLegendItem\fP * \fBitemWithPlottable\fP (const \fBQCPAbstractPlottable\fP *plottable) const "
+.br
+.ti -1c
+.RI "int \fBitemCount\fP () const "
+.br
+.ti -1c
+.RI "bool \fBhasItem\fP (\fBQCPAbstractLegendItem\fP *\fBitem\fP) const "
+.br
+.ti -1c
+.RI "bool \fBhasItemWithPlottable\fP (const \fBQCPAbstractPlottable\fP *plottable) const "
+.br
+.ti -1c
+.RI "bool \fBaddItem\fP (\fBQCPAbstractLegendItem\fP *\fBitem\fP)"
+.br
+.ti -1c
+.RI "bool \fBremoveItem\fP (int index)"
+.br
+.ti -1c
+.RI "bool \fBremoveItem\fP (\fBQCPAbstractLegendItem\fP *\fBitem\fP)"
+.br
+.ti -1c
+.RI "void \fBclearItems\fP ()"
+.br
+.ti -1c
+.RI "QList< \fBQCPAbstractLegendItem\fP * > \fBselectedItems\fP () const "
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBparentPlotInitialized\fP (\fBQCustomPlot\fP *parentPlot)"
+.br
+.ti -1c
+.RI "virtual \fBQCP::Interaction\fP \fBselectionCategory\fP () const "
+.br
+.ti -1c
+.RI "virtual void \fBapplyDefaultAntialiasingHint\fP (\fBQCPPainter\fP *painter) const "
+.br
+.ti -1c
+.RI "virtual void \fBdraw\fP (\fBQCPPainter\fP *painter)"
+.br
+.ti -1c
+.RI "virtual void \fBselectEvent\fP (QMouseEvent *event, bool additive, const QVariant &details, bool *selectionStateChanged)"
+.br
+.ti -1c
+.RI "virtual void \fBdeselectEvent\fP (bool *selectionStateChanged)"
+.br
+.ti -1c
+.RI "QPen \fBgetBorderPen\fP () const "
+.br
+.ti -1c
+.RI "QBrush \fBgetBrush\fP () const "
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "QPen \fBmBorderPen\fP"
+.br
+.ti -1c
+.RI "QPen \fBmIconBorderPen\fP"
+.br
+.ti -1c
+.RI "QBrush \fBmBrush\fP"
+.br
+.ti -1c
+.RI "QFont \fBmFont\fP"
+.br
+.ti -1c
+.RI "QColor \fBmTextColor\fP"
+.br
+.ti -1c
+.RI "QSize \fBmIconSize\fP"
+.br
+.ti -1c
+.RI "int \fBmIconTextPadding\fP"
+.br
+.ti -1c
+.RI "SelectableParts \fBmSelectedParts\fP"
+.br
+.ti -1c
+.RI "SelectableParts \fBmSelectableParts\fP"
+.br
+.ti -1c
+.RI "QPen \fBmSelectedBorderPen\fP"
+.br
+.ti -1c
+.RI "QPen \fBmSelectedIconBorderPen\fP"
+.br
+.ti -1c
+.RI "QBrush \fBmSelectedBrush\fP"
+.br
+.ti -1c
+.RI "QFont \fBmSelectedFont\fP"
+.br
+.ti -1c
+.RI "QColor \fBmSelectedTextColor\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBQCustomPlot\fP"
+.br
+.ti -1c
+.RI "class \fBQCPAbstractLegendItem\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Manages a legend inside a \fBQCustomPlot\fP\&. 
+
+A legend is a small box somewhere in the plot which lists plottables with their name and icon\&.
+.PP
+Normally, the legend is populated by calling \fBQCPAbstractPlottable::addToLegend\fP\&. The respective legend item can be removed with \fBQCPAbstractPlottable::removeFromLegend\fP\&. However, \fBQCPLegend\fP also offers an interface to add and manipulate legend items directly: \fBitem\fP, \fBitemWithPlottable\fP, \fBitemCount\fP, \fBaddItem\fP, \fBremoveItem\fP, etc\&.
+.PP
+The \fBQCPLegend\fP derives from \fBQCPLayoutGrid\fP and as such can be placed in any position a \fBQCPLayoutElement\fP may be positioned\&. The legend items are themselves QCPLayoutElements which are placed in the grid layout of the legend\&. \fBQCPLegend\fP only adds an interface specialized for handling child elements of type \fBQCPAbstractLegendItem\fP, as mentioned above\&. In principle, any other layout elements may also be added to a legend via the normal \fBQCPLayoutGrid\fP interface\&. However, the QCPAbstractLegendItem-Interface will ignore those elements (e\&.g\&. \fBitemCount\fP will only return the number of items with QCPAbstractLegendItems type)\&.
+.PP
+By default, every \fBQCustomPlot\fP has one legend (\fBQCustomPlot::legend\fP) which is placed in the inset layout of the main axis rect (\fBQCPAxisRect::insetLayout\fP)\&. To move the legend to another position inside the axis rect, use the methods of the \fBQCPLayoutInset\fP\&. To move the legend outside of the axis rect, place it anywhere else with the QCPLayout/QCPLayoutElement interface\&. 
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBQCPLegend::SelectablePart\fP"
+Defines the selectable parts of a legend
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetSelectedParts\fP, \fBsetSelectableParts\fP 
+.RE
+.PP
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIspNone \fP\fP
+\fC0x000\fP None 
+.TP
+\fB\fIspLegendBox \fP\fP
+\fC0x001\fP The legend box (frame) 
+.TP
+\fB\fIspItems \fP\fP
+\fC0x002\fP Legend items individually (see \fBselectedItems\fP) 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "QCPLegend::QCPLegend ()\fC [explicit]\fP"
+Constructs a new \fBQCPLegend\fP instance with \fIparentPlot\fP as the containing plot and default values\&.
+.PP
+Note that by default, \fBQCustomPlot\fP already contains a legend ready to be used as \fBQCustomPlot::legend\fP 
+.SH "Member Function Documentation"
+.PP 
+.SS "bool QCPLegend::addItem (\fBQCPAbstractLegendItem\fP * item)"
+Adds \fIitem\fP to the legend, if it's not present already\&.
+.PP
+Returns true on sucess, i\&.e\&. if the item wasn't in the list already and has been successfuly added\&.
+.PP
+The legend takes ownership of the item\&. 
+.SS "void QCPLegend::clearItems ()"
+Removes all items from the legend\&. 
+.SS "bool QCPLegend::hasItem (\fBQCPAbstractLegendItem\fP * item) const"
+Returns whether the legend contains \fIitm\fP\&. 
+.SS "bool QCPLegend::hasItemWithPlottable (const \fBQCPAbstractPlottable\fP * plottable) const"
+Returns whether the legend contains a \fBQCPPlottableLegendItem\fP which is associated with \fIplottable\fP (e\&.g\&. a \fBQCPGraph\fP*)\&. If such an item isn't in the legend, returns false\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBitemWithPlottable\fP 
+.RE
+.PP
+
+.SS "\fBQCPAbstractLegendItem\fP * QCPLegend::item (int index) const"
+Returns the item with index \fIi\fP\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBitemCount\fP 
+.RE
+.PP
+
+.SS "int QCPLegend::itemCount () const"
+Returns the number of items currently in the legend\&. 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBitem\fP 
+.RE
+.PP
+
+.SS "\fBQCPPlottableLegendItem\fP * QCPLegend::itemWithPlottable (const \fBQCPAbstractPlottable\fP * plottable) const"
+Returns the \fBQCPPlottableLegendItem\fP which is associated with \fIplottable\fP (e\&.g\&. a \fBQCPGraph\fP*)\&. If such an item isn't in the legend, returns 0\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBhasItemWithPlottable\fP 
+.RE
+.PP
+
+.SS "bool QCPLegend::removeItem (int index)"
+Removes the item with index \fIindex\fP from the legend\&.
+.PP
+Returns true, if successful\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBitemCount\fP, \fBclearItems\fP 
+.RE
+.PP
+
+.SS "bool QCPLegend::removeItem (\fBQCPAbstractLegendItem\fP * item)"
+This is an overloaded member function, provided for convenience\&. It differs from the above function only in what argument(s) it accepts\&.
+.PP
+Removes \fIitem\fP from the legend\&.
+.PP
+Returns true, if successful\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBclearItems\fP 
+.RE
+.PP
+
+.SS "QList< \fBQCPAbstractLegendItem\fP * > QCPLegend::selectedItems () const"
+Returns the legend items that are currently selected\&. If no items are selected, the list is empty\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBQCPAbstractLegendItem::setSelected\fP, setSelectable 
+.RE
+.PP
+
+.SS "void QCPLegend::selectionChanged (QCPLegend::SelectableParts selection)\fC [signal]\fP"
+This signal is emitted when the selection state of this legend has changed\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetSelectedParts\fP, \fBsetSelectableParts\fP 
+.RE
+.PP
+
+.SS "double QCPLegend::selectTest (const QPointF & pos, bool onlySelectable, QVariant * details = \fC0\fP) const\fC [virtual]\fP"
+Layout elements are sensitive to events inside their outer rect\&. If \fIpos\fP is within the outer rect, this method returns a value corresponding to 0\&.99 times the parent plot's selection tolerance\&. However, layout elements are not selectable by default\&. So if \fIonlySelectable\fP is true, -1\&.0 is returned\&.
+.PP
+See \fBQCPLayerable::selectTest\fP for a general explanation of this virtual method\&.
+.PP
+\fBQCPLayoutElement\fP subclasses may reimplement this method to provide more specific selection test behaviour\&. 
+.PP
+Reimplemented from \fBQCPLayoutElement\fP\&.
+.SS "void QCPLegend::setBorderPen (const QPen & pen)"
+Sets the pen, the border of the entire legend is drawn with\&. 
+.SS "void QCPLegend::setBrush (const QBrush & brush)"
+Sets the brush of the legend background\&. 
+.SS "void QCPLegend::setFont (const QFont & font)"
+Sets the default font of legend text\&. Legend items that draw text (e\&.g\&. the name of a graph) will use this font by default\&. However, a different font can be specified on a per-item-basis by accessing the specific legend item\&.
+.PP
+This function will also set \fIfont\fP on all already existing legend items\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBQCPAbstractLegendItem::setFont\fP 
+.RE
+.PP
+
+.SS "void QCPLegend::setIconBorderPen (const QPen & pen)"
+Sets the pen used to draw a border around each legend icon\&. Legend items that draw an icon (e\&.g\&. a visual representation of the graph) will use this pen by default\&.
+.PP
+If no border is wanted, set this to \fIQt::NoPen\fP\&. 
+.SS "void QCPLegend::setIconSize (const QSize & size)"
+Sets the size of legend icons\&. Legend items that draw an icon (e\&.g\&. a visual representation of the graph) will use this size by default\&. 
+.SS "void QCPLegend::setIconSize (int width, int height)"
+This is an overloaded member function, provided for convenience\&. It differs from the above function only in what argument(s) it accepts\&. 
+.SS "void QCPLegend::setIconTextPadding (int padding)"
+Sets the horizontal space in pixels between the legend icon and the text next to it\&. Legend items that draw an icon (e\&.g\&. a visual representation of the graph) and text (e\&.g\&. the name of the graph) will use this space by default\&. 
+.SS "void QCPLegend::setSelectableParts (const SelectableParts & selectable)"
+Sets whether the user can (de-)select the parts in \fIselectable\fP by clicking on the \fBQCustomPlot\fP surface\&. (When \fBQCustomPlot::setInteractions\fP contains \fBQCP::iSelectLegend\fP\&.)
+.PP
+However, even when \fIselectable\fP is set to a value not allowing the selection of a specific part, it is still possible to set the selection of this part manually, by calling \fBsetSelectedParts\fP directly\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBSelectablePart\fP, \fBsetSelectedParts\fP 
+.RE
+.PP
+
+.SS "void QCPLegend::setSelectedBorderPen (const QPen & pen)"
+When the legend box is selected, this pen is used to draw the border instead of the normal pen set via \fBsetBorderPen\fP\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetSelectedParts\fP, \fBsetSelectableParts\fP, \fBsetSelectedBrush\fP 
+.RE
+.PP
+
+.SS "void QCPLegend::setSelectedBrush (const QBrush & brush)"
+When the legend box is selected, this brush is used to draw the legend background instead of the normal brush set via \fBsetBrush\fP\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetSelectedParts\fP, \fBsetSelectableParts\fP, \fBsetSelectedBorderPen\fP 
+.RE
+.PP
+
+.SS "void QCPLegend::setSelectedFont (const QFont & font)"
+Sets the default font that is used by legend items when they are selected\&.
+.PP
+This function will also set \fIfont\fP on all already existing legend items\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetFont\fP, \fBQCPAbstractLegendItem::setSelectedFont\fP 
+.RE
+.PP
+
+.SS "void QCPLegend::setSelectedIconBorderPen (const QPen & pen)"
+Sets the pen legend items will use to draw their icon borders, when they are selected\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetSelectedParts\fP, \fBsetSelectableParts\fP, \fBsetSelectedFont\fP 
+.RE
+.PP
+
+.SS "void QCPLegend::setSelectedParts (const SelectableParts & selected)"
+Sets the selected state of the respective legend parts described by \fBSelectablePart\fP\&. When a part is selected, it uses a different pen/font and brush\&. If some legend items are selected and \fIselected\fP doesn't contain \fBspItems\fP, those items become deselected\&.
+.PP
+The entire selection mechanism is handled automatically when \fBQCustomPlot::setInteractions\fP contains iSelectLegend\&. You only need to call this function when you wish to change the selection state manually\&.
+.PP
+This function can change the selection state of a part even when \fBsetSelectableParts\fP was set to a value that actually excludes the part\&.
+.PP
+emits the \fBselectionChanged\fP signal when \fIselected\fP is different from the previous selection state\&.
+.PP
+Note that it doesn't make sense to set the selected state \fBspItems\fP here when it wasn't set before, because there's no way to specify which exact items to newly select\&. Do this by calling \fBQCPAbstractLegendItem::setSelected\fP directly on the legend item you wish to select\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBSelectablePart\fP, \fBsetSelectableParts\fP, \fBselectTest\fP, \fBsetSelectedBorderPen\fP, \fBsetSelectedIconBorderPen\fP, \fBsetSelectedBrush\fP, \fBsetSelectedFont\fP 
+.RE
+.PP
+
+.SS "void QCPLegend::setSelectedTextColor (const QColor & color)"
+Sets the default text color that is used by legend items when they are selected\&.
+.PP
+This function will also set \fIcolor\fP on all already existing legend items\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetTextColor\fP, \fBQCPAbstractLegendItem::setSelectedTextColor\fP 
+.RE
+.PP
+
+.SS "void QCPLegend::setTextColor (const QColor & color)"
+Sets the default color of legend text\&. Legend items that draw text (e\&.g\&. the name of a graph) will use this color by default\&. However, a different colors can be specified on a per-item-basis by accessing the specific legend item\&.
+.PP
+This function will also set \fIcolor\fP on all already existing legend items\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBQCPAbstractLegendItem::setTextColor\fP 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Voice analyze from the source code\&.

@@ -1,0 +1,9 @@
+<map id="QCPLayoutGrid::addElement" name="QCPLayoutGrid::addElement">
+<area shape="rect" id="node2" href="$class_q_c_p_layout_grid.html#ab0cf4f7edc9414a3bfaddac0f46dc0a0" title="QCPLayoutGrid::hasElement" alt="" coords="256,56,459,83"/>
+<area shape="rect" id="node5" href="$class_q_c_p_layout_element.html#a6235f5384db871fc6e3387a1bc558b0d" title="QCPLayoutElement::layout" alt="" coords="261,107,453,133"/>
+<area shape="rect" id="node6" href="$class_q_c_p_layout.html#ada26cd17e56472b0b4d7fbbc96873e4c" title="QCPLayout::take" alt="" coords="293,157,421,184"/>
+<area shape="rect" id="node7" href="$class_q_c_p_layout_grid.html#a886c0dcbabd51a45da399e044552b685" title="QCPLayoutGrid::expandTo" alt="" coords="263,5,451,32"/>
+<area shape="rect" id="node8" href="$class_q_c_p_layout_grid.html#a525f25e6ba43ee228151d074251b4e6a" title="QCPLayoutGrid::element" alt="" coords="268,208,447,235"/>
+<area shape="rect" id="node3" href="$class_q_c_p_layout_grid.html#af8e6c7a05864ebe610c87756c7b9079c" title="QCPLayoutGrid::rowCount" alt="" coords="519,5,705,32"/>
+<area shape="rect" id="node4" href="$class_q_c_p_layout_grid.html#ac39074eafd148b82d0762090f258189e" title="QCPLayoutGrid::columnCount" alt="" coords="507,56,717,83"/>
+</map>

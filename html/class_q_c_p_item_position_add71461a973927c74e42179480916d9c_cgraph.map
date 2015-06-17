@@ -1,0 +1,11 @@
+<map id="QCPItemPosition::setParentAnchorX" name="QCPItemPosition::setParentAnchorX">
+<area shape="rect" id="node2" href="$class_q_c_p_item_position.html#a7b4ffab9946945c0e11cd2352dc2e042" title="QCPItemPosition::parentAnchor" alt="" coords="252,5,475,32"/>
+<area shape="rect" id="node3" href="$class_q_c_p_item_anchor.html#ac54b20120669950255a63587193dbb86" title="QCPItemAnchor::toQCPItem\lPosition" alt="" coords="263,57,463,98"/>
+<area shape="rect" id="node4" href="$class_q_c_p_item_position.html#a2113b2351d6d00457fb3559a4e20c3ea" title="QCPItemPosition::setTypeX" alt="" coords="265,173,461,200"/>
+<area shape="rect" id="node5" href="$class_q_c_p_item_position.html#ae490f9c76ee2ba33752c495d3b6e8fb5" title="QCPItemPosition::pixelPoint" alt="" coords="523,120,720,147"/>
+<area shape="rect" id="node9" href="$class_q_c_p_item_position.html#ab404e56d9ac2ac2df0382c57933a71ef" title="QCPItemPosition::setPixel\lPoint" alt="" coords="529,222,714,263"/>
+<area shape="rect" id="node10" href="$class_q_c_p_item_position.html#aa988ba4e87ab684c9021017dcaba945f" title="QCPItemPosition::setCoords" alt="" coords="768,269,969,296"/>
+<area shape="rect" id="node8" href="$class_q_c_p_item_position.html#aecb709d72c9aa334a7f62e2c9e0b5d60" title="QCPItemPosition::type" alt="" coords="539,171,703,197"/>
+<area shape="rect" id="node6" href="$class_q_c_p_item_anchor.html#ae92def8f9297c5d73f5806c586517bb3" title="QCPItemAnchor::pixelPoint" alt="" coords="773,215,965,241"/>
+<area shape="rect" id="node7" href="$class_q_custom_plot.html#a953ecdbc28018e7e84cb6213ad3d88c2" title="QCustomPlot::viewport" alt="" coords="785,135,952,161"/>
+</map>

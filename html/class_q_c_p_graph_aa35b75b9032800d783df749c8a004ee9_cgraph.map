@@ -1,0 +1,9 @@
+<map id="QCPGraph::rescaleAxes" name="QCPGraph::rescaleAxes">
+<area shape="rect" id="node2" href="$class_q_c_p_graph.html#a2108a729046b0ab6e0516afb249dab13" title="QCPGraph::rescaleKeyAxis" alt="" coords="233,39,424,65"/>
+<area shape="rect" id="node8" href="$class_q_c_p_graph.html#a2ba0e1df416486d7e74299ef8cf68bba" title="QCPGraph::rescaleValueAxis" alt="" coords="227,89,431,116"/>
+<area shape="rect" id="node3" href="$class_q_c_p_axis.html#aebdfea5d44c3a0ad2b4700cd4d25b641" title="QCPAxis::setRange" alt="" coords="479,64,621,91"/>
+<area shape="rect" id="node4" href="$class_q_c_p_range.html#ab38bd4841c77c7bb86c9eea0f142dcc0" title="QCPRange::validRange" alt="" coords="685,5,851,32"/>
+<area shape="rect" id="node5" href="$class_q_c_p_range.html#aaf6a9046e78d91eeb8e89584fe46b034" title="QCPRange::sanitizedForLog\lScale" alt="" coords="669,57,867,98"/>
+<area shape="rect" id="node7" href="$class_q_c_p_range.html#a1ff029704c29a75adbc1dc36cecaf44c" title="QCPRange::sanitizedForLin\lScale" alt="" coords="672,122,864,163"/>
+<area shape="rect" id="node6" href="$class_q_c_p_range.html#af914a7740269b0604d0827c634a878a9" title="QCPRange::normalize" alt="" coords="915,97,1075,124"/>
+</map>

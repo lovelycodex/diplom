@@ -1,0 +1,132 @@
+\section{Widget Class Reference}
+\label{class_widget}\index{Widget@{Widget}}
+
+
+Collaboration diagram for Widget\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=136pt]{class_widget__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Plot\+Spectrum\+Signal} ()\label{class_widget_a9b522925828c2cdaeaee593322c936bc}
+
+\item 
+void {\bfseries Plot\+Kaiser\+Window\+Signal} ()\label{class_widget_abd316c989c14d989bdd63ce1d91682ba}
+
+\item 
+void {\bfseries fill\+\_\+ftt\+\_\+complex\+\_\+\+Signal} ()\label{class_widget_ad9627ed98a7e86aeb8d254d0ea6cc1e6}
+
+\item 
+void {\bfseries post\+\_\+filtering\+\_\+\+Signal} ()\label{class_widget_acd0fd3cc9538d8fc577b9625a151efa3}
+
+\item 
+void {\bfseries liftering\+\_\+\+Signal} ()\label{class_widget_aeb347c6b9284291eeb2c2b2f5848bf60}
+
+\item 
+void {\bfseries kaiser\+\_\+window\+\_\+signal} ()\label{class_widget_a2bcb29f9a8e3cb18b79ae2d05df5c917}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Widget} (Q\+Widget $\ast$parent=0)
+\begin{DoxyCompactList}\small\item\em Default constructor. Set a start up configuration. \end{DoxyCompactList}\item 
+{\bf $\sim$\+Widget} ()\label{class_widget_aa24f66bcbaaec6d458b0980e8c8eae65}
+
+\begin{DoxyCompactList}\small\item\em \doxyref{Widget\+::$\sim$\+Widget}{p.}{class_widget_aa24f66bcbaaec6d458b0980e8c8eae65} Defaul destructor. \end{DoxyCompactList}\item 
+void {\bf start\+Recording} ()\label{class_widget_a506b8a4ce5b5f0b1b652f17a0d6be960}
+
+\begin{DoxyCompactList}\small\item\em Starts the record and set default confuration for audio file. If start record is failure free R\+E\+C\+B\+U\+F is comming. \end{DoxyCompactList}\item 
+void {\bf stop\+Recording} ()
+\begin{DoxyCompactList}\small\item\em No incoming parameters. Get data from R\+C\+H\+A\+N. Creating the stream file. If B\+A\+S\+S\+\_\+\+Stream\+Create\+File is failure colled B\+A\+S\+S\+\_\+\+Free(). \end{DoxyCompactList}\item 
+void {\bf update\+Input\+Info} ()\label{class_widget_a084296318fecbd86f48296d3010b0293}
+
+\begin{DoxyCompactList}\small\item\em \doxyref{Widget\+::update\+Input\+Info}{p.}{class_widget_a084296318fecbd86f48296d3010b0293}. \end{DoxyCompactList}\item 
+void {\bf write\+To\+Disk} ()
+\begin{DoxyCompactList}\small\item\em No incoming parameters. Write recording data to disk. \end{DoxyCompactList}\item 
+float {\bf I0} (float)
+\begin{DoxyCompactList}\small\item\em zeroth order modified Bessel function of the first kind, which has a complex mathematical description. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Widget@{Widget}!Widget@{Widget}}
+\index{Widget@{Widget}!Widget@{Widget}}
+\subsubsection[{Widget}]{\setlength{\rightskip}{0pt plus 5cm}Widget\+::\+Widget (
+\begin{DoxyParamCaption}
+\item[{Q\+Widget $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\label{class_widget_a29531c7f141e461322981b3b579d4590}
+
+
+Default constructor. Set a start up configuration. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Q\+Widget} & $\ast$parent -\/ Link to parent \doxyref{Widget}{p.}{class_widget} (default is null). \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{Widget@{Widget}!I0@{I0}}
+\index{I0@{I0}!Widget@{Widget}}
+\subsubsection[{I0}]{\setlength{\rightskip}{0pt plus 5cm}float Widget\+::\+I0 (
+\begin{DoxyParamCaption}
+\item[{float}]{x}
+\end{DoxyParamCaption}
+)}\label{class_widget_af10aec37d5a2461ef0c4f85bcd36d37b}
+
+
+zeroth order modified Bessel function of the first kind, which has a complex mathematical description. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\index{Widget@{Widget}!stop\+Recording@{stop\+Recording}}
+\index{stop\+Recording@{stop\+Recording}!Widget@{Widget}}
+\subsubsection[{stop\+Recording}]{\setlength{\rightskip}{0pt plus 5cm}void Widget\+::stop\+Recording (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_widget_aa230d039c1746fbc0d13159b6ac0b80e}
+
+
+No incoming parameters. Get data from R\+C\+H\+A\+N. Creating the stream file. If B\+A\+S\+S\+\_\+\+Stream\+Create\+File is failure colled B\+A\+S\+S\+\_\+\+Free(). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em No} & params \\
+\hline
+\end{DoxyParams}
+\index{Widget@{Widget}!write\+To\+Disk@{write\+To\+Disk}}
+\index{write\+To\+Disk@{write\+To\+Disk}!Widget@{Widget}}
+\subsubsection[{write\+To\+Disk}]{\setlength{\rightskip}{0pt plus 5cm}void Widget\+::write\+To\+Disk (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_widget_aaf7b3689efa3f4b44af59bd9d514ff94}
+
+
+No incoming parameters. Write recording data to disk. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em No} & param \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+widget.\+h\item 
+widget.\+cpp\end{DoxyCompactItemize}

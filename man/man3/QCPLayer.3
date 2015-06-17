@@ -1,0 +1,121 @@
+.TH "QCPLayer" 3 "Thu Jun 18 2015" "Version v.2" "Voice analyze" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+QCPLayer \- A layer that may contain objects, to control the rendering order\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQCPLayer\fP (\fBQCustomPlot\fP *parentPlot, const QString &layerName)"
+.br
+.ti -1c
+.RI "\fBQCustomPlot\fP * \fBparentPlot\fP () const "
+.br
+.ti -1c
+.RI "QString \fBname\fP () const "
+.br
+.ti -1c
+.RI "int \fBindex\fP () const "
+.br
+.ti -1c
+.RI "QList< \fBQCPLayerable\fP * > \fBchildren\fP () const "
+.br
+.ti -1c
+.RI "bool \fBvisible\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetVisible\fP (bool visible)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBaddChild\fP (\fBQCPLayerable\fP *layerable, bool prepend)"
+.br
+.ti -1c
+.RI "void \fBremoveChild\fP (\fBQCPLayerable\fP *layerable)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBQCustomPlot\fP * \fBmParentPlot\fP"
+.br
+.ti -1c
+.RI "QString \fBmName\fP"
+.br
+.ti -1c
+.RI "int \fBmIndex\fP"
+.br
+.ti -1c
+.RI "QList< \fBQCPLayerable\fP * > \fBmChildren\fP"
+.br
+.ti -1c
+.RI "bool \fBmVisible\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBQCustomPlot\fP"
+.br
+.ti -1c
+.RI "class \fBQCPLayerable\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+A layer that may contain objects, to control the rendering order\&. 
+
+The Layering system of \fBQCustomPlot\fP is the mechanism to control the rendering order of the elements inside the plot\&.
+.PP
+It is based on the two classes \fBQCPLayer\fP and \fBQCPLayerable\fP\&. \fBQCustomPlot\fP holds an ordered list of one or more instances of \fBQCPLayer\fP (see \fBQCustomPlot::addLayer\fP, \fBQCustomPlot::layer\fP, \fBQCustomPlot::moveLayer\fP, etc\&.)\&. When replotting, \fBQCustomPlot\fP goes through the list of layers bottom to top and successively draws the layerables of the layers\&.
+.PP
+A \fBQCPLayer\fP contains an ordered list of \fBQCPLayerable\fP instances\&. \fBQCPLayerable\fP is an abstract base class from which almost all visible objects derive, like axes, grids, graphs, items, etc\&.
+.PP
+Initially, \fBQCustomPlot\fP has five layers: 'background', 'grid', 'main', 'axes' and 'legend' (in that order)\&. The top two layers 'axes' and 'legend' contain the default axes and legend, so they will be drawn on top\&. In the middle, there is the 'main' layer\&. It is initially empty and set as the current layer (see \fBQCustomPlot::setCurrentLayer\fP)\&. This means, all new plottables, items etc\&. are created on this layer by default\&. Then comes the 'grid' layer which contains the \fBQCPGrid\fP instances (which belong tightly to \fBQCPAxis\fP, see \fBQCPAxis::grid\fP)\&. The Axis rect background shall be drawn behind everything else, thus the default \fBQCPAxisRect\fP instance is placed on the 'background' layer\&. Of course, the layer affiliation of the individual objects can be changed as required (\fBQCPLayerable::setLayer\fP)\&.
+.PP
+Controlling the ordering of objects is easy: Create a new layer in the position you want it to be, e\&.g\&. above 'main', with \fBQCustomPlot::addLayer\fP\&. Then set the current layer with \fBQCustomPlot::setCurrentLayer\fP to that new layer and finally create the objects normally\&. They will be placed on the new layer automatically, due to the current layer setting\&. Alternatively you could have also ignored the current layer setting and just moved the objects with \fBQCPLayerable::setLayer\fP to the desired layer after creating them\&.
+.PP
+It is also possible to move whole layers\&. For example, If you want the grid to be shown in front of all plottables/items on the 'main' layer, just move it above 'main' with \fBQCustomPlot::moveLayer\fP\&.
+.PP
+The rendering order within one layer is simply by order of creation or insertion\&. The item created last (or added last to the layer), is drawn on top of all other objects on that layer\&.
+.PP
+When a layer is deleted, the objects on it are not deleted with it, but fall on the layer below the deleted layer, see \fBQCustomPlot::removeLayer\fP\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "QCPLayer::QCPLayer (\fBQCustomPlot\fP * parentPlot, const QString & layerName)"
+Creates a new \fBQCPLayer\fP instance\&.
+.PP
+Normally you shouldn't directly instantiate layers, use \fBQCustomPlot::addLayer\fP instead\&.
+.PP
+\fBWarning:\fP
+.RS 4
+It is not checked that \fIlayerName\fP is actually a unique layer name in \fIparentPlot\fP\&. This check is only performed by \fBQCustomPlot::addLayer\fP\&. 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "QList< \fBQCPLayerable\fP * > QCPLayer::children () const\fC [inline]\fP"
+Returns a list of all layerables on this layer\&. The order corresponds to the rendering order: layerables with higher indices are drawn above layerables with lower indices\&. 
+.SS "int QCPLayer::index () const\fC [inline]\fP"
+Returns the index this layer has in the \fBQCustomPlot\fP\&. The index is the integer number by which this layer can be accessed via \fBQCustomPlot::layer\fP\&.
+.PP
+Layers with higher indices will be drawn above layers with lower indices\&. 
+.SS "void QCPLayer::setVisible (bool visible)"
+Sets whether this layer is visible or not\&. If \fIvisible\fP is set to false, all layerables on this layer will be invisible\&.
+.PP
+This function doesn't change the visibility property of the layerables (\fBQCPLayerable::setVisible\fP), but the \fBQCPLayerable::realVisibility\fP of each layerable takes the visibility of the parent layer into account\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Voice analyze from the source code\&.

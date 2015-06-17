@@ -1,0 +1,154 @@
+\section{Q\+C\+P\+Item\+Anchor Class Reference}
+\label{class_q_c_p_item_anchor}\index{Q\+C\+P\+Item\+Anchor@{Q\+C\+P\+Item\+Anchor}}
+
+
+An anchor of an item to which positions can be attached to.  
+
+
+
+
+Collaboration diagram for Q\+C\+P\+Item\+Anchor\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_item_anchor__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Q\+C\+P\+Item\+Anchor} ({\bf Q\+Custom\+Plot} $\ast$parent\+Plot, {\bf Q\+C\+P\+Abstract\+Item} $\ast$parent\+Item, const Q\+String name, int anchor\+Id=-\/1)
+\item 
+Q\+String {\bfseries name} () const \label{class_q_c_p_item_anchor_ac93984042a58c875e76847dc3e5f75fe}
+
+\item 
+virtual Q\+Point\+F {\bf pixel\+Point} () const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf Q\+C\+P\+Item\+Position} $\ast$ {\bf to\+Q\+C\+P\+Item\+Position} ()
+\item 
+void {\bfseries add\+Child\+X} ({\bf Q\+C\+P\+Item\+Position} $\ast$pos)\label{class_q_c_p_item_anchor_aef15daa640debfb11b0aeaa2116c6fbc}
+
+\item 
+void {\bfseries remove\+Child\+X} ({\bf Q\+C\+P\+Item\+Position} $\ast$pos)\label{class_q_c_p_item_anchor_a230b1d494cda63458e289bbe1b642599}
+
+\item 
+void {\bfseries add\+Child\+Y} ({\bf Q\+C\+P\+Item\+Position} $\ast$pos)\label{class_q_c_p_item_anchor_af05dc56f24536f0c7a9a0f57b58cea67}
+
+\item 
+void {\bfseries remove\+Child\+Y} ({\bf Q\+C\+P\+Item\+Position} $\ast$pos)\label{class_q_c_p_item_anchor_aa2394911d8fff3bd958b9f4f1994b64d}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Q\+String {\bfseries m\+Name}\label{class_q_c_p_item_anchor_a23ad4d0ab0d2cbb41a7baf05bcf996ec}
+
+\item 
+{\bf Q\+Custom\+Plot} $\ast$ {\bfseries m\+Parent\+Plot}\label{class_q_c_p_item_anchor_a59b968410831ba91a25cc75a77dde6f5}
+
+\item 
+{\bf Q\+C\+P\+Abstract\+Item} $\ast$ {\bfseries m\+Parent\+Item}\label{class_q_c_p_item_anchor_a80fad480ad3bb980446ed6ebc00818ae}
+
+\item 
+int {\bfseries m\+Anchor\+Id}\label{class_q_c_p_item_anchor_a00c62070333e8345976b579676ad3997}
+
+\item 
+Q\+Set$<$ {\bf Q\+C\+P\+Item\+Position} $\ast$ $>$ {\bfseries m\+Children\+X}\label{class_q_c_p_item_anchor_a3c0bfd6e50f3b48e2a9b3824695b20f7}
+
+\item 
+Q\+Set$<$ {\bf Q\+C\+P\+Item\+Position} $\ast$ $>$ {\bfseries m\+Children\+Y}\label{class_q_c_p_item_anchor_a3abe4eebd0683454d81c8341df6f7115}
+
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries Q\+C\+P\+Item\+Position}\label{class_q_c_p_item_anchor_aa9b8ddc062778e202a0be06a57d18d17}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+An anchor of an item to which positions can be attached to. 
+
+An item (\doxyref{Q\+C\+P\+Abstract\+Item}{p.}{class_q_c_p_abstract_item}) may have one or more anchors. Unlike \doxyref{Q\+C\+P\+Item\+Position}{p.}{class_q_c_p_item_position}, an anchor doesn\textquotesingle{}t control anything on its item, but provides a way to tie other items via their positions to the anchor.
+
+For example, a \doxyref{Q\+C\+P\+Item\+Rect}{p.}{class_q_c_p_item_rect} is defined by its positions {\itshape top\+Left} and {\itshape bottom\+Right}. Additionally it has various anchors like {\itshape top}, {\itshape top\+Right} or {\itshape bottom\+Left} etc. So you can attach the {\itshape start} (which is a \doxyref{Q\+C\+P\+Item\+Position}{p.}{class_q_c_p_item_position}) of a \doxyref{Q\+C\+P\+Item\+Line}{p.}{class_q_c_p_item_line} to one of the anchors by calling \doxyref{Q\+C\+P\+Item\+Position\+::set\+Parent\+Anchor}{p.}{class_q_c_p_item_position_ac094d67a95d2dceafa0d50b9db3a7e51} on {\itshape start}, passing the wanted anchor of the \doxyref{Q\+C\+P\+Item\+Rect}{p.}{class_q_c_p_item_rect}. This way the start of the line will now always follow the respective anchor location on the rect item.
+
+Note that \doxyref{Q\+C\+P\+Item\+Position}{p.}{class_q_c_p_item_position} derives from \doxyref{Q\+C\+P\+Item\+Anchor}{p.}{class_q_c_p_item_anchor}, so every position can also serve as an anchor to other positions.
+
+To learn how to provide anchors in your own item subclasses, see the subclassing section of the \doxyref{Q\+C\+P\+Abstract\+Item}{p.}{class_q_c_p_abstract_item} documentation. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Q\+C\+P\+Item\+Anchor@{Q\+C\+P\+Item\+Anchor}!Q\+C\+P\+Item\+Anchor@{Q\+C\+P\+Item\+Anchor}}
+\index{Q\+C\+P\+Item\+Anchor@{Q\+C\+P\+Item\+Anchor}!Q\+C\+P\+Item\+Anchor@{Q\+C\+P\+Item\+Anchor}}
+\subsubsection[{Q\+C\+P\+Item\+Anchor}]{\setlength{\rightskip}{0pt plus 5cm}Q\+C\+P\+Item\+Anchor\+::\+Q\+C\+P\+Item\+Anchor (
+\begin{DoxyParamCaption}
+\item[{{\bf Q\+Custom\+Plot} $\ast$}]{parent\+Plot, }
+\item[{{\bf Q\+C\+P\+Abstract\+Item} $\ast$}]{parent\+Item, }
+\item[{const Q\+String}]{name, }
+\item[{int}]{anchor\+Id = {\ttfamily -\/1}}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_item_anchor_aeb6b681d2bf324db40a915d32ec5624f}
+Creates a new \doxyref{Q\+C\+P\+Item\+Anchor}{p.}{class_q_c_p_item_anchor}. You shouldn\textquotesingle{}t create \doxyref{Q\+C\+P\+Item\+Anchor}{p.}{class_q_c_p_item_anchor} instances directly, even if you want to make a new item subclass. Use Q\+C\+P\+Abstract\+Item\+::create\+Anchor instead, as explained in the subclassing section of the \doxyref{Q\+C\+P\+Abstract\+Item}{p.}{class_q_c_p_abstract_item} documentation. 
+
+\subsection{Member Function Documentation}
+\index{Q\+C\+P\+Item\+Anchor@{Q\+C\+P\+Item\+Anchor}!pixel\+Point@{pixel\+Point}}
+\index{pixel\+Point@{pixel\+Point}!Q\+C\+P\+Item\+Anchor@{Q\+C\+P\+Item\+Anchor}}
+\subsubsection[{pixel\+Point}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Point\+F Q\+C\+P\+Item\+Anchor\+::pixel\+Point (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_q_c_p_item_anchor_ae92def8f9297c5d73f5806c586517bb3}
+Returns the final absolute pixel position of the \doxyref{Q\+C\+P\+Item\+Anchor}{p.}{class_q_c_p_item_anchor} on the \doxyref{Q\+Custom\+Plot}{p.}{class_q_custom_plot} surface.
+
+The pixel information is internally retrieved via Q\+C\+P\+Abstract\+Item\+::anchor\+Pixel\+Position of the parent item, \doxyref{Q\+C\+P\+Item\+Anchor}{p.}{class_q_c_p_item_anchor} is just an intermediary. 
+
+Reimplemented in {\bf Q\+C\+P\+Item\+Position} \doxyref{}{p.}{class_q_c_p_item_position_ae490f9c76ee2ba33752c495d3b6e8fb5}.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_item_anchor_ae92def8f9297c5d73f5806c586517bb3_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Item\+Anchor@{Q\+C\+P\+Item\+Anchor}!to\+Q\+C\+P\+Item\+Position@{to\+Q\+C\+P\+Item\+Position}}
+\index{to\+Q\+C\+P\+Item\+Position@{to\+Q\+C\+P\+Item\+Position}!Q\+C\+P\+Item\+Anchor@{Q\+C\+P\+Item\+Anchor}}
+\subsubsection[{to\+Q\+C\+P\+Item\+Position}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+C\+P\+Item\+Position} $\ast$ Q\+C\+P\+Item\+Anchor\+::to\+Q\+C\+P\+Item\+Position (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}\label{class_q_c_p_item_anchor_ac54b20120669950255a63587193dbb86}
+Returns 0 if this instance is merely a \doxyref{Q\+C\+P\+Item\+Anchor}{p.}{class_q_c_p_item_anchor}, and a valid pointer of type Q\+C\+P\+Item\+Position$\ast$ if it actually is a \doxyref{Q\+C\+P\+Item\+Position}{p.}{class_q_c_p_item_position} (which is a subclass of \doxyref{Q\+C\+P\+Item\+Anchor}{p.}{class_q_c_p_item_anchor}).
+
+This safe downcast functionality could also be achieved with a dynamic\+\_\+cast. However, \doxyref{Q\+Custom\+Plot}{p.}{class_q_custom_plot} avoids dynamic\+\_\+cast to work with projects that don\textquotesingle{}t have R\+T\+T\+I support enabled (e.\+g. -\/fno-\/rtti flag with gcc compiler). 
+
+Reimplemented in {\bf Q\+C\+P\+Item\+Position} \doxyref{}{p.}{class_q_c_p_item_position_a577a7efc601df85a20b3e709d1ac320e}.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_item_anchor_ac54b20120669950255a63587193dbb86_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf qcustomplot.\+h}\item 
+{\bf qcustomplot.\+cpp}\end{DoxyCompactItemize}

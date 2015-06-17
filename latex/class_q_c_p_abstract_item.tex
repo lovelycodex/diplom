@@ -1,0 +1,448 @@
+\section{Q\+C\+P\+Abstract\+Item Class Reference}
+\label{class_q_c_p_abstract_item}\index{Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}}
+
+
+The abstract base class for all items in a plot.  
+
+
+
+
+Collaboration diagram for Q\+C\+P\+Abstract\+Item\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_abstract_item__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf selection\+Changed} (bool selected)
+\item 
+void {\bfseries selectable\+Changed} (bool selectable)\label{class_q_c_p_abstract_item_a5b266c11aac61cb511901f3911dac2a3}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Q\+C\+P\+Abstract\+Item} ({\bf Q\+Custom\+Plot} $\ast$parent\+Plot)
+\item 
+bool {\bfseries clip\+To\+Axis\+Rect} () const \label{class_q_c_p_abstract_item_a5b0ea171823033bcb8aee81f4a034871}
+
+\item 
+{\bf Q\+C\+P\+Axis\+Rect} $\ast$ {\bfseries clip\+Axis\+Rect} () const \label{class_q_c_p_abstract_item_a37f86618740b5047eae23eedb2de061a}
+
+\item 
+bool {\bfseries selectable} () const \label{class_q_c_p_abstract_item_a9189e752025533e1595eaade0009a3bc}
+
+\item 
+bool {\bfseries selected} () const \label{class_q_c_p_abstract_item_a225865808640d8d9a7dd19f09a2e93f2}
+
+\item 
+void {\bf set\+Clip\+To\+Axis\+Rect} (bool clip)
+\item 
+void {\bf set\+Clip\+Axis\+Rect} ({\bf Q\+C\+P\+Axis\+Rect} $\ast$rect)
+\item 
+Q\+\_\+\+S\+L\+O\+T void {\bf set\+Selectable} (bool selectable)
+\item 
+Q\+\_\+\+S\+L\+O\+T void {\bf set\+Selected} (bool selected)
+\item 
+virtual double {\bf select\+Test} (const Q\+Point\+F \&pos, bool only\+Selectable, Q\+Variant $\ast$details=0) const =0
+\item 
+Q\+List$<$ {\bf Q\+C\+P\+Item\+Position} $\ast$ $>$ {\bf positions} () const 
+\item 
+Q\+List$<$ {\bf Q\+C\+P\+Item\+Anchor} $\ast$ $>$ {\bf anchors} () const 
+\item 
+{\bf Q\+C\+P\+Item\+Position} $\ast$ {\bf position} (const Q\+String \&name) const 
+\item 
+{\bf Q\+C\+P\+Item\+Anchor} $\ast$ {\bf anchor} (const Q\+String \&name) const 
+\item 
+bool {\bf has\+Anchor} (const Q\+String \&name) const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf Q\+C\+P\+::\+Interaction} {\bfseries selection\+Category} () const \label{class_q_c_p_abstract_item_a777b5d384936396ad9c3ceb3d3453f1c}
+
+\item 
+virtual Q\+Rect {\bfseries clip\+Rect} () const \label{class_q_c_p_abstract_item_a538e25ff8856534582f5b2b400a46405}
+
+\item 
+virtual void {\bfseries apply\+Default\+Antialiasing\+Hint} ({\bf Q\+C\+P\+Painter} $\ast$painter) const \label{class_q_c_p_abstract_item_a0839031abdd71067e2256a4d53c7a011}
+
+\item 
+virtual void {\bfseries draw} ({\bf Q\+C\+P\+Painter} $\ast$painter)=0\label{class_q_c_p_abstract_item_ad0dc056f650c3ca73414e6b4f01674ef}
+
+\item 
+virtual void {\bfseries select\+Event} (Q\+Mouse\+Event $\ast$event, bool additive, const Q\+Variant \&details, bool $\ast$selection\+State\+Changed)\label{class_q_c_p_abstract_item_aaf92af7b9893712959a6c073d334d88d}
+
+\item 
+virtual void {\bfseries deselect\+Event} (bool $\ast$selection\+State\+Changed)\label{class_q_c_p_abstract_item_a91f090d6763cfedb0749219c63788ae9}
+
+\item 
+virtual Q\+Point\+F {\bfseries anchor\+Pixel\+Point} (int anchor\+Id) const \label{class_q_c_p_abstract_item_a94bde62b8a2fc133666dcbb8035deeed}
+
+\item 
+double {\bfseries dist\+Sqr\+To\+Line} (const Q\+Point\+F \&start, const Q\+Point\+F \&end, const Q\+Point\+F \&point) const \label{class_q_c_p_abstract_item_acdca343717d625b8abb3c3e38c0ed39d}
+
+\item 
+double {\bfseries rect\+Select\+Test} (const Q\+Rect\+F \&rect, const Q\+Point\+F \&pos, bool filled\+Rect) const \label{class_q_c_p_abstract_item_a4c0e14c4e92df91174cb7183fb363069}
+
+\item 
+{\bf Q\+C\+P\+Item\+Position} $\ast$ {\bfseries create\+Position} (const Q\+String \&name)\label{class_q_c_p_abstract_item_a75036d39c4d4e2e1a7dd145fff915d32}
+
+\item 
+{\bf Q\+C\+P\+Item\+Anchor} $\ast$ {\bfseries create\+Anchor} (const Q\+String \&name, int anchor\+Id)\label{class_q_c_p_abstract_item_af3fc92527802078ca395138748b629a7}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries m\+Clip\+To\+Axis\+Rect}\label{class_q_c_p_abstract_item_ad2a70ff6b658fcb84a9427f69d3f587d}
+
+\item 
+Q\+Pointer$<$ {\bf Q\+C\+P\+Axis\+Rect} $>$ {\bfseries m\+Clip\+Axis\+Rect}\label{class_q_c_p_abstract_item_a3e57cfe7da4b1ac3d6fa7281ea437361}
+
+\item 
+Q\+List$<$ {\bf Q\+C\+P\+Item\+Position} $\ast$ $>$ {\bfseries m\+Positions}\label{class_q_c_p_abstract_item_af94ff71b6a15ea6d028ab8bd8eccd012}
+
+\item 
+Q\+List$<$ {\bf Q\+C\+P\+Item\+Anchor} $\ast$ $>$ {\bfseries m\+Anchors}\label{class_q_c_p_abstract_item_a909a3abab783de302ebf0a0e6f2bbc15}
+
+\item 
+bool {\bfseries m\+Selectable}\label{class_q_c_p_abstract_item_ad81eb35c8726a0f458db9df9732e0e41}
+
+\item 
+bool {\bfseries m\+Selected}\label{class_q_c_p_abstract_item_a4bdb3457dad1d268c0f78a44152b9645}
+
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries Q\+Custom\+Plot}\label{class_q_c_p_abstract_item_a1cdf9df76adcfae45261690aa0ca2198}
+
+\item 
+class {\bfseries Q\+C\+P\+Item\+Anchor}\label{class_q_c_p_abstract_item_a61767d414fd57af9eb1741b34268c7fc}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The abstract base class for all items in a plot. 
+
+In \doxyref{Q\+Custom\+Plot}{p.}{class_q_custom_plot}, items are supplemental graphical elements that are neither plottables (\doxyref{Q\+C\+P\+Abstract\+Plottable}{p.}{class_q_c_p_abstract_plottable}) nor axes (\doxyref{Q\+C\+P\+Axis}{p.}{class_q_c_p_axis}). While plottables are always tied to two axes and thus plot coordinates, items can also be placed in absolute coordinates independent of any axes. Each specific item has at least one \doxyref{Q\+C\+P\+Item\+Position}{p.}{class_q_c_p_item_position} member which controls the positioning. Some items are defined by more than one coordinate and thus have two or more \doxyref{Q\+C\+P\+Item\+Position}{p.}{class_q_c_p_item_position} members (For example, \doxyref{Q\+C\+P\+Item\+Rect}{p.}{class_q_c_p_item_rect} has {\itshape top\+Left} and {\itshape bottom\+Right}).
+
+This abstract base class defines a very basic interface like visibility and clipping. Since this class is abstract, it can\textquotesingle{}t be instantiated. Use one of the subclasses or create a subclass yourself to create new items.
+
+The built-\/in items are\+: \begin{TabularC}{2}
+\hline
+\doxyref{Q\+C\+P\+Item\+Line}{p.}{class_q_c_p_item_line}&A line defined by a start and an end point. May have different ending styles on each side (e.\+g. arrows). \\\cline{1-2}
+\doxyref{Q\+C\+P\+Item\+Straight\+Line}{p.}{class_q_c_p_item_straight_line}&A straight line defined by a start and a direction point. Unlike \doxyref{Q\+C\+P\+Item\+Line}{p.}{class_q_c_p_item_line}, the straight line is infinitely long and has no endings. \\\cline{1-2}
+\doxyref{Q\+C\+P\+Item\+Curve}{p.}{class_q_c_p_item_curve}&A curve defined by start, end and two intermediate control points. May have different ending styles on each side (e.\+g. arrows). \\\cline{1-2}
+\doxyref{Q\+C\+P\+Item\+Rect}{p.}{class_q_c_p_item_rect}&A rectangle \\\cline{1-2}
+\doxyref{Q\+C\+P\+Item\+Ellipse}{p.}{class_q_c_p_item_ellipse}&An ellipse \\\cline{1-2}
+\doxyref{Q\+C\+P\+Item\+Pixmap}{p.}{class_q_c_p_item_pixmap}&An arbitrary pixmap \\\cline{1-2}
+\doxyref{Q\+C\+P\+Item\+Text}{p.}{class_q_c_p_item_text}&A text label \\\cline{1-2}
+\doxyref{Q\+C\+P\+Item\+Bracket}{p.}{class_q_c_p_item_bracket}&A bracket which may be used to reference/highlight certain parts in the plot. \\\cline{1-2}
+\doxyref{Q\+C\+P\+Item\+Tracer}{p.}{class_q_c_p_item_tracer}&An item that can be attached to a \doxyref{Q\+C\+P\+Graph}{p.}{class_q_c_p_graph} and sticks to its data points, given a key coordinate. \\\cline{1-2}
+\end{TabularC}
+\subsection{Clipping}\label{class_q_c_p_abstract_item_items-clipping}
+Items are by default clipped to the main axis rect (they are only visible inside the axis rect). To make an item visible outside that axis rect, disable clipping via \doxyref{set\+Clip\+To\+Axis\+Rect(false)}{p.}{class_q_c_p_abstract_item_a39e05b9d4176b9accafc746d16ca6a06}.
+
+On the other hand if you want the item to be clipped to a different axis rect, specify it via \doxyref{set\+Clip\+Axis\+Rect}{p.}{class_q_c_p_abstract_item_a7dc75fcbcd10206fe0b75d757ea7a347}. This clip\+Axis\+Rect property of an item is only used for clipping behaviour, and in principle is independent of the coordinate axes the item might be tied to via its position members (\doxyref{Q\+C\+P\+Item\+Position\+::set\+Axes}{p.}{class_q_c_p_item_position_a2185f45c75ac8cb9be89daeaaad50e37}). However, it is common that the axis rect for clipping also contains the axes used for the item positions.\subsection{Using items}\label{class_q_c_p_abstract_item_items-using}
+First you instantiate the item you want to use and add it to the plot\+: 
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+by default, the positions of the item are bound to the x-\/ and y-\/\+Axis of the plot. So we can just set the plot coordinates where the line should start/end\+: 
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+If we don\textquotesingle{}t want the line to be positioned in plot coordinates but a different coordinate system, e.\+g. absolute pixel positions on the \doxyref{Q\+Custom\+Plot}{p.}{class_q_custom_plot} surface, we need to change the position type like this\+: 
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+Then we can set the coordinates, this time in pixels\+: 
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+and make the line visible on the entire \doxyref{Q\+Custom\+Plot}{p.}{class_q_custom_plot}, by disabling clipping to the axis rect\+: 
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+ For more advanced plots, it is even possible to set different types and parent anchors per X/\+Y coordinate of an item position, using for example \doxyref{Q\+C\+P\+Item\+Position\+::set\+Type\+X}{p.}{class_q_c_p_item_position_a2113b2351d6d00457fb3559a4e20c3ea} or \doxyref{Q\+C\+P\+Item\+Position\+::set\+Parent\+Anchor\+X}{p.}{class_q_c_p_item_position_add71461a973927c74e42179480916d9c}. For details, see the documentation of \doxyref{Q\+C\+P\+Item\+Position}{p.}{class_q_c_p_item_position}.\subsection{Creating own items}\label{class_q_c_p_abstract_item_items-subclassing}
+To create an own item, you implement a subclass of \doxyref{Q\+C\+P\+Abstract\+Item}{p.}{class_q_c_p_abstract_item}. These are the pure virtual functions, you must implement\+: \begin{DoxyItemize}
+\item \doxyref{select\+Test}{p.}{class_q_c_p_abstract_item_a96d522d10ffc0413b9a366c6f7f0476b} \item draw\end{DoxyItemize}
+See the documentation of those functions for what they need to do.\subsubsection{Allowing the item to be positioned}\label{class_q_c_p_abstract_item_items-positioning}
+As mentioned, item positions are represented by \doxyref{Q\+C\+P\+Item\+Position}{p.}{class_q_c_p_item_position} members. Let\textquotesingle{}s assume the new item shall have only one point as its position (as opposed to two like a rect or multiple like a polygon). You then add a public member of type \doxyref{Q\+C\+P\+Item\+Position}{p.}{class_q_c_p_item_position} like so\+:
+
+
+\begin{DoxyCode}
+QCPItemPosition * \textcolor{keyword}{const} myPosition;
+\end{DoxyCode}
+
+
+the const makes sure the pointer itself can\textquotesingle{}t be modified from the user of your new item (the \doxyref{Q\+C\+P\+Item\+Position}{p.}{class_q_c_p_item_position} instance it points to, can be modified, of course). The initialization of this pointer is made easy with the create\+Position function. Just assign the return value of this function to each \doxyref{Q\+C\+P\+Item\+Position}{p.}{class_q_c_p_item_position} in the constructor of your item. create\+Position takes a string which is the name of the position, typically this is identical to the variable name. For example, the constructor of Q\+C\+P\+Item\+Example could look like this\+:
+
+
+\begin{DoxyCode}
+QCPItemExample::QCPItemExample(QCustomPlot *parentPlot) :
+  QCPAbstractItem(parentPlot),
+  myPosition(createPosition(\textcolor{stringliteral}{"myPosition"}))
+\{
+  \textcolor{comment}{// other constructor code}
+\}
+\end{DoxyCode}
+\subsubsection{The draw function}\label{class_q_c_p_abstract_item_items-drawing}
+To give your item a visual representation, reimplement the draw function and use the passed \doxyref{Q\+C\+P\+Painter}{p.}{class_q_c_p_painter} to draw the item. You can retrieve the item position in pixel coordinates from the position member(s) via \doxyref{Q\+C\+P\+Item\+Position\+::pixel\+Point}{p.}{class_q_c_p_item_position_ae490f9c76ee2ba33752c495d3b6e8fb5}.
+
+To optimize performance you should calculate a bounding rect first (don\textquotesingle{}t forget to take the pen width into account), check whether it intersects the clip\+Rect, and only draw the item at all if this is the case.\subsubsection{The select\+Test function}\label{class_q_c_p_abstract_item_items-selection}
+Your implementation of the \doxyref{select\+Test}{p.}{class_q_c_p_abstract_item_a96d522d10ffc0413b9a366c6f7f0476b} function may use the helpers dist\+Sqr\+To\+Line and rect\+Select\+Test. With these, the implementation of the selection test becomes significantly simpler for most items. See the documentation of \doxyref{select\+Test}{p.}{class_q_c_p_abstract_item_a96d522d10ffc0413b9a366c6f7f0476b} for what the function parameters mean and what the function should return.\subsubsection{Providing anchors}\label{class_q_c_p_abstract_item_anchors}
+Providing anchors (\doxyref{Q\+C\+P\+Item\+Anchor}{p.}{class_q_c_p_item_anchor}) starts off like adding a position. First you create a public member, e.\+g.
+
+
+\begin{DoxyCode}
+QCPItemAnchor * \textcolor{keyword}{const} bottom;
+\end{DoxyCode}
+
+
+and create it in the constructor with the create\+Anchor function, assigning it a name and an anchor id (an integer enumerating all anchors on the item, you may create an own enum for this). Since anchors can be placed anywhere, relative to the item\textquotesingle{}s position(s), your item needs to provide the position of every anchor with the reimplementation of the anchor\+Pixel\+Point(int anchor\+Id) function.
+
+In essence the \doxyref{Q\+C\+P\+Item\+Anchor}{p.}{class_q_c_p_item_anchor} is merely an intermediary that itself asks your item for the pixel position when anything attached to the anchor needs to know the coordinates. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}!Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}}
+\index{Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}!Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}}
+\subsubsection[{Q\+C\+P\+Abstract\+Item}]{\setlength{\rightskip}{0pt plus 5cm}Q\+C\+P\+Abstract\+Item\+::\+Q\+C\+P\+Abstract\+Item (
+\begin{DoxyParamCaption}
+\item[{{\bf Q\+Custom\+Plot} $\ast$}]{parent\+Plot}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_abstract_item_a9922507d8b4503a1fe1ed0b1030e23b6}
+Base class constructor which initializes base class members. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_abstract_item_a9922507d8b4503a1fe1ed0b1030e23b6_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}!anchor@{anchor}}
+\index{anchor@{anchor}!Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}}
+\subsubsection[{anchor}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+C\+P\+Item\+Anchor} $\ast$ Q\+C\+P\+Abstract\+Item\+::anchor (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{name}
+\end{DoxyParamCaption}
+) const}\label{class_q_c_p_abstract_item_abed974cba7cc02608c71dad4638e008d}
+Returns the \doxyref{Q\+C\+P\+Item\+Anchor}{p.}{class_q_c_p_item_anchor} with the specified {\itshape name}. If this item doesn\textquotesingle{}t have an anchor by that name, returns 0.
+
+This function provides an alternative way to access item anchors. Normally, you access anchors direcly by their member pointers (which typically have the same variable name as {\itshape name}).
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{anchors}{p.}{class_q_c_p_abstract_item_a8454b9941960b840608a5a1e00b1977d}, \doxyref{position}{p.}{class_q_c_p_abstract_item_af71345bd150f87fa1d2442837b87bb59} 
+\end{DoxySeeAlso}
+\index{Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}!anchors@{anchors}}
+\index{anchors@{anchors}!Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}}
+\subsubsection[{anchors}]{\setlength{\rightskip}{0pt plus 5cm}Q\+List$<$ {\bf Q\+C\+P\+Item\+Anchor} $\ast$ $>$ Q\+C\+P\+Abstract\+Item\+::anchors (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_q_c_p_abstract_item_a8454b9941960b840608a5a1e00b1977d}
+Returns all anchors of the item in a list. Note that since a position (\doxyref{Q\+C\+P\+Item\+Position}{p.}{class_q_c_p_item_position}) is always also an anchor, the list will also contain the positions of this item.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{positions}{p.}{class_q_c_p_abstract_item_adf6a680cc29a6bce8345c3b6af3a91a1}, \doxyref{anchor}{p.}{class_q_c_p_abstract_item_abed974cba7cc02608c71dad4638e008d} 
+\end{DoxySeeAlso}
+\index{Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}!has\+Anchor@{has\+Anchor}}
+\index{has\+Anchor@{has\+Anchor}!Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}}
+\subsubsection[{has\+Anchor}]{\setlength{\rightskip}{0pt plus 5cm}bool Q\+C\+P\+Abstract\+Item\+::has\+Anchor (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{name}
+\end{DoxyParamCaption}
+) const}\label{class_q_c_p_abstract_item_acbce9e5ba5252541d19db0c40303357a}
+Returns whether this item has an anchor with the specified {\itshape name}.
+
+Note that you can check for positions with this function, too. This is because every position is also an anchor (\doxyref{Q\+C\+P\+Item\+Position}{p.}{class_q_c_p_item_position} inherits from \doxyref{Q\+C\+P\+Item\+Anchor}{p.}{class_q_c_p_item_anchor}).
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{anchor}{p.}{class_q_c_p_abstract_item_abed974cba7cc02608c71dad4638e008d}, \doxyref{position}{p.}{class_q_c_p_abstract_item_af71345bd150f87fa1d2442837b87bb59} 
+\end{DoxySeeAlso}
+\index{Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}!position@{position}}
+\index{position@{position}!Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}}
+\subsubsection[{position}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+C\+P\+Item\+Position} $\ast$ Q\+C\+P\+Abstract\+Item\+::position (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{name}
+\end{DoxyParamCaption}
+) const}\label{class_q_c_p_abstract_item_af71345bd150f87fa1d2442837b87bb59}
+Returns the \doxyref{Q\+C\+P\+Item\+Position}{p.}{class_q_c_p_item_position} with the specified {\itshape name}. If this item doesn\textquotesingle{}t have a position by that name, returns 0.
+
+This function provides an alternative way to access item positions. Normally, you access positions direcly by their member pointers (which typically have the same variable name as {\itshape name}).
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{positions}{p.}{class_q_c_p_abstract_item_adf6a680cc29a6bce8345c3b6af3a91a1}, \doxyref{anchor}{p.}{class_q_c_p_abstract_item_abed974cba7cc02608c71dad4638e008d} 
+\end{DoxySeeAlso}
+\index{Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}!positions@{positions}}
+\index{positions@{positions}!Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}}
+\subsubsection[{positions}]{\setlength{\rightskip}{0pt plus 5cm}Q\+List$<$ {\bf Q\+C\+P\+Item\+Position} $\ast$ $>$ Q\+C\+P\+Abstract\+Item\+::positions (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_q_c_p_abstract_item_adf6a680cc29a6bce8345c3b6af3a91a1}
+Returns all positions of the item in a list.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{anchors}{p.}{class_q_c_p_abstract_item_a8454b9941960b840608a5a1e00b1977d}, \doxyref{position}{p.}{class_q_c_p_abstract_item_af71345bd150f87fa1d2442837b87bb59} 
+\end{DoxySeeAlso}
+\index{Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}!selection\+Changed@{selection\+Changed}}
+\index{selection\+Changed@{selection\+Changed}!Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}}
+\subsubsection[{selection\+Changed}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Abstract\+Item\+::selection\+Changed (
+\begin{DoxyParamCaption}
+\item[{bool}]{selected}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{class_q_c_p_abstract_item_aa5cffb034fc65dbb91c77e02c1c14251}
+This signal is emitted when the selection state of this item has changed, either by user interaction or by a direct call to \doxyref{set\+Selected}{p.}{class_q_c_p_abstract_item_a203de94ad586cc44d16c9565f49d3378}. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_abstract_item_aa5cffb034fc65dbb91c77e02c1c14251_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}!select\+Test@{select\+Test}}
+\index{select\+Test@{select\+Test}!Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}}
+\subsubsection[{select\+Test}]{\setlength{\rightskip}{0pt plus 5cm}virtual double Q\+C\+P\+Abstract\+Item\+::select\+Test (
+\begin{DoxyParamCaption}
+\item[{const Q\+Point\+F \&}]{pos, }
+\item[{bool}]{only\+Selectable, }
+\item[{Q\+Variant $\ast$}]{details = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{class_q_c_p_abstract_item_a96d522d10ffc0413b9a366c6f7f0476b}
+This function is used to decide whether a click hits a layerable object or not.
+
+{\itshape pos} is a point in pixel coordinates on the \doxyref{Q\+Custom\+Plot}{p.}{class_q_custom_plot} surface. This function returns the shortest pixel distance of this point to the object. If the object is either invisible or the distance couldn\textquotesingle{}t be determined, -\/1.\+0 is returned. Further, if {\itshape only\+Selectable} is true and the object is not selectable, -\/1.\+0 is returned, too.
+
+If the object is represented not by single lines but by an area like a \doxyref{Q\+C\+P\+Item\+Text}{p.}{class_q_c_p_item_text} or the bars of a \doxyref{Q\+C\+P\+Bars}{p.}{class_q_c_p_bars} plottable, a click inside the area should also be considered a hit. In these cases this function thus returns a constant value greater zero but still below the parent plot\textquotesingle{}s selection tolerance. (typically the selection\+Tolerance multiplied by 0.\+99).
+
+Providing a constant value for area objects allows selecting line objects even when they are obscured by such area objects, by clicking close to the lines (i.\+e. closer than 0.\+99$\ast$selection\+Tolerance).
+
+The actual setting of the selection state is not done by this function. This is handled by the parent \doxyref{Q\+Custom\+Plot}{p.}{class_q_custom_plot} when the mouse\+Release\+Event occurs, and the finally selected object is notified via the select\+Event/deselect\+Event methods.
+
+{\itshape details} is an optional output parameter. Every layerable subclass may place any information in {\itshape details}. This information will be passed to select\+Event when the parent \doxyref{Q\+Custom\+Plot}{p.}{class_q_custom_plot} decides on the basis of this select\+Test call, that the object was successfully selected. The subsequent call to select\+Event will carry the {\itshape details}. This is useful for multi-\/part objects (like \doxyref{Q\+C\+P\+Axis}{p.}{class_q_c_p_axis}). This way, a possibly complex calculation to decide which part was clicked is only done once in \doxyref{select\+Test}{p.}{class_q_c_p_abstract_item_a96d522d10ffc0413b9a366c6f7f0476b}. The result (i.\+e. the actually clicked part) can then be placed in {\itshape details}. So in the subsequent select\+Event, the decision which part was selected doesn\textquotesingle{}t have to be done a second time for a single selection operation.
+
+You may pass 0 as {\itshape details} to indicate that you are not interested in those selection details.
+
+\begin{DoxySeeAlso}{See also}
+select\+Event, deselect\+Event, \doxyref{Q\+Custom\+Plot\+::set\+Interactions}{p.}{class_q_custom_plot_a5ee1e2f6ae27419deca53e75907c27e5} 
+\end{DoxySeeAlso}
+
+
+Reimplemented from {\bf Q\+C\+P\+Layerable} \doxyref{}{p.}{class_q_c_p_layerable_a4001c4d0dfec55598efa4d531f2179a9}.
+
+
+
+Implemented in {\bf Q\+C\+P\+Item\+Bracket} \doxyref{}{p.}{class_q_c_p_item_bracket_aa6933caff1d42c54bcebc769ef88c798}, {\bf Q\+C\+P\+Item\+Tracer} \doxyref{}{p.}{class_q_c_p_item_tracer_ae71f3728421c83c188c117279ca050fd}, {\bf Q\+C\+P\+Item\+Pixmap} \doxyref{}{p.}{class_q_c_p_item_pixmap_a9f8436aa141fa0fb504191c882c2f4d9}, {\bf Q\+C\+P\+Item\+Ellipse} \doxyref{}{p.}{class_q_c_p_item_ellipse_acd7e5f9528630b2ab5987e2a5782eb7c}, {\bf Q\+C\+P\+Item\+Text} \doxyref{}{p.}{class_q_c_p_item_text_a285b95bb6634c2e4f7768abb7a8bc69c}, {\bf Q\+C\+P\+Item\+Rect} \doxyref{}{p.}{class_q_c_p_item_rect_af13b0797079b40b73d1c7286b76f18ac}, {\bf Q\+C\+P\+Item\+Curve} \doxyref{}{p.}{class_q_c_p_item_curve_a741375c11667b5f9c95b2683f93ee514}, {\bf Q\+C\+P\+Item\+Line} \doxyref{}{p.}{class_q_c_p_item_line_a7541e5d9378ca121d07b0df3b24f7178}, and {\bf Q\+C\+P\+Item\+Straight\+Line} \doxyref{}{p.}{class_q_c_p_item_straight_line_a64cc3796f58ce856012732603edb2f1c}.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_abstract_item_a96d522d10ffc0413b9a366c6f7f0476b_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}!set\+Clip\+Axis\+Rect@{set\+Clip\+Axis\+Rect}}
+\index{set\+Clip\+Axis\+Rect@{set\+Clip\+Axis\+Rect}!Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}}
+\subsubsection[{set\+Clip\+Axis\+Rect}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Abstract\+Item\+::set\+Clip\+Axis\+Rect (
+\begin{DoxyParamCaption}
+\item[{{\bf Q\+C\+P\+Axis\+Rect} $\ast$}]{rect}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_abstract_item_a7dc75fcbcd10206fe0b75d757ea7a347}
+Sets the clip axis rect. It defines the rect that will be used to clip the item when \doxyref{set\+Clip\+To\+Axis\+Rect}{p.}{class_q_c_p_abstract_item_a39e05b9d4176b9accafc746d16ca6a06} is set to true.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{set\+Clip\+To\+Axis\+Rect}{p.}{class_q_c_p_abstract_item_a39e05b9d4176b9accafc746d16ca6a06} 
+\end{DoxySeeAlso}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_abstract_item_a7dc75fcbcd10206fe0b75d757ea7a347_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}!set\+Clip\+To\+Axis\+Rect@{set\+Clip\+To\+Axis\+Rect}}
+\index{set\+Clip\+To\+Axis\+Rect@{set\+Clip\+To\+Axis\+Rect}!Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}}
+\subsubsection[{set\+Clip\+To\+Axis\+Rect}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Abstract\+Item\+::set\+Clip\+To\+Axis\+Rect (
+\begin{DoxyParamCaption}
+\item[{bool}]{clip}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_abstract_item_a39e05b9d4176b9accafc746d16ca6a06}
+Sets whether the item shall be clipped to an axis rect or whether it shall be visible on the entire \doxyref{Q\+Custom\+Plot}{p.}{class_q_custom_plot}. The axis rect can be set with \doxyref{set\+Clip\+Axis\+Rect}{p.}{class_q_c_p_abstract_item_a7dc75fcbcd10206fe0b75d757ea7a347}.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{set\+Clip\+Axis\+Rect}{p.}{class_q_c_p_abstract_item_a7dc75fcbcd10206fe0b75d757ea7a347} 
+\end{DoxySeeAlso}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_abstract_item_a39e05b9d4176b9accafc746d16ca6a06_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}!set\+Selectable@{set\+Selectable}}
+\index{set\+Selectable@{set\+Selectable}!Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}}
+\subsubsection[{set\+Selectable}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Abstract\+Item\+::set\+Selectable (
+\begin{DoxyParamCaption}
+\item[{bool}]{selectable}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_abstract_item_a8a8e32a55bc478b849756a78c2d87fd2}
+Sets whether the user can (de-\/)select this item by clicking on the \doxyref{Q\+Custom\+Plot}{p.}{class_q_custom_plot} surface. (When \doxyref{Q\+Custom\+Plot\+::set\+Interactions}{p.}{class_q_custom_plot_a5ee1e2f6ae27419deca53e75907c27e5} contains Q\+Custom\+Plot\+::i\+Select\+Items.)
+
+However, even when {\itshape selectable} was set to false, it is possible to set the selection manually, by calling \doxyref{set\+Selected}{p.}{class_q_c_p_abstract_item_a203de94ad586cc44d16c9565f49d3378}.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{Q\+Custom\+Plot\+::set\+Interactions}{p.}{class_q_custom_plot_a5ee1e2f6ae27419deca53e75907c27e5}, \doxyref{set\+Selected}{p.}{class_q_c_p_abstract_item_a203de94ad586cc44d16c9565f49d3378} 
+\end{DoxySeeAlso}
+\index{Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}!set\+Selected@{set\+Selected}}
+\index{set\+Selected@{set\+Selected}!Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}}
+\subsubsection[{set\+Selected}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Abstract\+Item\+::set\+Selected (
+\begin{DoxyParamCaption}
+\item[{bool}]{selected}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_abstract_item_a203de94ad586cc44d16c9565f49d3378}
+Sets whether this item is selected or not. When selected, it might use a different visual appearance (e.\+g. pen and brush), this depends on the specific item though.
+
+The entire selection mechanism for items is handled automatically when \doxyref{Q\+Custom\+Plot\+::set\+Interactions}{p.}{class_q_custom_plot_a5ee1e2f6ae27419deca53e75907c27e5} contains Q\+Custom\+Plot\+::i\+Select\+Items. You only need to call this function when you wish to change the selection state manually.
+
+This function can change the selection state even when \doxyref{set\+Selectable}{p.}{class_q_c_p_abstract_item_a8a8e32a55bc478b849756a78c2d87fd2} was set to false.
+
+emits the \doxyref{selection\+Changed}{p.}{class_q_c_p_abstract_item_aa5cffb034fc65dbb91c77e02c1c14251} signal when {\itshape selected} is different from the previous selection state.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{set\+Selectable}{p.}{class_q_c_p_abstract_item_a8a8e32a55bc478b849756a78c2d87fd2}, \doxyref{select\+Test}{p.}{class_q_c_p_abstract_item_a96d522d10ffc0413b9a366c6f7f0476b} 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf qcustomplot.\+h}\item 
+{\bf qcustomplot.\+cpp}\end{DoxyCompactItemize}

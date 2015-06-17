@@ -1,0 +1,572 @@
+\section{Q\+C\+P\+Color\+Map Class Reference}
+\label{class_q_c_p_color_map}\index{Q\+C\+P\+Color\+Map@{Q\+C\+P\+Color\+Map}}
+
+
+A plottable representing a two-\/dimensional color map in a plot.  
+
+
+
+
+Collaboration diagram for Q\+C\+P\+Color\+Map\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_color_map__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf data\+Range\+Changed} ({\bf Q\+C\+P\+Range} new\+Range)
+\item 
+void {\bf data\+Scale\+Type\+Changed} ({\bf Q\+C\+P\+Axis\+::\+Scale\+Type} scale\+Type)
+\item 
+void {\bf gradient\+Changed} ({\bf Q\+C\+P\+Color\+Gradient} new\+Gradient)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Q\+C\+P\+Color\+Map} ({\bf Q\+C\+P\+Axis} $\ast$key\+Axis, {\bf Q\+C\+P\+Axis} $\ast$value\+Axis)
+\item 
+{\bf Q\+C\+P\+Color\+Map\+Data} $\ast$ {\bf data} () const 
+\item 
+{\bf Q\+C\+P\+Range} {\bfseries data\+Range} () const \label{class_q_c_p_color_map_a37cc8e821e070697e15652f6419fab48}
+
+\item 
+{\bf Q\+C\+P\+Axis\+::\+Scale\+Type} {\bfseries data\+Scale\+Type} () const \label{class_q_c_p_color_map_a5ffc703dc603c4fd942f36ea51b8c48d}
+
+\item 
+bool {\bfseries interpolate} () const \label{class_q_c_p_color_map_a39019675a7ad00efad7212b96c0ccc95}
+
+\item 
+bool {\bfseries tight\+Boundary} () const \label{class_q_c_p_color_map_aa1d9aa8db73a5942881f6f6c5afdbb0f}
+
+\item 
+{\bf Q\+C\+P\+Color\+Gradient} {\bfseries gradient} () const \label{class_q_c_p_color_map_a9f967a971474e32345290b79cf107809}
+
+\item 
+{\bf Q\+C\+P\+Color\+Scale} $\ast$ {\bfseries color\+Scale} () const \label{class_q_c_p_color_map_a6bd82e0b042a2ec4d64f40853a3b05e3}
+
+\item 
+void {\bf set\+Data} ({\bf Q\+C\+P\+Color\+Map\+Data} $\ast${\bf data}, bool copy=false)
+\item 
+Q\+\_\+\+S\+L\+O\+T void {\bf set\+Data\+Range} (const {\bf Q\+C\+P\+Range} \&data\+Range)
+\item 
+Q\+\_\+\+S\+L\+O\+T void {\bf set\+Data\+Scale\+Type} ({\bf Q\+C\+P\+Axis\+::\+Scale\+Type} scale\+Type)
+\item 
+Q\+\_\+\+S\+L\+O\+T void {\bf set\+Gradient} (const {\bf Q\+C\+P\+Color\+Gradient} \&gradient)
+\item 
+void {\bf set\+Interpolate} (bool enabled)
+\item 
+void {\bf set\+Tight\+Boundary} (bool enabled)
+\item 
+void {\bf set\+Color\+Scale} ({\bf Q\+C\+P\+Color\+Scale} $\ast$color\+Scale)
+\item 
+void {\bf rescale\+Data\+Range} (bool recalculate\+Data\+Bounds=false)
+\item 
+Q\+\_\+\+S\+L\+O\+T void {\bf update\+Legend\+Icon} (Qt\+::\+Transformation\+Mode transform\+Mode=Qt\+::\+Smooth\+Transformation, const Q\+Size \&thumb\+Size=Q\+Size(32, 18))
+\item 
+virtual void {\bf clear\+Data} ()
+\item 
+virtual double {\bf select\+Test} (const Q\+Point\+F \&pos, bool only\+Selectable, Q\+Variant $\ast$details=0) const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries update\+Map\+Image} ()\label{class_q_c_p_color_map_a5efcea591bb5486d968af520a4d43c3a}
+
+\item 
+virtual void {\bfseries draw} ({\bf Q\+C\+P\+Painter} $\ast$painter)\label{class_q_c_p_color_map_a3b0f45a3177be9522d5e9b8cd8ae122d}
+
+\item 
+virtual void {\bfseries draw\+Legend\+Icon} ({\bf Q\+C\+P\+Painter} $\ast$painter, const Q\+Rect\+F \&rect) const \label{class_q_c_p_color_map_a7d5eee89f6b8eaf2f11f1d94e32215b2}
+
+\item 
+virtual {\bf Q\+C\+P\+Range} {\bfseries get\+Key\+Range} (bool \&found\+Range, {\bf Sign\+Domain} in\+Sign\+Domain={\bf sd\+Both}) const \label{class_q_c_p_color_map_a0d89371f8707f12e22737b863f1a5126}
+
+\item 
+virtual {\bf Q\+C\+P\+Range} {\bfseries get\+Value\+Range} (bool \&found\+Range, {\bf Sign\+Domain} in\+Sign\+Domain={\bf sd\+Both}) const \label{class_q_c_p_color_map_ac1b906e05ca9b61680e61b74b3825a22}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Q\+C\+P\+Range} {\bfseries m\+Data\+Range}\label{class_q_c_p_color_map_ab87609621d16cd3e9d52ad070b327b08}
+
+\item 
+{\bf Q\+C\+P\+Axis\+::\+Scale\+Type} {\bfseries m\+Data\+Scale\+Type}\label{class_q_c_p_color_map_ab28a4b2def408f83b9818799d5f18446}
+
+\item 
+{\bf Q\+C\+P\+Color\+Map\+Data} $\ast$ {\bfseries m\+Map\+Data}\label{class_q_c_p_color_map_a8709272aa8f0be3ca111bf3866806f8b}
+
+\item 
+{\bf Q\+C\+P\+Color\+Gradient} {\bfseries m\+Gradient}\label{class_q_c_p_color_map_aab77fe9a8df6f0486ab3507cc5f278fa}
+
+\item 
+bool {\bfseries m\+Interpolate}\label{class_q_c_p_color_map_af77e5eba9a844592648edeb6fbe834f1}
+
+\item 
+bool {\bfseries m\+Tight\+Boundary}\label{class_q_c_p_color_map_ac2e9425fe4381b496726e1c09f978302}
+
+\item 
+Q\+Pointer$<$ {\bf Q\+C\+P\+Color\+Scale} $>$ {\bfseries m\+Color\+Scale}\label{class_q_c_p_color_map_a95b4100bacc3387652c988b071ec9db7}
+
+\item 
+Q\+Image {\bfseries m\+Map\+Image}\label{class_q_c_p_color_map_a66110813b42eca78b64095b2a1f285a0}
+
+\item 
+Q\+Image {\bfseries m\+Undersampled\+Map\+Image}\label{class_q_c_p_color_map_acad3d52f3572436d5f2e4057911ea8d3}
+
+\item 
+Q\+Pixmap {\bfseries m\+Legend\+Icon}\label{class_q_c_p_color_map_ada522988db02cb531767d38c5029ef60}
+
+\item 
+bool {\bfseries m\+Map\+Image\+Invalidated}\label{class_q_c_p_color_map_ac9aea6a5c193d7fa866bc7b26e79ef2c}
+
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries Q\+Custom\+Plot}\label{class_q_c_p_color_map_a1cdf9df76adcfae45261690aa0ca2198}
+
+\item 
+class {\bfseries Q\+C\+P\+Legend}\label{class_q_c_p_color_map_a8429035e7adfbd7f05805a6530ad5e3b}
+
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+A plottable representing a two-\/dimensional color map in a plot. 
+
+
+
+The data is stored in the class \doxyref{Q\+C\+P\+Color\+Map\+Data}{p.}{class_q_c_p_color_map_data}, which can be accessed via the \doxyref{data()}{p.}{class_q_c_p_color_map_a3ae12c9ce842352037cd20ea5267414f} method.
+
+A color map has three dimensions to represent a data point\+: The {\itshape key} dimension, the {\itshape value} dimension and the {\itshape data} dimension. As with other plottables such as graphs, {\itshape key} and {\itshape value} correspond to two orthogonal axes on the \doxyref{Q\+Custom\+Plot}{p.}{class_q_custom_plot} surface that you specify in the Q\+Color\+Map constructor. The {\itshape data} dimension however is encoded as the color of the point at ({\itshape key}, {\itshape value}).
+
+Set the number of points (or {\itshape cells}) in the key/value dimension via \doxyref{Q\+C\+P\+Color\+Map\+Data\+::set\+Size}{p.}{class_q_c_p_color_map_data_a0d9ff35c299d0478b682bfbcdd9c097e}. The plot coordinate range over which these points will be displayed is specified via \doxyref{Q\+C\+P\+Color\+Map\+Data\+::set\+Range}{p.}{class_q_c_p_color_map_data_aad9c1c7c703c1339489fc730517c83d4}. The first cell will be centered on the lower range boundary and the last cell will be centered on the upper range boundary. The data can be set by either accessing the cells directly with \doxyref{Q\+C\+P\+Color\+Map\+Data\+::set\+Cell}{p.}{class_q_c_p_color_map_data_a8e75eaf8746596319032a93f3d2d0683} or by addressing the cells via their plot coordinates with \doxyref{Q\+C\+P\+Color\+Map\+Data\+::set\+Data}{p.}{class_q_c_p_color_map_data_afd2083ccfd6987ec94aa7ef8e91ca39a}. If possible, you should prefer set\+Cell, since it doesn\textquotesingle{}t need to do any coordinate transformation and thus performs a bit better.
+
+The cell with index (0, 0) is at the bottom left, if the color map uses normal (i.\+e. not reversed) key and value axes.
+
+To show the user which colors correspond to which {\itshape data} values, a \doxyref{Q\+C\+P\+Color\+Scale}{p.}{class_q_c_p_color_scale} is typically placed to the right of the axis rect. See the documentation there for details on how to add and use a color scale.\subsection{Changing the appearance}\label{class_q_c_p_statistical_box_appearance}
+The central part of the appearance is the color gradient, which can be specified via \doxyref{set\+Gradient}{p.}{class_q_c_p_color_map_a7313c78360471cead3576341a2c50377}. See the documentation of \doxyref{Q\+C\+P\+Color\+Gradient}{p.}{class_q_c_p_color_gradient} for details on configuring a color gradient.
+
+The {\itshape data} range that is mapped to the colors of the gradient can be specified with \doxyref{set\+Data\+Range}{p.}{class_q_c_p_color_map_a980b42837821159786a85b4b7dcb8774}. To make the data range encompass the whole data set minimum to maximum, call \doxyref{rescale\+Data\+Range}{p.}{class_q_c_p_color_map_a856608fa3dd1cc290bcd5f29a5575774}.\subsection{Usage}\label{class_q_c_p_statistical_box_usage}
+Like all data representing objects in \doxyref{Q\+Custom\+Plot}{p.}{class_q_custom_plot}, the \doxyref{Q\+C\+P\+Color\+Map}{p.}{class_q_c_p_color_map} is a plottable (\doxyref{Q\+C\+P\+Abstract\+Plottable}{p.}{class_q_c_p_abstract_plottable}). So the plottable-\/interface of \doxyref{Q\+Custom\+Plot}{p.}{class_q_custom_plot} applies (\doxyref{Q\+Custom\+Plot\+::plottable}{p.}{class_q_custom_plot_a32de81ff53e263e785b83b52ecd99d6f}, \doxyref{Q\+Custom\+Plot\+::add\+Plottable}{p.}{class_q_custom_plot_ab7ad9174f701f9c6f64e378df77927a6}, \doxyref{Q\+Custom\+Plot\+::remove\+Plottable}{p.}{class_q_custom_plot_af3dafd56884208474f311d6226513ab2}, etc.)
+
+Usually, you first create an instance and add it to the custom\+Plot\+: 
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+and then modify the properties of the newly created color map, e.\+g.\+: 
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+ \begin{DoxyNote}{Note}
+The \doxyref{Q\+C\+P\+Color\+Map}{p.}{class_q_c_p_color_map} always displays the data at equal key/value intervals, even if the key or value axis is set to a logarithmic scaling. If you want to use \doxyref{Q\+C\+P\+Color\+Map}{p.}{class_q_c_p_color_map} with logarithmic axes, you shouldn\textquotesingle{}t use the \doxyref{Q\+C\+P\+Color\+Map\+Data\+::set\+Data}{p.}{class_q_c_p_color_map_data_afd2083ccfd6987ec94aa7ef8e91ca39a} method as it uses a linear transformation to determine the cell index. Rather directly access the cell index with \doxyref{Q\+C\+P\+Color\+Map\+Data\+::set\+Cell}{p.}{class_q_c_p_color_map_data_a8e75eaf8746596319032a93f3d2d0683}. 
+\end{DoxyNote}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Q\+C\+P\+Color\+Map@{Q\+C\+P\+Color\+Map}!Q\+C\+P\+Color\+Map@{Q\+C\+P\+Color\+Map}}
+\index{Q\+C\+P\+Color\+Map@{Q\+C\+P\+Color\+Map}!Q\+C\+P\+Color\+Map@{Q\+C\+P\+Color\+Map}}
+\subsubsection[{Q\+C\+P\+Color\+Map}]{\setlength{\rightskip}{0pt plus 5cm}Q\+C\+P\+Color\+Map\+::\+Q\+C\+P\+Color\+Map (
+\begin{DoxyParamCaption}
+\item[{{\bf Q\+C\+P\+Axis} $\ast$}]{key\+Axis, }
+\item[{{\bf Q\+C\+P\+Axis} $\ast$}]{value\+Axis}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\label{class_q_c_p_color_map_aa37e976d2ee1e2be6c4cd88a64b36215}
+Constructs a color map with the specified {\itshape key\+Axis} and {\itshape value\+Axis}.
+
+The constructed \doxyref{Q\+C\+P\+Color\+Map}{p.}{class_q_c_p_color_map} can be added to the plot with \doxyref{Q\+Custom\+Plot\+::add\+Plottable}{p.}{class_q_custom_plot_ab7ad9174f701f9c6f64e378df77927a6}, \doxyref{Q\+Custom\+Plot}{p.}{class_q_custom_plot} then takes ownership of the color map. 
+
+\subsection{Member Function Documentation}
+\index{Q\+C\+P\+Color\+Map@{Q\+C\+P\+Color\+Map}!clear\+Data@{clear\+Data}}
+\index{clear\+Data@{clear\+Data}!Q\+C\+P\+Color\+Map@{Q\+C\+P\+Color\+Map}}
+\subsubsection[{clear\+Data}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Color\+Map\+::clear\+Data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_q_c_p_color_map_a0545dce5383766885912331705a8e099}
+Clears the colormap data by calling \doxyref{Q\+C\+P\+Color\+Map\+Data\+::clear()}{p.}{class_q_c_p_color_map_data_a9910ba830e96955bd5c8e5bef1e77ef3} on the internal data. This also resizes the map to 0x0 cells. 
+
+Implements {\bf Q\+C\+P\+Abstract\+Plottable} \doxyref{}{p.}{class_q_c_p_abstract_plottable_a86e5b8fd4b6ff4f4084e7ea4c573fc53}.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_color_map_a0545dce5383766885912331705a8e099_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Color\+Map@{Q\+C\+P\+Color\+Map}!data@{data}}
+\index{data@{data}!Q\+C\+P\+Color\+Map@{Q\+C\+P\+Color\+Map}}
+\subsubsection[{data}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+C\+P\+Color\+Map\+Data} $\ast$ Q\+C\+P\+Color\+Map\+::data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_q_c_p_color_map_a3ae12c9ce842352037cd20ea5267414f}
+Returns a pointer to the internal data storage of type \doxyref{Q\+C\+P\+Color\+Map\+Data}{p.}{class_q_c_p_color_map_data}. Access this to modify data points (cells) and the color map key/value range.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{set\+Data}{p.}{class_q_c_p_color_map_a5a23e133a20c4ccad35fd32e6c0f9809} 
+\end{DoxySeeAlso}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_color_map_a3ae12c9ce842352037cd20ea5267414f_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Color\+Map@{Q\+C\+P\+Color\+Map}!data\+Range\+Changed@{data\+Range\+Changed}}
+\index{data\+Range\+Changed@{data\+Range\+Changed}!Q\+C\+P\+Color\+Map@{Q\+C\+P\+Color\+Map}}
+\subsubsection[{data\+Range\+Changed}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Color\+Map\+::data\+Range\+Changed (
+\begin{DoxyParamCaption}
+\item[{{\bf Q\+C\+P\+Range}}]{new\+Range}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{class_q_c_p_color_map_a482980f2335d09cfb36dd95ba9663197}
+This signal is emitted when the data range changes.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{set\+Data\+Range}{p.}{class_q_c_p_color_map_a980b42837821159786a85b4b7dcb8774} 
+\end{DoxySeeAlso}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_color_map_a482980f2335d09cfb36dd95ba9663197_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Color\+Map@{Q\+C\+P\+Color\+Map}!data\+Scale\+Type\+Changed@{data\+Scale\+Type\+Changed}}
+\index{data\+Scale\+Type\+Changed@{data\+Scale\+Type\+Changed}!Q\+C\+P\+Color\+Map@{Q\+C\+P\+Color\+Map}}
+\subsubsection[{data\+Scale\+Type\+Changed}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Color\+Map\+::data\+Scale\+Type\+Changed (
+\begin{DoxyParamCaption}
+\item[{{\bf Q\+C\+P\+Axis\+::\+Scale\+Type}}]{scale\+Type}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{class_q_c_p_color_map_a978d5d5c9f68cffef8c902b855c04490}
+This signal is emitted when the data scale type changes.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{set\+Data\+Scale\+Type}{p.}{class_q_c_p_color_map_a9d20aa08e3c1f20f22908c45b9c06511} 
+\end{DoxySeeAlso}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_color_map_a978d5d5c9f68cffef8c902b855c04490_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Color\+Map@{Q\+C\+P\+Color\+Map}!gradient\+Changed@{gradient\+Changed}}
+\index{gradient\+Changed@{gradient\+Changed}!Q\+C\+P\+Color\+Map@{Q\+C\+P\+Color\+Map}}
+\subsubsection[{gradient\+Changed}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Color\+Map\+::gradient\+Changed (
+\begin{DoxyParamCaption}
+\item[{{\bf Q\+C\+P\+Color\+Gradient}}]{new\+Gradient}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{class_q_c_p_color_map_abf4797f86e422ac6e0f732c4ff1a4d49}
+This signal is emitted when the gradient changes.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{set\+Gradient}{p.}{class_q_c_p_color_map_a7313c78360471cead3576341a2c50377} 
+\end{DoxySeeAlso}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_color_map_abf4797f86e422ac6e0f732c4ff1a4d49_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Color\+Map@{Q\+C\+P\+Color\+Map}!rescale\+Data\+Range@{rescale\+Data\+Range}}
+\index{rescale\+Data\+Range@{rescale\+Data\+Range}!Q\+C\+P\+Color\+Map@{Q\+C\+P\+Color\+Map}}
+\subsubsection[{rescale\+Data\+Range}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Color\+Map\+::rescale\+Data\+Range (
+\begin{DoxyParamCaption}
+\item[{bool}]{recalculate\+Data\+Bounds = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_color_map_a856608fa3dd1cc290bcd5f29a5575774}
+Sets the data range (\doxyref{set\+Data\+Range}{p.}{class_q_c_p_color_map_a980b42837821159786a85b4b7dcb8774}) to span the minimum and maximum values that occur in the current data set. This corresponds to the \doxyref{rescale\+Key\+Axis}{p.}{class_q_c_p_abstract_plottable_a1acecfcca3e7fcda00fcbaa3c886386f} or \doxyref{rescale\+Value\+Axis}{p.}{class_q_c_p_abstract_plottable_abfd0805eb1d955c0111a990246658324} methods, only for the third data dimension of the color map.
+
+The minimum and maximum values of the data set are buffered in the internal \doxyref{Q\+C\+P\+Color\+Map\+Data}{p.}{class_q_c_p_color_map_data} instance (\doxyref{data}{p.}{class_q_c_p_color_map_a3ae12c9ce842352037cd20ea5267414f}). As data is updated via its \doxyref{Q\+C\+P\+Color\+Map\+Data\+::set\+Cell}{p.}{class_q_c_p_color_map_data_a8e75eaf8746596319032a93f3d2d0683} or \doxyref{Q\+C\+P\+Color\+Map\+Data\+::set\+Data}{p.}{class_q_c_p_color_map_data_afd2083ccfd6987ec94aa7ef8e91ca39a}, the buffered minimum and maximum values are updated, too. For performance reasons, however, they are only updated in an expanding fashion. So the buffered maximum can only increase and the buffered minimum can only decrease. In consequence, changes to the data that actually lower the maximum of the data set (by overwriting the cell holding the current maximum with a smaller value), aren\textquotesingle{}t recognized and the buffered maximum overestimates the true maximum of the data set. The same happens for the buffered minimum. To recalculate the true minimum and maximum by explicitly looking at each cell, the method \doxyref{Q\+C\+P\+Color\+Map\+Data\+::recalculate\+Data\+Bounds}{p.}{class_q_c_p_color_map_data_ab235ade8a4d64bd3adb26a99b3dd57ee} can be used. For convenience, setting the parameter {\itshape recalculate\+Data\+Bounds} calls this method before setting the data range to the buffered minimum and maximum.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{set\+Data\+Range}{p.}{class_q_c_p_color_map_a980b42837821159786a85b4b7dcb8774} 
+\end{DoxySeeAlso}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_color_map_a856608fa3dd1cc290bcd5f29a5575774_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Color\+Map@{Q\+C\+P\+Color\+Map}!select\+Test@{select\+Test}}
+\index{select\+Test@{select\+Test}!Q\+C\+P\+Color\+Map@{Q\+C\+P\+Color\+Map}}
+\subsubsection[{select\+Test}]{\setlength{\rightskip}{0pt plus 5cm}double Q\+C\+P\+Color\+Map\+::select\+Test (
+\begin{DoxyParamCaption}
+\item[{const Q\+Point\+F \&}]{pos, }
+\item[{bool}]{only\+Selectable, }
+\item[{Q\+Variant $\ast$}]{details = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_q_c_p_color_map_a4088dc7bcbe9bba605c84a912ba660ff}
+This function is used to decide whether a click hits a layerable object or not.
+
+{\itshape pos} is a point in pixel coordinates on the \doxyref{Q\+Custom\+Plot}{p.}{class_q_custom_plot} surface. This function returns the shortest pixel distance of this point to the object. If the object is either invisible or the distance couldn\textquotesingle{}t be determined, -\/1.\+0 is returned. Further, if {\itshape only\+Selectable} is true and the object is not selectable, -\/1.\+0 is returned, too.
+
+If the object is represented not by single lines but by an area like a \doxyref{Q\+C\+P\+Item\+Text}{p.}{class_q_c_p_item_text} or the bars of a \doxyref{Q\+C\+P\+Bars}{p.}{class_q_c_p_bars} plottable, a click inside the area should also be considered a hit. In these cases this function thus returns a constant value greater zero but still below the parent plot\textquotesingle{}s selection tolerance. (typically the selection\+Tolerance multiplied by 0.\+99).
+
+Providing a constant value for area objects allows selecting line objects even when they are obscured by such area objects, by clicking close to the lines (i.\+e. closer than 0.\+99$\ast$selection\+Tolerance).
+
+The actual setting of the selection state is not done by this function. This is handled by the parent \doxyref{Q\+Custom\+Plot}{p.}{class_q_custom_plot} when the mouse\+Release\+Event occurs, and the finally selected object is notified via the select\+Event/deselect\+Event methods.
+
+{\itshape details} is an optional output parameter. Every layerable subclass may place any information in {\itshape details}. This information will be passed to select\+Event when the parent \doxyref{Q\+Custom\+Plot}{p.}{class_q_custom_plot} decides on the basis of this select\+Test call, that the object was successfully selected. The subsequent call to select\+Event will carry the {\itshape details}. This is useful for multi-\/part objects (like \doxyref{Q\+C\+P\+Axis}{p.}{class_q_c_p_axis}). This way, a possibly complex calculation to decide which part was clicked is only done once in \doxyref{select\+Test}{p.}{class_q_c_p_color_map_a4088dc7bcbe9bba605c84a912ba660ff}. The result (i.\+e. the actually clicked part) can then be placed in {\itshape details}. So in the subsequent select\+Event, the decision which part was selected doesn\textquotesingle{}t have to be done a second time for a single selection operation.
+
+You may pass 0 as {\itshape details} to indicate that you are not interested in those selection details.
+
+\begin{DoxySeeAlso}{See also}
+select\+Event, deselect\+Event, \doxyref{Q\+Custom\+Plot\+::set\+Interactions}{p.}{class_q_custom_plot_a5ee1e2f6ae27419deca53e75907c27e5} 
+\end{DoxySeeAlso}
+
+
+Implements {\bf Q\+C\+P\+Abstract\+Plottable} \doxyref{}{p.}{class_q_c_p_abstract_plottable_a38efe9641d972992a3d44204bc80ec1d}.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_color_map_a4088dc7bcbe9bba605c84a912ba660ff_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Color\+Map@{Q\+C\+P\+Color\+Map}!set\+Color\+Scale@{set\+Color\+Scale}}
+\index{set\+Color\+Scale@{set\+Color\+Scale}!Q\+C\+P\+Color\+Map@{Q\+C\+P\+Color\+Map}}
+\subsubsection[{set\+Color\+Scale}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Color\+Map\+::set\+Color\+Scale (
+\begin{DoxyParamCaption}
+\item[{{\bf Q\+C\+P\+Color\+Scale} $\ast$}]{color\+Scale}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_color_map_aa828921db364fe3c6af4619580ab85fd}
+Associates the color scale {\itshape color\+Scale} with this color map.
+
+This means that both the color scale and the color map synchronize their gradient, data range and data scale type (\doxyref{set\+Gradient}{p.}{class_q_c_p_color_map_a7313c78360471cead3576341a2c50377}, \doxyref{set\+Data\+Range}{p.}{class_q_c_p_color_map_a980b42837821159786a85b4b7dcb8774}, \doxyref{set\+Data\+Scale\+Type}{p.}{class_q_c_p_color_map_a9d20aa08e3c1f20f22908c45b9c06511}). Multiple color maps can be associated with one single color scale. This causes the color maps to also synchronize those properties, via the mutual color scale.
+
+This function causes the color map to adopt the current color gradient, data range and data scale type of {\itshape color\+Scale}. After this call, you may change these properties at either the color map or the color scale, and the setting will be applied to both.
+
+Pass 0 as {\itshape color\+Scale} to disconnect the color scale from this color map again. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_color_map_aa828921db364fe3c6af4619580ab85fd_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Color\+Map@{Q\+C\+P\+Color\+Map}!set\+Data@{set\+Data}}
+\index{set\+Data@{set\+Data}!Q\+C\+P\+Color\+Map@{Q\+C\+P\+Color\+Map}}
+\subsubsection[{set\+Data}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Color\+Map\+::set\+Data (
+\begin{DoxyParamCaption}
+\item[{{\bf Q\+C\+P\+Color\+Map\+Data} $\ast$}]{data, }
+\item[{bool}]{copy = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_color_map_a5a23e133a20c4ccad35fd32e6c0f9809}
+Replaces the current \doxyref{data}{p.}{class_q_c_p_color_map_a3ae12c9ce842352037cd20ea5267414f} with the provided {\itshape data}.
+
+If {\itshape copy} is set to true, the {\itshape data} object will only be copied. if false, the color map takes ownership of the passed data and replaces the internal data pointer with it. This is significantly faster than copying for large datasets. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_color_map_a5a23e133a20c4ccad35fd32e6c0f9809_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Color\+Map@{Q\+C\+P\+Color\+Map}!set\+Data\+Range@{set\+Data\+Range}}
+\index{set\+Data\+Range@{set\+Data\+Range}!Q\+C\+P\+Color\+Map@{Q\+C\+P\+Color\+Map}}
+\subsubsection[{set\+Data\+Range}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Color\+Map\+::set\+Data\+Range (
+\begin{DoxyParamCaption}
+\item[{const {\bf Q\+C\+P\+Range} \&}]{data\+Range}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_color_map_a980b42837821159786a85b4b7dcb8774}
+Sets the data range of this color map to {\itshape data\+Range}. The data range defines which data values are mapped to the color gradient.
+
+To make the data range span the full range of the data set, use \doxyref{rescale\+Data\+Range}{p.}{class_q_c_p_color_map_a856608fa3dd1cc290bcd5f29a5575774}.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{Q\+C\+P\+Color\+Scale\+::set\+Data\+Range}{p.}{class_q_c_p_color_scale_abe88633003a26d1e756aa74984587fef} 
+\end{DoxySeeAlso}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_color_map_a980b42837821159786a85b4b7dcb8774_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_color_map_a980b42837821159786a85b4b7dcb8774_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Color\+Map@{Q\+C\+P\+Color\+Map}!set\+Data\+Scale\+Type@{set\+Data\+Scale\+Type}}
+\index{set\+Data\+Scale\+Type@{set\+Data\+Scale\+Type}!Q\+C\+P\+Color\+Map@{Q\+C\+P\+Color\+Map}}
+\subsubsection[{set\+Data\+Scale\+Type}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Color\+Map\+::set\+Data\+Scale\+Type (
+\begin{DoxyParamCaption}
+\item[{{\bf Q\+C\+P\+Axis\+::\+Scale\+Type}}]{scale\+Type}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_color_map_a9d20aa08e3c1f20f22908c45b9c06511}
+Sets whether the data is correlated with the color gradient linearly or logarithmically.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{Q\+C\+P\+Color\+Scale\+::set\+Data\+Scale\+Type}{p.}{class_q_c_p_color_scale_aeb6107d67dd7325145b2498abae67fc3} 
+\end{DoxySeeAlso}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_color_map_a9d20aa08e3c1f20f22908c45b9c06511_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_color_map_a9d20aa08e3c1f20f22908c45b9c06511_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Color\+Map@{Q\+C\+P\+Color\+Map}!set\+Gradient@{set\+Gradient}}
+\index{set\+Gradient@{set\+Gradient}!Q\+C\+P\+Color\+Map@{Q\+C\+P\+Color\+Map}}
+\subsubsection[{set\+Gradient}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Color\+Map\+::set\+Gradient (
+\begin{DoxyParamCaption}
+\item[{const {\bf Q\+C\+P\+Color\+Gradient} \&}]{gradient}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_color_map_a7313c78360471cead3576341a2c50377}
+Sets the color gradient that is used to represent the data. For more details on how to create an own gradient or use one of the preset gradients, see \doxyref{Q\+C\+P\+Color\+Gradient}{p.}{class_q_c_p_color_gradient}.
+
+The colors defined by the gradient will be used to represent data values in the currently set data range, see \doxyref{set\+Data\+Range}{p.}{class_q_c_p_color_map_a980b42837821159786a85b4b7dcb8774}. Data points that are outside this data range will either be colored uniformly with the respective gradient boundary color, or the gradient will repeat, depending on \doxyref{Q\+C\+P\+Color\+Gradient\+::set\+Periodic}{p.}{class_q_c_p_color_gradient_a39d6448155fc00a219f239220d14bb39}.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{Q\+C\+P\+Color\+Scale\+::set\+Gradient}{p.}{class_q_c_p_color_scale_a1f29583bb6f1e7f473b62fb712be3940} 
+\end{DoxySeeAlso}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_color_map_a7313c78360471cead3576341a2c50377_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Color\+Map@{Q\+C\+P\+Color\+Map}!set\+Interpolate@{set\+Interpolate}}
+\index{set\+Interpolate@{set\+Interpolate}!Q\+C\+P\+Color\+Map@{Q\+C\+P\+Color\+Map}}
+\subsubsection[{set\+Interpolate}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Color\+Map\+::set\+Interpolate (
+\begin{DoxyParamCaption}
+\item[{bool}]{enabled}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_color_map_a484eaa8a5065cfc386b15375bf98b964}
+Sets whether the color map image shall use bicubic interpolation when displaying the color map shrinked or expanded, and not at a 1\+:1 pixel-\/to-\/data scale.
+
+\index{Q\+C\+P\+Color\+Map@{Q\+C\+P\+Color\+Map}!set\+Tight\+Boundary@{set\+Tight\+Boundary}}
+\index{set\+Tight\+Boundary@{set\+Tight\+Boundary}!Q\+C\+P\+Color\+Map@{Q\+C\+P\+Color\+Map}}
+\subsubsection[{set\+Tight\+Boundary}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Color\+Map\+::set\+Tight\+Boundary (
+\begin{DoxyParamCaption}
+\item[{bool}]{enabled}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_color_map_ad03221cc285e5f562a0b13d684b5576d}
+Sets whether the outer most data rows and columns are clipped to the specified key and value range (see \doxyref{Q\+C\+P\+Color\+Map\+Data\+::set\+Key\+Range}{p.}{class_q_c_p_color_map_data_a0738c485f3c9df9ea1241b7a8bb6a86e}, \doxyref{Q\+C\+P\+Color\+Map\+Data\+::set\+Value\+Range}{p.}{class_q_c_p_color_map_data_ada1b2680ba96a5f4175b6d341cf75d23}).
+
+if {\itshape enabled} is set to false, the data points at the border of the color map are drawn with the same width and height as all other data points. Since the data points are represented by rectangles of one color centered on the data coordinate, this means that the shown color map extends by half a data point over the specified key/value range in each direction.
+
+\index{Q\+C\+P\+Color\+Map@{Q\+C\+P\+Color\+Map}!update\+Legend\+Icon@{update\+Legend\+Icon}}
+\index{update\+Legend\+Icon@{update\+Legend\+Icon}!Q\+C\+P\+Color\+Map@{Q\+C\+P\+Color\+Map}}
+\subsubsection[{update\+Legend\+Icon}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Color\+Map\+::update\+Legend\+Icon (
+\begin{DoxyParamCaption}
+\item[{Qt\+::\+Transformation\+Mode}]{transform\+Mode = {\ttfamily Qt\+:\+:SmoothTransformation}, }
+\item[{const Q\+Size \&}]{thumb\+Size = {\ttfamily QSize(32,~18)}}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_color_map_a5d8158b62d55fcfeaabcb68ce0083e87}
+Takes the current appearance of the color map and updates the legend icon, which is used to represent this color map in the legend (see \doxyref{Q\+C\+P\+Legend}{p.}{class_q_c_p_legend}).
+
+The {\itshape transform\+Mode} specifies whether the rescaling is done by a faster, low quality image scaling algorithm (Qt\+::\+Fast\+Transformation) or by a slower, higher quality algorithm (Qt\+::\+Smooth\+Transformation).
+
+The current color map appearance is scaled down to {\itshape thumb\+Size}. Ideally, this should be equal to the size of the legend icon (see \doxyref{Q\+C\+P\+Legend\+::set\+Icon\+Size}{p.}{class_q_c_p_legend_a8b0740cce488bf7010da6beda6898984}). If it isn\textquotesingle{}t exactly the configured legend icon size, the thumb will be rescaled during drawing of the legend item.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{set\+Data\+Range}{p.}{class_q_c_p_color_map_a980b42837821159786a85b4b7dcb8774} 
+\end{DoxySeeAlso}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_color_map_a5d8158b62d55fcfeaabcb68ce0083e87_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf qcustomplot.\+h}\item 
+{\bf qcustomplot.\+cpp}\end{DoxyCompactItemize}

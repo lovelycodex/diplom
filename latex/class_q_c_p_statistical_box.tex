@@ -1,0 +1,631 @@
+\section{Q\+C\+P\+Statistical\+Box Class Reference}
+\label{class_q_c_p_statistical_box}\index{Q\+C\+P\+Statistical\+Box@{Q\+C\+P\+Statistical\+Box}}
+
+
+A plottable representing a single statistical box in a plot.  
+
+
+
+
+Collaboration diagram for Q\+C\+P\+Statistical\+Box\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_statistical_box__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Q\+C\+P\+Statistical\+Box} ({\bf Q\+C\+P\+Axis} $\ast$key\+Axis, {\bf Q\+C\+P\+Axis} $\ast$value\+Axis)
+\item 
+double {\bfseries key} () const \label{class_q_c_p_statistical_box_a767af754f39872d6308b900a0d1758ca}
+
+\item 
+double {\bfseries minimum} () const \label{class_q_c_p_statistical_box_acd94c05d59c05d9146d3b60d9f52df82}
+
+\item 
+double {\bfseries lower\+Quartile} () const \label{class_q_c_p_statistical_box_af9c4a98f5ca95b5a5a8b140f57b64ace}
+
+\item 
+double {\bfseries median} () const \label{class_q_c_p_statistical_box_a44abdee617fe0bca72e6a2ea3fd492de}
+
+\item 
+double {\bfseries upper\+Quartile} () const \label{class_q_c_p_statistical_box_abd15951907b54343a89b1f7feddcb7a7}
+
+\item 
+double {\bfseries maximum} () const \label{class_q_c_p_statistical_box_a928bcf07dd2176affad91d85be03172f}
+
+\item 
+Q\+Vector$<$ double $>$ {\bfseries outliers} () const \label{class_q_c_p_statistical_box_a73eaa2f800b47e3832d7f09ad1f3b7e0}
+
+\item 
+double {\bfseries width} () const \label{class_q_c_p_statistical_box_a0733a7bd575fc5929ce6d507bcc2a04c}
+
+\item 
+double {\bfseries whisker\+Width} () const \label{class_q_c_p_statistical_box_ab02392dd54ebd6dd7c8d6fb5c3f0421c}
+
+\item 
+Q\+Pen {\bfseries whisker\+Pen} () const \label{class_q_c_p_statistical_box_a26d2b34cbaeac2dd639bb21590f317c4}
+
+\item 
+Q\+Pen {\bfseries whisker\+Bar\+Pen} () const \label{class_q_c_p_statistical_box_ab151a727fb0b6396acb3b6c72505a4fe}
+
+\item 
+Q\+Pen {\bfseries median\+Pen} () const \label{class_q_c_p_statistical_box_a96aa0bb650b83e9dfa0387ca4db7fa05}
+
+\item 
+{\bf Q\+C\+P\+Scatter\+Style} {\bfseries outlier\+Style} () const \label{class_q_c_p_statistical_box_ab7e5a68bce97ba43a7ff18e074c4dcad}
+
+\item 
+void {\bf set\+Key} (double key)
+\item 
+void {\bf set\+Minimum} (double value)
+\item 
+void {\bf set\+Lower\+Quartile} (double value)
+\item 
+void {\bf set\+Median} (double value)
+\item 
+void {\bf set\+Upper\+Quartile} (double value)
+\item 
+void {\bf set\+Maximum} (double value)
+\item 
+void {\bf set\+Outliers} (const Q\+Vector$<$ double $>$ \&values)
+\item 
+void {\bf set\+Data} (double key, double minimum, double lower\+Quartile, double median, double upper\+Quartile, double maximum)
+\item 
+void {\bf set\+Width} (double width)
+\item 
+void {\bf set\+Whisker\+Width} (double width)
+\item 
+void {\bf set\+Whisker\+Pen} (const Q\+Pen \&pen)
+\item 
+void {\bf set\+Whisker\+Bar\+Pen} (const Q\+Pen \&pen)
+\item 
+void {\bf set\+Median\+Pen} (const Q\+Pen \&pen)
+\item 
+void {\bf set\+Outlier\+Style} (const {\bf Q\+C\+P\+Scatter\+Style} \&style)
+\item 
+virtual void {\bf clear\+Data} ()
+\item 
+virtual double {\bf select\+Test} (const Q\+Point\+F \&pos, bool only\+Selectable, Q\+Variant $\ast$details=0) const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries draw} ({\bf Q\+C\+P\+Painter} $\ast$painter)\label{class_q_c_p_statistical_box_a753b62761217dd6b92f8a29e286a1317}
+
+\item 
+virtual void {\bfseries draw\+Legend\+Icon} ({\bf Q\+C\+P\+Painter} $\ast$painter, const Q\+Rect\+F \&rect) const \label{class_q_c_p_statistical_box_a51764ed423fa02d3ef63f6848851ec33}
+
+\item 
+virtual {\bf Q\+C\+P\+Range} {\bfseries get\+Key\+Range} (bool \&found\+Range, {\bf Sign\+Domain} in\+Sign\+Domain={\bf sd\+Both}) const \label{class_q_c_p_statistical_box_ad700fdce0f456dd22a3679d61e9896a4}
+
+\item 
+virtual {\bf Q\+C\+P\+Range} {\bfseries get\+Value\+Range} (bool \&found\+Range, {\bf Sign\+Domain} in\+Sign\+Domain={\bf sd\+Both}) const \label{class_q_c_p_statistical_box_adeef8c9a0361683c776bca2fbff292b7}
+
+\item 
+virtual void {\bfseries draw\+Quartile\+Box} ({\bf Q\+C\+P\+Painter} $\ast$painter, Q\+Rect\+F $\ast$quartile\+Box=0) const \label{class_q_c_p_statistical_box_a9ad0abdb154fefb04e9872f0db8e2ec7}
+
+\item 
+virtual void {\bfseries draw\+Median} ({\bf Q\+C\+P\+Painter} $\ast$painter) const \label{class_q_c_p_statistical_box_a16fef8bc19e5a09d82033edcfe919495}
+
+\item 
+virtual void {\bfseries draw\+Whiskers} ({\bf Q\+C\+P\+Painter} $\ast$painter) const \label{class_q_c_p_statistical_box_a6f8d093ec7e404529388d02da4c72b34}
+
+\item 
+virtual void {\bfseries draw\+Outliers} ({\bf Q\+C\+P\+Painter} $\ast$painter) const \label{class_q_c_p_statistical_box_a60ebb332a497f51ace837767db5105b9}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Vector$<$ double $>$ {\bfseries m\+Outliers}\label{class_q_c_p_statistical_box_a415e2f77a89396c2af999afe027bdf6c}
+
+\item 
+double {\bfseries m\+Key}\label{class_q_c_p_statistical_box_a86fd1d3be5c5bc11d11eda7517069af4}
+
+\item 
+double {\bfseries m\+Minimum}\label{class_q_c_p_statistical_box_a7143ece4e7e5f9ac010739fbc390bf0c}
+
+\item 
+double {\bfseries m\+Lower\+Quartile}\label{class_q_c_p_statistical_box_acac86cac93d9fa3d820b5aaa04ed96f6}
+
+\item 
+double {\bfseries m\+Median}\label{class_q_c_p_statistical_box_ae43287ca13c8166bde2ac19bf0969d23}
+
+\item 
+double {\bfseries m\+Upper\+Quartile}\label{class_q_c_p_statistical_box_a865afbcca332ee851aa45807381bc80e}
+
+\item 
+double {\bfseries m\+Maximum}\label{class_q_c_p_statistical_box_a16266f1e0e4e8e95b5d141c49479ef2e}
+
+\item 
+double {\bfseries m\+Width}\label{class_q_c_p_statistical_box_af365e40b0f706c3d76f857c7957f629d}
+
+\item 
+double {\bfseries m\+Whisker\+Width}\label{class_q_c_p_statistical_box_a4d166474f845d5db626e8b11a0815a6f}
+
+\item 
+Q\+Pen {\bfseries m\+Whisker\+Pen}\label{class_q_c_p_statistical_box_a25b7552499f0f090fcff02858b2265a5}
+
+\item 
+Q\+Pen {\bfseries m\+Whisker\+Bar\+Pen}\label{class_q_c_p_statistical_box_aa719b1d722a9f82364df1497a6dc1da8}
+
+\item 
+Q\+Pen {\bfseries m\+Median\+Pen}\label{class_q_c_p_statistical_box_a1af5b601049c575f778ae270f40c9443}
+
+\item 
+{\bf Q\+C\+P\+Scatter\+Style} {\bfseries m\+Outlier\+Style}\label{class_q_c_p_statistical_box_ae102e4187e1e6ba1f2df0f622b5171a4}
+
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries Q\+Custom\+Plot}\label{class_q_c_p_statistical_box_a1cdf9df76adcfae45261690aa0ca2198}
+
+\item 
+class {\bfseries Q\+C\+P\+Legend}\label{class_q_c_p_statistical_box_a8429035e7adfbd7f05805a6530ad5e3b}
+
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+A plottable representing a single statistical box in a plot. 
+
+
+
+To plot data, assign it with the individual parameter functions or use \doxyref{set\+Data}{p.}{class_q_c_p_statistical_box_adf50c57b635edb12470c0e4a986aff37} to set all parameters at once. The individual functions are\+: \begin{DoxyItemize}
+\item \doxyref{set\+Minimum}{p.}{class_q_c_p_statistical_box_a84ff7cc61ba44890f0c3e0c99c19941e} \item \doxyref{set\+Lower\+Quartile}{p.}{class_q_c_p_statistical_box_a680941af5e23d902013962fa67223f9e} \item \doxyref{set\+Median}{p.}{class_q_c_p_statistical_box_a65970e77a897da4ecb4b15300868aad3} \item \doxyref{set\+Upper\+Quartile}{p.}{class_q_c_p_statistical_box_a65a1375f941c5a2077b5201229e89346} \item \doxyref{set\+Maximum}{p.}{class_q_c_p_statistical_box_acec5ad1901f00f2c5387cfb4d9787eb3}\end{DoxyItemize}
+Additionally you can define a list of outliers, drawn as scatter datapoints\+: \begin{DoxyItemize}
+\item \doxyref{set\+Outliers}{p.}{class_q_c_p_statistical_box_af9bc09620e0bf93bf444ee35e5800d1d}\end{DoxyItemize}
+\subsection{Changing the appearance}\label{class_q_c_p_statistical_box_appearance}
+The appearance of the box itself is controlled via \doxyref{set\+Pen}{p.}{class_q_c_p_abstract_plottable_ab74b09ae4c0e7e13142fe4b5bf46cac7} and \doxyref{set\+Brush}{p.}{class_q_c_p_abstract_plottable_a7a4b92144dca6453a1f0f210e27edc74}. You may change the width of the box with \doxyref{set\+Width}{p.}{class_q_c_p_statistical_box_a0b62775bd67301b1eba5c785f2b26f14} in plot coordinates (not pixels).
+
+Analog functions exist for the minimum/maximum-\/whiskers\+: \doxyref{set\+Whisker\+Pen}{p.}{class_q_c_p_statistical_box_a4a5034cb3b9b040444df05ab1684620b}, \doxyref{set\+Whisker\+Bar\+Pen}{p.}{class_q_c_p_statistical_box_aa8d3e503897788e1abf68dc74b5f147f}, \doxyref{set\+Whisker\+Width}{p.}{class_q_c_p_statistical_box_adf378812446bd66f34d1f7f293d991cd}. The whisker width is the width of the bar at the top (maximum) and bottom (minimum).
+
+The median indicator line has its own pen, \doxyref{set\+Median\+Pen}{p.}{class_q_c_p_statistical_box_a7260ac55b669f5d0a74f16d5ca84c52c}.
+
+If the whisker backbone pen is changed, make sure to set the cap\+Style to Qt\+::\+Flat\+Cap. Else, the backbone line might exceed the whisker bars by a few pixels due to the pen cap being not perfectly flat.
+
+The Outlier data points are drawn as normal scatter points. Their look can be controlled with \doxyref{set\+Outlier\+Style}{p.}{class_q_c_p_statistical_box_ad5241943422eb8e58360a97e99ad6aa7}\subsection{Usage}\label{class_q_c_p_statistical_box_usage}
+Like all data representing objects in \doxyref{Q\+Custom\+Plot}{p.}{class_q_custom_plot}, the \doxyref{Q\+C\+P\+Statistical\+Box}{p.}{class_q_c_p_statistical_box} is a plottable. Usually, you first create an instance and add it to the custom\+Plot\+: 
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+and then modify the properties of the newly created plottable, e.\+g.\+: 
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Q\+C\+P\+Statistical\+Box@{Q\+C\+P\+Statistical\+Box}!Q\+C\+P\+Statistical\+Box@{Q\+C\+P\+Statistical\+Box}}
+\index{Q\+C\+P\+Statistical\+Box@{Q\+C\+P\+Statistical\+Box}!Q\+C\+P\+Statistical\+Box@{Q\+C\+P\+Statistical\+Box}}
+\subsubsection[{Q\+C\+P\+Statistical\+Box}]{\setlength{\rightskip}{0pt plus 5cm}Q\+C\+P\+Statistical\+Box\+::\+Q\+C\+P\+Statistical\+Box (
+\begin{DoxyParamCaption}
+\item[{{\bf Q\+C\+P\+Axis} $\ast$}]{key\+Axis, }
+\item[{{\bf Q\+C\+P\+Axis} $\ast$}]{value\+Axis}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\label{class_q_c_p_statistical_box_a75c2b3e7fcd0741cc981693a2ba63b27}
+Constructs a statistical box which uses {\itshape key\+Axis} as its key axis (\char`\"{}x\char`\"{}) and {\itshape value\+Axis} as its value axis (\char`\"{}y\char`\"{}). {\itshape key\+Axis} and {\itshape value\+Axis} must reside in the same \doxyref{Q\+Custom\+Plot}{p.}{class_q_custom_plot} instance and not have the same orientation. If either of these restrictions is violated, a corresponding message is printed to the debug output (q\+Debug), the construction is not aborted, though.
+
+The constructed statistical box can be added to the plot with \doxyref{Q\+Custom\+Plot\+::add\+Plottable}{p.}{class_q_custom_plot_ab7ad9174f701f9c6f64e378df77927a6}, \doxyref{Q\+Custom\+Plot}{p.}{class_q_custom_plot} then takes ownership of the statistical box. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_q_c_p_statistical_box_a75c2b3e7fcd0741cc981693a2ba63b27_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{Q\+C\+P\+Statistical\+Box@{Q\+C\+P\+Statistical\+Box}!clear\+Data@{clear\+Data}}
+\index{clear\+Data@{clear\+Data}!Q\+C\+P\+Statistical\+Box@{Q\+C\+P\+Statistical\+Box}}
+\subsubsection[{clear\+Data}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Statistical\+Box\+::clear\+Data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_q_c_p_statistical_box_a19112994449df0c20287858436cc68e3}
+Clears all data in the plottable. 
+
+Implements {\bf Q\+C\+P\+Abstract\+Plottable} \doxyref{}{p.}{class_q_c_p_abstract_plottable_a86e5b8fd4b6ff4f4084e7ea4c573fc53}.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{class_q_c_p_statistical_box_a19112994449df0c20287858436cc68e3_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Statistical\+Box@{Q\+C\+P\+Statistical\+Box}!select\+Test@{select\+Test}}
+\index{select\+Test@{select\+Test}!Q\+C\+P\+Statistical\+Box@{Q\+C\+P\+Statistical\+Box}}
+\subsubsection[{select\+Test}]{\setlength{\rightskip}{0pt plus 5cm}double Q\+C\+P\+Statistical\+Box\+::select\+Test (
+\begin{DoxyParamCaption}
+\item[{const Q\+Point\+F \&}]{pos, }
+\item[{bool}]{only\+Selectable, }
+\item[{Q\+Variant $\ast$}]{details = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_q_c_p_statistical_box_a7d3ac843dc48a085740fdfc4319a89cc}
+This function is used to decide whether a click hits a layerable object or not.
+
+{\itshape pos} is a point in pixel coordinates on the \doxyref{Q\+Custom\+Plot}{p.}{class_q_custom_plot} surface. This function returns the shortest pixel distance of this point to the object. If the object is either invisible or the distance couldn\textquotesingle{}t be determined, -\/1.\+0 is returned. Further, if {\itshape only\+Selectable} is true and the object is not selectable, -\/1.\+0 is returned, too.
+
+If the object is represented not by single lines but by an area like a \doxyref{Q\+C\+P\+Item\+Text}{p.}{class_q_c_p_item_text} or the bars of a \doxyref{Q\+C\+P\+Bars}{p.}{class_q_c_p_bars} plottable, a click inside the area should also be considered a hit. In these cases this function thus returns a constant value greater zero but still below the parent plot\textquotesingle{}s selection tolerance. (typically the selection\+Tolerance multiplied by 0.\+99).
+
+Providing a constant value for area objects allows selecting line objects even when they are obscured by such area objects, by clicking close to the lines (i.\+e. closer than 0.\+99$\ast$selection\+Tolerance).
+
+The actual setting of the selection state is not done by this function. This is handled by the parent \doxyref{Q\+Custom\+Plot}{p.}{class_q_custom_plot} when the mouse\+Release\+Event occurs, and the finally selected object is notified via the select\+Event/deselect\+Event methods.
+
+{\itshape details} is an optional output parameter. Every layerable subclass may place any information in {\itshape details}. This information will be passed to select\+Event when the parent \doxyref{Q\+Custom\+Plot}{p.}{class_q_custom_plot} decides on the basis of this select\+Test call, that the object was successfully selected. The subsequent call to select\+Event will carry the {\itshape details}. This is useful for multi-\/part objects (like \doxyref{Q\+C\+P\+Axis}{p.}{class_q_c_p_axis}). This way, a possibly complex calculation to decide which part was clicked is only done once in \doxyref{select\+Test}{p.}{class_q_c_p_statistical_box_a7d3ac843dc48a085740fdfc4319a89cc}. The result (i.\+e. the actually clicked part) can then be placed in {\itshape details}. So in the subsequent select\+Event, the decision which part was selected doesn\textquotesingle{}t have to be done a second time for a single selection operation.
+
+You may pass 0 as {\itshape details} to indicate that you are not interested in those selection details.
+
+\begin{DoxySeeAlso}{See also}
+select\+Event, deselect\+Event, \doxyref{Q\+Custom\+Plot\+::set\+Interactions}{p.}{class_q_custom_plot_a5ee1e2f6ae27419deca53e75907c27e5} 
+\end{DoxySeeAlso}
+
+
+Implements {\bf Q\+C\+P\+Abstract\+Plottable} \doxyref{}{p.}{class_q_c_p_abstract_plottable_a38efe9641d972992a3d44204bc80ec1d}.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=337pt]{class_q_c_p_statistical_box_a7d3ac843dc48a085740fdfc4319a89cc_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Statistical\+Box@{Q\+C\+P\+Statistical\+Box}!set\+Data@{set\+Data}}
+\index{set\+Data@{set\+Data}!Q\+C\+P\+Statistical\+Box@{Q\+C\+P\+Statistical\+Box}}
+\subsubsection[{set\+Data}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Statistical\+Box\+::set\+Data (
+\begin{DoxyParamCaption}
+\item[{double}]{key, }
+\item[{double}]{minimum, }
+\item[{double}]{lower\+Quartile, }
+\item[{double}]{median, }
+\item[{double}]{upper\+Quartile, }
+\item[{double}]{maximum}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_statistical_box_adf50c57b635edb12470c0e4a986aff37}
+Sets all parameters of the statistical box plot at once.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{set\+Key}{p.}{class_q_c_p_statistical_box_a84a1c6d34b2f9af40bca0c527d51e97e}, \doxyref{set\+Minimum}{p.}{class_q_c_p_statistical_box_a84ff7cc61ba44890f0c3e0c99c19941e}, \doxyref{set\+Lower\+Quartile}{p.}{class_q_c_p_statistical_box_a680941af5e23d902013962fa67223f9e}, \doxyref{set\+Median}{p.}{class_q_c_p_statistical_box_a65970e77a897da4ecb4b15300868aad3}, \doxyref{set\+Upper\+Quartile}{p.}{class_q_c_p_statistical_box_a65a1375f941c5a2077b5201229e89346}, \doxyref{set\+Maximum}{p.}{class_q_c_p_statistical_box_acec5ad1901f00f2c5387cfb4d9787eb3} 
+\end{DoxySeeAlso}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{class_q_c_p_statistical_box_adf50c57b635edb12470c0e4a986aff37_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Statistical\+Box@{Q\+C\+P\+Statistical\+Box}!set\+Key@{set\+Key}}
+\index{set\+Key@{set\+Key}!Q\+C\+P\+Statistical\+Box@{Q\+C\+P\+Statistical\+Box}}
+\subsubsection[{set\+Key}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Statistical\+Box\+::set\+Key (
+\begin{DoxyParamCaption}
+\item[{double}]{key}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_statistical_box_a84a1c6d34b2f9af40bca0c527d51e97e}
+Sets the key coordinate of the statistical box. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{class_q_c_p_statistical_box_a84a1c6d34b2f9af40bca0c527d51e97e_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Statistical\+Box@{Q\+C\+P\+Statistical\+Box}!set\+Lower\+Quartile@{set\+Lower\+Quartile}}
+\index{set\+Lower\+Quartile@{set\+Lower\+Quartile}!Q\+C\+P\+Statistical\+Box@{Q\+C\+P\+Statistical\+Box}}
+\subsubsection[{set\+Lower\+Quartile}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Statistical\+Box\+::set\+Lower\+Quartile (
+\begin{DoxyParamCaption}
+\item[{double}]{value}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_statistical_box_a680941af5e23d902013962fa67223f9e}
+Sets the parameter \char`\"{}lower Quartile\char`\"{} of the statistical box plot. This is the lower end of the box. The lower and the upper quartiles are the two statistical quartiles around the median of the sample, they contain 50\% of the sample data.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{set\+Upper\+Quartile}{p.}{class_q_c_p_statistical_box_a65a1375f941c5a2077b5201229e89346}, \doxyref{set\+Pen}{p.}{class_q_c_p_abstract_plottable_ab74b09ae4c0e7e13142fe4b5bf46cac7}, \doxyref{set\+Brush}{p.}{class_q_c_p_abstract_plottable_a7a4b92144dca6453a1f0f210e27edc74}, \doxyref{set\+Width}{p.}{class_q_c_p_statistical_box_a0b62775bd67301b1eba5c785f2b26f14} 
+\end{DoxySeeAlso}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{class_q_c_p_statistical_box_a680941af5e23d902013962fa67223f9e_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Statistical\+Box@{Q\+C\+P\+Statistical\+Box}!set\+Maximum@{set\+Maximum}}
+\index{set\+Maximum@{set\+Maximum}!Q\+C\+P\+Statistical\+Box@{Q\+C\+P\+Statistical\+Box}}
+\subsubsection[{set\+Maximum}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Statistical\+Box\+::set\+Maximum (
+\begin{DoxyParamCaption}
+\item[{double}]{value}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_statistical_box_acec5ad1901f00f2c5387cfb4d9787eb3}
+Sets the parameter \char`\"{}maximum\char`\"{} of the statistical box plot. This is the position of the upper whisker, typically the maximum measurement of the sample that\textquotesingle{}s not considered an outlier.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{set\+Minimum}{p.}{class_q_c_p_statistical_box_a84ff7cc61ba44890f0c3e0c99c19941e}, \doxyref{set\+Whisker\+Pen}{p.}{class_q_c_p_statistical_box_a4a5034cb3b9b040444df05ab1684620b}, \doxyref{set\+Whisker\+Bar\+Pen}{p.}{class_q_c_p_statistical_box_aa8d3e503897788e1abf68dc74b5f147f}, \doxyref{set\+Whisker\+Width}{p.}{class_q_c_p_statistical_box_adf378812446bd66f34d1f7f293d991cd} 
+\end{DoxySeeAlso}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{class_q_c_p_statistical_box_acec5ad1901f00f2c5387cfb4d9787eb3_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Statistical\+Box@{Q\+C\+P\+Statistical\+Box}!set\+Median@{set\+Median}}
+\index{set\+Median@{set\+Median}!Q\+C\+P\+Statistical\+Box@{Q\+C\+P\+Statistical\+Box}}
+\subsubsection[{set\+Median}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Statistical\+Box\+::set\+Median (
+\begin{DoxyParamCaption}
+\item[{double}]{value}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_statistical_box_a65970e77a897da4ecb4b15300868aad3}
+Sets the parameter \char`\"{}median\char`\"{} of the statistical box plot. This is the value of the median mark inside the quartile box. The median separates the sample data in half (50\% of the sample data is below/above the median).
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{set\+Median\+Pen}{p.}{class_q_c_p_statistical_box_a7260ac55b669f5d0a74f16d5ca84c52c} 
+\end{DoxySeeAlso}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{class_q_c_p_statistical_box_a65970e77a897da4ecb4b15300868aad3_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Statistical\+Box@{Q\+C\+P\+Statistical\+Box}!set\+Median\+Pen@{set\+Median\+Pen}}
+\index{set\+Median\+Pen@{set\+Median\+Pen}!Q\+C\+P\+Statistical\+Box@{Q\+C\+P\+Statistical\+Box}}
+\subsubsection[{set\+Median\+Pen}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Statistical\+Box\+::set\+Median\+Pen (
+\begin{DoxyParamCaption}
+\item[{const Q\+Pen \&}]{pen}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_statistical_box_a7260ac55b669f5d0a74f16d5ca84c52c}
+Sets the pen used for drawing the median indicator line inside the statistical box. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{class_q_c_p_statistical_box_a7260ac55b669f5d0a74f16d5ca84c52c_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Statistical\+Box@{Q\+C\+P\+Statistical\+Box}!set\+Minimum@{set\+Minimum}}
+\index{set\+Minimum@{set\+Minimum}!Q\+C\+P\+Statistical\+Box@{Q\+C\+P\+Statistical\+Box}}
+\subsubsection[{set\+Minimum}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Statistical\+Box\+::set\+Minimum (
+\begin{DoxyParamCaption}
+\item[{double}]{value}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_statistical_box_a84ff7cc61ba44890f0c3e0c99c19941e}
+Sets the parameter \char`\"{}minimum\char`\"{} of the statistical box plot. This is the position of the lower whisker, typically the minimum measurement of the sample that\textquotesingle{}s not considered an outlier.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{set\+Maximum}{p.}{class_q_c_p_statistical_box_acec5ad1901f00f2c5387cfb4d9787eb3}, \doxyref{set\+Whisker\+Pen}{p.}{class_q_c_p_statistical_box_a4a5034cb3b9b040444df05ab1684620b}, \doxyref{set\+Whisker\+Bar\+Pen}{p.}{class_q_c_p_statistical_box_aa8d3e503897788e1abf68dc74b5f147f}, \doxyref{set\+Whisker\+Width}{p.}{class_q_c_p_statistical_box_adf378812446bd66f34d1f7f293d991cd} 
+\end{DoxySeeAlso}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{class_q_c_p_statistical_box_a84ff7cc61ba44890f0c3e0c99c19941e_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Statistical\+Box@{Q\+C\+P\+Statistical\+Box}!set\+Outliers@{set\+Outliers}}
+\index{set\+Outliers@{set\+Outliers}!Q\+C\+P\+Statistical\+Box@{Q\+C\+P\+Statistical\+Box}}
+\subsubsection[{set\+Outliers}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Statistical\+Box\+::set\+Outliers (
+\begin{DoxyParamCaption}
+\item[{const Q\+Vector$<$ double $>$ \&}]{values}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_statistical_box_af9bc09620e0bf93bf444ee35e5800d1d}
+Sets a vector of outlier values that will be drawn as scatters. Any data points in the sample that are not within the whiskers (\doxyref{set\+Minimum}{p.}{class_q_c_p_statistical_box_a84ff7cc61ba44890f0c3e0c99c19941e}, \doxyref{set\+Maximum}{p.}{class_q_c_p_statistical_box_acec5ad1901f00f2c5387cfb4d9787eb3}) should be considered outliers and displayed as such.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{set\+Outlier\+Style}{p.}{class_q_c_p_statistical_box_ad5241943422eb8e58360a97e99ad6aa7} 
+\end{DoxySeeAlso}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{class_q_c_p_statistical_box_af9bc09620e0bf93bf444ee35e5800d1d_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Statistical\+Box@{Q\+C\+P\+Statistical\+Box}!set\+Outlier\+Style@{set\+Outlier\+Style}}
+\index{set\+Outlier\+Style@{set\+Outlier\+Style}!Q\+C\+P\+Statistical\+Box@{Q\+C\+P\+Statistical\+Box}}
+\subsubsection[{set\+Outlier\+Style}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Statistical\+Box\+::set\+Outlier\+Style (
+\begin{DoxyParamCaption}
+\item[{const {\bf Q\+C\+P\+Scatter\+Style} \&}]{style}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_statistical_box_ad5241943422eb8e58360a97e99ad6aa7}
+Sets the appearance of the outlier data points.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{set\+Outliers}{p.}{class_q_c_p_statistical_box_af9bc09620e0bf93bf444ee35e5800d1d} 
+\end{DoxySeeAlso}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{class_q_c_p_statistical_box_ad5241943422eb8e58360a97e99ad6aa7_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Statistical\+Box@{Q\+C\+P\+Statistical\+Box}!set\+Upper\+Quartile@{set\+Upper\+Quartile}}
+\index{set\+Upper\+Quartile@{set\+Upper\+Quartile}!Q\+C\+P\+Statistical\+Box@{Q\+C\+P\+Statistical\+Box}}
+\subsubsection[{set\+Upper\+Quartile}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Statistical\+Box\+::set\+Upper\+Quartile (
+\begin{DoxyParamCaption}
+\item[{double}]{value}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_statistical_box_a65a1375f941c5a2077b5201229e89346}
+Sets the parameter \char`\"{}upper Quartile\char`\"{} of the statistical box plot. This is the upper end of the box. The lower and the upper quartiles are the two statistical quartiles around the median of the sample, they contain 50\% of the sample data.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{set\+Lower\+Quartile}{p.}{class_q_c_p_statistical_box_a680941af5e23d902013962fa67223f9e}, \doxyref{set\+Pen}{p.}{class_q_c_p_abstract_plottable_ab74b09ae4c0e7e13142fe4b5bf46cac7}, \doxyref{set\+Brush}{p.}{class_q_c_p_abstract_plottable_a7a4b92144dca6453a1f0f210e27edc74}, \doxyref{set\+Width}{p.}{class_q_c_p_statistical_box_a0b62775bd67301b1eba5c785f2b26f14} 
+\end{DoxySeeAlso}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{class_q_c_p_statistical_box_a65a1375f941c5a2077b5201229e89346_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Statistical\+Box@{Q\+C\+P\+Statistical\+Box}!set\+Whisker\+Bar\+Pen@{set\+Whisker\+Bar\+Pen}}
+\index{set\+Whisker\+Bar\+Pen@{set\+Whisker\+Bar\+Pen}!Q\+C\+P\+Statistical\+Box@{Q\+C\+P\+Statistical\+Box}}
+\subsubsection[{set\+Whisker\+Bar\+Pen}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Statistical\+Box\+::set\+Whisker\+Bar\+Pen (
+\begin{DoxyParamCaption}
+\item[{const Q\+Pen \&}]{pen}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_statistical_box_aa8d3e503897788e1abf68dc74b5f147f}
+Sets the pen used for drawing the whisker bars (Those are the lines parallel to the key axis at each end of the whisker backbone).
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{set\+Whisker\+Pen}{p.}{class_q_c_p_statistical_box_a4a5034cb3b9b040444df05ab1684620b} 
+\end{DoxySeeAlso}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{class_q_c_p_statistical_box_aa8d3e503897788e1abf68dc74b5f147f_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Statistical\+Box@{Q\+C\+P\+Statistical\+Box}!set\+Whisker\+Pen@{set\+Whisker\+Pen}}
+\index{set\+Whisker\+Pen@{set\+Whisker\+Pen}!Q\+C\+P\+Statistical\+Box@{Q\+C\+P\+Statistical\+Box}}
+\subsubsection[{set\+Whisker\+Pen}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Statistical\+Box\+::set\+Whisker\+Pen (
+\begin{DoxyParamCaption}
+\item[{const Q\+Pen \&}]{pen}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_statistical_box_a4a5034cb3b9b040444df05ab1684620b}
+Sets the pen used for drawing the whisker backbone (That\textquotesingle{}s the line parallel to the value axis).
+
+Make sure to set the {\itshape pen} cap\+Style to Qt\+::\+Flat\+Cap to prevent the whisker backbone from reaching a few pixels past the whisker bars, when using a non-\/zero pen width.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{set\+Whisker\+Bar\+Pen}{p.}{class_q_c_p_statistical_box_aa8d3e503897788e1abf68dc74b5f147f} 
+\end{DoxySeeAlso}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{class_q_c_p_statistical_box_a4a5034cb3b9b040444df05ab1684620b_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Statistical\+Box@{Q\+C\+P\+Statistical\+Box}!set\+Whisker\+Width@{set\+Whisker\+Width}}
+\index{set\+Whisker\+Width@{set\+Whisker\+Width}!Q\+C\+P\+Statistical\+Box@{Q\+C\+P\+Statistical\+Box}}
+\subsubsection[{set\+Whisker\+Width}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Statistical\+Box\+::set\+Whisker\+Width (
+\begin{DoxyParamCaption}
+\item[{double}]{width}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_statistical_box_adf378812446bd66f34d1f7f293d991cd}
+Sets the width of the whiskers (\doxyref{set\+Minimum}{p.}{class_q_c_p_statistical_box_a84ff7cc61ba44890f0c3e0c99c19941e}, \doxyref{set\+Maximum}{p.}{class_q_c_p_statistical_box_acec5ad1901f00f2c5387cfb4d9787eb3}) in key coordinates.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{set\+Width}{p.}{class_q_c_p_statistical_box_a0b62775bd67301b1eba5c785f2b26f14} 
+\end{DoxySeeAlso}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{class_q_c_p_statistical_box_adf378812446bd66f34d1f7f293d991cd_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Statistical\+Box@{Q\+C\+P\+Statistical\+Box}!set\+Width@{set\+Width}}
+\index{set\+Width@{set\+Width}!Q\+C\+P\+Statistical\+Box@{Q\+C\+P\+Statistical\+Box}}
+\subsubsection[{set\+Width}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Statistical\+Box\+::set\+Width (
+\begin{DoxyParamCaption}
+\item[{double}]{width}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_statistical_box_a0b62775bd67301b1eba5c785f2b26f14}
+Sets the width of the box in key coordinates.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{set\+Whisker\+Width}{p.}{class_q_c_p_statistical_box_adf378812446bd66f34d1f7f293d991cd} 
+\end{DoxySeeAlso}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{class_q_c_p_statistical_box_a0b62775bd67301b1eba5c785f2b26f14_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf qcustomplot.\+h}\item 
+{\bf qcustomplot.\+cpp}\end{DoxyCompactItemize}

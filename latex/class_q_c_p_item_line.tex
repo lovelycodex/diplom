@@ -1,0 +1,235 @@
+\section{Q\+C\+P\+Item\+Line Class Reference}
+\label{class_q_c_p_item_line}\index{Q\+C\+P\+Item\+Line@{Q\+C\+P\+Item\+Line}}
+
+
+A line from one point to another.  
+
+
+
+
+Collaboration diagram for Q\+C\+P\+Item\+Line\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_item_line__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Q\+C\+P\+Item\+Line} ({\bf Q\+Custom\+Plot} $\ast$parent\+Plot)
+\item 
+Q\+Pen {\bfseries pen} () const \label{class_q_c_p_item_line_a235779dd079a263bedb20b3daecc40eb}
+
+\item 
+Q\+Pen {\bfseries selected\+Pen} () const \label{class_q_c_p_item_line_a9fde5e95a1a369008252e18f1925650c}
+
+\item 
+{\bf Q\+C\+P\+Line\+Ending} {\bfseries head} () const \label{class_q_c_p_item_line_a5f6cbc5c763feae9dfbce71748fc43f1}
+
+\item 
+{\bf Q\+C\+P\+Line\+Ending} {\bfseries tail} () const \label{class_q_c_p_item_line_a5d2ca0f784933e80f3e6e1d15dceebb3}
+
+\item 
+void {\bf set\+Pen} (const Q\+Pen \&pen)
+\item 
+void {\bf set\+Selected\+Pen} (const Q\+Pen \&pen)
+\item 
+void {\bf set\+Head} (const {\bf Q\+C\+P\+Line\+Ending} \&head)
+\item 
+void {\bf set\+Tail} (const {\bf Q\+C\+P\+Line\+Ending} \&tail)
+\item 
+virtual double {\bf select\+Test} (const Q\+Point\+F \&pos, bool only\+Selectable, Q\+Variant $\ast$details=0) const 
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Q\+C\+P\+Item\+Position} $\ast$const {\bfseries start}\label{class_q_c_p_item_line_a602da607a09498b0f152ada1d6851bc5}
+
+\item 
+{\bf Q\+C\+P\+Item\+Position} $\ast$const {\bfseries end}\label{class_q_c_p_item_line_a15598864c1c22a2497a1979c4980c4e1}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries draw} ({\bf Q\+C\+P\+Painter} $\ast$painter)\label{class_q_c_p_item_line_a1fc045dd33919f8006df0692aeb0e84a}
+
+\item 
+Q\+Line\+F {\bfseries get\+Rect\+Clipped\+Line} (const Q\+Vector2\+D \&start, const Q\+Vector2\+D \&end, const Q\+Rect \&rect) const \label{class_q_c_p_item_line_a36e8620019a221ccea4357f0287b81c2}
+
+\item 
+Q\+Pen {\bfseries main\+Pen} () const \label{class_q_c_p_item_line_a7b5bc4ebacb55774b87c91b308ca7912}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Pen {\bfseries m\+Pen}\label{class_q_c_p_item_line_abbb544d5bb927dfe4e81a7f3ca4c65ac}
+
+\item 
+Q\+Pen {\bfseries m\+Selected\+Pen}\label{class_q_c_p_item_line_aff858ad6dde3b90024814ca4b116f278}
+
+\item 
+{\bf Q\+C\+P\+Line\+Ending} {\bfseries m\+Head}\label{class_q_c_p_item_line_a51603f28ab7ddb1c1a95ea384791d3ed}
+
+\item 
+{\bf Q\+C\+P\+Line\+Ending} {\bfseries m\+Tail}\label{class_q_c_p_item_line_ab8ed61dfe15bbb1cbf9b95eae95e242f}
+
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+A line from one point to another. 
+
+ It has two positions, {\itshape start} and {\itshape end}, which define the end points of the line.
+
+With \doxyref{set\+Head}{p.}{class_q_c_p_item_line_aebf3d687114d584e0459db6759e2c3c3} and \doxyref{set\+Tail}{p.}{class_q_c_p_item_line_ac264222c3297a7efe33df9345c811a5f} you may set different line ending styles, e.\+g. to create an arrow. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Q\+C\+P\+Item\+Line@{Q\+C\+P\+Item\+Line}!Q\+C\+P\+Item\+Line@{Q\+C\+P\+Item\+Line}}
+\index{Q\+C\+P\+Item\+Line@{Q\+C\+P\+Item\+Line}!Q\+C\+P\+Item\+Line@{Q\+C\+P\+Item\+Line}}
+\subsubsection[{Q\+C\+P\+Item\+Line}]{\setlength{\rightskip}{0pt plus 5cm}Q\+C\+P\+Item\+Line\+::\+Q\+C\+P\+Item\+Line (
+\begin{DoxyParamCaption}
+\item[{{\bf Q\+Custom\+Plot} $\ast$}]{parent\+Plot}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_item_line_a17804b7f64961c6accf25b61e85142e3}
+Creates a line item and sets default values.
+
+The constructed item can be added to the plot with \doxyref{Q\+Custom\+Plot\+::add\+Item}{p.}{class_q_custom_plot_aa500620379262321685cb7a7674cbd2a}. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_item_line_a17804b7f64961c6accf25b61e85142e3_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{Q\+C\+P\+Item\+Line@{Q\+C\+P\+Item\+Line}!select\+Test@{select\+Test}}
+\index{select\+Test@{select\+Test}!Q\+C\+P\+Item\+Line@{Q\+C\+P\+Item\+Line}}
+\subsubsection[{select\+Test}]{\setlength{\rightskip}{0pt plus 5cm}double Q\+C\+P\+Item\+Line\+::select\+Test (
+\begin{DoxyParamCaption}
+\item[{const Q\+Point\+F \&}]{pos, }
+\item[{bool}]{only\+Selectable, }
+\item[{Q\+Variant $\ast$}]{details = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_q_c_p_item_line_a7541e5d9378ca121d07b0df3b24f7178}
+This function is used to decide whether a click hits a layerable object or not.
+
+{\itshape pos} is a point in pixel coordinates on the \doxyref{Q\+Custom\+Plot}{p.}{class_q_custom_plot} surface. This function returns the shortest pixel distance of this point to the object. If the object is either invisible or the distance couldn\textquotesingle{}t be determined, -\/1.\+0 is returned. Further, if {\itshape only\+Selectable} is true and the object is not selectable, -\/1.\+0 is returned, too.
+
+If the object is represented not by single lines but by an area like a \doxyref{Q\+C\+P\+Item\+Text}{p.}{class_q_c_p_item_text} or the bars of a \doxyref{Q\+C\+P\+Bars}{p.}{class_q_c_p_bars} plottable, a click inside the area should also be considered a hit. In these cases this function thus returns a constant value greater zero but still below the parent plot\textquotesingle{}s selection tolerance. (typically the selection\+Tolerance multiplied by 0.\+99).
+
+Providing a constant value for area objects allows selecting line objects even when they are obscured by such area objects, by clicking close to the lines (i.\+e. closer than 0.\+99$\ast$selection\+Tolerance).
+
+The actual setting of the selection state is not done by this function. This is handled by the parent \doxyref{Q\+Custom\+Plot}{p.}{class_q_custom_plot} when the mouse\+Release\+Event occurs, and the finally selected object is notified via the select\+Event/deselect\+Event methods.
+
+{\itshape details} is an optional output parameter. Every layerable subclass may place any information in {\itshape details}. This information will be passed to select\+Event when the parent \doxyref{Q\+Custom\+Plot}{p.}{class_q_custom_plot} decides on the basis of this select\+Test call, that the object was successfully selected. The subsequent call to select\+Event will carry the {\itshape details}. This is useful for multi-\/part objects (like \doxyref{Q\+C\+P\+Axis}{p.}{class_q_c_p_axis}). This way, a possibly complex calculation to decide which part was clicked is only done once in \doxyref{select\+Test}{p.}{class_q_c_p_item_line_a7541e5d9378ca121d07b0df3b24f7178}. The result (i.\+e. the actually clicked part) can then be placed in {\itshape details}. So in the subsequent select\+Event, the decision which part was selected doesn\textquotesingle{}t have to be done a second time for a single selection operation.
+
+You may pass 0 as {\itshape details} to indicate that you are not interested in those selection details.
+
+\begin{DoxySeeAlso}{See also}
+select\+Event, deselect\+Event, \doxyref{Q\+Custom\+Plot\+::set\+Interactions}{p.}{class_q_custom_plot_a5ee1e2f6ae27419deca53e75907c27e5} 
+\end{DoxySeeAlso}
+
+
+Implements {\bf Q\+C\+P\+Abstract\+Item} \doxyref{}{p.}{class_q_c_p_abstract_item_a96d522d10ffc0413b9a366c6f7f0476b}.
+
+\index{Q\+C\+P\+Item\+Line@{Q\+C\+P\+Item\+Line}!set\+Head@{set\+Head}}
+\index{set\+Head@{set\+Head}!Q\+C\+P\+Item\+Line@{Q\+C\+P\+Item\+Line}}
+\subsubsection[{set\+Head}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Item\+Line\+::set\+Head (
+\begin{DoxyParamCaption}
+\item[{const {\bf Q\+C\+P\+Line\+Ending} \&}]{head}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_item_line_aebf3d687114d584e0459db6759e2c3c3}
+Sets the line ending style of the head. The head corresponds to the {\itshape end} position.
+
+Note that due to the overloaded \doxyref{Q\+C\+P\+Line\+Ending}{p.}{class_q_c_p_line_ending} constructor, you may directly specify a \doxyref{Q\+C\+P\+Line\+Ending\+::\+Ending\+Style}{p.}{class_q_c_p_line_ending_a5ef16e6876b4b74959c7261d8d4c2cd5} here, e.\+g.
+\begin{DoxyCode}
+setHead(QCPLineEnding::esSpikeArrow) 
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{set\+Tail}{p.}{class_q_c_p_item_line_ac264222c3297a7efe33df9345c811a5f} 
+\end{DoxySeeAlso}
+\index{Q\+C\+P\+Item\+Line@{Q\+C\+P\+Item\+Line}!set\+Pen@{set\+Pen}}
+\index{set\+Pen@{set\+Pen}!Q\+C\+P\+Item\+Line@{Q\+C\+P\+Item\+Line}}
+\subsubsection[{set\+Pen}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Item\+Line\+::set\+Pen (
+\begin{DoxyParamCaption}
+\item[{const Q\+Pen \&}]{pen}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_item_line_a572528dab61c1abe205822fbd5db4b27}
+Sets the pen that will be used to draw the line
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{set\+Selected\+Pen}{p.}{class_q_c_p_item_line_a3e2fec44503277e77717e9c24f87f1ea} 
+\end{DoxySeeAlso}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_item_line_a572528dab61c1abe205822fbd5db4b27_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Item\+Line@{Q\+C\+P\+Item\+Line}!set\+Selected\+Pen@{set\+Selected\+Pen}}
+\index{set\+Selected\+Pen@{set\+Selected\+Pen}!Q\+C\+P\+Item\+Line@{Q\+C\+P\+Item\+Line}}
+\subsubsection[{set\+Selected\+Pen}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Item\+Line\+::set\+Selected\+Pen (
+\begin{DoxyParamCaption}
+\item[{const Q\+Pen \&}]{pen}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_item_line_a3e2fec44503277e77717e9c24f87f1ea}
+Sets the pen that will be used to draw the line when selected
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{set\+Pen}{p.}{class_q_c_p_item_line_a572528dab61c1abe205822fbd5db4b27}, \doxyref{set\+Selected}{p.}{class_q_c_p_abstract_item_a203de94ad586cc44d16c9565f49d3378} 
+\end{DoxySeeAlso}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_item_line_a3e2fec44503277e77717e9c24f87f1ea_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Q\+C\+P\+Item\+Line@{Q\+C\+P\+Item\+Line}!set\+Tail@{set\+Tail}}
+\index{set\+Tail@{set\+Tail}!Q\+C\+P\+Item\+Line@{Q\+C\+P\+Item\+Line}}
+\subsubsection[{set\+Tail}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Item\+Line\+::set\+Tail (
+\begin{DoxyParamCaption}
+\item[{const {\bf Q\+C\+P\+Line\+Ending} \&}]{tail}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_item_line_ac264222c3297a7efe33df9345c811a5f}
+Sets the line ending style of the tail. The tail corresponds to the {\itshape start} position.
+
+Note that due to the overloaded \doxyref{Q\+C\+P\+Line\+Ending}{p.}{class_q_c_p_line_ending} constructor, you may directly specify a \doxyref{Q\+C\+P\+Line\+Ending\+::\+Ending\+Style}{p.}{class_q_c_p_line_ending_a5ef16e6876b4b74959c7261d8d4c2cd5} here, e.\+g.
+\begin{DoxyCode}
+setTail(QCPLineEnding::esSpikeArrow) 
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{set\+Head}{p.}{class_q_c_p_item_line_aebf3d687114d584e0459db6759e2c3c3} 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf qcustomplot.\+h}\item 
+{\bf qcustomplot.\+cpp}\end{DoxyCompactItemize}

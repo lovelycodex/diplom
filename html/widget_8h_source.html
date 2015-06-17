@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="index.jpe"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Voice analyze
-   &#160;<span id="projectnumber">v.1</span>
+   &#160;<span id="projectnumber">v.2</span>
    </div>
   </td>
  </tr>
@@ -101,107 +101,131 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor"># include &lt;QGraphicsDropShadowEffect&gt;</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor"># include &lt;qmath.h&gt;</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor"># include &lt;exception&gt;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">//---------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor"># include &lt;sqlite3.h&gt;</span>       <span class="comment">//DB include</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor"># include &lt;malloc.h&gt;</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor"># include &quot;bass.h&quot;</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor"># include &quot;<a class="code" href="qcustomplot_8h.html">qcustomplot.h</a>&quot;</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor"># define BUFSTEP    200000</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor"># define SPECWIDTH  368     // display width (should be multiple of 4)</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor"># define SPECHEIGHT 127     // height (changing requires palette adjustments too)</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#ifdef QT_DEBUG</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">    #define QDEBUG(q) qDebug()&lt;&lt;q</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">    #define QDEBUG(q) ;</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="struct_r_g_b.html">   32</a></span>&#160;<span class="keyword">struct </span><a class="code" href="struct_r_g_b.html">RGB</a>{</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    qint8 rgbRed,rgbGreen,rgbBlue;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;};</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keywordtype">void</span> Error (QString er);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;BOOL CALLBACK RecordingCallback(HRECORD handle, <span class="keyword">const</span> <span class="keywordtype">void</span> *buffer, DWORD length, <span class="keywordtype">void</span> *user);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_ui.html">Ui</a> {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">class </span><a class="code" href="class_widget.html">Widget</a>;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="class_widget.html">   44</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_widget.html">Widget</a> : <span class="keyword">public</span> QWidget</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;{</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    Q_OBJECT</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="class_widget.html#a29531c7f141e461322981b3b579d4590">Widget</a>(QWidget *parent = 0);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="class_widget.html#aa24f66bcbaaec6d458b0980e8c8eae65">~Widget</a>();</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_widget.html#a506b8a4ce5b5f0b1b652f17a0d6be960">startRecording</a>                     ();</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_widget.html#aa230d039c1746fbc0d13159b6ac0b80e">stopRecording</a>                      ();</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_widget.html#a084296318fecbd86f48296d3010b0293">updateInputInfo</a>                    ();</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_widget.html#aaf7b3689efa3f4b44af59bd9d514ff94">writeToDisk</a>                        ();</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_widget.html#ac924875bf37e21593ee688f588523a28">plotSpectrums</a>                      (<span class="keywordtype">int</span>, <span class="keywordtype">float</span> *);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_widget.html#a80e9384e7e3f3507c654e2a621124060">KaiserWindow</a>                       ();</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">float</span> <a class="code" href="class_widget.html#af10aec37d5a2461ef0c4f85bcd36d37b">I0</a>                                (<span class="keywordtype">float</span>);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor"># include &lt;complex&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">//---------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor"># include &lt;sqlite3.h&gt;</span>       <span class="comment">//DB include</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor"># include &lt;malloc.h&gt;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor"># include &quot;bass.h&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor"># include &quot;<a class="code" href="qcustomplot_8h.html">qcustomplot.h</a>&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor"># define BUFSTEP    200000</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor"># define SPECWIDTH  368     // display width (should be multiple of 4)</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor"># define SPECHEIGHT 127     // height (changing requires palette adjustments too)</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#ifdef QT_DEBUG</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">    #define QDEBUG(q) qDebug()&lt;&lt;q</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">    #define QDEBUG(q) ;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="struct_r_g_b.html">   33</a></span>&#160;<span class="keyword">struct </span><a class="code" href="struct_r_g_b.html">RGB</a>{</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    qint8 rgbRed,rgbGreen,rgbBlue;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;};</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keywordtype">void</span> Error (QString er);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;BOOL CALLBACK RecordingCallback(HRECORD handle, <span class="keyword">const</span> <span class="keywordtype">void</span> *buffer, DWORD length, <span class="keywordtype">void</span> *user);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_ui.html">Ui</a> {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">class </span><a class="code" href="class_widget.html">Widget</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="class_widget.html">   45</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_widget.html">Widget</a> : <span class="keyword">public</span> QWidget</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;{</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    Q_OBJECT</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="class_widget.html#a29531c7f141e461322981b3b579d4590">Widget</a>(QWidget *parent = 0);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="class_widget.html#aa24f66bcbaaec6d458b0980e8c8eae65">~Widget</a>();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_widget.html#a506b8a4ce5b5f0b1b652f17a0d6be960">startRecording</a>                     ();</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_widget.html#aa230d039c1746fbc0d13159b6ac0b80e">stopRecording</a>                      ();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_widget.html#a084296318fecbd86f48296d3010b0293">updateInputInfo</a>                    ();</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_widget.html#aaf7b3689efa3f4b44af59bd9d514ff94">writeToDisk</a>                        ();</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">float</span> <a class="code" href="class_widget.html#af10aec37d5a2461ef0c4f85bcd36d37b">I0</a>                                (<span class="keywordtype">float</span>);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;signals:</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">void</span> PlotSpectrumSignal                 ();</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keyword">private</span> slots:</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">void</span> timerProc                          ();</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordtype">void</span> PlotKaiserWindowSignal             ();</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">void</span> fill_ftt_complex_Signal            ();</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">void</span> clearGraphs                        ();</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">void</span> post_filtering_Signal              ();</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">void</span> on_pushButton_clicked              ();</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">void</span> liftering_Signal                   ();</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">void</span> on_pushButton_2_clicked            ();</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">void</span> kaiser_window_signal               ();</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">void</span> on_horizontalSlider_valueChanged   (qint32 value);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordtype">void</span> on_pushButton_3_clicked            ();</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordtype">void</span> on_checkBox_clicked();</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">void</span> on_checkBox_2_clicked();</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordtype">void</span> on_pushButton_4_clicked();</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">void</span> on_pushButton_5_clicked();</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    QTimer      *timer;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordtype">float</span>       *fft;               <span class="comment">// recbuf represented by FFT;</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <a class="code" href="struct_r_g_b.html">RGB</a>         palette[256];</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    Ui::Widget  *ui;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;};</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="keyword">private</span> slots:</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordtype">void</span> timerProc                          ();</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">void</span> kaiser_window                      ();</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordtype">void</span> liftering                          ();</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordtype">void</span> post_filtering                     ();</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordtype">void</span> plotSpectrums                      ();</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordtype">void</span> plotKaiserWindow                   ();</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordtype">void</span> from_ftt_to_complex                ();</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordtype">void</span> stopRecordingSlot                  ();</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordtype">void</span> clearGraphs                        ();</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordtype">void</span> on_pushButton_clicked              ();</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="preprocessor">#endif // WIDGET_H</span></div>
-<div class="ttc" id="class_widget_html_a80e9384e7e3f3507c654e2a621124060"><div class="ttname"><a href="class_widget.html#a80e9384e7e3f3507c654e2a621124060">Widget::KaiserWindow</a></div><div class="ttdeci">void KaiserWindow()</div><div class="ttdoc">It is a one-parameter family of window functions used for digital signal processing. </div><div class="ttdef"><b>Definition:</b> widget.cpp:375</div></div>
-<div class="ttc" id="class_widget_html_a506b8a4ce5b5f0b1b652f17a0d6be960"><div class="ttname"><a href="class_widget.html#a506b8a4ce5b5f0b1b652f17a0d6be960">Widget::startRecording</a></div><div class="ttdeci">void startRecording()</div><div class="ttdoc">Starts the record and set default confuration for audio file. If start record is failure free RECBUF ...</div><div class="ttdef"><b>Definition:</b> widget.cpp:177</div></div>
-<div class="ttc" id="namespace_ui_html"><div class="ttname"><a href="namespace_ui.html">Ui</a></div><div class="ttdef"><b>Definition:</b> widget.h:40</div></div>
-<div class="ttc" id="struct_r_g_b_html"><div class="ttname"><a href="struct_r_g_b.html">RGB</a></div><div class="ttdef"><b>Definition:</b> widget.h:32</div></div>
-<div class="ttc" id="class_widget_html_a084296318fecbd86f48296d3010b0293"><div class="ttname"><a href="class_widget.html#a084296318fecbd86f48296d3010b0293">Widget::updateInputInfo</a></div><div class="ttdeci">void updateInputInfo()</div><div class="ttdoc">Widget::updateInputInfo. </div><div class="ttdef"><b>Definition:</b> widget.cpp:250</div></div>
-<div class="ttc" id="class_widget_html_ac924875bf37e21593ee688f588523a28"><div class="ttname"><a href="class_widget.html#ac924875bf37e21593ee688f588523a28">Widget::plotSpectrums</a></div><div class="ttdeci">void plotSpectrums(int, float *)</div><div class="ttdoc">Plot spectrums on two graphs (first- FFT, second - Kaiser Window) </div><div class="ttdef"><b>Definition:</b> widget.cpp:289</div></div>
-<div class="ttc" id="class_widget_html_aa24f66bcbaaec6d458b0980e8c8eae65"><div class="ttname"><a href="class_widget.html#aa24f66bcbaaec6d458b0980e8c8eae65">Widget::~Widget</a></div><div class="ttdeci">~Widget()</div><div class="ttdoc">Widget::~Widget Defaul destructor. </div><div class="ttdef"><b>Definition:</b> widget.cpp:163</div></div>
-<div class="ttc" id="class_widget_html_aa230d039c1746fbc0d13159b6ac0b80e"><div class="ttname"><a href="class_widget.html#aa230d039c1746fbc0d13159b6ac0b80e">Widget::stopRecording</a></div><div class="ttdeci">void stopRecording()</div><div class="ttdoc">No incoming parameters. Get data from RCHAN. Creating the stream file. If BASS_StreamCreateFile is fa...</div><div class="ttdef"><b>Definition:</b> widget.cpp:219</div></div>
-<div class="ttc" id="class_widget_html"><div class="ttname"><a href="class_widget.html">Widget</a></div><div class="ttdef"><b>Definition:</b> widget.h:44</div></div>
-<div class="ttc" id="class_widget_html_a29531c7f141e461322981b3b579d4590"><div class="ttname"><a href="class_widget.html#a29531c7f141e461322981b3b579d4590">Widget::Widget</a></div><div class="ttdeci">Widget(QWidget *parent=0)</div><div class="ttdoc">Default constructor. Set a start up configuration. </div><div class="ttdef"><b>Definition:</b> widget.cpp:42</div></div>
-<div class="ttc" id="class_widget_html_af10aec37d5a2461ef0c4f85bcd36d37b"><div class="ttname"><a href="class_widget.html#af10aec37d5a2461ef0c4f85bcd36d37b">Widget::I0</a></div><div class="ttdeci">float I0(float)</div><div class="ttdoc">zeroth order modified Bessel function of the first kind, which has a complex mathematical description...</div><div class="ttdef"><b>Definition:</b> widget.cpp:353</div></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordtype">void</span> on_pushButton_2_clicked            ();</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordtype">void</span> on_horizontalSlider_valueChanged   (qint32 value);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordtype">void</span> on_pushButton_3_clicked            ();</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordtype">void</span> on_checkBox_clicked                ();</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordtype">void</span> on_checkBox_2_clicked              ();</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordtype">void</span> on_pushButton_4_clicked            ();</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordtype">void</span> on_pushButton_5_clicked            ();</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    QTimer                          *timer;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    QTimer                          *timer_for_record;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keywordtype">float</span>                           *fft;               <span class="comment">// recbuf represented by FFT;</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <a class="code" href="struct_r_g_b.html">RGB</a>                             palette[256];</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    Ui::Widget                      *ui;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    QVector&lt;std::complex&lt;float&gt;&gt;    fft_complex;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    QVector&lt;float&gt;                  freq;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;};</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="preprocessor">#endif // WIDGET_H</span></div>
+<div class="ttc" id="class_widget_html_a506b8a4ce5b5f0b1b652f17a0d6be960"><div class="ttname"><a href="class_widget.html#a506b8a4ce5b5f0b1b652f17a0d6be960">Widget::startRecording</a></div><div class="ttdeci">void startRecording()</div><div class="ttdoc">Starts the record and set default confuration for audio file. If start record is failure free RECBUF ...</div><div class="ttdef"><b>Definition:</b> widget.cpp:190</div></div>
+<div class="ttc" id="namespace_ui_html"><div class="ttname"><a href="namespace_ui.html">Ui</a></div><div class="ttdef"><b>Definition:</b> widget.h:41</div></div>
+<div class="ttc" id="struct_r_g_b_html"><div class="ttname"><a href="struct_r_g_b.html">RGB</a></div><div class="ttdef"><b>Definition:</b> widget.h:33</div></div>
+<div class="ttc" id="class_widget_html_a084296318fecbd86f48296d3010b0293"><div class="ttname"><a href="class_widget.html#a084296318fecbd86f48296d3010b0293">Widget::updateInputInfo</a></div><div class="ttdeci">void updateInputInfo()</div><div class="ttdoc">Widget::updateInputInfo. </div><div class="ttdef"><b>Definition:</b> widget.cpp:264</div></div>
+<div class="ttc" id="class_widget_html_aa24f66bcbaaec6d458b0980e8c8eae65"><div class="ttname"><a href="class_widget.html#aa24f66bcbaaec6d458b0980e8c8eae65">Widget::~Widget</a></div><div class="ttdeci">~Widget()</div><div class="ttdoc">Widget::~Widget Defaul destructor. </div><div class="ttdef"><b>Definition:</b> widget.cpp:176</div></div>
+<div class="ttc" id="class_widget_html_aa230d039c1746fbc0d13159b6ac0b80e"><div class="ttname"><a href="class_widget.html#aa230d039c1746fbc0d13159b6ac0b80e">Widget::stopRecording</a></div><div class="ttdeci">void stopRecording()</div><div class="ttdoc">No incoming parameters. Get data from RCHAN. Creating the stream file. If BASS_StreamCreateFile is fa...</div><div class="ttdef"><b>Definition:</b> widget.cpp:232</div></div>
+<div class="ttc" id="class_widget_html"><div class="ttname"><a href="class_widget.html">Widget</a></div><div class="ttdef"><b>Definition:</b> widget.h:45</div></div>
+<div class="ttc" id="class_widget_html_a29531c7f141e461322981b3b579d4590"><div class="ttname"><a href="class_widget.html#a29531c7f141e461322981b3b579d4590">Widget::Widget</a></div><div class="ttdeci">Widget(QWidget *parent=0)</div><div class="ttdoc">Default constructor. Set a start up configuration. </div><div class="ttdef"><b>Definition:</b> widget.cpp:47</div></div>
+<div class="ttc" id="class_widget_html_af10aec37d5a2461ef0c4f85bcd36d37b"><div class="ttname"><a href="class_widget.html#af10aec37d5a2461ef0c4f85bcd36d37b">Widget::I0</a></div><div class="ttdeci">float I0(float)</div><div class="ttdoc">zeroth order modified Bessel function of the first kind, which has a complex mathematical description...</div><div class="ttdef"><b>Definition:</b> widget.cpp:369</div></div>
 <div class="ttc" id="qcustomplot_8h_html"><div class="ttname"><a href="qcustomplot_8h.html">qcustomplot.h</a></div></div>
-<div class="ttc" id="class_widget_html_aaf7b3689efa3f4b44af59bd9d514ff94"><div class="ttname"><a href="class_widget.html#aaf7b3689efa3f4b44af59bd9d514ff94">Widget::writeToDisk</a></div><div class="ttdeci">void writeToDisk()</div><div class="ttdoc">No incoming parameters. Write recording data to disk. </div><div class="ttdef"><b>Definition:</b> widget.cpp:267</div></div>
+<div class="ttc" id="class_widget_html_aaf7b3689efa3f4b44af59bd9d514ff94"><div class="ttname"><a href="class_widget.html#aaf7b3689efa3f4b44af59bd9d514ff94">Widget::writeToDisk</a></div><div class="ttdeci">void writeToDisk()</div><div class="ttdoc">No incoming parameters. Write recording data to disk. </div><div class="ttdef"><b>Definition:</b> widget.cpp:281</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jun 16 2015 19:06:46 for Voice analyze by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jun 18 2015 02:00:46 for Voice analyze by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

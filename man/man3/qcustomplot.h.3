@@ -1,0 +1,432 @@
+.TH "qcustomplot.h" 3 "Thu Jun 18 2015" "Version v.2" "Voice analyze" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+qcustomplot.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <QObject>\fP
+.br
+\fC#include <QPointer>\fP
+.br
+\fC#include <QWidget>\fP
+.br
+\fC#include <QPainter>\fP
+.br
+\fC#include <QPaintEvent>\fP
+.br
+\fC#include <QMouseEvent>\fP
+.br
+\fC#include <QPixmap>\fP
+.br
+\fC#include <QVector>\fP
+.br
+\fC#include <QString>\fP
+.br
+\fC#include <QDateTime>\fP
+.br
+\fC#include <QMultiMap>\fP
+.br
+\fC#include <QFlags>\fP
+.br
+\fC#include <QDebug>\fP
+.br
+\fC#include <QVector2D>\fP
+.br
+\fC#include <QStack>\fP
+.br
+\fC#include <QCache>\fP
+.br
+\fC#include <QMargins>\fP
+.br
+\fC#include <qmath\&.h>\fP
+.br
+\fC#include <limits>\fP
+.br
+\fC#include <QtNumeric>\fP
+.br
+\fC#include <QtPrintSupport>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBQCPScatterStyle\fP"
+.br
+.RI "\fIRepresents the visual appearance of scatter points\&. \fP"
+.ti -1c
+.RI "class \fBQCPPainter\fP"
+.br
+.RI "\fIQPainter subclass used internally\&. \fP"
+.ti -1c
+.RI "class \fBQCPLayer\fP"
+.br
+.RI "\fIA layer that may contain objects, to control the rendering order\&. \fP"
+.ti -1c
+.RI "class \fBQCPLayerable\fP"
+.br
+.RI "\fIBase class for all drawable objects\&. \fP"
+.ti -1c
+.RI "class \fBQCPRange\fP"
+.br
+.RI "\fIRepresents the range an axis is encompassing\&. \fP"
+.ti -1c
+.RI "class \fBQCPMarginGroup\fP"
+.br
+.RI "\fIA margin group allows synchronization of margin sides if working with multiple layout elements\&. \fP"
+.ti -1c
+.RI "class \fBQCPLayoutElement\fP"
+.br
+.RI "\fIThe abstract base class for all objects that form \fBthe layout system\fP\&. \fP"
+.ti -1c
+.RI "class \fBQCPLayout\fP"
+.br
+.RI "\fIThe abstract base class for layouts\&. \fP"
+.ti -1c
+.RI "class \fBQCPLayoutGrid\fP"
+.br
+.RI "\fIA layout that arranges child elements in a grid\&. \fP"
+.ti -1c
+.RI "class \fBQCPLayoutInset\fP"
+.br
+.RI "\fIA layout that places child elements aligned to the border or arbitrarily positioned\&. \fP"
+.ti -1c
+.RI "class \fBQCPLineEnding\fP"
+.br
+.RI "\fIHandles the different ending decorations for line-like items\&. \fP"
+.ti -1c
+.RI "class \fBQCPGrid\fP"
+.br
+.RI "\fIResponsible for drawing the grid of a \fBQCPAxis\fP\&. \fP"
+.ti -1c
+.RI "class \fBQCPAxis\fP"
+.br
+.RI "\fIManages a single axis inside a \fBQCustomPlot\fP\&. \fP"
+.ti -1c
+.RI "class \fBQCPAxisPainterPrivate\fP"
+.br
+.ti -1c
+.RI "struct \fBQCPAxisPainterPrivate::CachedLabel\fP"
+.br
+.ti -1c
+.RI "struct \fBQCPAxisPainterPrivate::TickLabelData\fP"
+.br
+.ti -1c
+.RI "class \fBQCPAbstractPlottable\fP"
+.br
+.RI "\fIThe abstract base class for all data representing objects in a plot\&. \fP"
+.ti -1c
+.RI "class \fBQCPItemAnchor\fP"
+.br
+.RI "\fIAn anchor of an item to which positions can be attached to\&. \fP"
+.ti -1c
+.RI "class \fBQCPItemPosition\fP"
+.br
+.RI "\fIManages the position of an item\&. \fP"
+.ti -1c
+.RI "class \fBQCPAbstractItem\fP"
+.br
+.RI "\fIThe abstract base class for all items in a plot\&. \fP"
+.ti -1c
+.RI "class \fBQCustomPlot\fP"
+.br
+.RI "\fIThe central class of the library\&. This is the QWidget which displays the plot and interacts with the user\&. \fP"
+.ti -1c
+.RI "class \fBQCPColorGradient\fP"
+.br
+.RI "\fIDefines a color gradient for use with e\&.g\&. \fBQCPColorMap\fP\&. \fP"
+.ti -1c
+.RI "class \fBQCPAxisRect\fP"
+.br
+.RI "\fIHolds multiple axes and arranges them in a rectangular shape\&. \fP"
+.ti -1c
+.RI "class \fBQCPAbstractLegendItem\fP"
+.br
+.RI "\fIThe abstract base class for all entries in a \fBQCPLegend\fP\&. \fP"
+.ti -1c
+.RI "class \fBQCPPlottableLegendItem\fP"
+.br
+.RI "\fIA legend item representing a plottable with an icon and the plottable name\&. \fP"
+.ti -1c
+.RI "class \fBQCPLegend\fP"
+.br
+.RI "\fIManages a legend inside a \fBQCustomPlot\fP\&. \fP"
+.ti -1c
+.RI "class \fBQCPPlotTitle\fP"
+.br
+.RI "\fIA layout element displaying a plot title text\&. \fP"
+.ti -1c
+.RI "class \fBQCPColorScaleAxisRectPrivate\fP"
+.br
+.ti -1c
+.RI "class \fBQCPColorScale\fP"
+.br
+.RI "\fIA color scale for use with color coding data such as \fBQCPColorMap\fP\&. \fP"
+.ti -1c
+.RI "class \fBQCPData\fP"
+.br
+.RI "\fIHolds the data of one single data point for \fBQCPGraph\fP\&. \fP"
+.ti -1c
+.RI "class \fBQCPGraph\fP"
+.br
+.RI "\fIA plottable representing a graph in a plot\&. \fP"
+.ti -1c
+.RI "class \fBQCPCurveData\fP"
+.br
+.RI "\fIHolds the data of one single data point for \fBQCPCurve\fP\&. \fP"
+.ti -1c
+.RI "class \fBQCPCurve\fP"
+.br
+.RI "\fIA plottable representing a parametric curve in a plot\&. \fP"
+.ti -1c
+.RI "class \fBQCPBarsGroup\fP"
+.br
+.RI "\fIGroups multiple \fBQCPBars\fP together so they appear side by side\&. \fP"
+.ti -1c
+.RI "class \fBQCPBarData\fP"
+.br
+.RI "\fIHolds the data of one single data point (one bar) for \fBQCPBars\fP\&. \fP"
+.ti -1c
+.RI "class \fBQCPBars\fP"
+.br
+.RI "\fIA plottable representing a bar chart in a plot\&. \fP"
+.ti -1c
+.RI "class \fBQCPStatisticalBox\fP"
+.br
+.RI "\fIA plottable representing a single statistical box in a plot\&. \fP"
+.ti -1c
+.RI "class \fBQCPColorMapData\fP"
+.br
+.RI "\fIHolds the two-dimensional data of a \fBQCPColorMap\fP plottable\&. \fP"
+.ti -1c
+.RI "class \fBQCPColorMap\fP"
+.br
+.RI "\fIA plottable representing a two-dimensional color map in a plot\&. \fP"
+.ti -1c
+.RI "class \fBQCPFinancialData\fP"
+.br
+.RI "\fIHolds the data of one single data point for \fBQCPFinancial\fP\&. \fP"
+.ti -1c
+.RI "class \fBQCPFinancial\fP"
+.br
+.RI "\fIA plottable representing a financial stock chart\&. \fP"
+.ti -1c
+.RI "class \fBQCPItemStraightLine\fP"
+.br
+.RI "\fIA straight line that spans infinitely in both directions\&. \fP"
+.ti -1c
+.RI "class \fBQCPItemLine\fP"
+.br
+.RI "\fIA line from one point to another\&. \fP"
+.ti -1c
+.RI "class \fBQCPItemCurve\fP"
+.br
+.RI "\fIA curved line from one point to another\&. \fP"
+.ti -1c
+.RI "class \fBQCPItemRect\fP"
+.br
+.RI "\fIA rectangle\&. \fP"
+.ti -1c
+.RI "class \fBQCPItemText\fP"
+.br
+.RI "\fIA text label\&. \fP"
+.ti -1c
+.RI "class \fBQCPItemEllipse\fP"
+.br
+.RI "\fIAn ellipse\&. \fP"
+.ti -1c
+.RI "class \fBQCPItemPixmap\fP"
+.br
+.RI "\fIAn arbitrary pixmap\&. \fP"
+.ti -1c
+.RI "class \fBQCPItemTracer\fP"
+.br
+.RI "\fIItem that sticks to \fBQCPGraph\fP data points\&. \fP"
+.ti -1c
+.RI "class \fBQCPItemBracket\fP"
+.br
+.RI "\fIA bracket for referencing/highlighting certain parts in the plot\&. \fP"
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBQCP\fP"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef QMap< double, \fBQCPData\fP > \fBQCPDataMap\fP"
+.br
+.ti -1c
+.RI "typedef QMapIterator< double, \fBQCPData\fP > \fBQCPDataMapIterator\fP"
+.br
+.ti -1c
+.RI "typedef QMutableMapIterator< double, \fBQCPData\fP > \fBQCPDataMutableMapIterator\fP"
+.br
+.ti -1c
+.RI "typedef QMap< double, \fBQCPCurveData\fP > \fBQCPCurveDataMap\fP"
+.br
+.ti -1c
+.RI "typedef QMapIterator< double, \fBQCPCurveData\fP > \fBQCPCurveDataMapIterator\fP"
+.br
+.ti -1c
+.RI "typedef QMutableMapIterator< double, \fBQCPCurveData\fP > \fBQCPCurveDataMutableMapIterator\fP"
+.br
+.ti -1c
+.RI "typedef QMap< double, \fBQCPBarData\fP > \fBQCPBarDataMap\fP"
+.br
+.ti -1c
+.RI "typedef QMapIterator< double, \fBQCPBarData\fP > \fBQCPBarDataMapIterator\fP"
+.br
+.ti -1c
+.RI "typedef QMutableMapIterator< double, \fBQCPBarData\fP > \fBQCPBarDataMutableMapIterator\fP"
+.br
+.ti -1c
+.RI "typedef QMap< double, \fBQCPFinancialData\fP > \fBQCPFinancialDataMap\fP"
+.br
+.ti -1c
+.RI "typedef QMapIterator< double, \fBQCPFinancialData\fP > \fBQCPFinancialDataMapIterator\fP"
+.br
+.ti -1c
+.RI "typedef QMutableMapIterator< double, \fBQCPFinancialData\fP > \fBQCPFinancialDataMutableMapIterator\fP"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBQCP::MarginSide\fP { \fBQCP::msLeft\fP = 0x01, \fBQCP::msRight\fP = 0x02, \fBQCP::msTop\fP = 0x04, \fBQCP::msBottom\fP = 0x08, \fBQCP::msAll\fP = 0xFF, \fBQCP::msNone\fP = 0x00 }"
+.br
+.ti -1c
+.RI "enum \fBQCP::AntialiasedElement\fP { \fBQCP::aeAxes\fP = 0x0001, \fBQCP::aeGrid\fP = 0x0002, \fBQCP::aeSubGrid\fP = 0x0004, \fBQCP::aeLegend\fP = 0x0008, \fBQCP::aeLegendItems\fP = 0x0010, \fBQCP::aePlottables\fP = 0x0020, \fBQCP::aeItems\fP = 0x0040, \fBQCP::aeScatters\fP = 0x0080, \fBQCP::aeErrorBars\fP = 0x0100, \fBQCP::aeFills\fP = 0x0200, \fBQCP::aeZeroLine\fP = 0x0400, \fBQCP::aeAll\fP = 0xFFFF, \fBQCP::aeNone\fP = 0x0000 }"
+.br
+.ti -1c
+.RI "enum \fBQCP::PlottingHint\fP { \fBQCP::phNone\fP = 0x000, \fBQCP::phFastPolylines\fP = 0x001, \fBQCP::phForceRepaint\fP = 0x002, \fBQCP::phCacheLabels\fP = 0x004 }"
+.br
+.ti -1c
+.RI "enum \fBQCP::Interaction\fP { \fBQCP::iRangeDrag\fP = 0x001, \fBQCP::iRangeZoom\fP = 0x002, \fBQCP::iMultiSelect\fP = 0x004, \fBQCP::iSelectPlottables\fP = 0x008, \fBQCP::iSelectAxes\fP = 0x010, \fBQCP::iSelectLegend\fP = 0x020, \fBQCP::iSelectItems\fP = 0x040, \fBQCP::iSelectOther\fP = 0x080 }"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBQCP::isInvalidData\fP (double value)"
+.br
+.ti -1c
+.RI "bool \fBQCP::isInvalidData\fP (double value1, double value2)"
+.br
+.ti -1c
+.RI "void \fBQCP::setMarginValue\fP (QMargins &margins, \fBQCP::MarginSide\fP side, int value)"
+.br
+.ti -1c
+.RI "int \fBQCP::getMarginValue\fP (const QMargins &margins, \fBQCP::MarginSide\fP side)"
+.br
+.ti -1c
+.RI "\fBQ_DECLARE_TYPEINFO\fP (\fBQCPScatterStyle\fP, Q_MOVABLE_TYPE)"
+.br
+.ti -1c
+.RI "\fBQ_DECLARE_TYPEINFO\fP (\fBQCPRange\fP, Q_MOVABLE_TYPE)"
+.br
+.ti -1c
+.RI "const \fBQCPRange\fP \fBoperator+\fP (const \fBQCPRange\fP &range, double value)"
+.br
+.ti -1c
+.RI "const \fBQCPRange\fP \fBoperator+\fP (double value, const \fBQCPRange\fP &range)"
+.br
+.ti -1c
+.RI "const \fBQCPRange\fP \fBoperator-\fP (const \fBQCPRange\fP &range, double value)"
+.br
+.ti -1c
+.RI "const \fBQCPRange\fP \fBoperator*\fP (const \fBQCPRange\fP &range, double value)"
+.br
+.ti -1c
+.RI "const \fBQCPRange\fP \fBoperator*\fP (double value, const \fBQCPRange\fP &range)"
+.br
+.ti -1c
+.RI "const \fBQCPRange\fP \fBoperator/\fP (const \fBQCPRange\fP &range, double value)"
+.br
+.ti -1c
+.RI "\fBQ_DECLARE_TYPEINFO\fP (\fBQCPLineEnding\fP, Q_MOVABLE_TYPE)"
+.br
+.ti -1c
+.RI "\fBQ_DECLARE_TYPEINFO\fP (\fBQCPData\fP, Q_MOVABLE_TYPE)"
+.br
+.ti -1c
+.RI "\fBQ_DECLARE_TYPEINFO\fP (\fBQCPCurveData\fP, Q_MOVABLE_TYPE)"
+.br
+.ti -1c
+.RI "\fBQ_DECLARE_TYPEINFO\fP (\fBQCPBarData\fP, Q_MOVABLE_TYPE)"
+.br
+.ti -1c
+.RI "\fBQ_DECLARE_TYPEINFO\fP (\fBQCPFinancialData\fP, Q_MOVABLE_TYPE)"
+.br
+.in -1c
+.SH "Typedef Documentation"
+.PP 
+.SS "\fBQCPBarDataMap\fP"
+Container for storing \fBQCPBarData\fP items in a sorted fashion\&. The key of the map is the key member of the \fBQCPBarData\fP instance\&.
+.PP
+This is the container in which \fBQCPBars\fP holds its data\&. 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBQCPBarData\fP, \fBQCPBars::setData\fP 
+.RE
+.PP
+
+.SS "\fBQCPCurveDataMap\fP"
+Container for storing \fBQCPCurveData\fP items in a sorted fashion\&. The key of the map is the t member of the \fBQCPCurveData\fP instance\&.
+.PP
+This is the container in which \fBQCPCurve\fP holds its data\&. 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBQCPCurveData\fP, \fBQCPCurve::setData\fP 
+.RE
+.PP
+
+.SS "\fBQCPDataMap\fP"
+Container for storing \fBQCPData\fP items in a sorted fashion\&. The key of the map is the key member of the \fBQCPData\fP instance\&.
+.PP
+This is the container in which \fBQCPGraph\fP holds its data\&. 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBQCPData\fP, \fBQCPGraph::setData\fP 
+.RE
+.PP
+
+.SS "\fBQCPFinancialDataMap\fP"
+Container for storing \fBQCPFinancialData\fP items in a sorted fashion\&. The key of the map is the key member of the \fBQCPFinancialData\fP instance\&.
+.PP
+This is the container in which \fBQCPFinancial\fP holds its data\&. 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBQCPFinancial\fP, \fBQCPFinancial::setData\fP 
+.RE
+.PP
+
+.SH "Function Documentation"
+.PP 
+.SS "const \fBQCPRange\fP operator* (const \fBQCPRange\fP & range, double value)\fC [inline]\fP"
+Multiplies both boundaries of the range by \fIvalue\fP\&. 
+.SS "const \fBQCPRange\fP operator* (double value, const \fBQCPRange\fP & range)\fC [inline]\fP"
+Multiplies both boundaries of the range by \fIvalue\fP\&. 
+.SS "const \fBQCPRange\fP operator+ (const \fBQCPRange\fP & range, double value)\fC [inline]\fP"
+Adds \fIvalue\fP to both boundaries of the range\&. 
+.SS "const \fBQCPRange\fP operator+ (double value, const \fBQCPRange\fP & range)\fC [inline]\fP"
+Adds \fIvalue\fP to both boundaries of the range\&. 
+.SS "const \fBQCPRange\fP operator- (const \fBQCPRange\fP & range, double value)\fC [inline]\fP"
+Subtracts \fIvalue\fP from both boundaries of the range\&. 
+.SS "const \fBQCPRange\fP operator/ (const \fBQCPRange\fP & range, double value)\fC [inline]\fP"
+Divides both boundaries of the range by \fIvalue\fP\&. 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Voice analyze from the source code\&.

@@ -1,0 +1,79 @@
+.TH "QCPData" 3 "Thu Jun 18 2015" "Version v.2" "Voice analyze" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+QCPData \- Holds the data of one single data point for \fBQCPGraph\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQCPData\fP ()"
+.br
+.ti -1c
+.RI "\fBQCPData\fP (double key, double value)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "double \fBkey\fP"
+.br
+.ti -1c
+.RI "double \fBvalue\fP"
+.br
+.ti -1c
+.RI "double \fBkeyErrorPlus\fP"
+.br
+.ti -1c
+.RI "double \fBkeyErrorMinus\fP"
+.br
+.ti -1c
+.RI "double \fBvalueErrorPlus\fP"
+.br
+.ti -1c
+.RI "double \fBvalueErrorMinus\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Holds the data of one single data point for \fBQCPGraph\fP\&. 
+
+The container for storing multiple data points is \fBQCPDataMap\fP\&.
+.PP
+The stored data is: 
+.PD 0
+
+.IP "\(bu" 2
+\fIkey:\fP coordinate on the key axis of this data point 
+.IP "\(bu" 2
+\fIvalue:\fP coordinate on the value axis of this data point 
+.IP "\(bu" 2
+\fIkeyErrorMinus:\fP negative error in the key dimension (for error bars) 
+.IP "\(bu" 2
+\fIkeyErrorPlus:\fP positive error in the key dimension (for error bars) 
+.IP "\(bu" 2
+\fIvalueErrorMinus:\fP negative error in the value dimension (for error bars) 
+.IP "\(bu" 2
+\fIvalueErrorPlus:\fP positive error in the value dimension (for error bars)
+.PP
+\fBSee also:\fP
+.RS 4
+\fBQCPDataMap\fP 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "QCPData::QCPData ()"
+Constructs a data point with key, value and all errors set to zero\&. 
+.SS "QCPData::QCPData (double key, double value)"
+Constructs a data point with the specified \fIkey\fP and \fIvalue\fP\&. All errors are set to zero\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Voice analyze from the source code\&.

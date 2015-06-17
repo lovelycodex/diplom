@@ -1,0 +1,298 @@
+.TH "QCPColorScale" 3 "Thu Jun 18 2015" "Version v.2" "Voice analyze" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+QCPColorScale \- A color scale for use with color coding data such as \fBQCPColorMap\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBdataRangeChanged\fP (\fBQCPRange\fP newRange)"
+.br
+.ti -1c
+.RI "void \fBdataScaleTypeChanged\fP (\fBQCPAxis::ScaleType\fP scaleType)"
+.br
+.ti -1c
+.RI "void \fBgradientChanged\fP (\fBQCPColorGradient\fP newGradient)"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQCPColorScale\fP (\fBQCustomPlot\fP *parentPlot)"
+.br
+.ti -1c
+.RI "\fBQCPAxis\fP * \fBaxis\fP () const "
+.br
+.ti -1c
+.RI "\fBQCPAxis::AxisType\fP \fBtype\fP () const "
+.br
+.ti -1c
+.RI "\fBQCPRange\fP \fBdataRange\fP () const "
+.br
+.ti -1c
+.RI "\fBQCPAxis::ScaleType\fP \fBdataScaleType\fP () const "
+.br
+.ti -1c
+.RI "\fBQCPColorGradient\fP \fBgradient\fP () const "
+.br
+.ti -1c
+.RI "QString \fBlabel\fP () const "
+.br
+.ti -1c
+.RI "int \fBbarWidth\fP () const "
+.br
+.ti -1c
+.RI "bool \fBrangeDrag\fP () const "
+.br
+.ti -1c
+.RI "bool \fBrangeZoom\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetType\fP (\fBQCPAxis::AxisType\fP type)"
+.br
+.ti -1c
+.RI "Q_SLOT void \fBsetDataRange\fP (const \fBQCPRange\fP &dataRange)"
+.br
+.ti -1c
+.RI "Q_SLOT void \fBsetDataScaleType\fP (\fBQCPAxis::ScaleType\fP scaleType)"
+.br
+.ti -1c
+.RI "Q_SLOT void \fBsetGradient\fP (const \fBQCPColorGradient\fP &gradient)"
+.br
+.ti -1c
+.RI "void \fBsetLabel\fP (const QString &str)"
+.br
+.ti -1c
+.RI "void \fBsetBarWidth\fP (int width)"
+.br
+.ti -1c
+.RI "void \fBsetRangeDrag\fP (bool enabled)"
+.br
+.ti -1c
+.RI "void \fBsetRangeZoom\fP (bool enabled)"
+.br
+.ti -1c
+.RI "QList< \fBQCPColorMap\fP * > \fBcolorMaps\fP () const "
+.br
+.ti -1c
+.RI "void \fBrescaleDataRange\fP (bool onlyVisibleMaps)"
+.br
+.ti -1c
+.RI "virtual void \fBupdate\fP (\fBUpdatePhase\fP phase)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBapplyDefaultAntialiasingHint\fP (\fBQCPPainter\fP *painter) const "
+.br
+.ti -1c
+.RI "virtual void \fBmousePressEvent\fP (QMouseEvent *event)"
+.br
+.ti -1c
+.RI "virtual void \fBmouseMoveEvent\fP (QMouseEvent *event)"
+.br
+.ti -1c
+.RI "virtual void \fBmouseReleaseEvent\fP (QMouseEvent *event)"
+.br
+.ti -1c
+.RI "virtual void \fBwheelEvent\fP (QWheelEvent *event)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBQCPAxis::AxisType\fP \fBmType\fP"
+.br
+.ti -1c
+.RI "\fBQCPRange\fP \fBmDataRange\fP"
+.br
+.ti -1c
+.RI "\fBQCPAxis::ScaleType\fP \fBmDataScaleType\fP"
+.br
+.ti -1c
+.RI "\fBQCPColorGradient\fP \fBmGradient\fP"
+.br
+.ti -1c
+.RI "int \fBmBarWidth\fP"
+.br
+.ti -1c
+.RI "QPointer< \fBQCPColorScaleAxisRectPrivate\fP > \fBmAxisRect\fP"
+.br
+.ti -1c
+.RI "QPointer< \fBQCPAxis\fP > \fBmColorAxis\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBQCPColorScaleAxisRectPrivate\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+A color scale for use with color coding data such as \fBQCPColorMap\fP\&. 
+
+This layout element can be placed on the plot to correlate a color gradient with data values\&. It is usually used in combination with one or multiple \fBQCPColorMaps\fP\&.
+.PP
+.PP
+The color scale can be either horizontal or vertical, as shown in the image above\&. The orientation and the side where the numbers appear is controlled with \fBsetType\fP\&.
+.PP
+Use \fBQCPColorMap::setColorScale\fP to connect a color map with a color scale\&. Once they are connected, they share their gradient, data range and data scale type (\fBsetGradient\fP, \fBsetDataRange\fP, \fBsetDataScaleType\fP)\&. Multiple color maps may be associated with a single color scale, to make them all synchronize these properties\&.
+.PP
+To have finer control over the number display and axis behaviour, you can directly access the \fBaxis\fP\&. See the documentation of \fBQCPAxis\fP for details about configuring axes\&. For example, if you want to change the number of automatically generated ticks, call 
+.PP
+.nf
+
+.fi
+.PP
+ Placing a color scale next to the main axis rect works like with any other layout element: 
+.PP
+.nf
+
+.fi
+.PP
+In this case we have placed it to the right of the default axis rect, so it wasn't necessary to call \fBsetType\fP, since \fBQCPAxis::atRight\fP is already the default\&. The text next to the color scale can be set with \fBsetLabel\fP\&.
+.PP
+For optimum appearance (like in the image above), it may be desirable to line up the axis rect and the borders of the color scale\&. Use a \fBQCPMarginGroup\fP to achieve this: 
+.PP
+.nf
+
+.fi
+.PP
+ Color scales are initialized with a non-zero minimum top and bottom margin (\fBsetMinimumMargins\fP), because vertical color scales are most common and the minimum top/bottom margin makes sure it keeps some distance to the top/bottom widget border\&. So if you change to a horizontal color scale by setting \fBsetType\fP to \fBQCPAxis::atBottom\fP or \fBQCPAxis::atTop\fP, you might want to also change the minimum margins accordingly, e\&.g\&. \fCsetMinimumMargins(QMargins(6, 0, 6, 0))\fP\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "QCPColorScale::QCPColorScale (\fBQCustomPlot\fP * parentPlot)\fC [explicit]\fP"
+Constructs a new \fBQCPColorScale\fP\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBQCPAxis\fP * QCPColorScale::axis () const\fC [inline]\fP"
+Returns the internal \fBQCPAxis\fP instance of this color scale\&. You can access it to alter the appearance and behaviour of the axis\&. \fBQCPColorScale\fP duplicates some properties in its interface for convenience\&. Those are \fBsetDataRange\fP (\fBQCPAxis::setRange\fP), \fBsetDataScaleType\fP (\fBQCPAxis::setScaleType\fP), and the method \fBsetLabel\fP (\fBQCPAxis::setLabel\fP)\&. As they each are connected, it does not matter whether you use the method on the \fBQCPColorScale\fP or on its \fBQCPAxis\fP\&.
+.PP
+If the type of the color scale is changed with \fBsetType\fP, the axis returned by this method will change, too, to either the left, right, bottom or top axis, depending on which type was set\&. 
+.SS "QList< \fBQCPColorMap\fP * > QCPColorScale::colorMaps () const"
+Returns a list of all the color maps associated with this color scale\&. 
+.SS "void QCPColorScale::dataRangeChanged (\fBQCPRange\fP newRange)\fC [signal]\fP"
+This signal is emitted when the data range changes\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetDataRange\fP 
+.RE
+.PP
+
+.SS "void QCPColorScale::dataScaleTypeChanged (\fBQCPAxis::ScaleType\fP scaleType)\fC [signal]\fP"
+This signal is emitted when the data scale type changes\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetDataScaleType\fP 
+.RE
+.PP
+
+.SS "void QCPColorScale::gradientChanged (\fBQCPColorGradient\fP newGradient)\fC [signal]\fP"
+This signal is emitted when the gradient changes\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetGradient\fP 
+.RE
+.PP
+
+.SS "void QCPColorScale::mouseMoveEvent (QMouseEvent * event)\fC [protected]\fP, \fC [virtual]\fP"
+This event is called, if the mouse is moved inside the outer rect of this layout element\&. 
+.PP
+Reimplemented from \fBQCPLayoutElement\fP\&.
+.SS "void QCPColorScale::mousePressEvent (QMouseEvent * event)\fC [protected]\fP, \fC [virtual]\fP"
+This event is called, if the mouse was pressed while being inside the outer rect of this layout element\&. 
+.PP
+Reimplemented from \fBQCPLayoutElement\fP\&.
+.SS "void QCPColorScale::mouseReleaseEvent (QMouseEvent * event)\fC [protected]\fP, \fC [virtual]\fP"
+This event is called, if the mouse was previously pressed inside the outer rect of this layout element and is now released\&. 
+.PP
+Reimplemented from \fBQCPLayoutElement\fP\&.
+.SS "void QCPColorScale::rescaleDataRange (bool onlyVisibleMaps)"
+Changes the data range such that all color maps associated with this color scale are fully mapped to the gradient in the data dimension\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetDataRange\fP 
+.RE
+.PP
+
+.SS "void QCPColorScale::setBarWidth (int width)"
+Sets the width (or height, for horizontal color scales) the bar where the gradient is displayed will have\&. 
+.SS "void QCPColorScale::setDataRange (const \fBQCPRange\fP & dataRange)"
+Sets the range spanned by the color gradient and that is shown by the axis in the color scale\&.
+.PP
+It is equivalent to calling \fBQCPColorMap::setDataRange\fP on any of the connected color maps\&. It is also equivalent to directly accessing the \fBaxis\fP and setting its range with \fBQCPAxis::setRange\fP\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetDataScaleType\fP, \fBsetGradient\fP, \fBrescaleDataRange\fP 
+.RE
+.PP
+
+.SS "void QCPColorScale::setDataScaleType (\fBQCPAxis::ScaleType\fP scaleType)"
+Sets the scale type of the color scale, i\&.e\&. whether values are linearly associated with colors or logarithmically\&.
+.PP
+It is equivalent to calling \fBQCPColorMap::setDataScaleType\fP on any of the connected color maps\&. It is also equivalent to directly accessing the \fBaxis\fP and setting its scale type with \fBQCPAxis::setScaleType\fP\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetDataRange\fP, \fBsetGradient\fP 
+.RE
+.PP
+
+.SS "void QCPColorScale::setGradient (const \fBQCPColorGradient\fP & gradient)"
+Sets the color gradient that will be used to represent data values\&.
+.PP
+It is equivalent to calling \fBQCPColorMap::setGradient\fP on any of the connected color maps\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetDataRange\fP, \fBsetDataScaleType\fP 
+.RE
+.PP
+
+.SS "void QCPColorScale::setLabel (const QString & str)"
+Sets the axis label of the color scale\&. This is equivalent to calling \fBQCPAxis::setLabel\fP on the internal \fBaxis\fP\&. 
+.SS "void QCPColorScale::setRangeDrag (bool enabled)"
+Sets whether the user can drag the data range (\fBsetDataRange\fP)\&.
+.PP
+Note that \fBQCP::iRangeDrag\fP must be in the \fBQCustomPlot\fP's interactions (\fBQCustomPlot::setInteractions\fP) to allow range dragging\&. 
+.SS "void QCPColorScale::setRangeZoom (bool enabled)"
+Sets whether the user can zoom the data range (\fBsetDataRange\fP) by scrolling the mouse wheel\&.
+.PP
+Note that \fBQCP::iRangeZoom\fP must be in the \fBQCustomPlot\fP's interactions (\fBQCustomPlot::setInteractions\fP) to allow range dragging\&. 
+.SS "void QCPColorScale::setType (\fBQCPAxis::AxisType\fP type)"
+Sets at which side of the color scale the axis is placed, and thus also its orientation\&.
+.PP
+Note that after setting \fItype\fP to a different value, the axis returned by \fBaxis()\fP will be a different one\&. The new axis will adopt the following properties from the previous axis: The range, scale type, log base and label\&. 
+.SS "void QCPColorScale::update (\fBUpdatePhase\fP phase)\fC [virtual]\fP"
+Updates the layout element and sub-elements\&. This function is automatically called before every replot by the parent layout element\&. It is called multiple times, once for every \fBUpdatePhase\fP\&. The phases are run through in the order of the enum values\&. For details about what happens at the different phases, see the documentation of \fBUpdatePhase\fP\&.
+.PP
+Layout elements that have child elements should call the \fBupdate\fP method of their child elements, and pass the current \fIphase\fP unchanged\&.
+.PP
+The default implementation executes the automatic margin mechanism in the \fBupMargins\fP phase\&. Subclasses should make sure to call the base class implementation\&. 
+.PP
+Reimplemented from \fBQCPLayoutElement\fP\&.
+.SS "void QCPColorScale::wheelEvent (QWheelEvent * event)\fC [protected]\fP, \fC [virtual]\fP"
+This event is called, if the mouse wheel is scrolled while the cursor is inside the rect of this layout element\&. 
+.PP
+Reimplemented from \fBQCPLayoutElement\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Voice analyze from the source code\&.

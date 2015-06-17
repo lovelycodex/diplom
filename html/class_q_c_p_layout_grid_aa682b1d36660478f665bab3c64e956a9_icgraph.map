@@ -1,0 +1,30 @@
+<map id="QCPLayoutGrid::elementCount" name="QCPLayoutGrid::elementCount">
+<area shape="rect" id="node2" href="$class_q_c_p_layout_grid.html#a26849ee5c47b4c940e8d65e8462f1065" title="QCPLayoutGrid::elementAt" alt="" coords="271,136,464,163"/>
+<area shape="rect" id="node4" href="$class_q_c_p_layout_grid.html#a666a9fe9e92054436f9b66eba25cca0c" title="QCPLayoutGrid::take" alt="" coords="761,35,916,61"/>
+<area shape="rect" id="node29" href="$class_q_c_p_legend.html#a198228e9cdc78d3a3c306fa6763d0404" title="QCPLegend::itemCount" alt="" coords="512,339,683,365"/>
+<area shape="rect" id="node3" href="$class_q_c_p_layout_grid.html#acc1277394ff8a6432e111ff9463e6375" title="QCPLayoutGrid::takeAt" alt="" coords="513,85,681,112"/>
+<area shape="rect" id="node5" href="$class_q_c_p_legend.html#a454272d7094437beb3278a2294006da5" title="QCPLegend::item" alt="" coords="531,263,664,289"/>
+<area shape="rect" id="node6" href="$class_q_c_p_legend.html#aa4cda8499e3cb0f3be415edc02984c73" title="QCPLegend::setFont" alt="" coords="763,237,915,264"/>
+<area shape="rect" id="node7" href="$class_q_c_p_legend.html#ae1eb239ff4a4632fe1b6c3e668d845c6" title="QCPLegend::setTextColor" alt="" coords="747,288,931,315"/>
+<area shape="rect" id="node9" href="$class_q_c_p_legend.html#a2aee309bb5c2a794b1987f3fc97f8ad8" title="QCPLegend::setSelectedParts" alt="" coords="732,339,945,365"/>
+<area shape="rect" id="node10" href="$class_q_c_p_legend.html#ab580a01c3c0a239374ed66c29edf5ad2" title="QCPLegend::setSelectedFont" alt="" coords="735,507,943,533"/>
+<area shape="rect" id="node11" href="$class_q_c_p_legend.html#a7674dfc7a1f30e1abd1018c0ed45e0bc" title="QCPLegend::setSelectedText\lColor" alt="" coords="735,390,942,431"/>
+<area shape="rect" id="node12" href="$class_q_c_p_legend.html#a5ee80cf83f65e3b6dd386942ee3cc1ee" title="QCPLegend::itemWithPlottable" alt="" coords="731,136,947,163"/>
+<area shape="rect" id="node24" href="$class_q_c_p_legend.html#a380dd19eb631592e1ebb9b24cc5b398a" title="QCPLegend::hasItem" alt="" coords="761,187,917,213"/>
+<area shape="rect" id="node26" href="$class_q_c_p_legend.html#ac91595c3eaa746fe6321d2eb952c63bb" title="QCPLegend::removeItem" alt="" coords="747,85,930,112"/>
+<area shape="rect" id="node28" href="$class_q_c_p_legend.html#ac93eaf236e911d67aa8b88942ef45c5e" title="QCPLegend::selectedItems" alt="" coords="741,456,936,483"/>
+<area shape="rect" id="node8" href="$class_q_c_p_legend.html#a0001a456989bd07ea378883651fabd72" title="QCPLegend::QCPLegend" alt="" coords="1025,339,1203,365"/>
+<area shape="rect" id="node13" href="$class_q_c_p_abstract_plottable.html#aa1f350e510326d012b9a9c9249736c83" title="QCPAbstractPlottable\l::removeFromLegend" alt="" coords="1035,74,1193,115"/>
+<area shape="rect" id="node20" href="$class_q_c_p_legend.html#a2eb1d24bdf5658e64962a656303fd61a" title="QCPLegend::hasItemWithPlottable" alt="" coords="995,140,1233,167"/>
+<area shape="rect" id="node14" href="$class_q_custom_plot.html#af3dafd56884208474f311d6226513ab2" title="QCustomPlot::removePlottable" alt="" coords="1281,81,1500,108"/>
+<area shape="rect" id="node15" href="$class_q_custom_plot.html#afc210e0021480f8119bccf37839dbcc8" title="QCustomPlot::removePlottable" alt="" coords="1548,81,1767,108"/>
+<area shape="rect" id="node16" href="$class_q_custom_plot.html#a9a409bb3201878adb7ffba1c89c4e004" title="QCustomPlot::clearPlottables" alt="" coords="1553,132,1761,159"/>
+<area shape="rect" id="node17" href="$class_q_custom_plot.html#a903561be895fb6528a770d66ac5e6713" title="QCustomPlot::removeGraph" alt="" coords="1556,31,1759,57"/>
+<area shape="rect" id="node18" href="$class_q_custom_plot.html#a9554b3d2d5b10c0f884bd4010b6c192c" title="QCustomPlot::removeGraph" alt="" coords="1815,56,2017,83"/>
+<area shape="rect" id="node19" href="$class_q_custom_plot.html#ab0f3abff2d2f7df3668b5836f39207fa" title="QCustomPlot::clearGraphs" alt="" coords="1821,5,2011,32"/>
+<area shape="rect" id="node21" href="$class_q_c_p_abstract_plottable.html#a70f8cabfd808f7d5204b9f18c45c13f5" title="QCPAbstractPlottable\l::addToLegend" alt="" coords="1311,179,1470,221"/>
+<area shape="rect" id="node22" href="$class_q_custom_plot.html#ab7ad9174f701f9c6f64e378df77927a6" title="QCustomPlot::addPlottable" alt="" coords="1560,187,1755,213"/>
+<area shape="rect" id="node23" href="$class_q_custom_plot.html#a6fb2873d35a8a8089842d81a70a54167" title="QCustomPlot::addGraph" alt="" coords="1827,187,2005,213"/>
+<area shape="rect" id="node25" href="$class_q_c_p_legend.html#a3ab274de52d2951faea45a6d975e6b3f" title="QCPLegend::addItem" alt="" coords="1035,191,1193,217"/>
+<area shape="rect" id="node27" href="$class_q_c_p_legend.html#a24795c7250eb5214fcea16b7217b4dfb" title="QCPLegend::clearItems" alt="" coords="1029,265,1199,292"/>
+</map>

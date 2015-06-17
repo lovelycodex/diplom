@@ -1,0 +1,97 @@
+\section{Q\+C\+P\+Plottable\+Legend\+Item Class Reference}
+\label{class_q_c_p_plottable_legend_item}\index{Q\+C\+P\+Plottable\+Legend\+Item@{Q\+C\+P\+Plottable\+Legend\+Item}}
+
+
+A legend item representing a plottable with an icon and the plottable name.  
+
+
+
+
+Collaboration diagram for Q\+C\+P\+Plottable\+Legend\+Item\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_plottable_legend_item__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Q\+C\+P\+Plottable\+Legend\+Item} ({\bf Q\+C\+P\+Legend} $\ast$parent, {\bf Q\+C\+P\+Abstract\+Plottable} $\ast$plottable)
+\item 
+{\bf Q\+C\+P\+Abstract\+Plottable} $\ast$ {\bfseries plottable} ()\label{class_q_c_p_plottable_legend_item_af29e9a2c60b4cba0cac2447b8af7b488}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries draw} ({\bf Q\+C\+P\+Painter} $\ast$painter)\label{class_q_c_p_plottable_legend_item_a68a781c3de4f9959fdf82075052d43aa}
+
+\item 
+virtual Q\+Size {\bf minimum\+Size\+Hint} () const 
+\item 
+Q\+Pen {\bfseries get\+Icon\+Border\+Pen} () const \label{class_q_c_p_plottable_legend_item_ab36270e6b022a6961fa44136f35c0e4b}
+
+\item 
+Q\+Color {\bfseries get\+Text\+Color} () const \label{class_q_c_p_plottable_legend_item_ad762b07439c738660ba93e78c1d03667}
+
+\item 
+Q\+Font {\bfseries get\+Font} () const \label{class_q_c_p_plottable_legend_item_a8a85c8a25affb4895423d730164d61de}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Q\+C\+P\+Abstract\+Plottable} $\ast$ {\bfseries m\+Plottable}\label{class_q_c_p_plottable_legend_item_ada647fb4b22971a1a424e15b4f6af0d9}
+
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+A legend item representing a plottable with an icon and the plottable name. 
+
+This is the standard legend item for plottables. It displays an icon of the plottable next to the plottable name. The icon is drawn by the respective plottable itself (Q\+C\+P\+Abstract\+Plottable\+::draw\+Legend\+Icon), and tries to give an intuitive symbol for the plottable. For example, the \doxyref{Q\+C\+P\+Graph}{p.}{class_q_c_p_graph} draws a centered horizontal line and/or a single scatter point in the middle.
+
+Legend items of this type are always associated with one plottable (retrievable via the plottable() function and settable with the constructor). You may change the font of the plottable name with \doxyref{set\+Font}{p.}{class_q_c_p_abstract_legend_item_a409c53455d8112f71d70c0c43eb10265}. Icon padding and border pen is taken from the parent \doxyref{Q\+C\+P\+Legend}{p.}{class_q_c_p_legend}, see \doxyref{Q\+C\+P\+Legend\+::set\+Icon\+Border\+Pen}{p.}{class_q_c_p_legend_a2f2c93d18a651f4ff294bb3f026f49b8} and \doxyref{Q\+C\+P\+Legend\+::set\+Icon\+Text\+Padding}{p.}{class_q_c_p_legend_a62973bd69d5155e8ea3141366e8968f6}.
+
+The function \doxyref{Q\+C\+P\+Abstract\+Plottable\+::add\+To\+Legend}{p.}{class_q_c_p_abstract_plottable_a70f8cabfd808f7d5204b9f18c45c13f5}/\doxyref{Q\+C\+P\+Abstract\+Plottable\+::remove\+From\+Legend}{p.}{class_q_c_p_abstract_plottable_aa1f350e510326d012b9a9c9249736c83} creates/removes legend items of this type in the default implementation. However, these functions may be reimplemented such that a different kind of legend item (e.\+g a direct subclass of \doxyref{Q\+C\+P\+Abstract\+Legend\+Item}{p.}{class_q_c_p_abstract_legend_item}) is used for that plottable.
+
+Since \doxyref{Q\+C\+P\+Legend}{p.}{class_q_c_p_legend} is based on \doxyref{Q\+C\+P\+Layout\+Grid}{p.}{class_q_c_p_layout_grid}, a legend item itself is just a subclass of \doxyref{Q\+C\+P\+Layout\+Element}{p.}{class_q_c_p_layout_element}. While it could be added to a legend (or any other layout) via the normal layout interface, \doxyref{Q\+C\+P\+Legend}{p.}{class_q_c_p_legend} has specialized functions for handling legend items conveniently, see the documentation of \doxyref{Q\+C\+P\+Legend}{p.}{class_q_c_p_legend}. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Q\+C\+P\+Plottable\+Legend\+Item@{Q\+C\+P\+Plottable\+Legend\+Item}!Q\+C\+P\+Plottable\+Legend\+Item@{Q\+C\+P\+Plottable\+Legend\+Item}}
+\index{Q\+C\+P\+Plottable\+Legend\+Item@{Q\+C\+P\+Plottable\+Legend\+Item}!Q\+C\+P\+Plottable\+Legend\+Item@{Q\+C\+P\+Plottable\+Legend\+Item}}
+\subsubsection[{Q\+C\+P\+Plottable\+Legend\+Item}]{\setlength{\rightskip}{0pt plus 5cm}Q\+C\+P\+Plottable\+Legend\+Item\+::\+Q\+C\+P\+Plottable\+Legend\+Item (
+\begin{DoxyParamCaption}
+\item[{{\bf Q\+C\+P\+Legend} $\ast$}]{parent, }
+\item[{{\bf Q\+C\+P\+Abstract\+Plottable} $\ast$}]{plottable}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_plottable_legend_item_ac1072591fe409d3dabad51b23ee4d6c5}
+Creates a new legend item associated with {\itshape plottable}.
+
+Once it\textquotesingle{}s created, it can be added to the legend via \doxyref{Q\+C\+P\+Legend\+::add\+Item}{p.}{class_q_c_p_legend_a3ab274de52d2951faea45a6d975e6b3f}.
+
+A more convenient way of adding/removing a plottable to/from the legend is via the functions \doxyref{Q\+C\+P\+Abstract\+Plottable\+::add\+To\+Legend}{p.}{class_q_c_p_abstract_plottable_a70f8cabfd808f7d5204b9f18c45c13f5} and \doxyref{Q\+C\+P\+Abstract\+Plottable\+::remove\+From\+Legend}{p.}{class_q_c_p_abstract_plottable_aa1f350e510326d012b9a9c9249736c83}. 
+
+\subsection{Member Function Documentation}
+\index{Q\+C\+P\+Plottable\+Legend\+Item@{Q\+C\+P\+Plottable\+Legend\+Item}!minimum\+Size\+Hint@{minimum\+Size\+Hint}}
+\index{minimum\+Size\+Hint@{minimum\+Size\+Hint}!Q\+C\+P\+Plottable\+Legend\+Item@{Q\+C\+P\+Plottable\+Legend\+Item}}
+\subsubsection[{minimum\+Size\+Hint}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Size Q\+C\+P\+Plottable\+Legend\+Item\+::minimum\+Size\+Hint (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{class_q_c_p_plottable_legend_item_a76bad654ebc8e870392f488419a6a483}
+Returns the minimum size this layout element (the inner \doxyref{rect}{p.}{class_q_c_p_layout_element_affdfea003469aac3d0fac5f4e06171bc}) may be compressed to.
+
+if a minimum size (\doxyref{set\+Minimum\+Size}{p.}{class_q_c_p_layout_element_a5dd29a3c8bc88440c97c06b67be7886b}) was not set manually, parent layouts consult this function to determine the minimum allowed size of this layout element. (A manual minimum size is considered set if it is non-\/zero.) 
+
+Reimplemented from {\bf Q\+C\+P\+Layout\+Element} \doxyref{}{p.}{class_q_c_p_layout_element_aebe14fb71f858c0f98caf8d342a9864a}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf qcustomplot.\+h}\item 
+{\bf qcustomplot.\+cpp}\end{DoxyCompactItemize}

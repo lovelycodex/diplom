@@ -1,0 +1,379 @@
+.TH "QCPLayoutGrid" 3 "Thu Jun 18 2015" "Version v.2" "Voice analyze" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+QCPLayoutGrid \- A layout that arranges child elements in a grid\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQCPLayoutGrid\fP ()"
+.br
+.ti -1c
+.RI "int \fBrowCount\fP () const "
+.br
+.ti -1c
+.RI "int \fBcolumnCount\fP () const "
+.br
+.ti -1c
+.RI "QList< double > \fBcolumnStretchFactors\fP () const "
+.br
+.ti -1c
+.RI "QList< double > \fBrowStretchFactors\fP () const "
+.br
+.ti -1c
+.RI "int \fBcolumnSpacing\fP () const "
+.br
+.ti -1c
+.RI "int \fBrowSpacing\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetColumnStretchFactor\fP (int column, double factor)"
+.br
+.ti -1c
+.RI "void \fBsetColumnStretchFactors\fP (const QList< double > &factors)"
+.br
+.ti -1c
+.RI "void \fBsetRowStretchFactor\fP (int row, double factor)"
+.br
+.ti -1c
+.RI "void \fBsetRowStretchFactors\fP (const QList< double > &factors)"
+.br
+.ti -1c
+.RI "void \fBsetColumnSpacing\fP (int pixels)"
+.br
+.ti -1c
+.RI "void \fBsetRowSpacing\fP (int pixels)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateLayout\fP ()"
+.br
+.ti -1c
+.RI "virtual int \fBelementCount\fP () const "
+.br
+.ti -1c
+.RI "virtual \fBQCPLayoutElement\fP * \fBelementAt\fP (int index) const "
+.br
+.ti -1c
+.RI "virtual \fBQCPLayoutElement\fP * \fBtakeAt\fP (int index)"
+.br
+.ti -1c
+.RI "virtual bool \fBtake\fP (\fBQCPLayoutElement\fP *\fBelement\fP)"
+.br
+.ti -1c
+.RI "virtual QList< \fBQCPLayoutElement\fP * > \fBelements\fP (bool recursive) const "
+.br
+.ti -1c
+.RI "virtual void \fBsimplify\fP ()"
+.br
+.ti -1c
+.RI "virtual QSize \fBminimumSizeHint\fP () const "
+.br
+.ti -1c
+.RI "virtual QSize \fBmaximumSizeHint\fP () const "
+.br
+.ti -1c
+.RI "\fBQCPLayoutElement\fP * \fBelement\fP (int row, int column) const "
+.br
+.ti -1c
+.RI "bool \fBaddElement\fP (int row, int column, \fBQCPLayoutElement\fP *\fBelement\fP)"
+.br
+.ti -1c
+.RI "bool \fBhasElement\fP (int row, int column)"
+.br
+.ti -1c
+.RI "void \fBexpandTo\fP (int newRowCount, int newColumnCount)"
+.br
+.ti -1c
+.RI "void \fBinsertRow\fP (int newIndex)"
+.br
+.ti -1c
+.RI "void \fBinsertColumn\fP (int newIndex)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBgetMinimumRowColSizes\fP (QVector< int > *minColWidths, QVector< int > *minRowHeights) const "
+.br
+.ti -1c
+.RI "void \fBgetMaximumRowColSizes\fP (QVector< int > *maxColWidths, QVector< int > *maxRowHeights) const "
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "QList< QList< \fBQCPLayoutElement\fP * > > \fBmElements\fP"
+.br
+.ti -1c
+.RI "QList< double > \fBmColumnStretchFactors\fP"
+.br
+.ti -1c
+.RI "QList< double > \fBmRowStretchFactors\fP"
+.br
+.ti -1c
+.RI "int \fBmColumnSpacing\fP"
+.br
+.ti -1c
+.RI "int \fBmRowSpacing\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+A layout that arranges child elements in a grid\&. 
+
+Elements are laid out in a grid with configurable stretch factors (\fBsetColumnStretchFactor\fP, \fBsetRowStretchFactor\fP) and spacing (\fBsetColumnSpacing\fP, \fBsetRowSpacing\fP)\&.
+.PP
+Elements can be added to cells via \fBaddElement\fP\&. The grid is expanded if the specified row or column doesn't exist yet\&. Whether a cell contains a valid layout element can be checked with \fBhasElement\fP, that element can be retrieved with \fBelement\fP\&. If rows and columns that only have empty cells shall be removed, call \fBsimplify\fP\&. Removal of elements is either done by just adding the element to a different layout or by using the \fBQCPLayout\fP interface \fBtake\fP or \fBremove\fP\&.
+.PP
+Row and column insertion can be performed with \fBinsertRow\fP and \fBinsertColumn\fP\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "QCPLayoutGrid::QCPLayoutGrid ()\fC [explicit]\fP"
+Creates an instance of \fBQCPLayoutGrid\fP and sets default values\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "bool QCPLayoutGrid::addElement (int row, int column, \fBQCPLayoutElement\fP * element)"
+Adds the \fIelement\fP to cell with \fIrow\fP and \fIcolumn\fP\&. If \fIelement\fP is already in a layout, it is first removed from there\&. If \fIrow\fP or \fIcolumn\fP don't exist yet, the layout is expanded accordingly\&.
+.PP
+Returns true if the element was added successfully, i\&.e\&. if the cell at \fIrow\fP and \fIcolumn\fP didn't already have an element\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBelement\fP, \fBhasElement\fP, \fBtake\fP, \fBremove\fP 
+.RE
+.PP
+
+.SS "int QCPLayoutGrid::columnCount () const"
+Returns the number of columns in the layout\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBrowCount\fP 
+.RE
+.PP
+
+.SS "\fBQCPLayoutElement\fP * QCPLayoutGrid::element (int row, int column) const"
+Returns the element in the cell in \fIrow\fP and \fIcolumn\fP\&.
+.PP
+Returns 0 if either the row/column is invalid or if the cell is empty\&. In those cases, a qDebug message is printed\&. To check whether a cell exists and isn't empty, use \fBhasElement\fP\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBaddElement\fP, \fBhasElement\fP 
+.RE
+.PP
+
+.SS "\fBQCPLayoutElement\fP * QCPLayoutGrid::elementAt (int index) const\fC [virtual]\fP"
+Returns the element in the cell with the given \fIindex\fP\&. If \fIindex\fP is invalid, returns 0\&.
+.PP
+Note that even if \fIindex\fP is valid, the respective cell may be empty in some layouts (e\&.g\&. \fBQCPLayoutGrid\fP), so this function may return 0 in those cases\&. You may use this function to check whether a cell is empty or not\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBelements\fP, \fBelementCount\fP, \fBtakeAt\fP 
+.RE
+.PP
+
+.PP
+Implements \fBQCPLayout\fP\&.
+.SS "int QCPLayoutGrid::elementCount () const\fC [virtual]\fP"
+Returns the number of elements/cells in the layout\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBelements\fP, \fBelementAt\fP 
+.RE
+.PP
+
+.PP
+Implements \fBQCPLayout\fP\&.
+.SS "QList< \fBQCPLayoutElement\fP * > QCPLayoutGrid::elements (bool recursive) const\fC [virtual]\fP"
+Returns a list of all child elements in this layout element\&. If \fIrecursive\fP is true, all sub-child elements are included in the list, too\&.
+.PP
+\fBWarning:\fP
+.RS 4
+There may be entries with value 0 in the returned list\&. (For example, \fBQCPLayoutGrid\fP may have empty cells which yield 0 at the respective index\&.) 
+.RE
+.PP
+
+.PP
+Reimplemented from \fBQCPLayout\fP\&.
+.SS "void QCPLayoutGrid::expandTo (int newRowCount, int newColumnCount)"
+Expands the layout to have \fInewRowCount\fP rows and \fInewColumnCount\fP columns\&. So the last valid row index will be \fInewRowCount-1\fP, the last valid column index will be \fInewColumnCount-1\fP\&.
+.PP
+If the current column/row count is already larger or equal to \fInewColumnCount/\fInewRowCount\fP,\fP this function does nothing in that dimension\&.
+.PP
+Newly created cells are empty, new rows and columns have the stretch factor 1\&.
+.PP
+Note that upon a call to \fBaddElement\fP, the layout is expanded automatically to contain the specified row and column, using this function\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsimplify\fP 
+.RE
+.PP
+
+.SS "bool QCPLayoutGrid::hasElement (int row, int column)"
+Returns whether the cell at \fIrow\fP and \fIcolumn\fP exists and contains a valid element, i\&.e\&. isn't empty\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBelement\fP 
+.RE
+.PP
+
+.SS "void QCPLayoutGrid::insertColumn (int newIndex)"
+Inserts a new column with empty cells at the column index \fInewIndex\fP\&. Valid values for \fInewIndex\fP range from 0 (inserts a row at the left) to \fIrowCount\fP (appends a row at the right)\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBinsertRow\fP 
+.RE
+.PP
+
+.SS "void QCPLayoutGrid::insertRow (int newIndex)"
+Inserts a new row with empty cells at the row index \fInewIndex\fP\&. Valid values for \fInewIndex\fP range from 0 (inserts a row at the top) to \fIrowCount\fP (appends a row at the bottom)\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBinsertColumn\fP 
+.RE
+.PP
+
+.SS "QSize QCPLayoutGrid::maximumSizeHint () const\fC [virtual]\fP"
+Returns the maximum size this layout element (the inner \fBrect\fP) may be expanded to\&.
+.PP
+if a maximum size (\fBsetMaximumSize\fP) was not set manually, parent layouts consult this function to determine the maximum allowed size of this layout element\&. (A manual maximum size is considered set if it is smaller than Qt's QWIDGETSIZE_MAX\&.) 
+.PP
+Reimplemented from \fBQCPLayoutElement\fP\&.
+.SS "QSize QCPLayoutGrid::minimumSizeHint () const\fC [virtual]\fP"
+Returns the minimum size this layout element (the inner \fBrect\fP) may be compressed to\&.
+.PP
+if a minimum size (\fBsetMinimumSize\fP) was not set manually, parent layouts consult this function to determine the minimum allowed size of this layout element\&. (A manual minimum size is considered set if it is non-zero\&.) 
+.PP
+Reimplemented from \fBQCPLayoutElement\fP\&.
+.SS "int QCPLayoutGrid::rowCount () const"
+Returns the number of rows in the layout\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBcolumnCount\fP 
+.RE
+.PP
+
+.SS "void QCPLayoutGrid::setColumnSpacing (int pixels)"
+Sets the gap that is left blank between columns to \fIpixels\fP\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetRowSpacing\fP 
+.RE
+.PP
+
+.SS "void QCPLayoutGrid::setColumnStretchFactor (int column, double factor)"
+Sets the stretch \fIfactor\fP of \fIcolumn\fP\&.
+.PP
+Stretch factors control the relative sizes of rows and columns\&. Cells will not be resized beyond their minimum and maximum widths/heights (\fBQCPLayoutElement::setMinimumSize\fP, \fBQCPLayoutElement::setMaximumSize\fP), regardless of the stretch factor\&.
+.PP
+The default stretch factor of newly created rows/columns is 1\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetColumnStretchFactors\fP, \fBsetRowStretchFactor\fP 
+.RE
+.PP
+
+.SS "void QCPLayoutGrid::setColumnStretchFactors (const QList< double > & factors)"
+Sets the stretch \fIfactors\fP of all columns\&. \fIfactors\fP must have the size \fBcolumnCount\fP\&.
+.PP
+Stretch factors control the relative sizes of rows and columns\&. Cells will not be resized beyond their minimum and maximum widths/heights (\fBQCPLayoutElement::setMinimumSize\fP, \fBQCPLayoutElement::setMaximumSize\fP), regardless of the stretch factor\&.
+.PP
+The default stretch factor of newly created rows/columns is 1\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetColumnStretchFactor\fP, \fBsetRowStretchFactors\fP 
+.RE
+.PP
+
+.SS "void QCPLayoutGrid::setRowSpacing (int pixels)"
+Sets the gap that is left blank between rows to \fIpixels\fP\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetColumnSpacing\fP 
+.RE
+.PP
+
+.SS "void QCPLayoutGrid::setRowStretchFactor (int row, double factor)"
+Sets the stretch \fIfactor\fP of \fIrow\fP\&.
+.PP
+Stretch factors control the relative sizes of rows and columns\&. Cells will not be resized beyond their minimum and maximum widths/heights (\fBQCPLayoutElement::setMinimumSize\fP, \fBQCPLayoutElement::setMaximumSize\fP), regardless of the stretch factor\&.
+.PP
+The default stretch factor of newly created rows/columns is 1\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetColumnStretchFactors\fP, \fBsetRowStretchFactor\fP 
+.RE
+.PP
+
+.SS "void QCPLayoutGrid::setRowStretchFactors (const QList< double > & factors)"
+Sets the stretch \fIfactors\fP of all rows\&. \fIfactors\fP must have the size \fBrowCount\fP\&.
+.PP
+Stretch factors control the relative sizes of rows and columns\&. Cells will not be resized beyond their minimum and maximum widths/heights (\fBQCPLayoutElement::setMinimumSize\fP, \fBQCPLayoutElement::setMaximumSize\fP), regardless of the stretch factor\&.
+.PP
+The default stretch factor of newly created rows/columns is 1\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetRowStretchFactor\fP, \fBsetColumnStretchFactors\fP 
+.RE
+.PP
+
+.SS "void QCPLayoutGrid::simplify ()\fC [virtual]\fP"
+Simplifies the layout by collapsing rows and columns which only contain empty cells\&. 
+.PP
+Reimplemented from \fBQCPLayout\fP\&.
+.SS "bool QCPLayoutGrid::take (\fBQCPLayoutElement\fP * element)\fC [virtual]\fP"
+Removes the specified \fIelement\fP from the layout and returns true on success\&.
+.PP
+If the \fIelement\fP isn't in this layout, returns false\&.
+.PP
+Note that some layouts don't remove the respective cell right away but leave an empty cell after successful removal of the layout element\&. To collapse empty cells, use \fBsimplify\fP\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBtakeAt\fP 
+.RE
+.PP
+
+.PP
+Implements \fBQCPLayout\fP\&.
+.SS "\fBQCPLayoutElement\fP * QCPLayoutGrid::takeAt (int index)\fC [virtual]\fP"
+Removes the element with the given \fIindex\fP from the layout and returns it\&.
+.PP
+If the \fIindex\fP is invalid or the cell with that index is empty, returns 0\&.
+.PP
+Note that some layouts don't remove the respective cell right away but leave an empty cell after successful removal of the layout element\&. To collapse empty cells, use \fBsimplify\fP\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBelementAt\fP, \fBtake\fP 
+.RE
+.PP
+
+.PP
+Implements \fBQCPLayout\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Voice analyze from the source code\&.

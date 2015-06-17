@@ -1,0 +1,186 @@
+.TH "QCPAxisPainterPrivate" 3 "Thu Jun 18 2015" "Version v.2" "Voice analyze" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+QCPAxisPainterPrivate \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBCachedLabel\fP"
+.br
+.ti -1c
+.RI "struct \fBTickLabelData\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQCPAxisPainterPrivate\fP (\fBQCustomPlot\fP *parentPlot)"
+.br
+.ti -1c
+.RI "virtual void \fBdraw\fP (\fBQCPPainter\fP *painter)"
+.br
+.ti -1c
+.RI "virtual int \fBsize\fP () const "
+.br
+.ti -1c
+.RI "void \fBclearCache\fP ()"
+.br
+.ti -1c
+.RI "QRect \fBaxisSelectionBox\fP () const "
+.br
+.ti -1c
+.RI "QRect \fBtickLabelsSelectionBox\fP () const "
+.br
+.ti -1c
+.RI "QRect \fBlabelSelectionBox\fP () const "
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBQCPAxis::AxisType\fP \fBtype\fP"
+.br
+.ti -1c
+.RI "QPen \fBbasePen\fP"
+.br
+.ti -1c
+.RI "\fBQCPLineEnding\fP \fBlowerEnding\fP"
+.br
+.ti -1c
+.RI "\fBQCPLineEnding\fP \fBupperEnding\fP"
+.br
+.ti -1c
+.RI "int \fBlabelPadding\fP"
+.br
+.ti -1c
+.RI "QFont \fBlabelFont\fP"
+.br
+.ti -1c
+.RI "QColor \fBlabelColor\fP"
+.br
+.ti -1c
+.RI "QString \fBlabel\fP"
+.br
+.ti -1c
+.RI "int \fBtickLabelPadding\fP"
+.br
+.ti -1c
+.RI "double \fBtickLabelRotation\fP"
+.br
+.ti -1c
+.RI "\fBQCPAxis::LabelSide\fP \fBtickLabelSide\fP"
+.br
+.ti -1c
+.RI "bool \fBsubstituteExponent\fP"
+.br
+.ti -1c
+.RI "bool \fBnumberMultiplyCross\fP"
+.br
+.ti -1c
+.RI "int \fBtickLengthIn\fP"
+.br
+.ti -1c
+.RI "int \fBtickLengthOut\fP"
+.br
+.ti -1c
+.RI "int \fBsubTickLengthIn\fP"
+.br
+.ti -1c
+.RI "int \fBsubTickLengthOut\fP"
+.br
+.ti -1c
+.RI "QPen \fBtickPen\fP"
+.br
+.ti -1c
+.RI "QPen \fBsubTickPen\fP"
+.br
+.ti -1c
+.RI "QFont \fBtickLabelFont\fP"
+.br
+.ti -1c
+.RI "QColor \fBtickLabelColor\fP"
+.br
+.ti -1c
+.RI "QRect \fBaxisRect\fP"
+.br
+.ti -1c
+.RI "QRect \fBviewportRect\fP"
+.br
+.ti -1c
+.RI "double \fBoffset\fP"
+.br
+.ti -1c
+.RI "bool \fBabbreviateDecimalPowers\fP"
+.br
+.ti -1c
+.RI "bool \fBreversedEndings\fP"
+.br
+.ti -1c
+.RI "QVector< double > \fBsubTickPositions\fP"
+.br
+.ti -1c
+.RI "QVector< double > \fBtickPositions\fP"
+.br
+.ti -1c
+.RI "QVector< QString > \fBtickLabels\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual QByteArray \fBgenerateLabelParameterHash\fP () const "
+.br
+.ti -1c
+.RI "virtual void \fBplaceTickLabel\fP (\fBQCPPainter\fP *painter, double position, int distanceToAxis, const QString &text, QSize *tickLabelsSize)"
+.br
+.ti -1c
+.RI "virtual void \fBdrawTickLabel\fP (\fBQCPPainter\fP *painter, double x, double y, const \fBTickLabelData\fP &labelData) const "
+.br
+.ti -1c
+.RI "virtual \fBTickLabelData\fP \fBgetTickLabelData\fP (const QFont &font, const QString &text) const "
+.br
+.ti -1c
+.RI "virtual QPointF \fBgetTickLabelDrawOffset\fP (const \fBTickLabelData\fP &labelData) const "
+.br
+.ti -1c
+.RI "virtual void \fBgetMaxTickLabelSize\fP (const QFont &font, const QString &text, QSize *tickLabelsSize) const "
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBQCustomPlot\fP * \fBmParentPlot\fP"
+.br
+.ti -1c
+.RI "QByteArray \fBmLabelParameterHash\fP"
+.br
+.ti -1c
+.RI "QCache< QString, \fBCachedLabel\fP > \fBmLabelCache\fP"
+.br
+.ti -1c
+.RI "QRect \fBmAxisSelectionBox\fP"
+.br
+.ti -1c
+.RI "QRect \fBmTickLabelsSelectionBox\fP"
+.br
+.ti -1c
+.RI "QRect \fBmLabelSelectionBox\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "QCPAxisPainterPrivate::QCPAxisPainterPrivate (\fBQCustomPlot\fP * parentPlot)\fC [explicit]\fP"
+Constructs a \fBQCPAxisPainterPrivate\fP instance\&. Make sure to not create a new instance on every redraw, to utilize the caching mechanisms\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Voice analyze from the source code\&.
