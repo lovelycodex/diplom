@@ -1,0 +1,15 @@
+<map id="QCPLayoutElement" name="QCPLayoutElement">
+<area shape="rect" id="node8" href="$class_q_c_p_layout.html" title="The abstract base class for layouts. " alt="" coords="253,95,345,121"/>
+<area shape="rect" id="node14" href="$class_q_c_p_axis_rect.html" title="Holds multiple axes and arranges them in a rectangular shape. " alt="" coords="498,275,601,301"/>
+<area shape="rect" id="node2" href="$class_q_c_p_layerable.html" title="Base class for all drawable objects. " alt="" coords="179,691,290,717"/>
+<area shape="rect" id="node9" href="$class_q_c_p_axis.html" title="Manages a single axis inside a QCustomPlot. " alt="" coords="512,364,587,391"/>
+<area shape="rect" id="node13" href="$class_q_c_p_grid.html" title="Responsible for drawing the grid of a QCPAxis. " alt="" coords="513,767,588,793"/>
+<area shape="rect" id="node4" href="$class_q_c_p_layer.html" title="A layer that may contain objects, to control the rendering order. " alt="" coords="122,601,206,628"/>
+<area shape="rect" id="node5" href="$class_q_custom_plot.html" title="The central class of the library. This is the QWidget which displays the plot and interacts with the ..." alt="" coords="227,497,333,524"/>
+<area shape="rect" id="node11" href="$class_q_c_p_axis_painter_private.html" title="QCPAxisPainterPrivate" alt="" coords="619,601,783,628"/>
+<area shape="rect" id="node7" href="$class_q_c_p_layout_grid.html" title="A layout that arranges child elements in a grid. " alt="" coords="159,275,278,301"/>
+<area shape="rect" id="node16" href="$class_q_c_p_legend.html" title="Manages a legend inside a QCustomPlot. " alt="" coords="51,364,147,391"/>
+<area shape="rect" id="node15" href="$class_q_c_p_layout_inset.html" title="A layout that places child elements aligned to the border or arbitrarily positioned. " alt="" coords="443,171,565,197"/>
+<area shape="rect" id="node10" href="$class_q_c_p_range.html" title="Represents the range an axis is encompassing. " alt="" coords="303,171,393,197"/>
+<area shape="rect" id="node12" href="$class_q_c_p_line_ending.html" title="Handles the different ending decorations for line&#45;like items. " alt="" coords="587,497,706,524"/>
+</map>

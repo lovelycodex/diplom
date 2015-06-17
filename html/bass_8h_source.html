@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.9.1"/>
-<title>My Project: bass.h Source File</title>
+<title>Voice analyze: bass.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,8 +22,10 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="index.jpe"/></td>
   <td style="padding-left: 0.5em;">
-   <div id="projectname">My Project
+   <div id="projectname">Voice analyze
+   &#160;<span id="projectnumber">v.1</span>
    </div>
   </td>
  </tr>
@@ -244,7 +246,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="preprocessor">#define BASS_OBJECT_DS3DL   2   // IDirectSound3DListener</span></div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="comment">// Device info structure</span></div>
-<div class="line"><a name="l00160"></a><span class="lineno"><a class="line" href="structBASS__DEVICEINFO.html">  160</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00160"></a><span class="lineno"><a class="line" href="struct_b_a_s_s___d_e_v_i_c_e_i_n_f_o.html">  160</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="preprocessor">#if defined(_WIN32_WCE) || (WINAPI_FAMILY &amp;&amp; WINAPI_FAMILY!=WINAPI_FAMILY_DESKTOP_APP)</span></div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">wchar_t</span> *name;    <span class="comment">// description</span></div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">wchar_t</span> *driver;  <span class="comment">// driver</span></div>
@@ -253,7 +255,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *driver; <span class="comment">// driver</span></div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    DWORD flags;</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;} <a class="code" href="structBASS__DEVICEINFO.html">BASS_DEVICEINFO</a>;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;} <a class="code" href="struct_b_a_s_s___d_e_v_i_c_e_i_n_f_o.html">BASS_DEVICEINFO</a>;</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;</div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;<span class="comment">// BASS_DEVICEINFO flags</span></div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="preprocessor">#define BASS_DEVICE_ENABLED     1</span></div>
@@ -276,7 +278,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;<span class="comment">// BASS_GetDeviceInfo flags</span></div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;<span class="preprocessor">#define BASS_DEVICES_AIRPLAY    0x1000000</span></div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;</div>
-<div class="line"><a name="l00192"></a><span class="lineno"><a class="line" href="structBASS__INFO.html">  192</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00192"></a><span class="lineno"><a class="line" href="struct_b_a_s_s___i_n_f_o.html">  192</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    DWORD flags;    <span class="comment">// device capabilities (DSCAPS_xxx flags)</span></div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    DWORD hwsize;   <span class="comment">// size of total device hardware memory</span></div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    DWORD hwfree;   <span class="comment">// size of free device hardware memory</span></div>
@@ -291,7 +293,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    DWORD initflags; <span class="comment">// BASS_Init &quot;flags&quot; parameter</span></div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    DWORD speakers; <span class="comment">// number of speakers available</span></div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    DWORD freq;     <span class="comment">// current output rate</span></div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;} <a class="code" href="structBASS__INFO.html">BASS_INFO</a>;</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;} <a class="code" href="struct_b_a_s_s___i_n_f_o.html">BASS_INFO</a>;</div>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;</div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;<span class="comment">// BASS_INFO flags (from DSOUND.H)</span></div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;<span class="preprocessor">#define DSCAPS_CONTINUOUSRATE   0x00000010  // supports all sample rates between min/maxrate</span></div>
@@ -303,13 +305,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;<span class="preprocessor">#define DSCAPS_SECONDARY16BIT   0x00000800  // 16 bit</span></div>
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;</div>
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;<span class="comment">// Recording device info structure</span></div>
-<div class="line"><a name="l00219"></a><span class="lineno"><a class="line" href="structBASS__RECORDINFO.html">  219</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00219"></a><span class="lineno"><a class="line" href="struct_b_a_s_s___r_e_c_o_r_d_i_n_f_o.html">  219</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    DWORD flags;    <span class="comment">// device capabilities (DSCCAPS_xxx flags)</span></div>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    DWORD formats;  <span class="comment">// supported standard formats (WAVE_FORMAT_xxx flags)</span></div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    DWORD inputs;   <span class="comment">// number of inputs</span></div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    BOOL singlein;  <span class="comment">// TRUE = only 1 input can be set at a time</span></div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    DWORD freq;     <span class="comment">// current input rate</span></div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;} <a class="code" href="structBASS__RECORDINFO.html">BASS_RECORDINFO</a>;</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;} <a class="code" href="struct_b_a_s_s___r_e_c_o_r_d_i_n_f_o.html">BASS_RECORDINFO</a>;</div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;</div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;<span class="comment">// BASS_RECORDINFO flags (from DSOUND.H)</span></div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;<span class="preprocessor">#define DSCCAPS_EMULDRIVER      DSCAPS_EMULDRIVER   // device does NOT have hardware DirectSound recording support</span></div>
@@ -332,7 +334,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;</div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;<span class="comment">// Sample info structure</span></div>
-<div class="line"><a name="l00248"></a><span class="lineno"><a class="line" href="structBASS__SAMPLE.html">  248</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00248"></a><span class="lineno"><a class="line" href="struct_b_a_s_s___s_a_m_p_l_e.html">  248</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
 <div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    DWORD freq;     <span class="comment">// default playback rate</span></div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    <span class="keywordtype">float</span> volume;   <span class="comment">// default volume (0-1)</span></div>
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    <span class="keywordtype">float</span> pan;      <span class="comment">// default pan (-1=left, 0=middle, 1=right)</span></div>
@@ -350,7 +352,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    <span class="keywordtype">float</span> outvol;   <span class="comment">// delta-volume outside the projection cone</span></div>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    DWORD vam;      <span class="comment">// voice allocation/management flags (BASS_VAM_xxx)</span></div>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    DWORD priority; <span class="comment">// priority (0=lowest, 0xffffffff=highest)</span></div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;} <a class="code" href="structBASS__SAMPLE.html">BASS_SAMPLE</a>;</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;} <a class="code" href="struct_b_a_s_s___s_a_m_p_l_e.html">BASS_SAMPLE</a>;</div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;</div>
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;<span class="preprocessor">#define BASS_SAMPLE_8BITS       1   // 8 bit</span></div>
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;<span class="preprocessor">#define BASS_SAMPLE_FLOAT       256 // 32-bit floating-point</span></div>
@@ -427,7 +429,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;<span class="preprocessor">#define BASS_VAM_TERM_PRIO      16</span></div>
 <div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;</div>
 <div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;<span class="comment">// Channel info structure</span></div>
-<div class="line"><a name="l00343"></a><span class="lineno"><a class="line" href="structBASS__CHANNELINFO.html">  343</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00343"></a><span class="lineno"><a class="line" href="struct_b_a_s_s___c_h_a_n_n_e_l_i_n_f_o.html">  343</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
 <div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    DWORD freq;     <span class="comment">// default playback rate</span></div>
 <div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    DWORD chans;    <span class="comment">// channels</span></div>
 <div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    DWORD flags;    <span class="comment">// BASS_SAMPLE/STREAM/MUSIC/SPEAKER flags</span></div>
@@ -436,7 +438,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;    HPLUGIN plugin; <span class="comment">// plugin</span></div>
 <div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    HSAMPLE sample; <span class="comment">// sample</span></div>
 <div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *filename; <span class="comment">// filename</span></div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;} <a class="code" href="structBASS__CHANNELINFO.html">BASS_CHANNELINFO</a>;</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;} <a class="code" href="struct_b_a_s_s___c_h_a_n_n_e_l_i_n_f_o.html">BASS_CHANNELINFO</a>;</div>
 <div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;</div>
 <div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;<span class="comment">// BASS_CHANNELINFO types</span></div>
 <div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;<span class="preprocessor">#define BASS_CTYPE_SAMPLE       1</span></div>
@@ -459,7 +461,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;<span class="preprocessor">#define BASS_CTYPE_MUSIC_IT     0x20004</span></div>
 <div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;<span class="preprocessor">#define BASS_CTYPE_MUSIC_MO3    0x00100 // MO3 flag</span></div>
 <div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;</div>
-<div class="line"><a name="l00375"></a><span class="lineno"><a class="line" href="structBASS__PLUGINFORM.html">  375</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00375"></a><span class="lineno"><a class="line" href="struct_b_a_s_s___p_l_u_g_i_n_f_o_r_m.html">  375</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
 <div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    DWORD ctype;        <span class="comment">// channel type</span></div>
 <div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;<span class="preprocessor">#if defined(_WIN32_WCE) || (WINAPI_FAMILY &amp;&amp; WINAPI_FAMILY!=WINAPI_FAMILY_DESKTOP_APP)</span></div>
 <div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">wchar_t</span> *name;    <span class="comment">// format description</span></div>
@@ -468,24 +470,24 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *name;   <span class="comment">// format description</span></div>
 <div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *exts;   <span class="comment">// file extension filter (*.ext1;*.ext2;etc...)</span></div>
 <div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;} <a class="code" href="structBASS__PLUGINFORM.html">BASS_PLUGINFORM</a>;</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;} <a class="code" href="struct_b_a_s_s___p_l_u_g_i_n_f_o_r_m.html">BASS_PLUGINFORM</a>;</div>
 <div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;</div>
-<div class="line"><a name="l00386"></a><span class="lineno"><a class="line" href="structBASS__PLUGININFO.html">  386</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00386"></a><span class="lineno"><a class="line" href="struct_b_a_s_s___p_l_u_g_i_n_i_n_f_o.html">  386</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
 <div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;    DWORD version;                  <span class="comment">// version (same form as BASS_GetVersion)</span></div>
 <div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;    DWORD formatc;                  <span class="comment">// number of formats</span></div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;    <span class="keyword">const</span> <a class="code" href="structBASS__PLUGINFORM.html">BASS_PLUGINFORM</a> *formats; <span class="comment">// the array of formats</span></div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;} <a class="code" href="structBASS__PLUGININFO.html">BASS_PLUGININFO</a>;</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;    <span class="keyword">const</span> <a class="code" href="struct_b_a_s_s___p_l_u_g_i_n_f_o_r_m.html">BASS_PLUGINFORM</a> *formats; <span class="comment">// the array of formats</span></div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;} <a class="code" href="struct_b_a_s_s___p_l_u_g_i_n_i_n_f_o.html">BASS_PLUGININFO</a>;</div>
 <div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;</div>
 <div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;<span class="comment">// 3D vector (for 3D positions/velocities/orientations)</span></div>
-<div class="line"><a name="l00393"></a><span class="lineno"><a class="line" href="structBASS__3DVECTOR.html">  393</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structBASS__3DVECTOR.html">BASS_3DVECTOR</a> {</div>
+<div class="line"><a name="l00393"></a><span class="lineno"><a class="line" href="struct_b_a_s_s__3_d_v_e_c_t_o_r.html">  393</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct_b_a_s_s__3_d_v_e_c_t_o_r.html">BASS_3DVECTOR</a> {</div>
 <div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;    <a class="code" href="structBASS__3DVECTOR.html">BASS_3DVECTOR</a>() {};</div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    <a class="code" href="structBASS__3DVECTOR.html">BASS_3DVECTOR</a>(<span class="keywordtype">float</span> _x, <span class="keywordtype">float</span> _y, <span class="keywordtype">float</span> _z) : x(_x), y(_y), z(_z) {};</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;    <a class="code" href="struct_b_a_s_s__3_d_v_e_c_t_o_r.html">BASS_3DVECTOR</a>() {};</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    <a class="code" href="struct_b_a_s_s__3_d_v_e_c_t_o_r.html">BASS_3DVECTOR</a>(<span class="keywordtype">float</span> _x, <span class="keywordtype">float</span> _y, <span class="keywordtype">float</span> _z) : x(_x), y(_y), z(_z) {};</div>
 <div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;    <span class="keywordtype">float</span> x;    <span class="comment">// +=right, -=left</span></div>
 <div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;    <span class="keywordtype">float</span> y;    <span class="comment">// +=up, -=down</span></div>
 <div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;    <span class="keywordtype">float</span> z;    <span class="comment">// +=front, -=behind</span></div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;} <a class="code" href="structBASS__3DVECTOR.html">BASS_3DVECTOR</a>;</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;} <a class="code" href="struct_b_a_s_s__3_d_v_e_c_t_o_r.html">BASS_3DVECTOR</a>;</div>
 <div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;</div>
 <div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;<span class="comment">// 3D channel modes</span></div>
 <div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;<span class="preprocessor">#define BASS_3DMODE_NORMAL      0   // normal 3D processing</span></div>
@@ -586,12 +588,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;<span class="keyword">typedef</span> DWORD (CALLBACK FILEREADPROC)(<span class="keywordtype">void</span> *buffer, DWORD length, <span class="keywordtype">void</span> *user);</div>
 <div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;<span class="keyword">typedef</span> BOOL (CALLBACK FILESEEKPROC)(QWORD offset, <span class="keywordtype">void</span> *user);</div>
 <div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;</div>
-<div class="line"><a name="l00502"></a><span class="lineno"><a class="line" href="structBASS__FILEPROCS.html">  502</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00502"></a><span class="lineno"><a class="line" href="struct_b_a_s_s___f_i_l_e_p_r_o_c_s.html">  502</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
 <div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;    FILECLOSEPROC *close;</div>
 <div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;    FILELENPROC *length;</div>
 <div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;    FILEREADPROC *read;</div>
 <div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;    FILESEEKPROC *seek;</div>
-<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;} <a class="code" href="structBASS__FILEPROCS.html">BASS_FILEPROCS</a>;</div>
+<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;} <a class="code" href="struct_b_a_s_s___f_i_l_e_p_r_o_c_s.html">BASS_FILEPROCS</a>;</div>
 <div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;</div>
 <div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;<span class="comment">// BASS_StreamPutFileData options</span></div>
 <div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;<span class="preprocessor">#define BASS_FILEDATA_END       0   // end &amp; close the file</span></div>
@@ -732,7 +734,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;<span class="preprocessor">#define BASS_TAG_MUSIC_SAMPLE   0x10300 // + sample #, MOD sample name : ANSI string</span></div>
 <div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;</div>
 <div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;<span class="comment">// ID3v1 tag structure</span></div>
-<div class="line"><a name="l00648"></a><span class="lineno"><a class="line" href="structTAG__ID3.html">  648</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00648"></a><span class="lineno"><a class="line" href="struct_t_a_g___i_d3.html">  648</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
 <div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;    <span class="keywordtype">char</span> <span class="keywordtype">id</span>[3];</div>
 <div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;    <span class="keywordtype">char</span> title[30];</div>
 <div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;    <span class="keywordtype">char</span> artist[30];</div>
@@ -740,14 +742,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;    <span class="keywordtype">char</span> year[4];</div>
 <div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;    <span class="keywordtype">char</span> comment[30];</div>
 <div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;    BYTE genre;</div>
-<div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;} <a class="code" href="structTAG__ID3.html">TAG_ID3</a>;</div>
+<div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;} <a class="code" href="struct_t_a_g___i_d3.html">TAG_ID3</a>;</div>
 <div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;</div>
 <div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;<span class="comment">// Binary APE tag structure</span></div>
-<div class="line"><a name="l00659"></a><span class="lineno"><a class="line" href="structTAG__APE__BINARY.html">  659</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00659"></a><span class="lineno"><a class="line" href="struct_t_a_g___a_p_e___b_i_n_a_r_y.html">  659</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
 <div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *key;</div>
 <div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">void</span> *data;</div>
 <div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;    DWORD length;</div>
-<div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;} <a class="code" href="structTAG__APE__BINARY.html">TAG_APE_BINARY</a>;</div>
+<div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;} <a class="code" href="struct_t_a_g___a_p_e___b_i_n_a_r_y.html">TAG_APE_BINARY</a>;</div>
 <div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;</div>
 <div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;<span class="comment">// BWF &quot;bext&quot; tag structure</span></div>
 <div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;<span class="preprocessor">#ifdef _MSC_VER</span></div>
@@ -755,7 +757,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;<span class="preprocessor">#pragma warning(disable:4200)</span></div>
 <div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;<span class="preprocessor">#pragma pack(push,1)</span></div>
-<div class="line"><a name="l00671"></a><span class="lineno"><a class="line" href="structTAG__BEXT.html">  671</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00671"></a><span class="lineno"><a class="line" href="struct_t_a_g___b_e_x_t.html">  671</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
 <div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;    <span class="keywordtype">char</span> Description[256];          <span class="comment">// description</span></div>
 <div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;    <span class="keywordtype">char</span> Originator[32];            <span class="comment">// name of the originator</span></div>
 <div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;    <span class="keywordtype">char</span> OriginatorReference[32];   <span class="comment">// reference of the originator</span></div>
@@ -772,17 +774,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;    <span class="keywordtype">char</span> CodingHistory[1];          <span class="comment">// history</span></div>
 <div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;} <a class="code" href="structTAG__BEXT.html">TAG_BEXT</a>;</div>
+<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;} <a class="code" href="struct_t_a_g___b_e_x_t.html">TAG_BEXT</a>;</div>
 <div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;<span class="preprocessor">#pragma pack(pop)</span></div>
 <div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;</div>
 <div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;<span class="comment">// BWF &quot;cart&quot; tag structures</span></div>
-<div class="line"><a name="l00692"></a><span class="lineno"><a class="line" href="structTAG__CART__TIMER.html">  692</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct</span></div>
+<div class="line"><a name="l00692"></a><span class="lineno"><a class="line" href="struct_t_a_g___c_a_r_t___t_i_m_e_r.html">  692</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct</span></div>
 <div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;{</div>
 <div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;    DWORD dwUsage;                  <span class="comment">// FOURCC timer usage ID</span></div>
 <div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;    DWORD dwValue;                  <span class="comment">// timer value in samples from head</span></div>
-<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;} <a class="code" href="structTAG__CART__TIMER.html">TAG_CART_TIMER</a>;</div>
+<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;} <a class="code" href="struct_t_a_g___c_a_r_t___t_i_m_e_r.html">TAG_CART_TIMER</a>;</div>
 <div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;</div>
-<div class="line"><a name="l00698"></a><span class="lineno"><a class="line" href="structTAG__CART.html">  698</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct</span></div>
+<div class="line"><a name="l00698"></a><span class="lineno"><a class="line" href="struct_t_a_g___c_a_r_t.html">  698</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct</span></div>
 <div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;{</div>
 <div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;    <span class="keywordtype">char</span> Version[4];                <span class="comment">// version of the data structure</span></div>
 <div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;    <span class="keywordtype">char</span> Title[64];                 <span class="comment">// title of cart audio sequence</span></div>
@@ -800,7 +802,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;    <span class="keywordtype">char</span> ProducerAppVersion[64];    <span class="comment">// version of producer application</span></div>
 <div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;    <span class="keywordtype">char</span> UserDef[64];               <span class="comment">// user defined text</span></div>
 <div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;    DWORD dwLevelReference;         <span class="comment">// sample value for 0 dB reference</span></div>
-<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;    <a class="code" href="structTAG__CART__TIMER.html">TAG_CART_TIMER</a> PostTimer[8];    <span class="comment">// 8 time markers after head</span></div>
+<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;    <a class="code" href="struct_t_a_g___c_a_r_t___t_i_m_e_r.html">TAG_CART_TIMER</a> PostTimer[8];    <span class="comment">// 8 time markers after head</span></div>
 <div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;    <span class="keywordtype">char</span> Reserved[276];</div>
 <div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;    <span class="keywordtype">char</span> URL[1024];                 <span class="comment">// uniform resource locator</span></div>
 <div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;<span class="preprocessor">#if defined(__GNUC__) &amp;&amp; __GNUC__&lt;3</span></div>
@@ -810,22 +812,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;    <span class="keywordtype">char</span> TagText[1];                <span class="comment">// free form text for scripts or tags</span></div>
 <div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;} <a class="code" href="structTAG__CART.html">TAG_CART</a>;</div>
+<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;} <a class="code" href="struct_t_a_g___c_a_r_t.html">TAG_CART</a>;</div>
 <div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;<span class="preprocessor">#ifdef _MSC_VER</span></div>
 <div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;<span class="preprocessor">#pragma warning(pop)</span></div>
 <div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;</div>
 <div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;<span class="comment">// CoreAudio codec info structure</span></div>
-<div class="line"><a name="l00732"></a><span class="lineno"><a class="line" href="structTAG__CA__CODEC.html">  732</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00732"></a><span class="lineno"><a class="line" href="struct_t_a_g___c_a___c_o_d_e_c.html">  732</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
 <div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;    DWORD ftype;                    <span class="comment">// file format</span></div>
 <div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;    DWORD atype;                    <span class="comment">// audio format</span></div>
 <div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *name;               <span class="comment">// description</span></div>
-<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;} <a class="code" href="structTAG__CA__CODEC.html">TAG_CA_CODEC</a>;</div>
+<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;} <a class="code" href="struct_t_a_g___c_a___c_o_d_e_c.html">TAG_CA_CODEC</a>;</div>
 <div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;</div>
 <div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;<span class="preprocessor">#ifndef _WAVEFORMATEX_</span></div>
 <div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;<span class="preprocessor">#define _WAVEFORMATEX_</span></div>
 <div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;<span class="preprocessor">#pragma pack(push,1)</span></div>
-<div class="line"><a name="l00741"></a><span class="lineno"><a class="line" href="structtWAVEFORMATEX.html">  741</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structtWAVEFORMATEX.html">tWAVEFORMATEX</a></div>
+<div class="line"><a name="l00741"></a><span class="lineno"><a class="line" href="structt_w_a_v_e_f_o_r_m_a_t_e_x.html">  741</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structt_w_a_v_e_f_o_r_m_a_t_e_x.html">tWAVEFORMATEX</a></div>
 <div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;{</div>
 <div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;    WORD wFormatTag;</div>
 <div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;    WORD nChannels;</div>
@@ -834,8 +836,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;    WORD nBlockAlign;</div>
 <div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;    WORD wBitsPerSample;</div>
 <div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;    WORD cbSize;</div>
-<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;} <a class="code" href="structtWAVEFORMATEX.html">WAVEFORMATEX</a>, *<a class="code" href="structtWAVEFORMATEX.html">PWAVEFORMATEX</a>, *<a class="code" href="structtWAVEFORMATEX.html">LPWAVEFORMATEX</a>;</div>
-<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;<span class="keyword">typedef</span> <span class="keyword">const</span> <a class="code" href="structtWAVEFORMATEX.html">WAVEFORMATEX</a> *<a class="code" href="structtWAVEFORMATEX.html">LPCWAVEFORMATEX</a>;</div>
+<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;} <a class="code" href="structt_w_a_v_e_f_o_r_m_a_t_e_x.html">WAVEFORMATEX</a>, *<a class="code" href="structt_w_a_v_e_f_o_r_m_a_t_e_x.html">PWAVEFORMATEX</a>, *<a class="code" href="structt_w_a_v_e_f_o_r_m_a_t_e_x.html">LPWAVEFORMATEX</a>;</div>
+<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;<span class="keyword">typedef</span> <span class="keyword">const</span> <a class="code" href="structt_w_a_v_e_f_o_r_m_a_t_e_x.html">WAVEFORMATEX</a> *<a class="code" href="structt_w_a_v_e_f_o_r_m_a_t_e_x.html">LPCWAVEFORMATEX</a>;</div>
 <div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;<span class="preprocessor">#pragma pack(pop)</span></div>
 <div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;</div>
@@ -879,7 +881,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;    BASS_FX_DX8_REVERB</div>
 <div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;};</div>
 <div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;</div>
-<div class="line"><a name="l00795"></a><span class="lineno"><a class="line" href="structBASS__DX8__CHORUS.html">  795</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00795"></a><span class="lineno"><a class="line" href="struct_b_a_s_s___d_x8___c_h_o_r_u_s.html">  795</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
 <div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;    <span class="keywordtype">float</span>       fWetDryMix;</div>
 <div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;    <span class="keywordtype">float</span>       fDepth;</div>
 <div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;    <span class="keywordtype">float</span>       fFeedback;</div>
@@ -887,34 +889,34 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;    DWORD       lWaveform;  <span class="comment">// 0=triangle, 1=sine</span></div>
 <div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160;    <span class="keywordtype">float</span>       fDelay;</div>
 <div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;    DWORD       lPhase;     <span class="comment">// BASS_DX8_PHASE_xxx</span></div>
-<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;} <a class="code" href="structBASS__DX8__CHORUS.html">BASS_DX8_CHORUS</a>;</div>
+<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;} <a class="code" href="struct_b_a_s_s___d_x8___c_h_o_r_u_s.html">BASS_DX8_CHORUS</a>;</div>
 <div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;</div>
-<div class="line"><a name="l00805"></a><span class="lineno"><a class="line" href="structBASS__DX8__COMPRESSOR.html">  805</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00805"></a><span class="lineno"><a class="line" href="struct_b_a_s_s___d_x8___c_o_m_p_r_e_s_s_o_r.html">  805</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
 <div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;    <span class="keywordtype">float</span>   fGain;</div>
 <div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;    <span class="keywordtype">float</span>   fAttack;</div>
 <div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;    <span class="keywordtype">float</span>   fRelease;</div>
 <div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;    <span class="keywordtype">float</span>   fThreshold;</div>
 <div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;    <span class="keywordtype">float</span>   fRatio;</div>
 <div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;    <span class="keywordtype">float</span>   fPredelay;</div>
-<div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;} <a class="code" href="structBASS__DX8__COMPRESSOR.html">BASS_DX8_COMPRESSOR</a>;</div>
+<div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;} <a class="code" href="struct_b_a_s_s___d_x8___c_o_m_p_r_e_s_s_o_r.html">BASS_DX8_COMPRESSOR</a>;</div>
 <div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;</div>
-<div class="line"><a name="l00814"></a><span class="lineno"><a class="line" href="structBASS__DX8__DISTORTION.html">  814</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00814"></a><span class="lineno"><a class="line" href="struct_b_a_s_s___d_x8___d_i_s_t_o_r_t_i_o_n.html">  814</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
 <div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;    <span class="keywordtype">float</span>   fGain;</div>
 <div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160;    <span class="keywordtype">float</span>   fEdge;</div>
 <div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160;    <span class="keywordtype">float</span>   fPostEQCenterFrequency;</div>
 <div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160;    <span class="keywordtype">float</span>   fPostEQBandwidth;</div>
 <div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;    <span class="keywordtype">float</span>   fPreLowpassCutoff;</div>
-<div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160;} <a class="code" href="structBASS__DX8__DISTORTION.html">BASS_DX8_DISTORTION</a>;</div>
+<div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160;} <a class="code" href="struct_b_a_s_s___d_x8___d_i_s_t_o_r_t_i_o_n.html">BASS_DX8_DISTORTION</a>;</div>
 <div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;</div>
-<div class="line"><a name="l00822"></a><span class="lineno"><a class="line" href="structBASS__DX8__ECHO.html">  822</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00822"></a><span class="lineno"><a class="line" href="struct_b_a_s_s___d_x8___e_c_h_o.html">  822</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
 <div class="line"><a name="l00823"></a><span class="lineno">  823</span>&#160;    <span class="keywordtype">float</span>   fWetDryMix;</div>
 <div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160;    <span class="keywordtype">float</span>   fFeedback;</div>
 <div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160;    <span class="keywordtype">float</span>   fLeftDelay;</div>
 <div class="line"><a name="l00826"></a><span class="lineno">  826</span>&#160;    <span class="keywordtype">float</span>   fRightDelay;</div>
 <div class="line"><a name="l00827"></a><span class="lineno">  827</span>&#160;    BOOL    lPanDelay;</div>
-<div class="line"><a name="l00828"></a><span class="lineno">  828</span>&#160;} <a class="code" href="structBASS__DX8__ECHO.html">BASS_DX8_ECHO</a>;</div>
+<div class="line"><a name="l00828"></a><span class="lineno">  828</span>&#160;} <a class="code" href="struct_b_a_s_s___d_x8___e_c_h_o.html">BASS_DX8_ECHO</a>;</div>
 <div class="line"><a name="l00829"></a><span class="lineno">  829</span>&#160;</div>
-<div class="line"><a name="l00830"></a><span class="lineno"><a class="line" href="structBASS__DX8__FLANGER.html">  830</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00830"></a><span class="lineno"><a class="line" href="struct_b_a_s_s___d_x8___f_l_a_n_g_e_r.html">  830</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
 <div class="line"><a name="l00831"></a><span class="lineno">  831</span>&#160;    <span class="keywordtype">float</span>       fWetDryMix;</div>
 <div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160;    <span class="keywordtype">float</span>       fDepth;</div>
 <div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160;    <span class="keywordtype">float</span>       fFeedback;</div>
@@ -922,14 +924,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160;    DWORD       lWaveform;  <span class="comment">// 0=triangle, 1=sine</span></div>
 <div class="line"><a name="l00836"></a><span class="lineno">  836</span>&#160;    <span class="keywordtype">float</span>       fDelay;</div>
 <div class="line"><a name="l00837"></a><span class="lineno">  837</span>&#160;    DWORD       lPhase;     <span class="comment">// BASS_DX8_PHASE_xxx</span></div>
-<div class="line"><a name="l00838"></a><span class="lineno">  838</span>&#160;} <a class="code" href="structBASS__DX8__FLANGER.html">BASS_DX8_FLANGER</a>;</div>
+<div class="line"><a name="l00838"></a><span class="lineno">  838</span>&#160;} <a class="code" href="struct_b_a_s_s___d_x8___f_l_a_n_g_e_r.html">BASS_DX8_FLANGER</a>;</div>
 <div class="line"><a name="l00839"></a><span class="lineno">  839</span>&#160;</div>
-<div class="line"><a name="l00840"></a><span class="lineno"><a class="line" href="structBASS__DX8__GARGLE.html">  840</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00840"></a><span class="lineno"><a class="line" href="struct_b_a_s_s___d_x8___g_a_r_g_l_e.html">  840</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
 <div class="line"><a name="l00841"></a><span class="lineno">  841</span>&#160;    DWORD       dwRateHz;               <span class="comment">// Rate of modulation in hz</span></div>
 <div class="line"><a name="l00842"></a><span class="lineno">  842</span>&#160;    DWORD       dwWaveShape;            <span class="comment">// 0=triangle, 1=square</span></div>
-<div class="line"><a name="l00843"></a><span class="lineno">  843</span>&#160;} <a class="code" href="structBASS__DX8__GARGLE.html">BASS_DX8_GARGLE</a>;</div>
+<div class="line"><a name="l00843"></a><span class="lineno">  843</span>&#160;} <a class="code" href="struct_b_a_s_s___d_x8___g_a_r_g_l_e.html">BASS_DX8_GARGLE</a>;</div>
 <div class="line"><a name="l00844"></a><span class="lineno">  844</span>&#160;</div>
-<div class="line"><a name="l00845"></a><span class="lineno"><a class="line" href="structBASS__DX8__I3DL2REVERB.html">  845</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00845"></a><span class="lineno"><a class="line" href="struct_b_a_s_s___d_x8___i3_d_l2_r_e_v_e_r_b.html">  845</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
 <div class="line"><a name="l00846"></a><span class="lineno">  846</span>&#160;    <span class="keywordtype">int</span>     lRoom;                  <span class="comment">// [-10000, 0]      default: -1000 mB</span></div>
 <div class="line"><a name="l00847"></a><span class="lineno">  847</span>&#160;    <span class="keywordtype">int</span>     lRoomHF;                <span class="comment">// [-10000, 0]      default: 0 mB</span></div>
 <div class="line"><a name="l00848"></a><span class="lineno">  848</span>&#160;    <span class="keywordtype">float</span>   flRoomRolloffFactor;    <span class="comment">// [0.0, 10.0]      default: 0.0</span></div>
@@ -942,20 +944,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00855"></a><span class="lineno">  855</span>&#160;    <span class="keywordtype">float</span>   flDiffusion;            <span class="comment">// [0.0, 100.0]     default: 100.0 %</span></div>
 <div class="line"><a name="l00856"></a><span class="lineno">  856</span>&#160;    <span class="keywordtype">float</span>   flDensity;              <span class="comment">// [0.0, 100.0]     default: 100.0 %</span></div>
 <div class="line"><a name="l00857"></a><span class="lineno">  857</span>&#160;    <span class="keywordtype">float</span>   flHFReference;          <span class="comment">// [20.0, 20000.0]  default: 5000.0 Hz</span></div>
-<div class="line"><a name="l00858"></a><span class="lineno">  858</span>&#160;} <a class="code" href="structBASS__DX8__I3DL2REVERB.html">BASS_DX8_I3DL2REVERB</a>;</div>
+<div class="line"><a name="l00858"></a><span class="lineno">  858</span>&#160;} <a class="code" href="struct_b_a_s_s___d_x8___i3_d_l2_r_e_v_e_r_b.html">BASS_DX8_I3DL2REVERB</a>;</div>
 <div class="line"><a name="l00859"></a><span class="lineno">  859</span>&#160;</div>
-<div class="line"><a name="l00860"></a><span class="lineno"><a class="line" href="structBASS__DX8__PARAMEQ.html">  860</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00860"></a><span class="lineno"><a class="line" href="struct_b_a_s_s___d_x8___p_a_r_a_m_e_q.html">  860</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
 <div class="line"><a name="l00861"></a><span class="lineno">  861</span>&#160;    <span class="keywordtype">float</span>   fCenter;</div>
 <div class="line"><a name="l00862"></a><span class="lineno">  862</span>&#160;    <span class="keywordtype">float</span>   fBandwidth;</div>
 <div class="line"><a name="l00863"></a><span class="lineno">  863</span>&#160;    <span class="keywordtype">float</span>   fGain;</div>
-<div class="line"><a name="l00864"></a><span class="lineno">  864</span>&#160;} <a class="code" href="structBASS__DX8__PARAMEQ.html">BASS_DX8_PARAMEQ</a>;</div>
+<div class="line"><a name="l00864"></a><span class="lineno">  864</span>&#160;} <a class="code" href="struct_b_a_s_s___d_x8___p_a_r_a_m_e_q.html">BASS_DX8_PARAMEQ</a>;</div>
 <div class="line"><a name="l00865"></a><span class="lineno">  865</span>&#160;</div>
-<div class="line"><a name="l00866"></a><span class="lineno"><a class="line" href="structBASS__DX8__REVERB.html">  866</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00866"></a><span class="lineno"><a class="line" href="struct_b_a_s_s___d_x8___r_e_v_e_r_b.html">  866</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
 <div class="line"><a name="l00867"></a><span class="lineno">  867</span>&#160;    <span class="keywordtype">float</span>   fInGain;                <span class="comment">// [-96.0,0.0]            default: 0.0 dB</span></div>
 <div class="line"><a name="l00868"></a><span class="lineno">  868</span>&#160;    <span class="keywordtype">float</span>   fReverbMix;             <span class="comment">// [-96.0,0.0]            default: 0.0 db</span></div>
 <div class="line"><a name="l00869"></a><span class="lineno">  869</span>&#160;    <span class="keywordtype">float</span>   fReverbTime;            <span class="comment">// [0.001,3000.0]         default: 1000.0 ms</span></div>
 <div class="line"><a name="l00870"></a><span class="lineno">  870</span>&#160;    <span class="keywordtype">float</span>   fHighFreqRTRatio;       <span class="comment">// [0.001,0.999]          default: 0.001</span></div>
-<div class="line"><a name="l00871"></a><span class="lineno">  871</span>&#160;} <a class="code" href="structBASS__DX8__REVERB.html">BASS_DX8_REVERB</a>;</div>
+<div class="line"><a name="l00871"></a><span class="lineno">  871</span>&#160;} <a class="code" href="struct_b_a_s_s___d_x8___r_e_v_e_r_b.html">BASS_DX8_REVERB</a>;</div>
 <div class="line"><a name="l00872"></a><span class="lineno">  872</span>&#160;</div>
 <div class="line"><a name="l00873"></a><span class="lineno">  873</span>&#160;<span class="preprocessor">#define BASS_DX8_PHASE_NEG_180        0</span></div>
 <div class="line"><a name="l00874"></a><span class="lineno">  874</span>&#160;<span class="preprocessor">#define BASS_DX8_PHASE_NEG_90         1</span></div>
@@ -976,7 +978,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00889"></a><span class="lineno">  889</span>&#160;<span class="keywordtype">void</span> *BASSDEF(BASS_GetConfigPtr)(DWORD option);</div>
 <div class="line"><a name="l00890"></a><span class="lineno">  890</span>&#160;DWORD BASSDEF(BASS_GetVersion)();</div>
 <div class="line"><a name="l00891"></a><span class="lineno">  891</span>&#160;<span class="keywordtype">int</span> BASSDEF(BASS_ErrorGetCode)();</div>
-<div class="line"><a name="l00892"></a><span class="lineno">  892</span>&#160;BOOL BASSDEF(BASS_GetDeviceInfo)(DWORD device, <a class="code" href="structBASS__DEVICEINFO.html">BASS_DEVICEINFO</a> *info);</div>
+<div class="line"><a name="l00892"></a><span class="lineno">  892</span>&#160;BOOL BASSDEF(BASS_GetDeviceInfo)(DWORD device, <a class="code" href="struct_b_a_s_s___d_e_v_i_c_e_i_n_f_o.html">BASS_DEVICEINFO</a> *info);</div>
 <div class="line"><a name="l00893"></a><span class="lineno">  893</span>&#160;<span class="preprocessor">#if defined(_WIN32) &amp;&amp; !defined(_WIN32_WCE) &amp;&amp; !(WINAPI_FAMILY &amp;&amp; WINAPI_FAMILY!=WINAPI_FAMILY_DESKTOP_APP)</span></div>
 <div class="line"><a name="l00894"></a><span class="lineno">  894</span>&#160;BOOL BASSDEF(BASS_Init)(<span class="keywordtype">int</span> device, DWORD freq, DWORD flags, HWND win, <span class="keyword">const</span> GUID *dsguid);</div>
 <div class="line"><a name="l00895"></a><span class="lineno">  895</span>&#160;<span class="preprocessor">#else</span></div>
@@ -988,7 +990,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00901"></a><span class="lineno">  901</span>&#160;<span class="preprocessor">#if defined(_WIN32) &amp;&amp; !defined(_WIN32_WCE) &amp;&amp; !(WINAPI_FAMILY &amp;&amp; WINAPI_FAMILY!=WINAPI_FAMILY_DESKTOP_APP)</span></div>
 <div class="line"><a name="l00902"></a><span class="lineno">  902</span>&#160;<span class="keywordtype">void</span> *BASSDEF(BASS_GetDSoundObject)(DWORD object);</div>
 <div class="line"><a name="l00903"></a><span class="lineno">  903</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00904"></a><span class="lineno">  904</span>&#160;BOOL BASSDEF(BASS_GetInfo)(<a class="code" href="structBASS__INFO.html">BASS_INFO</a> *info);</div>
+<div class="line"><a name="l00904"></a><span class="lineno">  904</span>&#160;BOOL BASSDEF(BASS_GetInfo)(<a class="code" href="struct_b_a_s_s___i_n_f_o.html">BASS_INFO</a> *info);</div>
 <div class="line"><a name="l00905"></a><span class="lineno">  905</span>&#160;BOOL BASSDEF(BASS_Update)(DWORD length);</div>
 <div class="line"><a name="l00906"></a><span class="lineno">  906</span>&#160;<span class="keywordtype">float</span> BASSDEF(BASS_GetCPU)();</div>
 <div class="line"><a name="l00907"></a><span class="lineno">  907</span>&#160;BOOL BASSDEF(BASS_Start)();</div>
@@ -999,12 +1001,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00912"></a><span class="lineno">  912</span>&#160;</div>
 <div class="line"><a name="l00913"></a><span class="lineno">  913</span>&#160;HPLUGIN BASSDEF(BASS_PluginLoad)(<span class="keyword">const</span> <span class="keywordtype">char</span> *file, DWORD flags);</div>
 <div class="line"><a name="l00914"></a><span class="lineno">  914</span>&#160;BOOL BASSDEF(BASS_PluginFree)(HPLUGIN handle);</div>
-<div class="line"><a name="l00915"></a><span class="lineno">  915</span>&#160;<span class="keyword">const</span> <a class="code" href="structBASS__PLUGININFO.html">BASS_PLUGININFO</a> *BASSDEF(BASS_PluginGetInfo)(HPLUGIN handle);</div>
+<div class="line"><a name="l00915"></a><span class="lineno">  915</span>&#160;<span class="keyword">const</span> <a class="code" href="struct_b_a_s_s___p_l_u_g_i_n_i_n_f_o.html">BASS_PLUGININFO</a> *BASSDEF(BASS_PluginGetInfo)(HPLUGIN handle);</div>
 <div class="line"><a name="l00916"></a><span class="lineno">  916</span>&#160;</div>
 <div class="line"><a name="l00917"></a><span class="lineno">  917</span>&#160;BOOL BASSDEF(BASS_Set3DFactors)(<span class="keywordtype">float</span> distf, <span class="keywordtype">float</span> rollf, <span class="keywordtype">float</span> doppf);</div>
 <div class="line"><a name="l00918"></a><span class="lineno">  918</span>&#160;BOOL BASSDEF(BASS_Get3DFactors)(<span class="keywordtype">float</span> *distf, <span class="keywordtype">float</span> *rollf, <span class="keywordtype">float</span> *doppf);</div>
-<div class="line"><a name="l00919"></a><span class="lineno">  919</span>&#160;BOOL BASSDEF(BASS_Set3DPosition)(<span class="keyword">const</span> <a class="code" href="structBASS__3DVECTOR.html">BASS_3DVECTOR</a> *pos, <span class="keyword">const</span> <a class="code" href="structBASS__3DVECTOR.html">BASS_3DVECTOR</a> *vel, <span class="keyword">const</span> <a class="code" href="structBASS__3DVECTOR.html">BASS_3DVECTOR</a> *front, <span class="keyword">const</span> <a class="code" href="structBASS__3DVECTOR.html">BASS_3DVECTOR</a> *top);</div>
-<div class="line"><a name="l00920"></a><span class="lineno">  920</span>&#160;BOOL BASSDEF(BASS_Get3DPosition)(<a class="code" href="structBASS__3DVECTOR.html">BASS_3DVECTOR</a> *pos, <a class="code" href="structBASS__3DVECTOR.html">BASS_3DVECTOR</a> *vel, <a class="code" href="structBASS__3DVECTOR.html">BASS_3DVECTOR</a> *front, <a class="code" href="structBASS__3DVECTOR.html">BASS_3DVECTOR</a> *top);</div>
+<div class="line"><a name="l00919"></a><span class="lineno">  919</span>&#160;BOOL BASSDEF(BASS_Set3DPosition)(<span class="keyword">const</span> <a class="code" href="struct_b_a_s_s__3_d_v_e_c_t_o_r.html">BASS_3DVECTOR</a> *pos, <span class="keyword">const</span> <a class="code" href="struct_b_a_s_s__3_d_v_e_c_t_o_r.html">BASS_3DVECTOR</a> *vel, <span class="keyword">const</span> <a class="code" href="struct_b_a_s_s__3_d_v_e_c_t_o_r.html">BASS_3DVECTOR</a> *front, <span class="keyword">const</span> <a class="code" href="struct_b_a_s_s__3_d_v_e_c_t_o_r.html">BASS_3DVECTOR</a> *top);</div>
+<div class="line"><a name="l00920"></a><span class="lineno">  920</span>&#160;BOOL BASSDEF(BASS_Get3DPosition)(<a class="code" href="struct_b_a_s_s__3_d_v_e_c_t_o_r.html">BASS_3DVECTOR</a> *pos, <a class="code" href="struct_b_a_s_s__3_d_v_e_c_t_o_r.html">BASS_3DVECTOR</a> *vel, <a class="code" href="struct_b_a_s_s__3_d_v_e_c_t_o_r.html">BASS_3DVECTOR</a> *front, <a class="code" href="struct_b_a_s_s__3_d_v_e_c_t_o_r.html">BASS_3DVECTOR</a> *top);</div>
 <div class="line"><a name="l00921"></a><span class="lineno">  921</span>&#160;<span class="keywordtype">void</span> BASSDEF(BASS_Apply3D)();</div>
 <div class="line"><a name="l00922"></a><span class="lineno">  922</span>&#160;<span class="preprocessor">#if defined(_WIN32) &amp;&amp; !defined(_WIN32_WCE) &amp;&amp; !(WINAPI_FAMILY &amp;&amp; WINAPI_FAMILY!=WINAPI_FAMILY_DESKTOP_APP)</span></div>
 <div class="line"><a name="l00923"></a><span class="lineno">  923</span>&#160;BOOL BASSDEF(BASS_SetEAXParameters)(<span class="keywordtype">int</span> env, <span class="keywordtype">float</span> vol, <span class="keywordtype">float</span> decay, <span class="keywordtype">float</span> damp);</div>
@@ -1019,8 +1021,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00932"></a><span class="lineno">  932</span>&#160;BOOL BASSDEF(BASS_SampleFree)(HSAMPLE handle);</div>
 <div class="line"><a name="l00933"></a><span class="lineno">  933</span>&#160;BOOL BASSDEF(BASS_SampleSetData)(HSAMPLE handle, <span class="keyword">const</span> <span class="keywordtype">void</span> *buffer);</div>
 <div class="line"><a name="l00934"></a><span class="lineno">  934</span>&#160;BOOL BASSDEF(BASS_SampleGetData)(HSAMPLE handle, <span class="keywordtype">void</span> *buffer);</div>
-<div class="line"><a name="l00935"></a><span class="lineno">  935</span>&#160;BOOL BASSDEF(BASS_SampleGetInfo)(HSAMPLE handle, <a class="code" href="structBASS__SAMPLE.html">BASS_SAMPLE</a> *info);</div>
-<div class="line"><a name="l00936"></a><span class="lineno">  936</span>&#160;BOOL BASSDEF(BASS_SampleSetInfo)(HSAMPLE handle, <span class="keyword">const</span> <a class="code" href="structBASS__SAMPLE.html">BASS_SAMPLE</a> *info);</div>
+<div class="line"><a name="l00935"></a><span class="lineno">  935</span>&#160;BOOL BASSDEF(BASS_SampleGetInfo)(HSAMPLE handle, <a class="code" href="struct_b_a_s_s___s_a_m_p_l_e.html">BASS_SAMPLE</a> *info);</div>
+<div class="line"><a name="l00936"></a><span class="lineno">  936</span>&#160;BOOL BASSDEF(BASS_SampleSetInfo)(HSAMPLE handle, <span class="keyword">const</span> <a class="code" href="struct_b_a_s_s___s_a_m_p_l_e.html">BASS_SAMPLE</a> *info);</div>
 <div class="line"><a name="l00937"></a><span class="lineno">  937</span>&#160;HCHANNEL BASSDEF(BASS_SampleGetChannel)(HSAMPLE handle, BOOL onlynew);</div>
 <div class="line"><a name="l00938"></a><span class="lineno">  938</span>&#160;DWORD BASSDEF(BASS_SampleGetChannels)(HSAMPLE handle, HCHANNEL *channels);</div>
 <div class="line"><a name="l00939"></a><span class="lineno">  939</span>&#160;BOOL BASSDEF(BASS_SampleStop)(HSAMPLE handle);</div>
@@ -1028,18 +1030,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00941"></a><span class="lineno">  941</span>&#160;HSTREAM BASSDEF(BASS_StreamCreate)(DWORD freq, DWORD chans, DWORD flags, STREAMPROC *proc, <span class="keywordtype">void</span> *user);</div>
 <div class="line"><a name="l00942"></a><span class="lineno">  942</span>&#160;HSTREAM BASSDEF(BASS_StreamCreateFile)(BOOL mem, <span class="keyword">const</span> <span class="keywordtype">void</span> *file, QWORD offset, QWORD length, DWORD flags);</div>
 <div class="line"><a name="l00943"></a><span class="lineno">  943</span>&#160;HSTREAM BASSDEF(BASS_StreamCreateURL)(<span class="keyword">const</span> <span class="keywordtype">char</span> *url, DWORD offset, DWORD flags, DOWNLOADPROC *proc, <span class="keywordtype">void</span> *user);</div>
-<div class="line"><a name="l00944"></a><span class="lineno">  944</span>&#160;HSTREAM BASSDEF(BASS_StreamCreateFileUser)(DWORD system, DWORD flags, <span class="keyword">const</span> <a class="code" href="structBASS__FILEPROCS.html">BASS_FILEPROCS</a> *proc, <span class="keywordtype">void</span> *user);</div>
+<div class="line"><a name="l00944"></a><span class="lineno">  944</span>&#160;HSTREAM BASSDEF(BASS_StreamCreateFileUser)(DWORD system, DWORD flags, <span class="keyword">const</span> <a class="code" href="struct_b_a_s_s___f_i_l_e_p_r_o_c_s.html">BASS_FILEPROCS</a> *proc, <span class="keywordtype">void</span> *user);</div>
 <div class="line"><a name="l00945"></a><span class="lineno">  945</span>&#160;BOOL BASSDEF(BASS_StreamFree)(HSTREAM handle);</div>
 <div class="line"><a name="l00946"></a><span class="lineno">  946</span>&#160;QWORD BASSDEF(BASS_StreamGetFilePosition)(HSTREAM handle, DWORD mode);</div>
 <div class="line"><a name="l00947"></a><span class="lineno">  947</span>&#160;DWORD BASSDEF(BASS_StreamPutData)(HSTREAM handle, <span class="keyword">const</span> <span class="keywordtype">void</span> *buffer, DWORD length);</div>
 <div class="line"><a name="l00948"></a><span class="lineno">  948</span>&#160;DWORD BASSDEF(BASS_StreamPutFileData)(HSTREAM handle, <span class="keyword">const</span> <span class="keywordtype">void</span> *buffer, DWORD length);</div>
 <div class="line"><a name="l00949"></a><span class="lineno">  949</span>&#160;</div>
-<div class="line"><a name="l00950"></a><span class="lineno">  950</span>&#160;BOOL BASSDEF(BASS_RecordGetDeviceInfo)(DWORD device, <a class="code" href="structBASS__DEVICEINFO.html">BASS_DEVICEINFO</a> *info);</div>
+<div class="line"><a name="l00950"></a><span class="lineno">  950</span>&#160;BOOL BASSDEF(BASS_RecordGetDeviceInfo)(DWORD device, <a class="code" href="struct_b_a_s_s___d_e_v_i_c_e_i_n_f_o.html">BASS_DEVICEINFO</a> *info);</div>
 <div class="line"><a name="l00951"></a><span class="lineno">  951</span>&#160;BOOL BASSDEF(BASS_RecordInit)(<span class="keywordtype">int</span> device);</div>
 <div class="line"><a name="l00952"></a><span class="lineno">  952</span>&#160;BOOL BASSDEF(BASS_RecordSetDevice)(DWORD device);</div>
 <div class="line"><a name="l00953"></a><span class="lineno">  953</span>&#160;DWORD BASSDEF(BASS_RecordGetDevice)();</div>
 <div class="line"><a name="l00954"></a><span class="lineno">  954</span>&#160;BOOL BASSDEF(BASS_RecordFree)();</div>
-<div class="line"><a name="l00955"></a><span class="lineno">  955</span>&#160;BOOL BASSDEF(BASS_RecordGetInfo)(<a class="code" href="structBASS__RECORDINFO.html">BASS_RECORDINFO</a> *info);</div>
+<div class="line"><a name="l00955"></a><span class="lineno">  955</span>&#160;BOOL BASSDEF(BASS_RecordGetInfo)(<a class="code" href="struct_b_a_s_s___r_e_c_o_r_d_i_n_f_o.html">BASS_RECORDINFO</a> *info);</div>
 <div class="line"><a name="l00956"></a><span class="lineno">  956</span>&#160;<span class="keyword">const</span> <span class="keywordtype">char</span> *BASSDEF(BASS_RecordGetInputName)(<span class="keywordtype">int</span> input);</div>
 <div class="line"><a name="l00957"></a><span class="lineno">  957</span>&#160;BOOL BASSDEF(BASS_RecordSetInput)(<span class="keywordtype">int</span> input, DWORD flags, <span class="keywordtype">float</span> volume);</div>
 <div class="line"><a name="l00958"></a><span class="lineno">  958</span>&#160;DWORD BASSDEF(BASS_RecordGetInput)(<span class="keywordtype">int</span> input, <span class="keywordtype">float</span> *volume);</div>
@@ -1050,7 +1052,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00963"></a><span class="lineno">  963</span>&#160;DWORD BASSDEF(BASS_ChannelGetDevice)(DWORD handle);</div>
 <div class="line"><a name="l00964"></a><span class="lineno">  964</span>&#160;BOOL BASSDEF(BASS_ChannelSetDevice)(DWORD handle, DWORD device);</div>
 <div class="line"><a name="l00965"></a><span class="lineno">  965</span>&#160;DWORD BASSDEF(BASS_ChannelIsActive)(DWORD handle);</div>
-<div class="line"><a name="l00966"></a><span class="lineno">  966</span>&#160;BOOL BASSDEF(BASS_ChannelGetInfo)(DWORD handle, <a class="code" href="structBASS__CHANNELINFO.html">BASS_CHANNELINFO</a> *info);</div>
+<div class="line"><a name="l00966"></a><span class="lineno">  966</span>&#160;BOOL BASSDEF(BASS_ChannelGetInfo)(DWORD handle, <a class="code" href="struct_b_a_s_s___c_h_a_n_n_e_l_i_n_f_o.html">BASS_CHANNELINFO</a> *info);</div>
 <div class="line"><a name="l00967"></a><span class="lineno">  967</span>&#160;<span class="keyword">const</span> <span class="keywordtype">char</span> *BASSDEF(BASS_ChannelGetTags)(DWORD handle, DWORD tags);</div>
 <div class="line"><a name="l00968"></a><span class="lineno">  968</span>&#160;DWORD BASSDEF(BASS_ChannelFlags)(DWORD handle, DWORD flags, DWORD mask);</div>
 <div class="line"><a name="l00969"></a><span class="lineno">  969</span>&#160;BOOL BASSDEF(BASS_ChannelUpdate)(DWORD handle, DWORD length);</div>
@@ -1066,8 +1068,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00979"></a><span class="lineno">  979</span>&#160;DWORD BASSDEF(BASS_ChannelGetAttributeEx)(DWORD handle, DWORD attrib, <span class="keywordtype">void</span> *value, DWORD size);</div>
 <div class="line"><a name="l00980"></a><span class="lineno">  980</span>&#160;BOOL BASSDEF(BASS_ChannelSet3DAttributes)(DWORD handle, <span class="keywordtype">int</span> mode, <span class="keywordtype">float</span> min, <span class="keywordtype">float</span> max, <span class="keywordtype">int</span> iangle, <span class="keywordtype">int</span> oangle, <span class="keywordtype">float</span> outvol);</div>
 <div class="line"><a name="l00981"></a><span class="lineno">  981</span>&#160;BOOL BASSDEF(BASS_ChannelGet3DAttributes)(DWORD handle, DWORD *mode, <span class="keywordtype">float</span> *min, <span class="keywordtype">float</span> *max, DWORD *iangle, DWORD *oangle, <span class="keywordtype">float</span> *outvol);</div>
-<div class="line"><a name="l00982"></a><span class="lineno">  982</span>&#160;BOOL BASSDEF(BASS_ChannelSet3DPosition)(DWORD handle, <span class="keyword">const</span> <a class="code" href="structBASS__3DVECTOR.html">BASS_3DVECTOR</a> *pos, <span class="keyword">const</span> <a class="code" href="structBASS__3DVECTOR.html">BASS_3DVECTOR</a> *orient, <span class="keyword">const</span> <a class="code" href="structBASS__3DVECTOR.html">BASS_3DVECTOR</a> *vel);</div>
-<div class="line"><a name="l00983"></a><span class="lineno">  983</span>&#160;BOOL BASSDEF(BASS_ChannelGet3DPosition)(DWORD handle, <a class="code" href="structBASS__3DVECTOR.html">BASS_3DVECTOR</a> *pos, <a class="code" href="structBASS__3DVECTOR.html">BASS_3DVECTOR</a> *orient, <a class="code" href="structBASS__3DVECTOR.html">BASS_3DVECTOR</a> *vel);</div>
+<div class="line"><a name="l00982"></a><span class="lineno">  982</span>&#160;BOOL BASSDEF(BASS_ChannelSet3DPosition)(DWORD handle, <span class="keyword">const</span> <a class="code" href="struct_b_a_s_s__3_d_v_e_c_t_o_r.html">BASS_3DVECTOR</a> *pos, <span class="keyword">const</span> <a class="code" href="struct_b_a_s_s__3_d_v_e_c_t_o_r.html">BASS_3DVECTOR</a> *orient, <span class="keyword">const</span> <a class="code" href="struct_b_a_s_s__3_d_v_e_c_t_o_r.html">BASS_3DVECTOR</a> *vel);</div>
+<div class="line"><a name="l00983"></a><span class="lineno">  983</span>&#160;BOOL BASSDEF(BASS_ChannelGet3DPosition)(DWORD handle, <a class="code" href="struct_b_a_s_s__3_d_v_e_c_t_o_r.html">BASS_3DVECTOR</a> *pos, <a class="code" href="struct_b_a_s_s__3_d_v_e_c_t_o_r.html">BASS_3DVECTOR</a> *orient, <a class="code" href="struct_b_a_s_s__3_d_v_e_c_t_o_r.html">BASS_3DVECTOR</a> *vel);</div>
 <div class="line"><a name="l00984"></a><span class="lineno">  984</span>&#160;QWORD BASSDEF(BASS_ChannelGetLength)(DWORD handle, DWORD mode);</div>
 <div class="line"><a name="l00985"></a><span class="lineno">  985</span>&#160;BOOL BASSDEF(BASS_ChannelSetPosition)(DWORD handle, QWORD pos, DWORD mode);</div>
 <div class="line"><a name="l00986"></a><span class="lineno">  986</span>&#160;QWORD BASSDEF(BASS_ChannelGetPosition)(DWORD handle, DWORD mode);</div>
@@ -1119,35 +1121,35 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l01032"></a><span class="lineno"> 1032</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l01033"></a><span class="lineno"> 1033</span>&#160;</div>
 <div class="line"><a name="l01034"></a><span class="lineno"> 1034</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="structBASS__CHANNELINFO_html"><div class="ttname"><a href="structBASS__CHANNELINFO.html">BASS_CHANNELINFO</a></div><div class="ttdef"><b>Definition:</b> bass.h:343</div></div>
-<div class="ttc" id="structTAG__CART_html"><div class="ttname"><a href="structTAG__CART.html">TAG_CART</a></div><div class="ttdef"><b>Definition:</b> bass.h:698</div></div>
-<div class="ttc" id="structBASS__DX8__I3DL2REVERB_html"><div class="ttname"><a href="structBASS__DX8__I3DL2REVERB.html">BASS_DX8_I3DL2REVERB</a></div><div class="ttdef"><b>Definition:</b> bass.h:845</div></div>
-<div class="ttc" id="structTAG__CA__CODEC_html"><div class="ttname"><a href="structTAG__CA__CODEC.html">TAG_CA_CODEC</a></div><div class="ttdef"><b>Definition:</b> bass.h:732</div></div>
-<div class="ttc" id="structBASS__RECORDINFO_html"><div class="ttname"><a href="structBASS__RECORDINFO.html">BASS_RECORDINFO</a></div><div class="ttdef"><b>Definition:</b> bass.h:219</div></div>
-<div class="ttc" id="structTAG__APE__BINARY_html"><div class="ttname"><a href="structTAG__APE__BINARY.html">TAG_APE_BINARY</a></div><div class="ttdef"><b>Definition:</b> bass.h:659</div></div>
-<div class="ttc" id="structBASS__SAMPLE_html"><div class="ttname"><a href="structBASS__SAMPLE.html">BASS_SAMPLE</a></div><div class="ttdef"><b>Definition:</b> bass.h:248</div></div>
-<div class="ttc" id="structBASS__DX8__DISTORTION_html"><div class="ttname"><a href="structBASS__DX8__DISTORTION.html">BASS_DX8_DISTORTION</a></div><div class="ttdef"><b>Definition:</b> bass.h:814</div></div>
-<div class="ttc" id="structBASS__3DVECTOR_html"><div class="ttname"><a href="structBASS__3DVECTOR.html">BASS_3DVECTOR</a></div><div class="ttdef"><b>Definition:</b> bass.h:393</div></div>
-<div class="ttc" id="structBASS__PLUGININFO_html"><div class="ttname"><a href="structBASS__PLUGININFO.html">BASS_PLUGININFO</a></div><div class="ttdef"><b>Definition:</b> bass.h:386</div></div>
-<div class="ttc" id="structTAG__CART__TIMER_html"><div class="ttname"><a href="structTAG__CART__TIMER.html">TAG_CART_TIMER</a></div><div class="ttdef"><b>Definition:</b> bass.h:692</div></div>
-<div class="ttc" id="structBASS__INFO_html"><div class="ttname"><a href="structBASS__INFO.html">BASS_INFO</a></div><div class="ttdef"><b>Definition:</b> bass.h:192</div></div>
-<div class="ttc" id="structBASS__DX8__GARGLE_html"><div class="ttname"><a href="structBASS__DX8__GARGLE.html">BASS_DX8_GARGLE</a></div><div class="ttdef"><b>Definition:</b> bass.h:840</div></div>
-<div class="ttc" id="structBASS__DEVICEINFO_html"><div class="ttname"><a href="structBASS__DEVICEINFO.html">BASS_DEVICEINFO</a></div><div class="ttdef"><b>Definition:</b> bass.h:160</div></div>
-<div class="ttc" id="structBASS__PLUGINFORM_html"><div class="ttname"><a href="structBASS__PLUGINFORM.html">BASS_PLUGINFORM</a></div><div class="ttdef"><b>Definition:</b> bass.h:375</div></div>
-<div class="ttc" id="structBASS__DX8__REVERB_html"><div class="ttname"><a href="structBASS__DX8__REVERB.html">BASS_DX8_REVERB</a></div><div class="ttdef"><b>Definition:</b> bass.h:866</div></div>
-<div class="ttc" id="structTAG__ID3_html"><div class="ttname"><a href="structTAG__ID3.html">TAG_ID3</a></div><div class="ttdef"><b>Definition:</b> bass.h:648</div></div>
-<div class="ttc" id="structtWAVEFORMATEX_html"><div class="ttname"><a href="structtWAVEFORMATEX.html">tWAVEFORMATEX</a></div><div class="ttdef"><b>Definition:</b> bass.h:741</div></div>
-<div class="ttc" id="structTAG__BEXT_html"><div class="ttname"><a href="structTAG__BEXT.html">TAG_BEXT</a></div><div class="ttdef"><b>Definition:</b> bass.h:671</div></div>
-<div class="ttc" id="structBASS__DX8__ECHO_html"><div class="ttname"><a href="structBASS__DX8__ECHO.html">BASS_DX8_ECHO</a></div><div class="ttdef"><b>Definition:</b> bass.h:822</div></div>
-<div class="ttc" id="structBASS__DX8__COMPRESSOR_html"><div class="ttname"><a href="structBASS__DX8__COMPRESSOR.html">BASS_DX8_COMPRESSOR</a></div><div class="ttdef"><b>Definition:</b> bass.h:805</div></div>
-<div class="ttc" id="structBASS__DX8__FLANGER_html"><div class="ttname"><a href="structBASS__DX8__FLANGER.html">BASS_DX8_FLANGER</a></div><div class="ttdef"><b>Definition:</b> bass.h:830</div></div>
-<div class="ttc" id="structBASS__DX8__PARAMEQ_html"><div class="ttname"><a href="structBASS__DX8__PARAMEQ.html">BASS_DX8_PARAMEQ</a></div><div class="ttdef"><b>Definition:</b> bass.h:860</div></div>
-<div class="ttc" id="structBASS__FILEPROCS_html"><div class="ttname"><a href="structBASS__FILEPROCS.html">BASS_FILEPROCS</a></div><div class="ttdef"><b>Definition:</b> bass.h:502</div></div>
-<div class="ttc" id="structBASS__DX8__CHORUS_html"><div class="ttname"><a href="structBASS__DX8__CHORUS.html">BASS_DX8_CHORUS</a></div><div class="ttdef"><b>Definition:</b> bass.h:795</div></div>
+<div class="ttc" id="struct_t_a_g___c_a_r_t_html"><div class="ttname"><a href="struct_t_a_g___c_a_r_t.html">TAG_CART</a></div><div class="ttdef"><b>Definition:</b> bass.h:698</div></div>
+<div class="ttc" id="struct_b_a_s_s___d_x8___r_e_v_e_r_b_html"><div class="ttname"><a href="struct_b_a_s_s___d_x8___r_e_v_e_r_b.html">BASS_DX8_REVERB</a></div><div class="ttdef"><b>Definition:</b> bass.h:866</div></div>
+<div class="ttc" id="struct_t_a_g___i_d3_html"><div class="ttname"><a href="struct_t_a_g___i_d3.html">TAG_ID3</a></div><div class="ttdef"><b>Definition:</b> bass.h:648</div></div>
+<div class="ttc" id="struct_b_a_s_s___d_e_v_i_c_e_i_n_f_o_html"><div class="ttname"><a href="struct_b_a_s_s___d_e_v_i_c_e_i_n_f_o.html">BASS_DEVICEINFO</a></div><div class="ttdef"><b>Definition:</b> bass.h:160</div></div>
+<div class="ttc" id="struct_b_a_s_s___p_l_u_g_i_n_f_o_r_m_html"><div class="ttname"><a href="struct_b_a_s_s___p_l_u_g_i_n_f_o_r_m.html">BASS_PLUGINFORM</a></div><div class="ttdef"><b>Definition:</b> bass.h:375</div></div>
+<div class="ttc" id="struct_b_a_s_s___r_e_c_o_r_d_i_n_f_o_html"><div class="ttname"><a href="struct_b_a_s_s___r_e_c_o_r_d_i_n_f_o.html">BASS_RECORDINFO</a></div><div class="ttdef"><b>Definition:</b> bass.h:219</div></div>
+<div class="ttc" id="struct_b_a_s_s___s_a_m_p_l_e_html"><div class="ttname"><a href="struct_b_a_s_s___s_a_m_p_l_e.html">BASS_SAMPLE</a></div><div class="ttdef"><b>Definition:</b> bass.h:248</div></div>
+<div class="ttc" id="struct_b_a_s_s___d_x8___c_h_o_r_u_s_html"><div class="ttname"><a href="struct_b_a_s_s___d_x8___c_h_o_r_u_s.html">BASS_DX8_CHORUS</a></div><div class="ttdef"><b>Definition:</b> bass.h:795</div></div>
+<div class="ttc" id="struct_b_a_s_s___d_x8___d_i_s_t_o_r_t_i_o_n_html"><div class="ttname"><a href="struct_b_a_s_s___d_x8___d_i_s_t_o_r_t_i_o_n.html">BASS_DX8_DISTORTION</a></div><div class="ttdef"><b>Definition:</b> bass.h:814</div></div>
+<div class="ttc" id="struct_t_a_g___c_a___c_o_d_e_c_html"><div class="ttname"><a href="struct_t_a_g___c_a___c_o_d_e_c.html">TAG_CA_CODEC</a></div><div class="ttdef"><b>Definition:</b> bass.h:732</div></div>
+<div class="ttc" id="struct_b_a_s_s___f_i_l_e_p_r_o_c_s_html"><div class="ttname"><a href="struct_b_a_s_s___f_i_l_e_p_r_o_c_s.html">BASS_FILEPROCS</a></div><div class="ttdef"><b>Definition:</b> bass.h:502</div></div>
+<div class="ttc" id="structt_w_a_v_e_f_o_r_m_a_t_e_x_html"><div class="ttname"><a href="structt_w_a_v_e_f_o_r_m_a_t_e_x.html">tWAVEFORMATEX</a></div><div class="ttdef"><b>Definition:</b> bass.h:741</div></div>
+<div class="ttc" id="struct_b_a_s_s___i_n_f_o_html"><div class="ttname"><a href="struct_b_a_s_s___i_n_f_o.html">BASS_INFO</a></div><div class="ttdef"><b>Definition:</b> bass.h:192</div></div>
+<div class="ttc" id="struct_b_a_s_s___d_x8___e_c_h_o_html"><div class="ttname"><a href="struct_b_a_s_s___d_x8___e_c_h_o.html">BASS_DX8_ECHO</a></div><div class="ttdef"><b>Definition:</b> bass.h:822</div></div>
+<div class="ttc" id="struct_b_a_s_s___d_x8___p_a_r_a_m_e_q_html"><div class="ttname"><a href="struct_b_a_s_s___d_x8___p_a_r_a_m_e_q.html">BASS_DX8_PARAMEQ</a></div><div class="ttdef"><b>Definition:</b> bass.h:860</div></div>
+<div class="ttc" id="struct_b_a_s_s___d_x8___c_o_m_p_r_e_s_s_o_r_html"><div class="ttname"><a href="struct_b_a_s_s___d_x8___c_o_m_p_r_e_s_s_o_r.html">BASS_DX8_COMPRESSOR</a></div><div class="ttdef"><b>Definition:</b> bass.h:805</div></div>
+<div class="ttc" id="struct_t_a_g___c_a_r_t___t_i_m_e_r_html"><div class="ttname"><a href="struct_t_a_g___c_a_r_t___t_i_m_e_r.html">TAG_CART_TIMER</a></div><div class="ttdef"><b>Definition:</b> bass.h:692</div></div>
+<div class="ttc" id="struct_t_a_g___a_p_e___b_i_n_a_r_y_html"><div class="ttname"><a href="struct_t_a_g___a_p_e___b_i_n_a_r_y.html">TAG_APE_BINARY</a></div><div class="ttdef"><b>Definition:</b> bass.h:659</div></div>
+<div class="ttc" id="struct_t_a_g___b_e_x_t_html"><div class="ttname"><a href="struct_t_a_g___b_e_x_t.html">TAG_BEXT</a></div><div class="ttdef"><b>Definition:</b> bass.h:671</div></div>
+<div class="ttc" id="struct_b_a_s_s__3_d_v_e_c_t_o_r_html"><div class="ttname"><a href="struct_b_a_s_s__3_d_v_e_c_t_o_r.html">BASS_3DVECTOR</a></div><div class="ttdef"><b>Definition:</b> bass.h:393</div></div>
+<div class="ttc" id="struct_b_a_s_s___c_h_a_n_n_e_l_i_n_f_o_html"><div class="ttname"><a href="struct_b_a_s_s___c_h_a_n_n_e_l_i_n_f_o.html">BASS_CHANNELINFO</a></div><div class="ttdef"><b>Definition:</b> bass.h:343</div></div>
+<div class="ttc" id="struct_b_a_s_s___d_x8___f_l_a_n_g_e_r_html"><div class="ttname"><a href="struct_b_a_s_s___d_x8___f_l_a_n_g_e_r.html">BASS_DX8_FLANGER</a></div><div class="ttdef"><b>Definition:</b> bass.h:830</div></div>
+<div class="ttc" id="struct_b_a_s_s___d_x8___g_a_r_g_l_e_html"><div class="ttname"><a href="struct_b_a_s_s___d_x8___g_a_r_g_l_e.html">BASS_DX8_GARGLE</a></div><div class="ttdef"><b>Definition:</b> bass.h:840</div></div>
+<div class="ttc" id="struct_b_a_s_s___p_l_u_g_i_n_i_n_f_o_html"><div class="ttname"><a href="struct_b_a_s_s___p_l_u_g_i_n_i_n_f_o.html">BASS_PLUGININFO</a></div><div class="ttdef"><b>Definition:</b> bass.h:386</div></div>
+<div class="ttc" id="struct_b_a_s_s___d_x8___i3_d_l2_r_e_v_e_r_b_html"><div class="ttname"><a href="struct_b_a_s_s___d_x8___i3_d_l2_r_e_v_e_r_b.html">BASS_DX8_I3DL2REVERB</a></div><div class="ttdef"><b>Definition:</b> bass.h:845</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jun 9 2015 12:40:15 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jun 16 2015 19:06:46 for Voice analyze by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>
