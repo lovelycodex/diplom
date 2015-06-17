@@ -49,6 +49,7 @@ Widget::Widget(QWidget *parent) : QWidget(parent), ui(new Ui::Widget)
         connect(timer_for_record, SIGNAL(timeout()), this, SLOT(stopRecordingSlot()));
         connect(this, SIGNAL(PlotSpectrumSignal()), this, SLOT(plotSpectrums()));
         connect(this, SIGNAL(fill_ftt_complex_Signal()), this, SLOT(from_ftt_to_complex()));
+        connect(this, SIGNAL(post_filtering_Signal()), this, SLOT(post_filtering()));
 
         ui->setupUi(this);
         ui->lineEdit->setAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
@@ -478,6 +479,18 @@ void Widget::from_ftt_to_complex() {
         QDEBUG(complex_diggit.real() << " " << complex_diggit.imag());
         this->fft_complex.push_back(complex_diggit);
     }
+
+    emit this->post_filtering_Signal();
+}
+
+void Widget::post_filtering() {
+
+
+    emit this->liftering_Signal();
+}
+
+void Widget::liftering() {
+
 
     emit this->plotSpectrums();
 }

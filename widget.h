@@ -69,8 +69,16 @@ signals:
 
     void fill_ftt_complex_Signal            ();
 
+    void post_filtering_Signal              ();
+
+    void liftering_Signal                   ();
+
 private slots:
     void timerProc                          ();
+
+    void liftering                          ();
+
+    void post_filtering                     ();
 
     void plotSpectrums                      ();
 
