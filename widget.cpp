@@ -14,7 +14,12 @@ qint8   *specbuf;
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------
 //-------------------------------------------------------Recording callback function---------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------
-///brief:: Always calling when recodr is running and check recbuf. If recbuf have not enoth memory this function is realloc mem for recbuf.
+/**
+ * @brief Always calling when recodr is running and check recbuf. If recbuf have not enoth memory this function is realloc mem for recbuf.
+ *
+ *
+ *
+ */
 BOOL CALLBACK RecordingCallback(HRECORD handle, const void *buffer, DWORD length, void *user)
 {
     // increase buffer size if needed;
@@ -226,7 +231,7 @@ void Widget::startRecording() {
  */
 void Widget::stopRecording()
 {
-    if (BASS_ChannelGetData(rchan, this->fft, BASS_DATA_FFT512|BASS_DATA_FFT_COMPLEX) == -1) {
+    if (BASS_ChannelGetData(rchan, this->fft, BASS_DATA_FFT512|BASS_DATA_FFT_COMPLEX|BASS_DATA_FFT_NOWINDOW) == -1) {
         QDEBUG("Cannot get recbuf from rchan");
         QDEBUG(BASS_ErrorGetCode());
     }
@@ -317,7 +322,9 @@ void Widget::plotSpectrums() {
 
     emit this->plotKaiserWindow();
 }
-
+/**
+ * @brief Widget::plotKaiserWindow
+ */
 void Widget::plotKaiserWindow() {
     ui->plot2->addGraph();
     ui->plot2->addGraph();
@@ -444,16 +451,22 @@ void Widget::on_horizontalSlider_valueChanged(qint32 value) {
         BASS_RecordSetInput(-1,BASS_INPUT_ON,level); // try master level instead
     }
 }
-
+/**
+ * @brief Widget::clearGraphs
+ */
 void Widget::clearGraphs() {
     this->ui->plot1->clearGraphs();
     this->ui->plot2->clearGraphs();
 }
-
+/**
+ * @brief Widget::on_pushButton_3_clicked
+ */
 void Widget::on_pushButton_3_clicked() {
     writeToDisk();
 }
-
+/**
+ * @brief Widget::on_pushButton_clicked
+ */
 void Widget::on_pushButton_clicked() {
     if (!rchan) {
         //this->clearGraphs();
@@ -462,7 +475,9 @@ void Widget::on_pushButton_clicked() {
         startRecording();
     }
 }
-
+/**
+ * @brief Widget::stopRecordingSlot
+ */
 void Widget::stopRecordingSlot() {
     fft_complex.clear();
     freq.clear();
@@ -471,7 +486,9 @@ void Widget::stopRecordingSlot() {
     this->stopRecording();
     emit this->fill_ftt_complex_Signal();
 }
-
+/**
+ * @brief Widget::from_ftt_to_complex
+ */
 void Widget::from_ftt_to_complex() {
     std::complex<float> complex_diggit;
 
@@ -482,7 +499,9 @@ void Widget::from_ftt_to_complex() {
 
     emit this->post_filtering_Signal();
 }
-
+/**
+ * @brief Widget::post_filtering
+ */
 void Widget::post_filtering() {
     float w = 0.0;
     float k = 0.0;
@@ -503,7 +522,9 @@ void Widget::post_filtering() {
     }
     emit this->liftering_Signal();
 }
-
+/**
+ * @brief Widget::liftering
+ */
 void Widget::liftering() {
     float w = 0.0;
     float xout = 0.0;
