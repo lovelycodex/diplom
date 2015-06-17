@@ -12,6 +12,7 @@
 # include <QGraphicsDropShadowEffect>
 # include <qmath.h>
 # include <exception>
+# include <complex>
 //---------------------------------------------------------------------------------------------
 # include <sqlite3.h>       //DB include
 
@@ -66,12 +67,16 @@ signals:
 
     void PlotKaiserWindowSignal             ();
 
+    void fill_ftt_complex_Signal            ();
+
 private slots:
     void timerProc                          ();
 
     void plotSpectrums                      ();
 
     void plotKaiserWindow                   ();
+
+    void from_ftt_to_complex                ();
 
     void stopRecordingSlot                  ();
 
@@ -85,20 +90,21 @@ private slots:
 
     void on_pushButton_3_clicked            ();
 
-    void on_checkBox_clicked();
+    void on_checkBox_clicked                ();
 
-    void on_checkBox_2_clicked();
+    void on_checkBox_2_clicked              ();
 
-    void on_pushButton_4_clicked();
+    void on_pushButton_4_clicked            ();
 
-    void on_pushButton_5_clicked();
+    void on_pushButton_5_clicked            ();
 
 private:
-    QTimer      *timer;
-    QTimer      *timer_for_record;
-    float       *fft;               // recbuf represented by FFT;
-    RGB         palette[256];
-    Ui::Widget  *ui;
+    QTimer                          *timer;
+    QTimer                          *timer_for_record;
+    float                           *fft;               // recbuf represented by FFT;
+    RGB                             palette[256];
+    Ui::Widget                      *ui;
+    QVector<std::complex<float>>    fft_complex;
 };
 
 

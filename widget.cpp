@@ -48,6 +48,7 @@ Widget::Widget(QWidget *parent) : QWidget(parent), ui(new Ui::Widget)
         connect(timer, SIGNAL(timeout()), this, SLOT(timerProc()));
         connect(timer_for_record, SIGNAL(timeout()), this, SLOT(stopRecordingSlot()));
         connect(this, SIGNAL(PlotSpectrumSignal()), this, SLOT(plotSpectrums()));
+        connect(this, SIGNAL(fill_ftt_complex_Signal()), this, SLOT(from_ftt_to_complex()));
 
         ui->setupUi(this);
         ui->lineEdit->setAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
@@ -298,23 +299,23 @@ void Widget::plotSpectrums() {
 
     QVector<double> x;
     QVector<double> y;
-    QVector<double> reverse_y;
 
-    float w = xout = k = sq = 0;
+    float w = 0;
+    float k = 0;
+    float xout = 0;
+    float sq = 0;
 
 
 
     for (int i = 0; i < 1024; i++) {
         x.push_back(i);
-        y.push_back((fft[i*2]+fft[i*2+1])*20);
+        y.push_back(this->fft_complex[i].real() + this->fft_complex[i].imag());
     }
 
     ui->plot1->graph(0)->setData(x,y);
     ui->plot1->xAxis->setRange(0, 1024);
     ui->plot1->xAxis->setVisible(true);
     ui->plot1->yAxis->setVisible(true);
-    //ui->plot1->graph(0)->setBrush(QBrush(Qt::blue));
-    //ui->plot1->yAxis->setRange(0, 1);
     ui->plot1->replot();
 
     emit this->plotKaiserWindow();
@@ -326,7 +327,7 @@ void Widget::plotKaiserWindow() {
 
     QVector<double> x;
     QVector<double> y;
-    QVector<double> reverse_y;
+    //    QVector<double> reverse_y;
 
     qint32 j = 2;
 
@@ -342,7 +343,7 @@ void Widget::plotKaiserWindow() {
     QDEBUG(x.size());
 
     ui->plot2->graph(0)->setData(x,y);
-    ui->plot2->graph(1)->setData(x,reverse_y);
+    //ui->plot2->graph(1)->setData(x,reverse_y);
     ui->plot2->xAxis->setRange(0, x.size());
     ui->plot2->xAxis->setVisible(true);
     ui->plot2->yAxis->setVisible(true);
@@ -466,5 +467,17 @@ void Widget::stopRecordingSlot() {
     this->timer->stop();
     this->timer_for_record->stop();
     this->stopRecording();
-    emit this->PlotSpectrumSignal();
+    emit this->fill_ftt_complex_Signal();
+}
+
+void Widget::from_ftt_to_complex() {
+    std::complex<float> complex_diggit;
+
+    for (int i = 0; i < 1024; i++) {
+        complex_diggit = fft[i*2]+fft[i*2+1];
+        QDEBUG(complex_diggit.real() << " " << complex_diggit.imag());
+        this->fft_complex.push_back(complex_diggit);
+    }
+
+    emit this->plotSpectrums();
 }
