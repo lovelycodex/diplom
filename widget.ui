@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>770</width>
-    <height>304</height>
+    <height>560</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -112,7 +112,7 @@ color: white;</string>
     <rect>
      <x>10</x>
      <y>90</y>
-     <width>371</width>
+     <width>751</width>
      <height>211</height>
     </rect>
    </property>
@@ -123,9 +123,9 @@ color: white;</string>
   <widget class="QCustomPlot" name="plot2" native="true">
    <property name="geometry">
     <rect>
-     <x>400</x>
-     <y>90</y>
-     <width>361</width>
+     <x>10</x>
+     <y>310</y>
+     <width>751</width>
      <height>211</height>
     </rect>
    </property>

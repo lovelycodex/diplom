@@ -226,7 +226,7 @@ void Widget::startRecording() {
  */
 void Widget::stopRecording()
 {
-    if (BASS_ChannelGetData(rchan, this->fft, BASS_DATA_FFT1024|BASS_DATA_FFT_COMPLEX) == -1) {
+    if (BASS_ChannelGetData(rchan, this->fft, BASS_DATA_FFT512|BASS_DATA_FFT_COMPLEX) == -1) {
         QDEBUG("Cannot get recbuf from rchan");
         QDEBUG(BASS_ErrorGetCode());
     }
@@ -303,16 +303,16 @@ void Widget::plotSpectrums() {
     QVector<double> x;
     QVector<double> y;
 
-    for (int i = 0; i < 1024; i++) {
+    for (int i = 1; i < 256; i++) {
         x.push_back(i);
-        y.push_back(freq[i]);
+        y.push_back((fft[i*2]+fft[i*2+1])*20);
     }
 
     ui->plot1->graph(0)->setData(x,y);
-    ui->plot1->xAxis->setRange(0, 1024);
+    ui->plot1->xAxis->setRange(0, 256);
     ui->plot1->xAxis->setVisible(true);
     ui->plot1->yAxis->setVisible(true);
-    ui->plot1->yAxis->setRange(-1,1);
+    // ui->plot1->yAxis->setRange(-1,0);
     ui->plot1->replot();
 
     emit this->plotKaiserWindow();
@@ -328,11 +328,13 @@ void Widget::plotKaiserWindow() {
 
     qint32 j = 0;
 
-    for (int i = 0; i < freq.size(); i++) {
-        x.push_back(j);
-        y.push_back(freq[i]);
-        //reverse_y.push_back(fft[i]*20*(-1));
-        j++;
+    for (int i = 1; i < freq.size()-1; i++) {
+        if (!qIsNaN(freq[i])) {
+            x.push_back(j);
+            y.push_back(freq[i]*20);
+            //reverse_y.push_back(fft[i]*20*(-1));
+            j++;
+        }
     }
 
     QDEBUG(freq.size());
@@ -345,7 +347,7 @@ void Widget::plotKaiserWindow() {
     ui->plot2->yAxis->setVisible(true);
     //ui->plot2->graph(0)->setBrush(QBrush(Qt::black));
     //ui->plot2->graph(1)->setBrush(QBrush(Qt::black));
-    ui->plot2->yAxis->setRange(-1, 1);
+    ui->plot2->yAxis->setRange(-20, 0);
     ui->plot2->replot();
 }
 
@@ -383,14 +385,14 @@ void Widget::kaiser_window() {
     float iI0b = 0, h = 0;
     int k = 0;
 
-    k = -(4096 >> 2);
+    k = -(256 >> 2);
 
     iI0b = this->I0(20);
 
-    for (int i = 1; i < (4096 >> 2); i++, k++) {
-        h = this->I0(20*std::sqrt(1 - std::sqrt(2.0*k/(4096-1)))) * iI0b;
-        this->fft[i] *= h;
-        this->fft[2048 - 1 - i] *= h;
+    for (int i = 1; i < (256 >> 2); i++, k++) {
+        h = this->I0(20*std::sqrt(1 - std::sqrt(2.0*k/(256-1)))) * iI0b;
+        this->freq[i] *= h;
+        this->freq[256 - 1 - i] *= h;
     }
 
     emit this->plotSpectrums();
@@ -473,7 +475,7 @@ void Widget::stopRecordingSlot() {
 void Widget::from_ftt_to_complex() {
     std::complex<float> complex_diggit;
 
-    for (int i = 0; i < 1024; i++) {
+    for (int i = 0; i < 256; i++) {
         complex_diggit = fft[i*2]+fft[i*2+1];
         this->fft_complex.push_back(complex_diggit);
     }
@@ -487,7 +489,7 @@ void Widget::post_filtering() {
     float xout = 0.0;
     float sq = 0.0;
 
-    for (int i = 0; i < 1024; i++) {
+    for (int i = 0; i < 256; i++) {
         freq.push_back(std::sqrt(std::pow(fft_complex[i].real(),2)+std::pow(fft_complex[i].imag(),2)));
         //QDEBUG(freq[i]);
     }
@@ -495,7 +497,7 @@ void Widget::post_filtering() {
 
     sq = 1.58 * std::pow(k,2);
 
-    for (int i = 0; i < 1024; i++) {
+    for (int i = 0; i < 256; i++) {
         freq[i] = freq[i]*std::exp(sq/32);
         QDEBUG(freq[i]);
     }
