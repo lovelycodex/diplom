@@ -58,8 +58,6 @@ public:
 
     void writeToDisk                        ();
 
-    void KaiserWindow                       ();
-
     float I0                                (float);
 
 signals:
@@ -73,8 +71,12 @@ signals:
 
     void liftering_Signal                   ();
 
+    void kaiser_window_signal               ();
+
 private slots:
     void timerProc                          ();
+
+    void kaiser_window                      ();
 
     void liftering                          ();
 
@@ -113,6 +115,7 @@ private:
     RGB                             palette[256];
     Ui::Widget                      *ui;
     QVector<std::complex<float>>    fft_complex;
+    QVector<float>                  freq;
 };
 
 

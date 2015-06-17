@@ -50,6 +50,8 @@ Widget::Widget(QWidget *parent) : QWidget(parent), ui(new Ui::Widget)
         connect(this, SIGNAL(PlotSpectrumSignal()), this, SLOT(plotSpectrums()));
         connect(this, SIGNAL(fill_ftt_complex_Signal()), this, SLOT(from_ftt_to_complex()));
         connect(this, SIGNAL(post_filtering_Signal()), this, SLOT(post_filtering()));
+        connect(this, SIGNAL(liftering_Signal()), this, SLOT(liftering()));
+        connect(this, SIGNAL(kaiser_window_signal()), this, SLOT(kaiser_window()));
 
         ui->setupUi(this);
         ui->lineEdit->setAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
@@ -301,22 +303,16 @@ void Widget::plotSpectrums() {
     QVector<double> x;
     QVector<double> y;
 
-    float w = 0;
-    float k = 0;
-    float xout = 0;
-    float sq = 0;
-
-
-
     for (int i = 0; i < 1024; i++) {
         x.push_back(i);
-        y.push_back(this->fft_complex[i].real() + this->fft_complex[i].imag());
+        y.push_back(freq[i]);
     }
 
     ui->plot1->graph(0)->setData(x,y);
     ui->plot1->xAxis->setRange(0, 1024);
     ui->plot1->xAxis->setVisible(true);
     ui->plot1->yAxis->setVisible(true);
+    ui->plot1->yAxis->setRange(-1,1);
     ui->plot1->replot();
 
     emit this->plotKaiserWindow();
@@ -330,26 +326,25 @@ void Widget::plotKaiserWindow() {
     QVector<double> y;
     //    QVector<double> reverse_y;
 
-    qint32 j = 2;
+    qint32 j = 0;
 
-    for (int i = 0; i < 1024; i++) {
-        if (!qIsNaN(fft[i])) {
-            x.push_back(j);
-            y.push_back(fft[i*2]+fft[i*2+1]);
-            //reverse_y.push_back(fft[i]*20*(-1));
-            j++;
-        }
+    for (int i = 0; i < freq.size(); i++) {
+        x.push_back(j);
+        y.push_back(freq[i]);
+        //reverse_y.push_back(fft[i]*20*(-1));
+        j++;
     }
 
-    QDEBUG(x.size());
+    QDEBUG(freq.size());
 
     ui->plot2->graph(0)->setData(x,y);
+    ui->plot2->graph(0)->setPen(QPen(QColor(218,242,4)));
     //ui->plot2->graph(1)->setData(x,reverse_y);
     ui->plot2->xAxis->setRange(0, x.size());
     ui->plot2->xAxis->setVisible(true);
     ui->plot2->yAxis->setVisible(true);
-    ui->plot2->graph(0)->setBrush(QBrush(Qt::black));
-    ui->plot2->graph(1)->setBrush(QBrush(Qt::black));
+    //ui->plot2->graph(0)->setBrush(QBrush(Qt::black));
+    //ui->plot2->graph(1)->setBrush(QBrush(Qt::black));
     ui->plot2->yAxis->setRange(-1, 1);
     ui->plot2->replot();
 }
@@ -384,19 +379,21 @@ float Widget::I0(float x) {
 /**
  * @brief It is a one-parameter family of window functions used for digital signal processing.
  */
-void Widget::KaiserWindow() {
+void Widget::kaiser_window() {
     float iI0b = 0, h = 0;
     int k = 0;
 
-    k = -(2048 >> 2);
+    k = -(4096 >> 2);
 
     iI0b = this->I0(20);
 
-    for (int i = 1; i < (2048 >> 2); i++, k++) {
-        h = this->I0(20*std::sqrt(1 - std::sqrt(2.0*k/(2048-1)))) * iI0b;
+    for (int i = 1; i < (4096 >> 2); i++, k++) {
+        h = this->I0(20*std::sqrt(1 - std::sqrt(2.0*k/(4096-1)))) * iI0b;
         this->fft[i] *= h;
         this->fft[2048 - 1 - i] *= h;
     }
+
+    emit this->plotSpectrums();
 }
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------Message box for errors--------------------------------------------------------------------------
@@ -465,6 +462,8 @@ void Widget::on_pushButton_clicked() {
 }
 
 void Widget::stopRecordingSlot() {
+    fft_complex.clear();
+    freq.clear();
     this->timer->stop();
     this->timer_for_record->stop();
     this->stopRecording();
@@ -476,7 +475,6 @@ void Widget::from_ftt_to_complex() {
 
     for (int i = 0; i < 1024; i++) {
         complex_diggit = fft[i*2]+fft[i*2+1];
-        QDEBUG(complex_diggit.real() << " " << complex_diggit.imag());
         this->fft_complex.push_back(complex_diggit);
     }
 
@@ -484,13 +482,36 @@ void Widget::from_ftt_to_complex() {
 }
 
 void Widget::post_filtering() {
+    float w = 0.0;
+    float k = 0.0;
+    float xout = 0.0;
+    float sq = 0.0;
 
+    for (int i = 0; i < 1024; i++) {
+        freq.push_back(std::sqrt(std::pow(fft_complex[i].real(),2)+std::pow(fft_complex[i].imag(),2)));
+        //QDEBUG(freq[i]);
+    }
+    k = *(std::max_element(freq.begin(), freq.end()));
 
+    sq = 1.58 * std::pow(k,2);
+
+    for (int i = 0; i < 1024; i++) {
+        freq[i] = freq[i]*std::exp(sq/32);
+        QDEBUG(freq[i]);
+    }
     emit this->liftering_Signal();
 }
 
 void Widget::liftering() {
+    float w = 0.0;
+    float xout = 0.0;
 
+    for (int i = 0; i < freq.size(); i++) {
+        xout = freq[i]-0.9*w;
+        w = 0.54 - 0.46*std::cos(2*M_PI*(i-6)/179);
 
-    emit this->plotSpectrums();
+        freq[i] = xout*w;
+    }
+
+    emit this->kaiser_window_signal();
 }
