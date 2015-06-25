@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>770</width>
-    <height>560</height>
+    <height>308</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -107,7 +107,7 @@ color: white;</string>
     <enum>Qt::Horizontal</enum>
    </property>
   </widget>
-  <widget class="QCustomPlot" name="plot1" native="true">
+  <widget class="QCustomPlot" name="plot2" native="true">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -120,17 +120,69 @@ color: white;</string>
     <string notr="true">background : rgb(70,70,70);</string>
    </property>
   </widget>
-  <widget class="QCustomPlot" name="plot2" native="true">
+  <widget class="QPushButton" name="pushButton_2">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>310</y>
-     <width>751</width>
-     <height>211</height>
+     <x>370</x>
+     <y>20</y>
+     <width>80</width>
+     <height>25</height>
     </rect>
    </property>
-   <property name="styleSheet">
-    <string notr="true">background : rgb(70,70,70);</string>
+   <property name="text">
+    <string>PushButton</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_4">
+   <property name="geometry">
+    <rect>
+     <x>460</x>
+     <y>20</y>
+     <width>80</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>PushButton</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_5">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>50</y>
+     <width>80</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>PushButton</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_6">
+   <property name="geometry">
+    <rect>
+     <x>560</x>
+     <y>20</y>
+     <width>80</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>PushButton</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_7">
+   <property name="geometry">
+    <rect>
+     <x>650</x>
+     <y>20</y>
+     <width>80</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>PushButton</string>
    </property>
   </widget>
  </widget>

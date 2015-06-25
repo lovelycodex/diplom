@@ -1,5 +1,7 @@
 #ifndef WIDGET_H
 #define WIDGET_H
+
+# include <iostream>
 //-----------------------------------------QT class incldues----------------------------------
 # include <QWidget>
 # include <QMessageBox>
@@ -25,7 +27,7 @@
 # define SPECHEIGHT 127     // height (changing requires palette adjustments too)
 
 #ifdef QT_DEBUG
-    #define QDEBUG(q) qDebug()<<q
+    #define QDEBUG(q) qDebug()<< q
 #else
     #define QDEBUG(q) ;
 #endif
@@ -58,7 +60,7 @@ public:
 
     void writeToDisk                        ();
 
-    float I0                                (float);
+    std::float_t I0                                (std::float_t);
 
 signals:
     void PlotSpectrumSignal                 ();
@@ -96,7 +98,7 @@ private slots:
 
     void on_pushButton_2_clicked            ();
 
-    void on_horizontalSlider_valueChanged   (qint32 value);
+    void on_horizontalSlider_valueChanged   (std::int32_t value);
 
     void on_pushButton_3_clicked            ();
 
@@ -108,14 +110,22 @@ private slots:
 
     void on_pushButton_5_clicked            ();
 
+    void on_pushButton_6_clicked();
+
+    void on_pushButton_7_clicked();
+
 private:
-    QTimer                          *timer;
-    QTimer                          *timer_for_record;
-    float                           *fft;               // recbuf represented by FFT;
-    RGB                             palette[256];
-    Ui::Widget                      *ui;
-    QVector<std::complex<float>>    fft_complex;
-    QVector<float>                  freq;
+    QTimer                                      *timer;
+    QTimer                                      *timer_for_record;
+    std::float_t                                *fft;               // recbuf represented by FFT;
+    RGB                                         palette[256];
+    Ui::Widget                                  *ui;
+    std::vector<std::complex<std::float_t>>     fft_complex;
+    std::vector<std::float_t>                   freq;
+    std::vector<std::float_t>                   one;
+    std::vector<std::float_t>                   two;
+    std::vector<std::float_t>                   three;
+    std::vector<std::float_t>                   four;
 };
 
 
